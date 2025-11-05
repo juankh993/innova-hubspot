@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="356px" height="247px" viewBox="0 0 356 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>footer-minimal</title>
+    <desc>Created with Sketch.</desc>
+    <g id="minimal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="356" height="247"></rect>
+        <rect id="Rectangle-Copy" stroke="#010101" stroke-width="3" fill="#ECEDF1" x="1.5" y="218.5" width="353" height="27"></rect>
+        <rect id="Rectangle" stroke="#010101" stroke-width="3" x="1.5" y="1.5" width="353" height="244"></rect>
+        <path d="M134,232 L161,232" id="Line-Copy-34" stroke="#010101" stroke-width="3"></path>
+        <path d="M165,232 L192,232" id="Line-Copy-35" stroke="#010101" stroke-width="3"></path>
+        <path d="M196,232 L223,232" id="Line-Copy-36" stroke="#010101" stroke-width="3"></path>
+    </g>
+</svg>

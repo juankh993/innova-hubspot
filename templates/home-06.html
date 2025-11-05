@@ -1,0 +1,160 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-06.jpg
+  label: POWER THEME Home 06
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='',
+                    title_sel_heading='h1',
+                    description='',
+                    layout={full_width:false,header_height:"large",isSmall:false,title_extra_large:false},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-home6",height:817,'src':get_asset_url('../images/bgs/pwr-img_bg_woman-headphones-marketing.jpg'),width:1360},
+                        background_image_overlay:"",
+                        scheme:"dark"
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text Tabs #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text Tabs',
+                    tab=[
+                        {content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"WE SAY NO TO DESIGN LIMITATIONS.",content_title_sel_heading:"h2",field_group:{is2Cols:false},tab_title:"Intuitive Editor"},
+                        {content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"YOU DON\'T WEAR NERDY GLASSES AND LOVE COMPUTER-LANG. NO PROBLEM.",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"No Coding required"},
+                        {content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"ONE MAGIC TOUCH AND EVERYTHING IS IN YOUR HUSBPOT WORKSPACE.",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"One-Click Installation"},
+                        {content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"COUNTLESS MODULES AND LAYOUT VARIATIONS. BUILD BASICALLY ANYTHING YOU WANT.",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"Many modules"},
+                        {content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"IN FOR A SPECIAL JOURNEY? GET POWER AND HOP ON THE SPACE SHUTTLE.",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"Takes you to Space"}
+                        ],
+                    layout={isNumbered:true,section_variant:"tabs_hor"},
+                    style={background:"color"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text Tabs #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='',
+                    title='BESIDES SAVING THE WORLD WE ALSO SHOOT BEAUTIFUL PHOTOS.',
+                    boxes=[
+                        {field_group:{background_position:"center"},
+                        filtering:{},img:{alt:"woman on phone call",height:590,'src':get_asset_url('../images/boxes/gallery/pwr-img_gallery_01-woman-call.jpg'),width:590},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{},img:{alt:"mountains panorama",height:590,'src':get_asset_url('../images/boxes/gallery/pwr-img_gallery_02-mountains.jpg'),width:1180},intro_to_title:"",layout:{size:"pwr-image-box--one-by-two"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:100}},
+                        {filtering:{},img:{alt:"man walking up the stairs",height:590,'src':get_asset_url('../images/boxes/gallery/pwr-img_gallery_05-stairs-walking.jpg'),width:590},intro_to_title:"",layout:{size:"pwr-image-box--two-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{},img:{alt:"woman laughing in business meeting",height:590,'src':get_asset_url('../images/boxes/gallery/pwr-img_gallery_04-woman-laughing.jpg'),width:590},intro_to_title:"",layout:{size:"pwr-image-box--two-by-two"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{},img:{alt:"white stairs",height:590,'src':get_asset_url('../images/boxes/gallery/pwr-img_gallery_03-stairs.jpg'),width:590},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:200}},
+                        {filtering:{},img:{alt:"man typing on keyboard",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_man-keyboard.jpg'),width:1920},intro_to_title:"",layout:{size:"pwr-image-box--one-by-two"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"",translation:{txt_link:"Enlarge"},animation:{animation_type:"default",delay:300}}
+                        ],
+                    layout={no_gutter:false,section_variant:"4cols_masonry"},
+                    style={box_overlay_front:false,is_gallery:true}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span>You say impossible, we say easy. Ok, ok, not all photos are shot by us, but they show our company and our locations. Amazing, right?&nbsp;</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section Stats Counter #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "stats" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-stats', 
+                    label='Stats Counter',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    stats=[
+                        {number:"27",suffix:"k",title:"Website Traffic"},
+                        {number:"1.2",suffix:"M",title:"Pixels Shifted"},
+                        {number:"72.6",suffix:"k",title:"lines of code"},
+                        {number:"8941",title:"Leads generated"}
+                        ], 
+                    layout={padding_bottom:" ",padding_top:" "},
+                    style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Stats Counter #}
+
+            {# Section Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    intro_to_title='BLOG PREVIEW',
+                    title='WHAT WE HAVE TO SAY',
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:2,padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-md",section_variant:"small_hor"},
+                    style={background:"gradient",background_gradient_color_1:{color:"#242934",opacity:100},background_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:100},scheme:"dark"},
+                    animation={blog_posts:{delay:400},section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    With our blog post preview you have lots of different layout and extensive filter options to promote and push your content.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Post Preview #}
+
+            {# Section Map #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "map" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-map', 
+                    label='Map',
+                    intro_to_title='',
+                    title='GET IN TOUCH',
+                    contact=False,
+                    is_form=True,
+                    map_embed_code='<iframe title="Map Location" src="https://snazzymaps.com/embed/132230" width="100%" height="100%"   style="border:none;"></iframe>',
+                    layout={full_width:true,section_height:687,section_variant:"map_right"}
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"097aff1b-68c6-407b-8b33-af04ee10f81d","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                    {% end_module_attribute %}
+                    {% module_attribute "desc" %}
+                    Let\'s start your next project. No need to be shy, we will help you achieve all your project goals.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Map #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

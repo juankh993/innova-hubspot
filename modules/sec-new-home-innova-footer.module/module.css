@@ -1,0 +1,46 @@
+p{
+   all: revert-layer;
+}
+
+.contact-media p{
+  font-family: 'Josefin Sans';
+  font-weight:400;
+  font-size:14px;
+  line-height: 16px;
+  color:#ffffff;
+}
+.footer-logo{
+  max-width: 174px;
+  max-height: 80px;
+}
+
+.footer-list-title{
+  font-family: 'Otterco';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  padding-bottom: 16px;
+}
+
+.footer-list-item{
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.footer-list-item:hover{
+    text-transform: capitalize;
+}
+
+.footer-copyright{
+  font-family: 'Josefin Sans';
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 22px;
+}

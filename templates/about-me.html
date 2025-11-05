@@ -1,0 +1,158 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_about-me.jpg
+  label: POWER THEME About Me
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='pwr-bullet-points', label='Main Content' %}
+        {# Section Hero #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "hero" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-hero', 
+                label='Hero',
+                title='Jennifer Mill', 
+                title_sel_heading='h1', 
+                description='Head of Marketing', 
+                layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                style={desc_large:true,scheme:"light"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Hero #}
+
+        {# Section Content Split #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "media-content-split" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-media-content-split', 
+                label='Content Split',
+                title='', 
+                intro_to_title='', 
+                img={alt:"about-me",height:1037,'src':get_asset_url('../images/portraits/full/pwr-img_portrait_full_04.jpg'),width:1200}, 
+                contact=True, 
+                social_icons=[{flip_icon_horizontally:false,icon:{name:"twitter",type:"REGULAR",unicode:"f099"},link:{no_follow:false,open_in_new_tab:true,url:{href:"https://www.twitter.com",type:"EXTERNAL"}}},{flip_icon_horizontally:false,icon:{name:"linkedin-in",type:"REGULAR",unicode:"f0e1"},link:{no_follow:false,open_in_new_tab:true,url:{href:"https://www.linkedin.com",type:"EXTERNAL"}}},{flip_icon_horizontally:false,icon:{name:"envelope",type:"SOLID",unicode:"f0e0"},internal_url:"mailto:hello@power.com",link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}}},{flip_icon_horizontally:false,icon:{name:"phone",type:"SOLID",unicode:"f095"},internal_url:"tel:+4989123567",link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}}}], 
+                style={background:"color",background_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},media_position:"top"}
+                %}
+                    
+                {% module_attribute "desc" %}
+                This module allows you to show associated content with an image or video on the left or right - full width or content width. You can add a intro title, title, an image, a link, social icons or a CTA to your content area and even use it as a testimonial. Optionally specify a custom height for this section and configure several backgrounds for the content are, like background color, background image or video, even gradients with several directions, an overlay color or gradient with opacities, etc. In this case it is used to show the bio of Jennifer.
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Content Split #}
+
+        {# Section Text #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "text" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-text', 
+                label='Text',
+                intro_to_title='', 
+                title='COMPETENCIES',
+                layout={section_variant:"2col"}
+                %}
+                {% module_attribute "left" %}
+                <ul><li>Cross browser optimized - FF, Safari, Chrome, IE11, Edge, Opera</li><li>Fully Responsive design - perfect on any device</li><li>Multi-language ready - everything in our modules is translatable</li><li>Retina image support for high-density pixel displays</li></ul>
+                {% end_module_attribute %}
+                {% module_attribute "right" %}
+                <ul><li>Flexible - Customize font and color scheme to fit your brand</li><li>Great documentation - good for new or legacy users</li><li>Professional support - we love what we do and who we do it for</li><li>Many header- / footer-layouts and loads of easy-to-use modules</li></ul>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Text #}
+
+        {# Section Testimonial #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "testimonial" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-testimonial', 
+                label='Testimonial',
+                intro_to_title='', 
+                title='', 
+                description='', 
+                testimonial=[{job_title:"Natural Historian",name_:"David Attenborough",quote:"”It seems to me that the natural world is the greatest source of excitement; the greatest source of visual beauty; the greatest source of intellectual interest. It is the greatest source of so much in life that makes life worth living.”"}], 
+                slider={nav_arrows:false}, 
+                layout={section_variant:"one_by_one_style2"}, 
+                style={background:"img_vid",background_image:{alt:"bg-office-women-chat-253053889",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-women-chat.jpg'),width:1920},background_position:"parallax",overlay_color:{color:"#1a1d17",opacity:60},scheme:"dark"},
+                animation={section:{animation_type:"default",delay:50}}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Testimonial #}
+
+        {# Section Text #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "text" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-text', 
+                label='Text',
+                intro_to_title='', 
+                title='AWARDS & CERTIFICATIONS', 
+                layout={section_variant:"2col",padding_bottom:"pwr--sec-padding-b-md"}, 
+                style={background:"color"}
+                %}
+                {% module_attribute "left" %}
+                Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                {% end_module_attribute %}
+                {% module_attribute "right" %}
+                Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Text #}
+
+        {# Section Image Slider #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "image-slider" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-image-slider', 
+                label='Image Slider',
+                intro_to_title='', 
+                title='', 
+                description='', 
+                image=[
+                    {alt:"certification-01",height:200,'src':get_asset_url('../images/boxes/certifications/pwr-img_certification_01.jpg'),width:386},
+                    {alt:"certification-02",height:200,'src':get_asset_url('../images/boxes/certifications/pwr-img_certification_02.jpg'),width:386},
+                    {alt:"certification-03",height:200,'src':get_asset_url('../images/boxes/certifications/pwr-img_certification_03.jpg'),width:386}
+                ], 
+                slider={autoplay:false,nav_arrows:false,nav_bullets:false}, 
+                layout={full_width:false,padding_bottom:"pwr--sec-padding-b-md",section_variant:"multiple"}, 
+                style={background:"color"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Image Slider #}
+
+        {# Section Blog Post Preview #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "blog-post-preview" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-blog-post-preview', 
+                label='Blog Post Preview',
+                intro_to_title='', 
+                title='BLOG POSTS BY JENNIFER', 
+                description='', 
+                filter={author_s:"Jennifer Mill"}, 
+                layout={nr_posts:3,section_variant:"standard"},
+                animation={blog_posts:{delay:400}}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Blog Post Preview #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

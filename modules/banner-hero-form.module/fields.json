@@ -1,0 +1,92 @@
+[ {
+  "id" : "ac521212-3b14-4ff3-2ed6-3bea7e408fb3",
+  "name" : "banner_welcome",
+  "label" : "Texto bienvenida",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Bienvenido a"
+}, {
+  "id" : "8c1bea7e-5c41-ba2e-f55d-4568cd904d2a",
+  "name" : "school_campus",
+  "label" : "Nombre sede",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Innova sede"
+}, {
+  "id" : "5776f18f-74f8-0307-8ef9-368ad1faf4fb",
+  "name" : "form_title",
+  "label" : "Título del formulario",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "INSCRIPCIONES ABIERTAS COLEGIO INNOVA"
+}, {
+  "id" : "072b6d40-cecc-7952-7939-0a0e334ef7cb",
+  "name" : "form_subtitle",
+  "label" : "Subítulo del formulario",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "NIZA BOGOTÁ - CALENDARIO B"
+}, {
+  "picker" : "video",
+  "id" : "3d56e0cc-3864-f19e-d396-6c8318dd789b",
+  "name" : "banner_video_preview",
+  "label" : "Video preview",
+  "required" : true,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://contenidos.innovaschools.edu.co/hubfs/Cada%20ni%C3%B1o%20tiene%20un%20temperamento%20unico.mp4"
+}, {
+  "id" : "65bd5b5a-a3f4-9939-3fdc-4da2a3af882c",
+  "name" : "video_id",
+  "label" : "Video del modal",
+  "help_text" : "Extraer solo el ID del video de YouTube, no la URL completa. por ejemplo, únicamente la parte final después del igual: https://www.youtube.com/watch?v=7vdYYJrpdIk",
+  "inline_help_text" : "Ingresa solo el ID del video de YouTube.",
+  "required" : true,
+  "locked" : false,
+  "placeholder" : "video_id",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "7vdYYJrpdIk"
+}, {
+  "id" : "3dcfbe27-3536-a2c8-4c9a-c959f2978ed7",
+  "name" : "form_field",
+  "label" : "Elegir Formulario",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Gracias por enviar el formulario."
+  }
+}, {
+  "id" : "166ddae4-a092-810d-1b5c-23fb8710690f",
+  "name" : "logo",
+  "label" : "Logo",
+  "help_text" : "Ingresa el logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : ""
+  }
+} ]

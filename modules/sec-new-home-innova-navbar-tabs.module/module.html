@@ -1,0 +1,262 @@
+<section id="tabs-section" class="px-[14px] py-[104px] md:py-[51px] md:px-[59px] bg-[#F4FAFF] relative z-[10]">
+  <div
+    class="absolute -left-[130px] md:-left-[100px] md:-top-[130px] -top-[130px] md:w-[260px] md:h-[260px] w-[250px] h-[250px] pointer-events-none animate-[spin_10s_linear_infinite_reverse]">
+    <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-sol.png"
+      alt="vertical-acordion-slider-sun-doodle">
+  </div>
+  <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/tabs-doodle-izquierdo.svg"
+    alt="tabs-doodle-izquierdo" class="absolute top-0 left-0 z-[-1]">
+  <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/tabs-doodle-derecho.svg"
+    alt="tabs-doodle-derecho" class="absolute top-0 right-0 z-[-1] h-full">
+  <header class=" bg-[#ffffff] rounded-[30px] xl:max-w-[1280px] xl:m-auto relative z-1">
+    <nav
+      class="pt-[18px] md:px-[20px] bottom-0 flex justify-center items-center w-full !mx-auto  rounded-tl-[10px] rounded-tr-[10px] bg-[#139ED4] lg:rounded-tl-[30px] lg:rounded-tr-[30px] z-50 uppercase lg:top-4 lg:left-0 lg:right-0"
+      role="navigation" aria-label="Navegación principal" id="fixed-blue-nav">
+      <ul
+        class="flex justify-around w-full h-full items-strech [&>li>a]:text-white md:[&>li>a]:text-[14px] lg:[&>li>a]:text-[20px] [&>li>a]:transition-colors [&>li>a]:duration-150 [&>li>a]:ease-in-out md:px-[20px] px-[10px] overflow-x-auto xl:overflow-visible overflow-y-hidden xl:[scrollbar-width:none] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]"
+        role="tablist">
+        {% for item in module.nav_items %}
+        <li class="flex flex-auto max-w-[180px] [&:nth-child(1)]:ml-[20px] xl:[&:nth-child(1)]:ml-0"
+          role="presentation">
+          <button data-tab-index="{{ loop.index0 }}"
+            class=" min-w-[180px] w-full h-full tab-button xl:pt-[18px] py-[18px] xl:pb-[22px] px-[10px] hover:bg-[#2CCEBB] hover:rounded-tr-[30px] hover:rounded-tl-[30px] navbar-estilos {% if loop.index0 == 0 %}active{% endif %}"
+            role="tab" aria-selected="{% if loop.index0 == 0 %}true{% else %}false{% endif %}"
+            aria-controls="tab-content-{{ loop.index0 }}">
+            <span class="relative z-1 italic">{{ item.text_name }}</span>
+          </button>
+
+        </li>
+
+        {% endfor %}
+
+
+        {# Botón Desktop #}
+        <li class="hidden md:flex justify-center items-center ml-[20px] xl:mr-0" role="presentation">
+          <a href="#section-form-enrollment"
+            class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
+            role="tab" id="CTA_Inscribete">
+            <span
+              class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+            <span class="text-[#ffffff] relative z-10 font-['Otterco'] font-bold leading-[20px] uppercase texture-image">
+              {{ module.button_text }}
+            </span>
+            <svg class="z-10" width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.33789 1.32031C1.44452 1.32132 1.55084 1.34471 1.65039 1.38965C1.74999 1.43465 1.84204 1.5012 1.91992 1.58594L1.92578 1.5918L7.24805 7.18457C7.4067 7.35134 7.5 7.58313 7.5 7.8291C7.49995 8.07497 7.40663 8.30594 7.24805 8.47266L1.92578 14.0664C1.76792 14.2323 1.5587 14.3203 1.34668 14.3203C1.18838 14.3202 1.03137 14.2711 0.895508 14.1758C0.759099 14.08 0.648842 13.9405 0.583008 13.7734C0.517205 13.6063 0.499352 13.4211 0.533203 13.2422C0.567056 13.0633 0.650478 12.9025 0.768555 12.7783L5.15039 8.17383L5.47852 7.8291L5.15039 7.48438L0.768555 2.87988L0.762695 2.87305L0.705078 2.80859C0.650606 2.74107 0.605403 2.6645 0.571289 2.58105C0.52577 2.46969 0.501014 2.3492 0.5 2.22656C0.498992 2.10392 0.52171 1.98241 0.56543 1.87012C0.609138 1.75804 0.672802 1.65739 0.751953 1.57422C0.831131 1.49106 0.92419 1.42688 1.02441 1.38379C1.1246 1.34074 1.23122 1.31934 1.33789 1.32031Z"
+                fill="white" stroke="white" />
+            </svg>
+
+          </a>
+        </li>
+
+
+
+      </ul>
+    </nav>
+
+    <section>
+      {% for item in module.nav_items %}
+      <div id="tab-content-{{ loop.index0 }}" class="tab-content {% if loop.index0 != 0 %}hidden{% endif %}"
+        role="tabpanel" aria-labelledby="tab-{{ loop.index0 }}">
+        {% if item.accordion_selection_information == "info" %}
+
+        <div
+          class="grid grid-cols-1 lg:!grid-cols-[42%_56%] gap-[24px] items-center py-[30px] md:pt-[45.5px] px-[19px] lg:px-[40px] 2xl:px-0 lg:max-w-[1165px] lg:m-auto w-full"
+          id="valores-content-reverse" data-animate="text-fade-up">
+          <!-- Columna izquierda: títulos, descripción y lista -->
+          <div class="content-column">
+            <!-- Títulos y descripción -->
+            <div class="mb-[24px]">
+              <h3 class="uppercase font-bold text-[32px] leading-[38px] md:text-[32px] md:leading-[44px] text-[#f85245]"
+                style="font-family: 'Josefin Sans', sans-serif; letter-spacing: 3.2px; line-height:38px;"
+                id="valores-subtitle-reverse" data-animate="fade-up">
+                {{ item.tab_title }}
+              </h3>
+              <h2
+                class="uppercase italic font-bold tracking-[0.2em] text-[32px] leading-[30px] md:text-[32px] md:leading-[32px] text-[#139ED4]"
+                style="font-family: 'Otterco', sans-serif; letter-spacing: 3.2px; line-height:34px; "
+                data-animate="fade-up">
+                {{ item.tab_subtitle }}
+              </h2>
+            </div>
+            <div class="text-[#003b87] mb-8 [&_span]:text-[22px] [&_span]:leading-[26px] !mx-0"
+              style="font-family: 'Josefin Sans', sans-serif; font-size:16px;" id="valores-description-reverse"
+              data-animate="fade-up">
+              {{ item.tab_description }}
+            </div>
+            <div class="text-center md:text-left">
+              <a href="#section-form-enrollment"
+                class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px]  border-[2px] border-[#003B87] rounded-full tracking-normal transition-colors duration-300  overflow-hidden font-bold"
+                role="tab" id="CTA_Inscribete">
+                <span
+                  class="absolute inset-0 bg-[#003B87] group-active:bg-[#FF6D62] transition-[clip-path] duration-500 ease-in-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+                <span
+                  class="!text-[#003B87] group-hover:!text-white relative z-10 font-['Otterco'] uppercase texture-image">
+                  {{ item.tab_button_text }}
+                </span>
+                <svg class="z-10" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.9297 5.89453C18.0592 5.89453 22.5348 8.68019 24.9297 12.8203C22.5348 16.9604 18.0592 19.7461 12.9297 19.7461C7.8002 19.7461 3.3246 16.9604 0.929688 12.8203C3.32459 8.68018 7.80018 5.89453 12.9297 5.89453Z"
+                    fill="#EDED70" />
+                  <path
+                    d="M16.9936 10.0598C16.7516 10.3443 16.3949 10.5226 15.9915 10.5226C15.2654 10.5226 14.6794 9.93665 14.6794 9.21054C14.6794 8.88357 14.7983 8.58634 14.9936 8.35704C14.3609 8.06404 13.6603 7.89844 12.9172 7.89844C10.1996 7.89844 8 10.1023 8 12.8156C8 15.529 10.2038 17.7328 12.9172 17.7328C15.6306 17.7328 17.8344 15.529 17.8344 12.8156C17.8344 11.7923 17.5202 10.8411 16.9894 10.0555"
+                    fill="#003B87" />
+                </svg>
+
+
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna derecha: imagen gif -->
+          <div id="valores-carousel-col-reverse" class="relative flex lg:justify-center slider-column w-full"
+            data-animate="fade-up">
+            <div class="relative slider-desktop w-full">
+              <div
+                class="relative h-[261px] xl:h-[434px] w-full max-w-[612px] overflow-hidden rounded-tl-[80px] rounded-tr-[8px] rounded-br-[80px] rounded-bl-[8px]">
+                {% if item.asset_choice == "video_choice" %}
+                <iframe class="absolute left-0 top-0 w-full h-full hidden"
+                  src="https://www.youtube.com/embed/{{ item.tab_video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ item.tab_video_id }}"
+                  title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
+                </iframe>
+                <video class="absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline>
+                  <source src="{{ item.tab_video }}" type="video/mp4">
+                </video>
+                <!-- Overlay para abrir modal -->
+                <div class="absolute inset-0 video-overlay z-[4]" style="cursor: pointer;"
+                  data-blendy-from="universal-video" data-video-id="{{ item.tab_video_id }}" role="button" tabindex="0"
+                  aria-label="Abrir video principal">
+                  <!-- Cursor custom -->
+                 
+                </div>
+                {% elif item.asset_choice == "image_choice" %}
+                <img src="{{ item.tab_image.src }}" class="w-full h-full object-cover" alt="{{ item.tab_image.alt }}" />
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {% elif item.accordion_selection_information == "acordeon" %}
+
+        <!-- Sección Acordiones -->
+        <div
+          class="grid grid-cols-1 lg:!grid-cols-[42%_56%] gap-[24px] items-center py-[30px] md:pt-[45.5px] px-[19px] lg:px-[40px] 2xl:px-0 lg:max-w-[1165px] lg:m-auto w-full"
+          id="valores-content" data-animate="text-fade-up">
+          <!-- Columna izquierda: títulos y acordeones -->
+          <div class="content-column">
+            <!-- Títulos y descripción -->
+            <div class="mb-[24px] lg:mb-[32px]">
+              <h2
+                class="uppercase font-bold tracking-[0.1em] text-[24px] leading-[30px] md:text-[32px] md:leading-[32px] text-[#003b87]"
+                style=" font-family: 'Josefin Sans', sans-serif; letter-spacing: 3.2px;" data-animate="fade-up">
+                {{ item.accordion_title }}
+              </h2>
+              <h3
+                class="uppercase font-bold italic tracking-[0.28em] text-[24px] leading-[28px] md:text-[44px] md:leading-[44px] text-[#f85245]"
+                style="font-family: 'Otterco', sans-serif; letter-spacing: 4.4px" id="valores-subtitle"
+                data-animate="fade-up">
+                {{ item.accordion_subtitle }}
+              </h3>
+            </div>
+            <!-- Acordeones -->
+            <div id="valores-acordeones" class="space-y-2 mt-[32px]" data-animate="fade-up">
+              {% for accordion_item in item.stages_accordion %}
+              {% set snake = item.item_title|lower|replace(' ', '_') %}
+              <div class="accordion-item rounded-lg transition-all duration-300"
+                data-accordion-id="{{ item.item_title|slugify }}" data-index="{{ loop.index0 }}">
+                <button type="button" id="ValoresAgre_{{ snake }}"
+                  class="rounded-[30px] md:rounded-none py-[32px] px-[12px] md:py-0 md:px-0 bg-[#F2F4F6] md:bg-[#ffffff] flex w-full items-stretch gap-[16px] text-left group ValoresAgre_elementos lg:mb-[12px] group md:hover:cursor-pointer"
+                  aria-expanded="false">
+                  <div class="hidden md:flex flex-col items-center flex-grow md:max-w-[24px] max-w-[32px]">
+                    <div
+                      class="w-6 h-6 rounded-xl flex items-center justify-center bg-yellow-100 dot-outer hidden md:flex md:[.group:hover_&:not(.active-item)]:!bg-[#A7B2F2] md:ease-in-out duration-300"
+                      style="background-color: {% if loop.first %}#fce8c2 !important{% else %}transparent{% endif %};">
+                      <div class="w-[10px] h-[10px] rounded-full dot-inner"
+                        style="background-color: {% if loop.first %}#fdb731{% else %}#003b87{% endif %};">
+                      </div>
+                    </div>
+
+                    <div class="hidden md:flex item-line"></div>
+                  </div>
+                  <div class="flex-1 flex flex-col w-full gap-[8px]">
+                    <div class="flex justify-strech gap-[8px]">
+                      <img src="{{ accordion_item.icon_mobile_acordion_item.src }}"
+                        alt="{{ accordion_item.icon_mobile_acordion_item.alt }}"
+                        class="block md:hidden w-[46px] h-[46px] object-contain">
+                      <h4
+                        class="flex gap-[10px] items-center accordion-title tabs-home-title md:[.group:hover_&:not(.active-item)]:scale-[1.1] md:ease-in-out duration-300">
+                        {{ accordion_item.accordion_item_title }}
+                        <svg class="md:hidden tab-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 13 9"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12.5322 1.6582C12.5312 1.77488 12.5075 1.89051 12.4629 1.99707C12.4294 2.077 12.3842 2.15044 12.3301 2.21582L12.2734 2.27832L12.2676 2.28418L7.07617 7.60645C6.91889 7.7676 6.70844 7.85645 6.49121 7.85645C6.27398 7.85644 6.06352 7.76761 5.90625 7.60645L0.714844 2.28418C0.557152 2.12254 0.466845 1.9005 0.466797 1.66699C0.466914 1.49323 0.517338 1.32433 0.610352 1.18164C0.703353 1.03904 0.83439 0.929342 0.985352 0.865234C1.13613 0.801302 1.3017 0.784916 1.46094 0.817382C1.62024 0.849953 1.76847 0.930571 1.88574 1.05078L6.15918 5.43262L6.49121 5.77344L6.82324 5.43262L11.0967 1.05078L11.1025 1.04492L11.1631 0.986328C11.2264 0.931249 11.2974 0.886877 11.373 0.853516C11.4739 0.809073 11.5824 0.785151 11.6914 0.78418C11.8003 0.783242 11.9083 0.805149 12.0098 0.847656C12.1114 0.890282 12.2053 0.95335 12.2842 1.03418C12.3629 1.11498 12.426 1.21208 12.4687 1.31934C12.5115 1.42651 12.5332 1.54178 12.5322 1.6582Z"
+                            fill="#044C8D" stroke="#044C8D" stroke-width="0.928125" />
+                        </svg>
+
+                      </h4>
+                    </div>
+                    <div id="tabs-acordion-home" class="accordion-content"
+                      data-accordion-content="valor-agregado-{{ loop.index0 }}">
+                      <div class="pt-[12px] lg:pb-[30px] accordion-text">
+                        <p class="tabs-home-description mb-[24px] md:mb-0 px-[10px]">
+                          {{ accordion_item.accordion_item_description }}
+                        </p>
+                        <img src="{{ accordion_item.accordion_item_image.src }}"
+                          class="rounded-tl-[12px] rounded-tr-[50px] rounded-br-[12px] rounded-bl-[50px] block md:hidden w-full h-full object-cover"
+                          alt="{{ accordion_item.accordion_item_image.alt }}" />
+                      </div>
+
+                    </div>
+                  </div>
+                </button>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Columna derecha: carrusel principal (desktop) -->
+          <div id="valores-carousel-col" class="relative lg:justify-center slider-column w-full hidden md:flex"
+            data-animate="fade-up">
+            <div class="relative slider-desktop w-full">
+              {% for accordion_item in item.stages_accordion %}
+              <div class="accordion-image {% if loop.index0 != 0 %}hidden{% endif %}"
+                data-accordion-index="{{ loop.index0 }}">
+                <div
+                  class="relative h-[261px] xl:h-[434px] w-full max-w-[612px] overflow-hidden rounded-tl-[80px] rounded-tr-[8px] rounded-br-[80px] rounded-bl-[8px] h-full">
+                  <img src="{{ accordion_item.accordion_item_image.src }}" class="w-full h-full object-cover"
+                    alt="{{ accordion_item.accordion_item_image.alt }}" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <!-- Fin Sección Acordiones -->
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+  </header>
+  <div id="sticky-cta-mobile"
+    class="fixed bottom-0 left-0 right-0 z-[10] translate-y-full transition-transform duration-500 ease-out md:hidden">
+    <div class="px-4 pb-4">
+      <a style="color:#ffffff;" href="#section-form-enrollment" id="primary-button"
+        class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete w-full"
+        role="tab">
+        <span
+          class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+        <span id="hero-cta-registration" class="relative z-10 font-['Otterco'] uppercase texture-image"
+          style="color:#ffffff;" id="primary-button-text">
+          {{ module.button_text }}
+        </span>
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.0186 13.8545L8.31152 12.3408L8.31738 12.3271L8.30469 12.3428L6.32422 14.7568H6.32324C6.22632 14.8807 6.095 14.9433 5.92773 14.9434C5.85748 14.9434 5.79808 14.9325 5.75 14.9111H5.74902C5.64668 14.8734 5.56489 14.8096 5.50293 14.7207C5.44095 14.6318 5.41022 14.5335 5.41016 14.4258V11.5693L12.4805 2.9043L12.4707 2.89648L12.4717 2.89551L3.72461 10.4639L0.495117 9.14062H0.494141C0.394229 9.10278 0.317388 9.04652 0.263672 8.97266C0.209939 8.89874 0.179015 8.80624 0.170898 8.69531L0.171875 8.61719C0.176922 8.5414 0.195248 8.4736 0.227539 8.41406C0.270558 8.33479 0.337801 8.26912 0.429688 8.21777L14.0508 0.360352C14.1317 0.311872 14.218 0.287109 14.3096 0.287109C14.4173 0.287179 14.5144 0.316762 14.6006 0.375977C14.6897 0.440796 14.7517 0.516633 14.7881 0.602539C14.8244 0.688648 14.8346 0.786323 14.8184 0.894531L12.7236 13.4668C12.6967 13.623 12.6106 13.7446 12.4648 13.8311C12.3895 13.8741 12.3056 13.8955 12.2139 13.8955C12.1548 13.8955 12.089 13.8816 12.0186 13.8545Z"
+            fill="white" stroke="white" stroke-width="0.012278" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

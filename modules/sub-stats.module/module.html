@@ -1,0 +1,37 @@
+{# *********************************************
+   * POWER Theme Sub Module Stats Counter V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+<div class="pwr-sub-stats {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" {% if module.style.text_color.color %}style="color: rgba({{ module.style.text_color.color|convert_rgb }}, {{ module.style.text_color.opacity|int / 100 }})"{% endif %}
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+  
+  <div class="pwr-sec-stats__wrapper">
+    <div class="pwr-stats {% if module.layout.centered %}pwr-stats--centered{% endif %} pwr--clearfix">
+      
+      <div class="pwr-stat">
+        <span class="pwr-stat__number">{{ module.stats.number }}</span><span class="pwr-stat__suffix">{{ module.stats.suffix }}</span>
+        <span class="pwr-stat__title">{{ module.stats.title }}</span>
+      </div>
+      
+    </div>
+  </div>
+</div>

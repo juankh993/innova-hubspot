@@ -1,0 +1,137 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_clients.jpg
+  label: POWER THEME Clients
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='OUR CLIENTS', 
+                    title_sel_heading='h1', 
+                    description='This is why we do what we do.', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"power theme customers laughing in office",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_two-women-in-front-of-laptop.jpg'),width:2400},background_image_overlay:"color",background_position:"center",desc_large:true,overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    filter_active_category='', 
+                    boxes=[
+                        {filtering:{cats:"Technology"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_01.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"Engineering"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_02.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{cats:"Software"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_03.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{cats:"SaaS"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_04.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:350}},
+                        {filtering:{cats:"Software"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_05.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"Software"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_06.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{cats:"Crypto"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_07.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{cats:"Social Media"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_08.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:350}},
+                        {filtering:{cats:"Social Media"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_09.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"SaaS"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_10.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{cats:"SaaS"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_11.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{cats:"SaaS"},img:{alt:"client-logo",height:575,'src':get_asset_url('../images/logos/solid/pwr-img_logo_wbg_12.png'),width:575},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Company Name",translation:{txt_link:"TO WEBSITE"},animation:{animation_type:"default",delay:350}}
+                        ], 
+                    layout={no_gutter:false,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"4cols"}, 
+                    style={background:"color",box_overlay_front:false,box_style:"content_below",filter_color:{color:"#171b24",opacity:100},filter_color_scheme:"dark",overlay_gradient_color_1:{color:"#6FA8DC",opacity:40},overlay_gradient_color_2:{color:"#A64D79",opacity:60},overlay_gradient_direction:"vert",overwrite_box_color:true,scheme:"light",smaller_content:true,style_filter:false,youtube_link:""}, 
+                    translation={txt_all:"All"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section Image Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-slider', 
+                    label='Image Slider',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    image=[
+                        {alt:"bg-office-unsplash-02",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-02.jpg'),width:1920},
+                        {alt:"bg-office-unsplash-01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-01.jpg'),width:1920},
+                        {alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920}
+                    ], 
+                    slider={nav_arrows:false,nav_bullets:true,navigation_bullets_overlay:true}, 
+                    layout={section_variant:"one_by_one_reduced",section_height:450}, 
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Slider #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonials',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    layout={padding_bottom:" ",section_variant:"2cols"},
+                    slider={autoplay:false,autoplay_time:1000,nav_arrows:true,nav_bullets:false},
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},
+                        scheme:"light"},
+                    testimonial=[
+                        {filtering:{cats:"Engineering"},avatar:{alt:"Gene Cernan Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_01.png'),width:285},job_title:"Astronaut",name_:"Gene Cernan",quote:"“<span>When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you\'re looking at something that is very strange, but yet is very, very familiar, because you\'re beginning to see the Earth evolve.</span>”",animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"Engineering"},avatar:{alt:"David Attenborough Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"Natural Historian",name_:"David Attenborough",quote:"<span>”It seems to me that the natural world is the greatest source of excitement; the greatest source of visual beauty; the greatest source of intellectual interest. It is the greatest source of so much in life that makes life worth living.</span>”",animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"Engineering"},avatar:{alt:"Edgar Mitchell Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"Astronaut",name_:"Edgar Mitchell",quote:"“<span>You develop an instant global consciousness, a people orientation, an intense dissatisfaction with the state of the world, and a compulsion to do something about it. From out there on the moon, international politics look so petty. You want to grab a politician by the scruff of the neck and drag him a quarter of a million miles out and say, Look at that, you son of a b****.</span>”",animation:{animation_type:"default",delay:50}},
+                        {filtering:{cats:"Sports"},avatar:{alt:"Muhammad Ali Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Boxer",name_:"Muhammad Ali",quote:"“<span>I am the astronaut of boxing. Joe Louis and Dempsey were just jet pilots. I\'m in a world of my own.</span>”",animation:{animation_type:"default",delay:50}}
+                        ]
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='JOIN THE CLUB OF HAPPY CLIENTS', 
+                    title_sel_heading='h2',
+                    cta='77b308a5-f601-4ca6-b079-98b16b13361a', 
+                    layout={section_variant:"vertical"}, 
+                    style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <p>Ready? Click on the button below and we will reach out to you as soon as possible.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

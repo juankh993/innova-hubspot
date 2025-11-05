@@ -1,0 +1,214 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_case-study.jpg
+  label: POWER THEME Case Studies
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='CLIENT NEW WEBSITE', 
+                    title_sel_heading='h1', 
+                    description='Website', 
+                    layout={full_width:false,isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"product image",height:788,'src':get_asset_url('../images/bgs/pwr-img_bg_mockup-product.jpg'),width:1484},background_image_overlay:"color",background_image_position:"parallax",background_position:"parallax",desc_large:true,overlay_color:{color:theme.colors.brand_colors.base_color_light.color,opacity:0},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Previous Next Navigation #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "prev-next-nav" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/prev-next-nav', 
+                    label='Previous Next Navigation',
+                    home_link={type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study"}, 
+                    previous_link={type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-portfolio-overview"}, 
+                    next_link={type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study"},
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Previous Next Navigation #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Steps',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    step=[
+                        {description:"Fully responsive website design, implementation and optimization",icon:{},image_field:{'src':""},title:"PROJECT"},
+                        {description:"UI/UX Design, Coding, SEO Optimization",icon:{},img:{'src':""},title:"WHAT WE DID"},
+                        {description:"Name of the Client here www.clientsite.com",icon:{},img:{'src':""},title:"CLIENT"},
+                        {description:"Start August 2019, 3 Weeks Design, 6 Weeks Coding",icon:{},img:{'src':""},title:"TIMELINE"}
+                        ], 
+                    layout={centered:false,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"text_only"}, 
+                    style={title_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100} }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='PROJECT INFORMATION', 
+                    layout={section_variant:"2col",padding_top:" "}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section DnD #}
+            {% dnd_section 
+                background_image={
+                    'backgroundPosition': 'MIDDLE_CENTER',
+                    'backgroundSize': 'cover',
+                    'imageUrl': get_asset_url('../images/bgs/pwr-img_bg_office-02.jpg')
+                },
+                full_width=true,
+                padding={ 
+                    'default': {'top': 225,'bottom': 225},
+                    'mobile': {'top': 175,'bottom': 175}
+                } 
+                %}
+            {% end_dnd_section %}
+            {# End Section DnD #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='CHALLENGES', 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    <ul><li>Relatively low budget for design, implementation and marketing</li><li>8-week time constraint for the whole project</li><li>Website must match existing digital corporate identity</li><li>Website should be deeply integrated into the HubSpot solution</li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li>Design &amp; development from scratch is not feasible</li><li>Customer would like to be able to edit content and structure</li><li>Website must be implemented in three languages</li><li>Webdesign must match modern design standards</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    title='RESULTS', 
+                    layout={padding_bottom:"pwr--sec-padding-b-md"}
+                    %}
+                    {% module_attribute "left" %}
+                    Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Image Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-slider', 
+                    label='Image Slider',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    image=[
+                        {alt:"portfolio-05",height:960,'src':get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_05.jpg'),width:960},
+                        {alt:"portfolio-06",height:960,'src':get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_06.jpg'),width:960},
+                        {alt:"portfolio-12",height:960,'src':get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_12.jpg'),width:960},
+                        {alt:"portfolio-04",height:960,'src':get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_04.jpg'),width:960},
+                        {alt:"portfolio-08",height:960,'src':get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_08.jpg'),width:960}
+                        ], 
+                    slider={autoplay:true,nav_arrows:true,nav_bullets:true,navigation_bullets_overlay:true}, 
+                    layout={full_width:false,padding_bottom:"pwr--sec-padding-b-md",section_variant:"multiple"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Slider #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonial',
+                    title='', 
+                    intro_to_title='', 
+                    description='', 
+                    testimonial=[{job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:'"When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you are looking at something that is very strange, but yet is very, very familiar, because you are beginning to see the Earth evolve."'}], 
+                    slider={nav_arrows:false}, 
+                    layout={section_variant:"one_by_one_style2"}, 
+                    style={background:"img_vid",background_image:{alt:"bg-woman-phone-1221911038",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_woman-mobile-phone.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='SCHEDULE A MEETING WITH AN EXPERT', 
+                    cta='77b308a5-f601-4ca6-b079-98b16b13361a', 
+                    style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span>And generate leads with our Call-To-Action module.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

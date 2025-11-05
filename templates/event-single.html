@@ -1,0 +1,170 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_event.jpg
+  label: POWER THEME Event Single
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='BIG CONFERENCE', 
+                    title_sel_heading='h1', 
+                    basic_info=[{icon:{name:"calendar-alt",type:"REGULAR",unicode:"f073"},info:"20-06-21"},{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},info:"Dublin, Ireland"}], 
+                    description='', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"bg-exhibition-792158590",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_exhibition.jpg'),width:1920},background_image_overlay:"color",background_image_position:"parallax",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='EVENT INTRODUCTION', 
+                    layout={section_variant:"2col"}, 
+                    style={background:"color"}
+                    %}
+                    
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Team #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "team" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-team', 
+                    label='Team',
+                    intro_to_title='', 
+                    title='OUR SPEAKERS AT THE EVENT', 
+                    team=[
+                        {img:{alt:"team-small-05",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"CEO, Managing Director",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Laura Laurati",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.facebook.com",animation:{animation_type:"default",delay:50}},
+                        {img:{alt:"team-small-06",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"Software Engineer",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Sandra Torres",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.facebook.com",animation:{animation_type:"default",delay:200}},
+                        {img:{alt:"team-small-07",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Marketing Wizard",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Charles Eden",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.facebook.com",animation:{animation_type:"default",delay:350}},
+                        {img:{alt:"team-small-08",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_05.png'),width:285},job_title:"Lasagna Eater",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"G. Arbuckle",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.facebook.com",animation:{animation_type:"default",delay:500}}
+                        ], 
+                    layout={isTabs:false}
+                    %}
+                    {% module_attribute "description" %}
+                    The people brave enough to talk in front of hundreds of people. Also, they are paid to talk here.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Team #}
+
+            {# Section Schedule #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "schedule" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-schedule', 
+                    label='Schedule',
+                    intro_to_title='', 
+                    title='EVENT SCHEDULE', 
+                    tabs=[
+                        {slot:[
+                            {desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"},
+                            {desc_left:"AUDITORIUM",desc_right:"Sarah Skedul&nbsp;- Founder of Druugle AG",title_left:"11:30AM - 1:30PM",title_right:"LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR"},
+                            {desc_left:"ROOM R4.02",desc_right:"Ergi Kayote - CCO, Actionkraft",title_left:"2:00PM - 4:30PM",title_right:"WEBDESIGN TRENDS 2019 INBOUND DESIGN"}],tab_title:"Monday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Tuesday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Wednesday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Thursday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Friday"}
+                        ], 
+                    style={scheme:"dark"}
+                    %}
+                    {% module_attribute "description" %}
+                    Create a one or multiple-day schedule for a conference, convention, training class or other events with this module. Multiple days will be shown in different tabs. Each tab is customizable by event time, location, description and speaker name.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Schedule #}
+
+            {# Section Client Logo Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "logo-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-logo-slider', 
+                    label='Client Logo Slider',
+                    intro_to_title='', 
+                    title='OUR BUSINESS PARTNERS', 
+                    client_logo=[
+                        {alt:"client logo",height:575,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_01.png'),width:575},
+                        {alt:"client logo",height:575,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_02.png'),width:575},
+                        {alt:"client logo",height:575,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_04.png'),width:575},
+                        {alt:"client logo",height:575,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_11.png'),width:575}
+                    ], 
+                    layout={centered:true}
+                    %}
+                    {% module_attribute "description" %}
+                    We love the collaboration with our business partners &amp; vendors and therefore proudly present them here with the client logo module.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Client Logo Slider #}
+
+            {# Section Map #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "map" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-map', 
+                    label='Map',
+                    intro_to_title='', 
+                    title='EVENT LOCATION', 
+                    desc='Exhibition Arena, Munich', 
+                    contact=True, 
+                    cta='79bc9b15-a012-44d4-bba5-bd9925a0e6c6', 
+                    phone='', 
+                    map_embed_code='<iframe title="Map Location" src="https://snazzymaps.com/embed/132243" width="100%" height="100%" style="border:none;"></iframe>',
+                    layout={full_width:true,section_height:590}, 
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Map #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='GRAB YOUR TICKET', 
+                    description='Join the event and be part of something special, for free! Food and drinks are on us!', 
+                    cta='66c9b07c-0a54-42f6-ac73-bd5c1580d97a', 
+                    style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

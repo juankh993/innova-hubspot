@@ -1,0 +1,83 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_faq.jpg
+  label: POWER THEME FAQ
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='FAQs', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    layout={full_width:false,header_height:"x-small",isSmall:true,title_extra_large:false}, 
+                    style={desc_large:false,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Steps',
+                    intro_to_title='', 
+                    title='GET DIRECTLY IN TOUCH.', 
+                    step=[
+                        {description:'<p>E-Mail: <a href="mailto:info@maka-ageny.com" rel="noopener">contact@power.com</a><br>Tel: +49 123 456 789</p>',icon:{},image_field:{'src':""},title:"Customer Service"},
+                        {description:'<p>E-Mail: <a href="mailto:info@maka-ageny.com" rel="noopener">contact@power.com</a><br>Tel: +49 123 456 789</p>',icon:{},img:{'src':""},title:"Career Inquiries"},
+                        {description:'<p>E-Mail: <a href="mailto:info@maka-ageny.com" rel="noopener">contact@power.com</a><br>Tel: +49 123 456 789</p>',icon:{},img:{'src':""},title:"Press Inquiries"},
+                        {description:'<p>E-Mail: <a href="mailto:info@maka-ageny.com" rel="noopener">contact@power.com</a><br>Tel: +49 123 456 789</p>',icon:{},img:{'src':""},title:"Marketing Inquiries"}
+                    ], 
+                    layout={centered:false,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"text_only"}, 
+                    style={background:"color",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section Accordion #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "accordion" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-accordion', 
+                    label='Accordion',
+                    intro_to_title='', 
+                    title='FREQUENTLY ASKED QUESTIONS', 
+                    accordion=[
+                        {description:"If you have time constraints, a limited budget or have no clue how to code, a theme is a good choice. Countless hours of work were invested in the POWER Theme such that you save yourself a ton of time, headaches and money.",title:"Why POWER hubspot theme?",animation:{animation_type:"default",delay:50}},
+                        {description:"The POWER theme is intuitive, easy-to-use and well documented. With our module options, you\'ll have all the control you desire - no matter if you are in marketing, design or coding.",title:"Is a template the right fit for me?",animation:{animation_type:"default",delay:150}},
+                        {description:'Once, you purchased our theme from the Hubspot marketplace, you will find all templates,&nbsp; modules and assets in HubSpots design manager under the folder POWER. We highly recommend starting with our detailed documentation: <a href="https://www.maka-agency.com/documentation/" rel="noopener" target="_blank">read documentation</a>.',title:"How to get started?",animation:{animation_type:"default",delay:250}},
+                        {description:'Your requirements exceed the functionality of our POWER Theme? Whaaat? Are you building a space ship?! 😜 Do not worry, we also offer a custom service to implement your individual projects. <a href="https://www.maka-agency.com/contact/" rel="noopener">Reach out now</a>',title:"What about special requirements?",animation:{animation_type:"default",delay:350}},
+                        {description:'Yes, we are. Get in touch here <a href="https://www.maka-agency.com/contact/" rel="noopener">Reach out now</a>',title:"Are you available for custom projects? ",animation:{animation_type:"default",delay:450}},
+                        {description:'You got stuck in your building process? Get in touch with us through the live-chat option on <a href="https://www.maka-agency.com" rel="noopener" target="_blank">our website</a> or contact us through our <a href="https://www.maka-agency.com/contact/" rel="noopener" target="_blank">contact form</a> and we will do our best to help you.',title:"How do I get support?",animation:{animation_type:"default",delay:550}}
+                        ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>The purchase of our theme is just the beginning of a long-lasting relationship between us and our customers. Be it product knowledge, or help planning your next adventure, if you need us for any reason, we urge you to reach us: +49 89 123 123 44, or contact@power.com. In the meantime here\'s a list of questions we\'re frequently asked, with some helpful answers.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Accordion #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

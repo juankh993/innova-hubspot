@@ -1,0 +1,66 @@
+h2, h4, p {
+    all: revert-layer;
+}
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.accordion-content .swiper-pagination:not(:has(.swiper-pagination-bullet)) {
+  display: none;
+}
+
+.schools-network-swiper .swiper-wrapper{
+align-items: center;
+}
+
+.school-network-section::before{
+    background: url(https://www.innovaschools.edu.co/hubfs/doodle-schools-network.png) no-repeat right;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+    pointer-events: none;
+}
+
+.school-network-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.image-wraper::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    left: -50px;
+    background-image: url('https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 99;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  .accordion-title {
+    width: calc(100% - 40px);
+  }
+  .accordion-content {
+    width: calc(100% - 40px);
+   
+  }
+}
+@media screen and (max-width: 768px) {
+  .school-network-section::before{
+    display:none;
+  }
+
+}

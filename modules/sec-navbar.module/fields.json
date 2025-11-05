@@ -1,0 +1,48 @@
+[ {
+  "id" : "a4156d75-c503-0e9c-d1e6-40e11c7d642b",
+  "name" : "nav_items",
+  "label" : "nav items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "0204b450-ac89-8839-db4c-ccfe34f6317d",
+    "name" : "text_name",
+    "label" : "Navbar item",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Diferencial Innova"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text_name" : "Diferencial Innova"
+  }, {
+    "text_name" : "Diferencial Innova"
+  }, {
+    "text_name" : "Diferencial Innova"
+  }, {
+    "text_name" : "Diferencial Innova"
+  } ]
+}, {
+  "id" : "87e058d6-ba0a-0fcf-d6fb-1b1222dc2eb5",
+  "name" : "button_text",
+  "label" : "Texto del botón",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "iniciar matrícula"
+} ]

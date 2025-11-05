@@ -1,0 +1,71 @@
+<section class="relative bg-cover bg-center flex items-center justify-center min-h-[65vh]" id="section-location" style="background-image: url('{{ module.background_image.src }}')">
+  <!-- Overlay semitransparente -->
+  <div class="absolute inset-0 overlay"></div>
+
+  <div class="relative z-10 max-w-[1280px] mx-auto px-[20px] pb-[88px] md:px-[80px] md:py-[96px]
+           flex flex-col items-center justify-center text-center
+           md:flex-row md:justify-center md:space-x-0">
+    <!-- Imagen única mobile -->
+    <img src="{{ module.icon_mobile.src }}" alt="Icono" class="block md:hidden w-[335px] mx-auto mb-[16px] mt-[24px]" data-animate="figure-zoom-in" />
+    <!-- Desktop: visible solo en ≥ md -->
+    <img src="{{ module.icon_desktop.src }}" alt="Icono"
+      class="hidden md:block w-[400px] pt-[24px] pr-[34px] mx-auto" data-animate="figure-zoom-in"/>
+
+    <!-- Texto + botón -->
+    <div class="text-white text-left md:pt-[24px]">
+      <h2 class="text-left josefin-sans font-bold uppercase text-[40px] tracking-[4px] leading-[40px]" 
+          data-animate="text-fade-up" 
+          data-animate-start="top 85%"
+          data-animate-end="bottom 85%"
+          >
+        {{ module.testimonial_title }}
+
+      </h2>
+      <h2 class="text-left uppercase tracking-[4px] mt-0 leading-[60px]">
+        <span class="text-red-500 font-bold font-otterco text-[40px] md:text-[64px] tracking-[10%] niza-estilos"
+              data-animate="text-fade-up" 
+              data-animate-start="top 85%"
+              data-animate-end="bottom 85%"
+             >
+          {{ module.school_name }}
+        </span>
+      </h2>
+      <p class="josefin-sans text-left text-[20px] md:text-[22px] md:leading-[26px] tracking[1px]" 
+          data-animate="text-fade-up" 
+          data-animate-start="top 85%"
+          data-animate-end="bottom 85%"
+        >
+        {{ module.school_address }}<br>
+        {{ module.school_address_complement }}
+      </p>
+
+      <div class="w-full flex justify-center md:justify-start md:max-w-[335px] md:mx-auto w-full md:max-w-none md:mx-0" 
+           data-animate="text-fade-up" 
+          data-animate-start="top 85%"
+          data-animate-end="bottom 85%"
+           >
+       
+         {% if module.location_url.url.href %}
+          <a href="{{ module.location_url.url.href }}" target="_blank" 
+                   class="relative group w-full md:w-auto mb-[88px] md:mb-0 overflow-hidden inline-flex justify-center items-center gap-2 mt-6 !text-[20px]
+                               py-[12px] px-[18px] rounded-full
+                                bg-[#F85245] tracking-normal transition-colors duration-300 font-bold">
+                  <span
+                    class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+                  <span
+                    class="relative pl-[0px] font-otterco niza-estilos z-10 transition-colors duration-300 uppercase texture-image tracking-normal leading-[20px]">
+                    {{ module.button_name }}
+                  </span>
+                  <svg class="z-10" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.7773 2C15.1643 2 17.4535 2.94821 19.1413 4.63604C20.8291 6.32387 21.7773 8.61305 21.7773 11C21.7773 14.074 20.1013 16.59 18.3353 18.395C17.453 19.2871 16.4903 20.0958 15.4593 20.811L15.0333 21.101L14.8333 21.234L14.4563 21.474L14.1203 21.679L13.7043 21.921C13.422 22.0822 13.1025 22.1669 12.7773 22.1669C12.4522 22.1669 12.1327 22.0822 11.8503 21.921L11.4343 21.679L10.9143 21.359L10.7223 21.234L10.3123 20.961C9.20018 20.2085 8.16425 19.3491 7.21934 18.395C5.45334 16.589 3.77734 14.074 3.77734 11C3.77734 8.61305 4.72556 6.32387 6.41338 4.63604C8.10121 2.94821 10.3904 2 12.7773 2ZM12.7773 8C12.3834 8 11.9933 8.0776 11.6293 8.22836C11.2653 8.37913 10.9346 8.6001 10.656 8.87868C10.3774 9.15726 10.1565 9.48797 10.0057 9.85195C9.85494 10.2159 9.77734 10.606 9.77734 11C9.77734 11.394 9.85494 11.7841 10.0057 12.1481C10.1565 12.512 10.3774 12.8427 10.656 13.1213C10.9346 13.3999 11.2653 13.6209 11.6293 13.7716C11.9933 13.9224 12.3834 14 12.7773 14C13.573 14 14.3361 13.6839 14.8987 13.1213C15.4613 12.5587 15.7773 11.7956 15.7773 11C15.7773 10.2044 15.4613 9.44129 14.8987 8.87868C14.3361 8.31607 13.573 8 12.7773 8Z"
+                      fill="white" />
+                  </svg>
+              </a>
+            {% endif %}
+        
+       
+      </div>
+    </div>
+  </div>
+</section>

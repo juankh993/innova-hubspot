@@ -1,0 +1,91 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_resources.jpg
+  label: POWER THEME Resources
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='Resources', 
+                    title_sel_heading='h1', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"",
+                        desc_large:true,
+                        scheme:"light",
+                        title_extra_large:false
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    eBooks, Whitepapers, Research Papers, Manuals
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    boxes=[
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"eBook, Whitepaper"},img:{alt:"resources-01",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_01.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:true,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"GET MORE TRAFFIC ON YOUR WEBSITE?",translation:{txt_link:"READ MORE"},animation:{animation_type:"default",delay:50}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"Note, eBook, Manual"},img:{alt:"resources-02",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_02.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"MASTERING INBOUND SALES PROCESSES",translation:{txt_link:"SEE MORE"},animation:{animation_type:"default",delay:150}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"Research Paper, eBook"},img:{alt:"resources-03",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_03.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"HOW TO MASTER WEBSITE TRAFFIC V2 2019",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:250}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"Manual, Note"},img:{alt:"resources-04",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_04.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"HOW TO APPLY THE LATEST DESIGN TRENDS",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"eBook, Whitepaper"},img:{alt:"resources-05",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_05.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"TRANSFORM LEADS TO LONG-TERM CLIENTS",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:450}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr sed diam nonumy.",filtering:{cats:"Manual, eBook"},img:{alt:"resources-06",height:500,'src':get_asset_url('../images/boxes/resources/pwr-img_resource_06.jpg'),width:600},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"ADVANCED SALES TECHNIQUES PART 1 + PART 2",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:550}}
+                        ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--padding-t-0",section_variant:"3cols_rect"}, 
+                    style={background:"",box_style:"content_below",filter_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},smaller_content:true,style_filter:true,variant_content_below:"style-2"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='TALK WITH OUR AUTHORS',
+                    title_sel_heading='h2', 
+                    cta='66c9b07c-0a54-42f6-ac73-bd5c1580d97a', 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920},
+                        background_position:"parallax",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        scheme:"dark"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    Next year you have the chance to have a chat with our authors at the big POWER convention!!
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

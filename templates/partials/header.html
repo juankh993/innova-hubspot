@@ -1,0 +1,26 @@
+<!--
+  templateType: global_partial
+  label: POWER Header
+-->
+<header class="header">
+  <div class="header__container">
+    {%- if !content || !content.widgets.page_settings.body.header_footer_style && content.site_page || content.widgets.page_settings.body.header_footer_style == 'page' %}
+    	{% module "header_page" path='../../modules/header', overrideable=True, label='PAGE Header', sticky_logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"} %}
+    {% endif -%}
+    {% if !content || !content.widgets.page_settings.body.header_footer_style && content.landing_page || content.widgets.page_settings.body.header_footer_style == 'landing_page' %}
+      {% module "lp_page" path='../../modules/header', 
+          label='LANDING PAGE Header',
+          overrideable=True, 
+          local_logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-dark.svg'),width:113,height: 113,alt:"power theme logo"},
+          sticky_logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"},
+          search=False,
+          contact=False,
+          is_header_menu=False,
+          style={fixed_header:false}
+           %}
+   	{% endif -%}
+    {%- if !content || !content.widgets.page_settings.body.header_footer_style && group || content.widgets.page_settings.body.header_footer_style == 'blog_post' %}
+        {% module "header_blog" path='../../modules/header', overrideable=True, label='BLOG Header', sticky_logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"} %}
+    {% endif -%}
+  </div>
+</header>

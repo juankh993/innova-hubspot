@@ -1,0 +1,388 @@
+{# *********************************************
+   * POWER Theme Section Image Boxes V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{%- macro get_background_image(box_size, img_src, isMasonry, layout) %}
+{%- if layout == '4cols' %}
+{% set size = 300 %}
+{% else %}
+{% set size = 400 %}
+{% endif %} 
+{%- if box_size == 'pwr-image-box--one-by-one' || !isMasonry %}
+data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_m / 2) }} {{ theme.performance.images.image_width_m }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 3) }} {{ theme.performance.images.image_width_l }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 3) }} {{ theme.performance.images.image_width_l * 2 }}w"
+data-sizes="auto"
+{% elif box_size == 'pwr-image-box--two-by-one' %}
+data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l * 2 }}w"
+data-sizes="auto"
+{% else %}
+data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l }}w, 
+            {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l * 2 }}w"
+data-sizes="auto"
+{% endif -%}
+{% endmacro -%}
+
+{% macro get_image_box_style_content_overlay(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout, isGallery) %}
+<{% if isLink && isGallery %}a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-image-box pwr-js-masonry__item {% if layout == '4cols' %}pwr-image-box--4cols{% elif layout == '3cols_rect' %}pwr-image-box--3cols-rect{% endif %} {% if isMasonry %}{{ box.layout.size }}{% else %}pwr-image-box--one-by-one{% endif %} {% if isLink %}pwr-image-box--is-link{% endif %} {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} pwr-touch-btn-container {% if cat_classes %}{{ cat_classes }}{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(box.animation) }}       
+>
+  <div class="pwr-3D-box">
+    <div class="pwr-image-box__img pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ box.style.background_position}}"{% endif %}>
+      {% if !isGallery %}<div class="pwr-touch-btn">{{ module.translation.txt_touch }}<span class="pwr-touch-btn__icon"></span></div>{% endif %}
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-image-box__front {% if module.style.hide_front %}pwr-image-box__front--hide{% endif %} pwr-3D-box__info-box">
+        <span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>
+        <span class="pwr-image-box__title">{{ box.title }}</span>
+      </div>
+      <div class="pwr-image-box__back pwr-3D-box__info-box">
+        {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+        {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+        {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc {% if isGallery %}pwr-image-box__desc--is-gallery{% endif %}">{{ box.desc }}</span>{% endif %}
+        {% if isLink && !isGallery %}
+        <a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box__more-link">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</a>
+        {% elif isGallery %}
+        <span class="pwr-image-box__more-link">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</{% if isLink && isGallery %}a{% else%}div{% endif %}>
+{% endmacro %}
+
+{% macro get_image_box_style_content_below_1(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout) %}
+{% if isLink %}
+<a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box pwr-js-masonry__item {% if layout == '4cols' %}pwr-image-box--4cols{% elif layout == '3cols_rect' %}pwr-image-box--3cols-rect{% endif %} pwr-image-box--style-below-1 {% if isMasonry %}{{ box.layout.size }}{% else %}pwr-image-box--one-by-one{% endif %} pwr-image-box--is-link {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} {% if cat_classes %}{{ cat_classes }}{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(box.animation) }}       
+>
+  <div class="pwr-3D-box">
+    <div class="pwr-image-box__img pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ box.style.background_position}}"{% endif %}>
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--centered">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+    </div>
+  </div>
+  <div class="pwr-image-box__below">
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}
+    <span class="pwr-image-box__more-link pwr-image-box__more-link--mobile">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+  </div>
+</a>
+{% else %}
+<div class="pwr-image-box pwr-js-masonry__item {% if layout == '4cols' %}pwr-image-box--4cols{% elif layout == '3cols_rect' %}pwr-image-box--3cols-rect{% endif %} pwr-image-box--style-below-1 {% if isMasonry %}{{ box.layout.size }}{% else %}pwr-image-box--one-by-one{% endif %} {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} {% if cat_classes %}{{ cat_classes }}{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(box.animation) }}       
+>
+  <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ box.style.background_position}}"{% endif %}></div>
+  <div class="pwr-image-box__below">
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}    
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro get_image_box_style_content_below_2(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout) %}
+{% if isLink %}
+<a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box pwr-js-masonry__item {% if layout == '4cols' %}pwr-image-box--4cols{% elif layout == '3cols_rect' %}pwr-image-box--3cols-rect{% endif %} pwr-image-box--style-below-2 {% if isMasonry %}{{ box.layout.size }}{% else %}pwr-image-box--one-by-one{% endif %} pwr-image-box--is-link {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} {% if cat_classes %}{{ cat_classes }}{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(box.animation) }}       
+>
+  <div class="pwr-3D-box">
+    <div class="pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover">
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ box.style.background_position}}"{% endif %}></div>
+      <div class="pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--centered">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+      <div class="pwr-image-box__below pwr--colored-box {% if module.style.overwrite_box_color %}{% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}{% endif %}" {% if module.style.overwrite_box_color && module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+        {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+        {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+        {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}   
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--mobile">{{ box.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if box.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+    </div>
+  </div>
+</a>
+{% else %}
+<div class="pwr-image-box pwr-js-masonry__item {% if layout == '4cols' %}pwr-image-box--4cols{% elif layout == '3cols_rect' %}pwr-image-box--3cols-rect{% endif %} pwr-image-box--style-below-2 {% if isMasonry %}{{ box.layout.size }}{% else %}pwr-image-box--one-by-one{% endif %} {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} {% if cat_classes %}{{ cat_classes }}{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(box.animation) }}       
+  >
+  <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ box.style.background_position}}"{% endif %}></div>
+  <div class="pwr-image-box__below pwr--colored-box {% if module.style.overwrite_box_color %}{% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}{% endif %}" {% if module.style.overwrite_box_color && module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}    
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+{% if module.anchor_link_id  %}<div class="pwr-anchor" id="{{ module.anchor_link_id }}"></div>{% endif %}
+<div class="pwr-sec-image-boxes pwr-js-masonry {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.style.background_position == "parallax" %}pwr-sec-image-boxes--parallax{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }} lazyload"
+      {# Animation on Scroll #}
+      {{ get_aos(module.animation.section) }}       
+      {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+      {% elif bgImg.src && bgImgPos != 'parallax' %}
+      {# Lazy load and resposive images for background-image #}           
+      data-bgset="{{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_xs * 2 }}w [(max-width: 575px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_s * 2 }}w [(max-width: 767px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_m * 2 }}w [(max-width: 991px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l) }} {{ theme.performance.images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_l * 2 }}w [(max-width: 1199px)] |
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_max_size * theme.performance.retina_images.image_retina_scaling_factor) }}"
+      data-sizes="auto"
+      style="background-size: cover;background-position: {{ bgImgPos }};"
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+      style="background-color: transparent;"
+     {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+   {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+  {% if module.intro_to_title || module.title || module.description || (module.cta && module.cta != 'null') %}
+  <div class="page-center pwr--relative">
+    <div class="row-fluid">
+      <div class="pwr-sec-image-boxes__intro-sec {% if module.layout.centered %}pwr-sec-image-boxes__intro-sec--centered pwr--align-c{% endif %}">
+        {% if module.intro_to_title %}
+        <span class="pwr-sec__title-intro pwr-sec__title-intro--narrow pwr-sec-image-boxes__title-intro"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.intro_to_title) }}>
+            {{ module.intro_to_title }}
+        </span>
+        {% endif %}
+        {%- if module.title_sel_heading && module.title %}
+        <{{ module.title_sel_heading }} class="pwr-sec__title pwr-sec__title--narrow pwr-sec-image-boxes__title" 
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.title) }}>{{ module.title }}</{{ module.title_sel_heading }}>{% endif -%}
+        {% if module.description %}  
+        <div class="pwr-rich-text pwr-sec__desc pwr-sec-image-boxes__desc"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.description) }}>
+          {{ module.description }}
+        </div>
+        {% endif %}
+        {% if module.cta != 'null' && module.cta %}
+        <div class="pwr-sec-image-boxes__cta {% if !module.intro_to_title %}pwr-sec-image-boxes__cta--no-intro-title{% endif %} pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+          {% cta "name" guid="{{module.cta}}" %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
+  {%- set final_cats = [] -%}
+  {%- for box in module.boxes -%}
+    {% if box.filtering.cats %}
+      {% set cats = box.filtering.cats|split(',') %}
+      {% for cat in cats %}
+      {%- do final_cats.append(cat|trim) -%}
+      {% endfor %}
+    {% endif %}
+  {%- endfor -%}
+  {% set final_cats = final_cats|unique %}
+    
+  {% if final_cats|length > 0 %}
+    {% if module.style.style_filter %}
+  <div class="pwr-filter pwr-filter--margin {% if module.style.filter_color_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.layout.centered %}pwr-filter--centered pwr--align-c{% endif %}" {% if module.style.filter_color.color %}style="background-color: rgba({{ module.style.filter_color.color|convert_rgb }}, {{ module.style.filter_color.opacity|int / 100 }})"{% endif %}>
+    {% else %}
+  <div class="pwr-filter {% if module.title_sel_heading && module.title %}pwr--padding-t-0{% endif %} {% if module.layout.centered %}pwr-filter--centered pwr--align-c{% endif %}" >
+    {% endif %}
+    <div class="page-center pwr--relative">
+      <ul class="pwr-filter__list" 
+        {# Animation on Scroll #}
+        {{ get_aos(module.animation.filter) }}       
+      >
+        {% if module.is_filter_cat_all %}
+        <li class="pwr-filter__list-item"> 
+          <a href="#all" class="pwr-filter__link pwr-js-filter__link {% if module.filter_active_category|lower == "all" || module.filter_active_category|trim == "" || !module.filter_active_category %}active{% endif %}">{{ module.translation.txt_all }}</a>
+        </li>
+        {% endif %}
+        {% for cat in final_cats %}
+        <li class="pwr-filter__list-item">
+          <a href="#{{ cat|replace(' ','_')|lower }}" class="pwr-filter__link pwr-js-filter__link {% if module.filter_active_category|lower == cat|lower %}active{% endif %}">{{ cat }}</a>
+        </li>
+        {% endfor %}    
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+    
+  {% set layout = module.layout.section_variant|replace('_masonry','') %}
+  {% set isMasonry = module.layout.section_variant|replace(layout,'') == '_masonry' %}
+  <div class="page-center pwr--relative">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="pwr-js-masonry__container pwr-sec-image-boxes__container pwr--neg-margin-lr-10 pwr-js-masonry__container--no-gutter {% if !isMasonry && module.style.box_style == "content_below" %}pwr-js-masonry__container--fitRows {% if module.style.variant_content_below == "style-2" %}pwr-js-masonry__container--sameHeight{% endif %}{% endif %} {% if module.layout.no_gutter %}pwr-sec-image-boxes__container--no-gutter{% endif %} {% if module.layout.centered %}pwr-sec-image-boxes__container--centered pwr--align-c{% endif %} pwr--clearfix" {% if module.style.is_gallery %}data-featherlight-gallery data-featherlight-filter="a.pwr-js-masonry__item"{% endif %} {% if module.filter_active_category %}data-filter="{{ module.filter_active_category|trim|replace(' ','_')|lower }}"{% endif %} >
+        {% for box in module.boxes %}        
+          {% if box.internal_url|length > 0 %}
+            {% set isLink = true %}
+            {% set isInternalLink = true %}
+            {% set href = box.internal_url %}
+          {% elif box.link.url.href|length > 0 %}
+            {% set isLink = true %}
+            {% set href = box.link.url.href %}
+            {% if box.link.url.type == "EMAIL_ADDRESS" %}
+             {% set href = "mailto:" + href %}
+            {% endif %}            
+          {% else %}
+            {% set isLink = false %}
+          {% endif %}
+          {% if module.style.is_gallery %}
+            {% set isLink = true %}
+            {% set href = box.img.src %}
+          {% endif %}
+          
+          {% set cat_classes = undefined %}
+          {% if final_cats|length > 0 %}
+            {% set cat_classes = [] %}
+            {% set box_cats = box.filtering.cats|split(',') %}
+            {% for cat in box_cats %}
+              {%- do cat_classes.append(cat|trim|replace(' ','_')|lower) -%}
+            {% endfor %}
+            {% set cat_classes = cat_classes|join(' ') %}
+          {% endif %}
+          
+          {% if module.style.box_style == 'content_overlay' %}
+            {{ get_image_box_style_content_overlay(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout, module.style.is_gallery) }}
+          {% elif module.style.box_style == 'content_below' %}
+            {% if module.style.variant_content_below == 'style-1' %}
+              {{ get_image_box_style_content_below_1(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout) }}
+            {% else %}
+              {{ get_image_box_style_content_below_2(box, isLink, isInternalLink, href, cat_classes, isMasonry, layout) }}
+            {% endif %}
+          {% endif %}
+
+        {% endfor %}  
+        </div>
+      </div>    
+    </div>
+  </div>
+</div>

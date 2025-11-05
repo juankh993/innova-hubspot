@@ -1,0 +1,177 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-02.jpg
+  label: POWER THEME Home 02
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='BUILD A POWERFUL HUBSPOT WEBSITE', 
+                    title_sel_heading='h1',
+                    btn_type='btn',
+                    btns=[{title:"Get started now",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}}],
+                    layout={centered:false,full_width:false,header_height:"large",isSmall:false,title_extra_large:false},
+                    style={
+                        background: "img_vid",
+                        background_color_fallback:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",
+                        background_image:{alt:"POWER HOME 02 YOUTUBE VIDEO",height:1080,'src':get_asset_url('../images/video/pwr-img_video_vr.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        background_image_position:"parallax",
+                        background_position:"center",
+                        cta_style:"pwr-cta--primary-solid",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:50},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_direction:"",overlay_gradient_opacity:1,
+                        scheme:"dark",
+                        youtube_link:"https://youtu.be/AXQehZH4s84"} 
+                    %}
+                    {% module_attribute "description" %}
+                    Promote your products and services with stunning design. Pixel perfect & expertly crafted.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    title='WE DEVELOP DIGITAL STRATEGIES AND SERVICES',
+                    layout={section_variant:"2col"},
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    <p>With our text module you can create one- or two-column layouts (centered or not) or even a layout with the title on the left and text on the right. All of our row modules have an optional intro title, title, padding settings, loads of different background options, like background-color, background-image, background-gradient, background-video (*.mp4 or Youtube) and it does not stop there.</p><p>With our 49 modules you are able to build up your website fast and fit the design to your branding easily. Our theme comes with 45+ templates like this page to give you a head-start and lots of examples on how to use our modules.</p>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li>Background colors with color picker</li><li>Gradient backgrounds with several directions</li><li>Background images</li><li>Background videos (*.mp4 and Youtube)</li><li>Background Position &amp; Parallax effects</li><li>Background overlays with opacity</li><li>Section intro title, title, description and padding settings</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Team #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "team" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-team', 
+                    label='Team',
+                    intro_to_title='', 
+                    title='MEET OUR AMAZING TEAM', 
+                    team=[
+                        {img:{alt:"Laura Laurati",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"CEO, Managing Director",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Laura Laurati",phone:"+4940582291",animation:{animation_type:"default",delay:50}},
+                        {img:{alt:"Jeff Lee",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_01.png'),width:285},job_title:"CTO, Head of Coding",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Jeff Lee",phone:"+4940582291",animation:{animation_type:"default",delay:150}},
+                        {img:{alt:"Sandra Torres",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"Software Engineer",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Sandra Torres",phone:"+4940582291",animation:{animation_type:"default",delay:250}},
+                        {img:{alt:"Charles Eden",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Marketing Wizard",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Charles Eden",phone:"+4940582291",animation:{animation_type:"default",delay:350}},
+                        {img:{alt:"Angela Whitter",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"Accounting",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Angela Whitter",phone:"+4940582291",animation:{animation_type:"default",delay:450}},
+                        {img:{alt:"Oscar Martinez",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Head of Accounting",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Oscar Martinez",phone:"+4940582291",animation:{animation_type:"default",delay:550}},
+                        {img:{alt:"Ana Lucia",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"Human Resources",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"Ana Lucia",phone:"+4940582291",animation:{animation_type:"default",delay:650}},
+                        {img:{alt:"G. Arbuckle",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_05.png'),width:285},job_title:"Part-Time Lasagna Eater",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},name_:"G. Arbuckle",phone:"+4940582291",animation:{animation_type:"default",delay:750}}
+                        ],
+                    layout={centered:false,isTabs:false,padding_bottom:" ",padding_top:" ",section_variant:"reduced"},
+                    style={background:"color",background_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},scheme:"light"},
+                    translation={txt_link:"More About Me"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>This is one of the eye catching layout variants of our team module. Portrait your team members with their name, job position, photo and optionally group them by department.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Team #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='',
+                    title='', 
+                    title_sel_heading='h2',
+                    is_testimonial=True,
+                    img={alt:"testi-big",height:691,'src':get_asset_url('../images/boxes/testimonials/pwr-img_testimonial_woman-big.jpg'),width:1280},
+                    name_='Gene Cernan',
+                    job_title='Astronaut',
+                    link='', 
+                    logo={alt:"gen-logo-bright-1",height:30,'src':get_asset_url('../images/logos/other/pwr-img_logo_tresco.svg'),width:183},
+                    layout={centered:true,full_width:true,padding_top:"ak_one--padding-t-0",section_height:550,section_variant:"img_right"},
+                    style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "desc" %}
+                    <p>“<span>When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve.</span>"</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post PreviewODO',
+                    intro_to_title='BLOG PREVIEW',
+                    title='WHAT WE HAVE TO SAY',
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:4,section_variant:"small_hor",show_author:false,show_date:false,show_read_time:false,show_summary:false,truncate:false}, 
+                    style={background:""},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                    {% module_attribute "description" %}
+                    With our blog post preview you have lots of different layout and extensive filter options to promote and push your content.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='BUILD TOP-NOTCH HUBSPOT WEBSITES',
+                    btn_type='btn',
+                    btn={title:"Lift off now!",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}},
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"horizontal"},
+                    style={
+                        background:"gradient",
+                        background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        background_gradient_color_1:{color:"#2254fe",opacity:100},
+                        background_gradient_color_2:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        scheme:"dark",
+                        cta_style:"pwr-cta--regular-solid"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "description" %}
+                    And generate leads with our Call-To-Action module.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

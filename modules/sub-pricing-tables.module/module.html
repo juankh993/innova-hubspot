@@ -1,0 +1,101 @@
+{# *********************************************
+   * POWER Theme Sub Module Pricing Tables V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+{% macro get_price_table_reduced(price_table) %}
+  <h2 class="pwr-price-table__title pwr-price-table__title--style-reduced pwr--toc-ignore">{{ price_table.title }}</h2>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-reduced">{{ price_table.description }}</span>
+  <span class="pwr-price-table__price pwr-price-table__price--style-reduced {% if !price_table.cta %} mb-0 {% endif %}">{{ price_table.price }}</span>
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}
+    <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+  <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro get_price_table_full_style_1(price_table) %}
+  <h2 class="pwr-price-table__title pwr-price-table__title--style-full pwr--toc-ignore">{{ price_table.title }}</h2>
+  <span class="pwr-price-table__price pwr-price-table__price--style-full-1">{{ price_table.price }}</span>
+  <div class="pwr-price-table-features pwr-price-table-features--style-full-1">
+    {% for feature in price_table.features %}
+    <div class="pwr-price-table-features__item pwr-price-table-features__item--style-full-1 {% if feature.deactivated %}pwr-price-table-features__item--disabled{% endif %}">
+      <span class="pwr-price-table-features__icon">{% icon name="check" style="SOLID" unicode="f00c" %}</span>
+      <span class="pwr-price-table-features__text">{{ feature.name_ }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-full-1 {% if !price_table.cta %} mb-0 {% endif %}">{{ price_table.description }}</span>
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}
+    <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+  <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>
+    </div>
+  {% endif %}
+{% endmacro %} 
+
+{% macro get_price_table_full_style_2(price_table) %}
+  <h2 class="pwr-price-table__title pwr--toc-ignore">{{ price_table.title }}</h2>
+  <span class="pwr-price-table__price pwr-price-table__price--style-full-2">{{ price_table.price }}</span>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-full-2">{{ price_table.description }}</span> 
+  <div class="pwr-price-table-features pwr-price-table-features--style-full-2 {% if !price_table.cta %} mb-0 {% endif %}">
+    {% for feature in price_table.features %}
+    <div class="pwr-price-table-features__item pwr-price-table-features__item--style-full-2 {% if feature.deactivated %}pwr-price-table-features__item--disabled{% endif %}">{{ feature.name_ }}</div>
+    {% endfor %}
+  </div>
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}
+    <div class="pwr-price-table__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+  <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+  
+
+<div class="pwr-sub-price-tables" 
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+    <div class="{% if module.layout.intro_centered %}pwr--align-c{% endif %}">
+        <div class="pwr-price-tables pwr--clearfix">
+          
+            <div class="pwr-price-table {% if module.layout.section_variant == 'full' && module.style.table_style == 'style_2' %}pwr-price-table--opac{% else %}pwr--colored-box{% endif %} {% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.style.highlighted %}pwr-price-table--highlighted{% endif %} {% if module.style.recommended %}pwr-price-table--recommended{% endif %} {% if module.layout.box_centered %}pwr--align-c{% else %}pwr--align-l{% endif %}" 
+            {% if module.style.box_color.color %} style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+
+              {% if module.style.recommended %}
+                <div class="pwr-price-table__recommended {% if module.style.recommended_color_scheme == 'dark' %}pwr--light{% endif %}" {% if module.style.recommended_color.color %} style="background-color: rgba({{ module.style.recommended_color.color|convert_rgb }}, {{ module.style.recommended_color.opacity|int / 100 }})"{% endif %} >{{ module.translation.txt_recommended}}</div>
+              {% endif %}
+
+              {% if module.layout.section_variant == 'reduced' %}
+                {{ get_price_table_reduced(module.price_table) }}
+              {% elif module.layout.section_variant == 'full' && module.style.table_style == 'style_1' %}
+                {{ get_price_table_full_style_1(module.price_table) }}
+              {% elif module.layout.section_variant == 'full' && module.style.table_style == 'style_2' %}
+                {{ get_price_table_full_style_2(module.price_table) }}
+              {% endif %}
+            </div>
+            
+        </div>
+    </div>
+</div>

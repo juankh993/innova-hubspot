@@ -1,0 +1,180 @@
+[ {
+  "id" : "883788f4-4a26-9297-4ba4-691c93fc0682",
+  "name" : "footer_logo",
+  "label" : "Logo Footer",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/logo-footer.png",
+    "alt" : "logo-footer",
+    "loading" : "lazy",
+    "width" : 174,
+    "height" : 80,
+    "max_width" : 174,
+    "max_height" : 80
+  }
+}, {
+  "id" : "8d49761f-d71d-eb25-cea9-cdfd98191ad1",
+  "name" : "contacts",
+  "label" : "Texto enriquecido",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>experienciapadres@innovaschools.edu.co</p>\n<p>Colegios Colombianos S.A.S.</p>\n<p><a href=\"https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/bank-pdfs/compromiso-con%20la-integridad-etica.pdf\" rel=\"noopener\" target=\"_blank\" data-hs-domain-rewrite=\"true\">Código de Ética de Colegios Colombianos</a></p>\n<p><a href=\"https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/bank-pdfs/politica-de-descuentos-feb-2025.pdf\" rel=\"noopener\" target=\"_blank\" data-hs-domain-rewrite=\"true\">Política de Cobros, Devoluciones y Descuentos</a></p>\n<p>Calle 75# 7-24 Bogotá, Colombia</p>"
+}, {
+  "id" : "2b8cb740-030a-e58e-1096-c10b23ba6704",
+  "name" : "items_list",
+  "label" : "Lista de Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "11424b68-d59f-158f-0efd-743e2925aa85",
+    "name" : "list_title",
+    "label" : "Titulo de lista",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Colegios"
+  }, {
+    "id" : "327d4193-8b7c-4d8a-26d2-24fd6df3ac14",
+    "name" : "links_list",
+    "label" : "Lista de Links",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "b86a1ea6-05d1-7086-9c8d-2e063d3bcccc",
+      "name" : "item_title",
+      "label" : "Titulo de item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Innova Tunja"
+    }, {
+      "id" : "61fbf5b9-1ebb-cbed-f088-4ed8241d407b",
+      "name" : "item_url",
+      "label" : "Url de item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://google.com/"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "item_title" : "Innova Tunja",
+      "item_url" : "https://google.com/"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "list_title" : "Colegios",
+    "links_list" : [ {
+      "item_title" : "Innova Tunja",
+      "item_url" : "https://google.com/"
+    } ]
+  } ]
+}, {
+  "id" : "1b632492-8589-6f66-177c-d29894146714",
+  "name" : "iconos_redes_sociales",
+  "label" : "Iconos redes sociales",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "4db0b141-c8d9-6c4a-6822-a2df3e799c11",
+    "name" : "social_media_logo",
+    "label" : "Icono Red Social",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/logo-facebook-footer.svg",
+      "alt" : "logo-facebook-footer",
+      "loading" : "lazy",
+      "width" : 17,
+      "height" : 18,
+      "max_width" : 17,
+      "max_height" : 18
+    }
+  }, {
+    "id" : "b882fc3a-9dc8-1425-e16a-3e9be9ef41f3",
+    "name" : "social_media_url",
+    "label" : "Url Red Social",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://google.com/"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "social_media_logo" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/logo-facebook-footer.svg",
+      "alt" : "logo-facebook-footer",
+      "loading" : "lazy",
+      "width" : 17,
+      "height" : 18,
+      "max_width" : 17,
+      "max_height" : 18
+    },
+    "social_media_url" : "https://google.com/"
+  } ]
+}, {
+  "id" : "fbdc1b21-d8f5-26bc-2a1b-8af1342600bb",
+  "name" : "footer_copyright",
+  "label" : "Copyright Footer",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Innova Schools Colombia 2025 © Todos los derechos reservados"
+} ]

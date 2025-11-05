@@ -1,0 +1,1054 @@
+[ {
+  "id" : "cc8c95de-1980-3c09-d340-85a469f03b50",
+  "name" : "intro_to_title",
+  "label" : "Intro To Title",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Intro Title"
+}, {
+  "id" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "SECTION SCHEDULE - TITLE"
+}, {
+  "id" : "b05162a4-bcf6-2304-315a-6cd25e0b8dd9",
+  "name" : "title_sel_heading",
+  "label" : "Title - Header Type",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
+  "id" : "235ea83d-3dd3-cb06-2b05-d61bc389cb05",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span></p>"
+}, {
+  "id" : "10f6e5e4-28b3-e711-b83c-706db67b6b21",
+  "name" : "tabs",
+  "label" : "Tab",
+  "help_text" : "Make sure to select the layout beforehand. If you do NOT want to use tabs, the time slots have to be added via Slot only",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "f83535ec-2d2b-3443-513f-740e562c3902",
+    "name" : "tab_title",
+    "label" : "Tab Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Tab Title"
+  }, {
+    "id" : "551640d7-4067-6413-0ed4-43f589465e77",
+    "name" : "slot",
+    "label" : "Slot",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "b7b08c7a-20df-8810-6106-202adffd5141",
+      "name" : "title_left",
+      "label" : "Title Left",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "show_emoji_picker" : true,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Time Slot"
+    }, {
+      "id" : "17dad2fc-0742-3094-7c42-60b8e57d5a72",
+      "name" : "desc_left",
+      "label" : "Description Left",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "Location"
+    }, {
+      "id" : "a208dbb0-e82f-43a5-98f0-bdc6a0ac5b7a",
+      "name" : "title_right",
+      "label" : "Title Right",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "show_emoji_picker" : true,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Event Title"
+    }, {
+      "id" : "91e3386d-0bb0-0e7b-0041-a6b623248960",
+      "name" : "desc_right",
+      "label" : "Description Right",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "E.g. Speaker Name - Job Title"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title_left" : "Time Slot",
+      "desc_left" : "Location",
+      "title_right" : "Event Title",
+      "desc_right" : "E.g. Speaker Name - Job Title"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "tab_title" : "Tab Title",
+    "slot" : [ {
+      "title_left" : "Time Slot",
+      "desc_left" : "Location",
+      "title_right" : "Event Title",
+      "desc_right" : "E.g. Speaker Name - Job Title"
+    } ]
+  } ]
+}, {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "slot",
+  "label" : "Slot",
+  "help_text" : "Make sure to select the layout beforehand. If you would like to use tabs, use the Tabs property to build up the time tables",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "4de9d33d-5da8-4b68-6e38-32074474996e",
+    "name" : "title_left",
+    "label" : "Title Left",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Time Slot"
+  }, {
+    "id" : "7d5d21f0-e15c-c078-dcb2-727f5903931e",
+    "name" : "desc_left",
+    "label" : "Description Left",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Location"
+  }, {
+    "id" : "9b44c3dc-70ab-6d5f-b17a-ff2294b5eabc",
+    "name" : "title_right",
+    "label" : "Title Right",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Event Title"
+  }, {
+    "id" : "4d39f5c2-2b64-ad81-2232-461e87d00d57",
+    "name" : "desc_right",
+    "label" : "Description Right",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "E.g. Speaker Name - Job Title"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title_left" : "Time Slot",
+    "desc_left" : "Location",
+    "title_right" : "Event Title",
+    "desc_right" : "E.g. Speaker Name - Job Title"
+  } ]
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "name" : "isTabs",
+    "label" : "Use  Tabs?",
+    "help_text" : "The time tables have to be configured in the tabs property. If this is deactivated and you do not want to use tabs, use the Slot property only",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "60eff067-42eb-5e90-2dff-0588bfbba5ab",
+    "name" : "centered",
+    "label" : "Centered",
+    "help_text" : "Only intro section",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "c6e084a3-7d44-deee-6966-6b32a065c78d",
+    "name" : "padding_top",
+    "label" : "Padding Top",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-t-0", "None" ], [ "pwr--sec-padding-t-sm", "Small" ], [ "pwr--sec-padding-t-md", "Medium" ], [ "pwr--sec-padding-t-lg", "Large" ], [ "pwr-sec--first-with-header", "First Section With Header" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  }, {
+    "id" : "2aa8eb22-e63e-e28a-737b-c5ee954b2fa2",
+    "name" : "padding_bottom",
+    "label" : "Padding Bottom",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-b-0", "None" ], [ "pwr--sec-padding-b-sm", "Small" ], [ "pwr--sec-padding-b-md", "Medium" ], [ "pwr--sec-padding-b-lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "isTabs" : true,
+    "centered" : false,
+    "padding_top" : " ",
+    "padding_bottom" : " "
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "57660431-33ff-1d5e-a410-3e29d36d36d5",
+    "name" : "overwrite_box_color",
+    "label" : "Overwrite Box Colors",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "fd020825-ab9f-0142-0326-f558af1b2412",
+    "name" : "box_scheme",
+    "label" : "Box Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "57660431-33ff-1d5e-a410-3e29d36d36d5",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "8ba5c51f-7d45-9587-aabc-6cc986541b3e",
+    "name" : "box_color",
+    "label" : "Custom Box Background Color ",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "57660431-33ff-1d5e-a410-3e29d36d36d5",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+    "name" : "background",
+    "label" : "Background",
+    "help_text" : "Optionally overwrite the default background with a custom background-color, a background-image / -video or a gradient",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Background Color" ], [ "img_vid", "Background Image / Video" ], [ "gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1fc03c0b-792b-04d6-fd94-9245acc6ee7f",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "df6d581d-b1f2-8a9d-a318-1efce42ee696",
+    "name" : "background_image",
+    "label" : "Background Image / Placeholder Image (Video)",
+    "help_text" : "The image should be at least 2000 pixels in width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "picker" : "file",
+    "id" : "85621e73-c446-5672-df98-0c5359f2c36e",
+    "name" : "background_video",
+    "label" : "Background Video - *.mp4",
+    "help_text" : "If a custom video (*.mp4) is configured here, it will overwrite the background image.\nPlease make sure that the file size is not too big. A general rule of thumb is to keep reducing the file size until it starts to noticeably be degraded. Try to export videos in 720p and with a bitrate under 700kb/s ( preferably 500kb/s ).",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null
+  }, {
+    "id" : "abd30497-cb8e-20d3-ee53-3a2e772c680c",
+    "name" : "youtube_link",
+    "label" : "Background Video - Youtube",
+    "help_text" : "Enter your Youtube Link or ID. This will overwrite the previously configured background image or custom background video *.mp4",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "bce7b890-f3a5-ef21-29c5-9cc6d4a9f795",
+    "name" : "background_position",
+    "label" : "Background Position / Parallax Effect",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom", "Bottom" ], [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ], [ "top", "Top" ], [ "parallax", "Parallax" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "35e07bf0-8869-84d6-bfb0-f9be2010807a",
+    "name" : "background_image_overlay",
+    "label" : "Background Image Overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "color", "Color" ], [ "gradient", "Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "e0b2e916-9c5a-fe86-d116-9aa9aab50c18",
+    "name" : "overlay_color",
+    "label" : "Overlay Color",
+    "help_text" : "Set the opacity to 0% if you do not want to use an overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    }
+  }, {
+    "id" : "793dd27a-344c-fde9-0c5c-d6e247d4f19e",
+    "name" : "overlay_gradient_direction",
+    "label" : "Overlay Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "595f9bc9-56f1-cc6f-8869-a1376e7f7995",
+    "name" : "overlay_gradient_color_1",
+    "label" : "Overlay Gradient Color 1",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d5022779-0958-7717-0787-49dc20c11f75",
+    "name" : "overlay_gradient_color_2",
+    "label" : "Overlay Gradient Color 2",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "91d2a009-ef2d-fbe2-c110-c7eba801de19",
+    "name" : "overlay_gradient_opacity",
+    "label" : "Overlay Gradient Opacity in %",
+    "help_text" : "General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors, if not 100% -> General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  }, {
+    "id" : "ad81404f-40cf-0a02-a76a-45bc72a5272a",
+    "name" : "background_gradient_direction",
+    "label" : "Background Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "00a049e6-ea9f-9ef1-eda1-570a6b30ed54",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8bb34386-47ba-da71-4690-592660474606",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "overwrite_box_color" : false,
+    "box_scheme" : "light",
+    "box_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background" : "",
+    "background_color" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : null
+    },
+    "background_position" : "center",
+    "background_image_overlay" : "color",
+    "overlay_color" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    },
+    "overlay_gradient_direction" : "hor",
+    "overlay_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_opacity" : 100,
+    "background_gradient_direction" : "hor",
+    "background_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.section",
+    "name" : "section",
+    "label" : "Section",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.section.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "none"
+    }, {
+      "id" : "animation.section.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.intro_to_title",
+    "name" : "intro_to_title",
+    "label" : "Intro to Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.intro_to_title.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.intro_to_title.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.title.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.title.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.description.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.description.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.schedule",
+    "name" : "schedule",
+    "label" : "Schedule",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.schedule.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.schedule.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "0ca41865-9138-3414-9649-319173166d26",
+  "name" : "anchor_link_id",
+  "label" : "Anchor Link ID",
+  "help_text" : "Anchor Link ID to Jump to a Specific Part of a Page https://www.yoursite.com/this-page#anchor-link-id. The ID must begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens (\"-\"), underscores (\"_\"), colons (\":\"), and periods (\".\")",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "^[A-Za-z]+[\\w\\-\\:\\.]*$",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

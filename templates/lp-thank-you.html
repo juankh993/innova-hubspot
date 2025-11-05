@@ -1,0 +1,72 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-09-thank-you.jpg
+  label: POWER THEME Landing Page Thank You
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='THANK YOU!', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    layout={full_width:false,header_height:"x-small",isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        scheme:"dark",
+                        title_extra_large:false
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='WE HAVE EMAILED YOU THE DOWNLOAD LINK', 
+                    left='<p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br><br>{{cta(\'001a0dbf-59cb-4429-9e21-6e6dc3f8a717\')}}<br></span><span></span></p>', 
+                    layout={section_variant:"1col"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Blog Post Preview',
+                    intro_to_title='', 
+                    title='RECOMMENDED CONTENT', 
+                    description='', 
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:2,section_variant:"standard"}, 
+                    style={background:"color",box_coloroverlay_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},overwrite_box_color:true,scheme:"light"},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

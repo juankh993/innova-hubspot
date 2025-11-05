@@ -1,0 +1,723 @@
+[ {
+  "id" : "50435976-878a-5897-983f-f9694e4ff2f8",
+  "name" : "search_settings",
+  "label" : "Search Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ce942b99-578c-7d84-ec9b-278d8c43f883",
+    "name" : "limit",
+    "label" : "Limit",
+    "help_text" : "Specifies the number of results to be shown per page",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 5
+  }, {
+    "id" : "a6e66e55-752c-3352-a275-dc42dcde879f",
+    "name" : "property",
+    "label" : "Search in Properties...",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59a748d-a52a-09c4-8054-b2bd319767d5",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "53a73966-ed35-94cc-9794-fa8051ce52cd",
+      "name" : "meta_description",
+      "label" : "Meta Description",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "b78ce41e-cd66-75af-711b-48bf2e6031b0",
+      "name" : "html",
+      "label" : "Html",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "d105ef41-e821-db08-b41a-d4a6fa71c677",
+      "name" : "author_name",
+      "label" : "Author Name",
+      "help_text" : "For blog posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "ba3e8d01-c24e-8207-8c9e-032222dedb46",
+      "name" : "author_handle",
+      "label" : "Author Handle",
+      "help_text" : "For blog posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "3c53c23a-c134-8ba5-2bbe-39cb933052c0",
+      "name" : "tag",
+      "label" : "Tag",
+      "help_text" : "For blog posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : true,
+      "meta_description" : true,
+      "html" : true,
+      "author_name" : true,
+      "author_handle" : true,
+      "tag" : true
+    }
+  }, {
+    "id" : "0c00e8d5-346d-413a-1463-da9721d1232b",
+    "name" : "search_type",
+    "label" : "Search in Page Types...",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "902bb926-d229-6c1b-0a0c-98f4186fc649",
+      "name" : "pages",
+      "label" : "Pages",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "f13e5339-806e-1236-a410-862750ffc924",
+      "name" : "blog_listings",
+      "label" : "Blog Listings",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "4314a93f-24bc-662f-5824-cbd30fb90f82",
+      "name" : "blog_posts",
+      "label" : "Blog Posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "5a4cc99c-027a-7d53-7120-f253b17b026a",
+      "name" : "landing_pages",
+      "label" : "Landing Pages",
+      "help_text" : "By default, landing pages are not included in site search results because it will interfere with the conversion flow.",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "359a1f50-f24f-d86c-c2c1-d4678f4aec9f",
+      "name" : "knowledge_base_articles",
+      "label" : "Knowledge Base Articles",
+      "help_text" : "By default, knowledge-based articles are not included in site search results because it will interfere with the conversion flow.",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "pages" : true,
+      "blog_listings" : true,
+      "blog_posts" : true,
+      "landing_pages" : false,
+      "knowledge_base_articles" : false
+    }
+  }, {
+    "id" : "ba768ca3-8658-04f4-fb3a-81369ab832f3",
+    "name" : "blogs",
+    "label" : "Specific Blog(s)",
+    "help_text" : "Defaults to all blogs if nothing is configured",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "type" : "blog",
+    "display_width" : null
+  }, {
+    "id" : "1873ad9b-71a5-07c8-b118-600e954a9e38",
+    "name" : "language",
+    "label" : "Language",
+    "help_text" : "Specifies the language of content to be searched. This parameter should obey the ISO639-1 format (e.g. es for Spanish).\nDefault: All languages",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "limit" : 5,
+    "property" : {
+      "title" : true,
+      "meta_description" : true,
+      "html" : true,
+      "author_name" : true,
+      "author_handle" : true,
+      "tag" : true
+    },
+    "type" : {
+      "pages" : true,
+      "blog_listings" : true,
+      "blog_posts" : true,
+      "landing_pages" : false,
+      "knowledge_base_articles" : false
+    }
+  }
+}, {
+  "id" : "6a717fe5-a9d0-ecb3-792c-32b291643999",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ae90ab80-aaf1-7ae2-a4e1-c44d7995f112",
+    "name" : "padding_top",
+    "label" : "Padding Top",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "", "Standard" ], [ "pwr--padding-t-0", "None" ], [ "pwr--sec-padding-t-sm", "Small" ], [ "pwr--sec-padding-t-md", "Medium" ], [ "pwr--sec-padding-t-lg", "Large" ], [ "pwr-sec--first-with-header", "First Section With Header" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "3c4e9546-d4ab-9966-adf4-8c5631a90775",
+    "name" : "padding_bottom",
+    "label" : "Padding Bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "", "Standard" ], [ "pwr--padding-b-0", "None" ], [ "pwr--sec-padding-b-sm", "Small" ], [ "pwr--sec-padding-b-md", "Medium" ], [ "pwr--sec-padding-b-lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "padding_top" : "",
+    "padding_bottom" : ""
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+    "name" : "background",
+    "label" : "Background",
+    "help_text" : "Optionally overwrite the default background with a custom background-color, a background-image / -video or a gradient",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Background Color" ], [ "img_vid", "Background Image / Video" ], [ "gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "1fc03c0b-792b-04d6-fd94-9245acc6ee7f",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "df6d581d-b1f2-8a9d-a318-1efce42ee696",
+    "name" : "background_image",
+    "label" : "Background Image / Placeholder Image (Video)",
+    "help_text" : "The image should be at least 2000 pixels in width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "picker" : "file",
+    "id" : "816dda16-36db-6e96-ffbb-0dca8ef86b3e",
+    "name" : "background_video",
+    "label" : "Background Video - *.mp4",
+    "help_text" : "If a custom video (*.mp4) is configured here, it will overwrite the background image.\nPlease make sure that the file size is not too big. A general rule of thumb is to keep reducing the file size until it starts to noticeably be degraded. Try to export videos in 720p and with a bitrate under 700kb/s ( preferably 500kb/s ).",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null
+  }, {
+    "id" : "48e0e727-6323-55dd-16e3-ad38ebd3fb83",
+    "name" : "youtube_link",
+    "label" : "Background Video - Youtube",
+    "help_text" : "Enter your Youtube Link or ID. This will overwrite the previously configured background image or custom background video *.mp4",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "bce7b890-f3a5-ef21-29c5-9cc6d4a9f795",
+    "name" : "background_position",
+    "label" : "Background Position / Parallax",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom", "Bottom" ], [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ], [ "top", "Top" ], [ "parallax", "Parallax" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "35e07bf0-8869-84d6-bfb0-f9be2010807a",
+    "name" : "background_image_overlay",
+    "label" : "Background Image Overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "color", "Color" ], [ "gradient", "Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "e0b2e916-9c5a-fe86-d116-9aa9aab50c18",
+    "name" : "overlay_color",
+    "label" : "Overlay Color",
+    "help_text" : "Set the opacity to 0% if you do not want to use an overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    }
+  }, {
+    "id" : "793dd27a-344c-fde9-0c5c-d6e247d4f19e",
+    "name" : "overlay_gradient_direction",
+    "label" : "Overlay Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "595f9bc9-56f1-cc6f-8869-a1376e7f7995",
+    "name" : "overlay_gradient_color_1",
+    "label" : "Overlay Gradient Color 1",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d5022779-0958-7717-0787-49dc20c11f75",
+    "name" : "overlay_gradient_color_2",
+    "label" : "Overlay Gradient Color 2",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "91d2a009-ef2d-fbe2-c110-c7eba801de19",
+    "name" : "overlay_gradient_opacity",
+    "label" : "Overlay Gradient Opacity in %",
+    "help_text" : "General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors, if not 100% -> General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  }, {
+    "id" : "ad81404f-40cf-0a02-a76a-45bc72a5272a",
+    "name" : "background_gradient_direction",
+    "label" : "Background Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "00a049e6-ea9f-9ef1-eda1-570a6b30ed54",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8bb34386-47ba-da71-4690-592660474606",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "background" : "color",
+    "background_color" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : null
+    },
+    "background_position" : "center",
+    "background_image_overlay" : "color",
+    "overlay_color" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    },
+    "overlay_gradient_direction" : "hor",
+    "overlay_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_opacity" : 100,
+    "background_gradient_direction" : "hor",
+    "background_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "71cbdcf1-2dbb-dd18-f2e0-72f2cdfee00c",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "86657334-a8cd-fcaf-ee1f-b926447bed62",
+    "name" : "txt_placeholder",
+    "label" : "Search Input Placeholder",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Type search here"
+  }, {
+    "id" : "528ebe32-97fa-549b-264b-4edad31d12fa",
+    "name" : "txt_suggestions_title",
+    "label" : "Search Field Suggestions Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Quick results for \"{search_term}\""
+  }, {
+    "id" : "211c7c9e-723a-a5d4-3c75-564880007478",
+    "name" : "txt_previous",
+    "label" : "Previous Page",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "PREVIOUS PAGE"
+  }, {
+    "id" : "129b2327-feec-09cf-21f0-420243a40479",
+    "name" : "txt_next",
+    "label" : "Next Page",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "NEXT PAGE"
+  }, {
+    "id" : "7a07ff3f-e721-ec36-d313-816837748c06",
+    "name" : "txt_no_results_excuse",
+    "label" : "No Results - Excuse",
+    "help_text" : "{search_term} is the placeholder for the search term",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Sorry. There are no results for \"{search_term}\""
+  }, {
+    "id" : "9308c710-02c9-f735-68dc-1150539c89f6",
+    "name" : "txt_no_results_hint",
+    "label" : "No Results - Hint",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Try rewording your query, or browse through our site."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_placeholder" : "Type search here",
+    "txt_suggestions_title" : "Quick results for \"{search_term}\"",
+    "txt_previous" : "PREVIOUS PAGE",
+    "txt_next" : "NEXT PAGE",
+    "txt_no_results_excuse" : "Sorry. There are no results for \"{search_term}\"",
+    "txt_no_results_hint" : "Try rewording your query, or browse through our site."
+  }
+} ]

@@ -1,0 +1,207 @@
+{#*********************************************
+ * POWER Sticky Sub-Menu V1.0
+*********************************************#}
+
+{% require_css %}
+<style type="text/css">
+  {% set horizontal_spacing = module.style.horizontal_spacing|int / module.style.font_size.size|int %}
+  .pwr-sticky-sub-menu__link-container {
+      font-size: {{ module.style.font_size.size }}px;
+      font-weight: {{ module.style.font_weight }};
+      margin-left: -{{ horizontal_spacing }}em;
+      margin-right: -{{ horizontal_spacing }}em;
+      letter-spacing: {{ module.style.letter_spacing }}px;
+  }
+  .pwr-sticky-sub-menu__link, 
+  .pwr-sticky-sub-menu__link--external {
+      margin-left: {{ horizontal_spacing }}em;
+      margin-right: {{ horizontal_spacing }}em;
+      opacity: {{ module.style.link_color.opacity|int / 100 }};
+  }
+  {% if module.style.link_color.color %}
+  .pwr-sticky-sub-menu__link, 
+  .pwr-sticky-sub-menu__link--external,
+  .pwr--dark .pwr-sticky-sub-menu__link,
+  .pwr--dark .pwr-sticky-sub-menu__link--external {
+      color: {{ module.style.link_color.color }};
+  }
+  {% endif %}
+  .pwr-sticky-sub-menu--mobile-open .pwr-sticky-sub-menu__link,
+  .pwr-sticky-sub-menu--mobile-open .pwr-sticky-sub-menu__link--external {
+      font-size: {{ module.style.font_size_mobile.size }}px;
+  }
+  {% if module.layout.is_scroll_indicator %}
+    {% set progress_bar_color = '' %}
+    {% set progress_bar_opacity = 1 %}
+    {%- if module.style.scroll_indicator_color.color %}
+        {% set progress_bar_color = 'rgba(' + module.style.scroll_indicator_color.color|convert_rgb + ', ' + module.style.scroll_indicator_color.opacity|int / 100 + ')'%}
+    {% else %}
+        {% set progress_bar_opacity = module.style.scroll_indicator_color.opacity|int / 100 %}
+    {%- endif %}
+    .pwr-sticky-sub-menu__progress-bar {
+        {% if progress_bar_color != '' %}color: {{ progress_bar_color }};{% endif %}
+        opacity: {{ progress_bar_opacity }};
+    }
+    {%- if progress_bar_color != '' %}
+    .pwr-sticky-sub-menu__progress-bar::-webkit-progress-value {
+        background-color: {{ progress_bar_color }};
+    }
+    .pwr-sticky-sub-menu__progress-bar::-moz-progress-bar {
+        background-color: {{ progress_bar_color }};
+    }
+    {%- endif %}
+  {% endif %}
+  .pwr-sticky-sub-menu__link:hover,
+  .pwr-sticky-sub-menu__link--external:hover,
+  .pwr--dark .pwr-sticky-sub-menu__link:hover,
+  .pwr--dark .pwr-sticky-sub-menu__link--external:hover,
+  .pwr-sticky-sub-menu__link--active {
+    {% if module.style.link_active_color.color %}
+      color: rgba({{ module.style.link_active_color.color|convert_rgb }}, {{ module.style.link_active_color.opacity|int / 100 }}) !important;
+      opacity: 1;
+    {% else %}
+    opacity: {{ module.style.link_active_color.opacity|int / 100 }};
+    {% endif %}  
+  }
+</style>
+{% end_require_css %}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+<div id="pwr-js-sticky-sub-menu" class="pwr-sticky-sub-menu pwr-sticky-sub-menu--match-height {% if module.style.is_box_shadow %}pwr-sticky-sub-menu--has-shadow{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }}"
+     {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+     {% elif bgImg.src && bgImgPos != 'parallax' %}
+     style="
+            background-image: url({{ resize_image_url(bgImg.src,2000) }});
+            background-image: -webkit-image-set(url({{ resize_image_url(bgImg.src,2000) }}) 1x, url({{ resize_image_url(bgImg.src,3000) }}) 2x);
+            background-size: cover;
+            background-position: {{ bgImgPos }};
+            "
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+     style="background-color: transparent;"
+     {% elif bgGradientDir %}
+     style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+  <img src="{{ bgImg.src }}" class="pwr-parallax" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+  {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" {% if bgImgPos == 'parallax' %}class="pwr-parallax"{% endif %}></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+                                    background: {{ bgGradientColor1 }};
+                                    background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                                    background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                                    background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+                                    opacity: {{ generalOpacity }};
+                                    "></div>
+  {% endif %}
+  <div class="pwr-sticky-sub-menu__content-wrapper">
+    <div class="pwr-sticky-sub-menu__content pwr--relative {% if !module.layout.full_width %}page-center{% else %}pwr-sticky-sub-menu__content--full-width{% endif %} {% if module.layout.centered %}pwr--align-c{% endif %}">
+        <nav class="pwr-sticky-sub-menu__link-container" aria-label="On page navigation element">
+            <ul class="pwr--reset">
+                {% for link in module.links %}
+                {% if link.link_type == 'external' %}
+                    <li class="pwr--reset"><a href="{{ link.external_link.url.href }}" {% if link.external_link.open_in_new_tab %}target="_blank"{% endif %} {% if link.external_link.no_follow %}rel="nofollow"{% endif %} rel="noopener" class="pwr-sticky-sub-menu__link--external">{{ link.title }}</a></li>
+                {% else %}
+                    <li class="pwr--reset"><a class="pwr-sticky-sub-menu__link" href="{{ link.link }}" rel="nofollow">{{ link.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    {%- if module.layout.is_scroll_indicator %}
+    <progress id="pwr-js-sticky-sub-menu__progress-bar" class="pwr-sticky-sub-menu__progress-bar" style="height:{{ module.style.scroll_indicator_height }}%;"></progress>
+    {% endif -%}
+  </div>
+  
+  <a href="#" id="pwr-js-sticky-sub-menu__btn" class="pwr-sticky-sub-menu__btn pwr-sticky-sub-menu__btn--{{ module.layout.mobile_btn_pos }}" style="bottom:{{ module.layout.mobile_btn_offset }}px;">
+    <div class="pwr-sticky-sub-menu__btn--icon-open">
+      <span></span>
+    </div>
+    <span class="pwr-sticky-sub-menu__btn--icon-close"></span>
+  </a>
+</div>
+<div id="pwr-js-sticky-sub-menu--placeholder" class="pwr-sticky-sub-menu--placeholder pwr-sticky-sub-menu--match-height"></div>

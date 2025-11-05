@@ -1,0 +1,77 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_blog-post.jpg
+  label: POWER THEME Blog Post Template
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper body-container-wrapper--blog-post">
+    <div class="body-container">
+        {# Section Blog Post Header #}
+        {% module_block module "blog-post-header" 
+            full_width=true,
+            width=12,
+            path='../modules/blog-post-header', 
+            label='Blog Post Header',
+            layout={section_variant:"reduced"}, 
+            style={background:"img_vid",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark",youtube_link:""}
+            %}
+        {% end_module_block %}
+        {# End Section Blog Post Header #}
+
+        {# Section Previous Next Navigation #}
+{% module "narration" path="@hubspot/blog_audio",
+ overrideable=False,
+ styles={
+   groupColors: {
+     override: 'custom',
+     background: { color: '#f4f5f9' },
+     text: { color: '#ff6a00' },
+     hover: { color: '#7fded2' },
+   },
+ }
+%}
+
+
+        {% if theme.blog.blog_post.is_nav_bar %}
+        {% module_block module "prev-next-nav" 
+            full_width=true,
+            width=12,
+            path='../modules/prev-next-nav', 
+            label='Previous Next Navigation',
+            style={background:"",scheme:"light"}
+            %}
+        {% end_module_block %}
+        {% endif %}
+        {# End Section Previous Next Navigation #}
+
+        {# Section Blog Post #}
+      {% module_block module "blog-post" 
+            full_width=true,
+            width=12,
+            path='../modules/blog-post', 
+            label='Blog Post',
+            %}
+        {% end_module_block %}
+        {# End Section Blog Post #}
+
+        {# Section Blog Post Preview #}
+        {% if theme.blog.blog_post.is_related_posts %}
+        {% module_block module "blog-post-preview" 
+            full_width=true,
+            width=12,
+            path='../modules/sec-blog-post-preview', 
+            label='Blog Post Preview',
+            intro_to_title='', 
+            title='RELATED ARTICLES',
+            description='', 
+            filter={blog_id:37821962406}, 
+            layout={nr_posts:3,section_variant:"standard"}
+            %}
+        {% end_module_block %}
+        {% endif %}
+        {# End Section Blog Post Preview #}
+    </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,85 @@
+{# *********************************************
+   * POWER Theme Sub Module Video Box V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+<div class="pwr-sub-video-box {% if module.layout.centered %}pwr--align-c{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+
+  <div class="pwr-sec-video-box__container pwr--clearfix">
+  
+    {% if module.video_box.link.url.href %}
+      {% set isLink = true %}
+      {% set href = module.video_box.link.url.href %}
+      {% if module.video_box.link.url.type == "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}            
+    {% else %}
+      {% set isLink = false %}
+    {% endif %}
+    
+    {% if module.video_box.video && module.video_box.video != 'null' %}
+      {% set video_html = '<video autoplay controls src="{{ module.video_box.video }}"></video>' %}
+      {% set isVideo = true %}
+    {% elif module.video_box.youtube_link %}
+      {% set video_html = '<div class="pwr-video-background__youtube"><div class="player" data-video="{{ module.video_box.youtube_link }}"></div></div' %}
+      {% set isVideo = true %}
+    {% else %}
+      {% set video_html = 'Please configure a video' %}
+      {% set isVideo = false %}
+    {% endif %}       
+    
+    {% if isVideo %}
+    <a href="#" class="pwr-lightbox pwr-video-box pwr-video-box--is-link {% if cat_classes %}{{ cat_classes }}{% endif %}" data-lightbox='{{ video_html }}' data-featherlight-type="html">
+    {% elif isLink %}
+    <a href="{{ href }}" {% if module.video_box.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if module.video_box.link.no_follow %}rel="nofollow"{% endif %} class="pwr-video-box pwr-video-box--is-link">
+    {% else %}
+    <div class="pwr-video-box">
+    {% endif %}
+      <div class="pwr-video-box__top">
+        <div class="pwr-video-box__img" {% if module.video_box.img %}style="background-image: url({{ resize_image_url(module.video_box.img.src,850) }});background-image: -webkit-image-set(url({{ resize_image_url(module.video_box.img.src,850) }}) 1x, url({{ resize_image_url(module.video_box.img.src,1700) }}) 2x);background-position:{{ module.style.background_position}}"{% endif %}></div>
+        {% if isLink or isVideo %}
+        <div class="pwr-video-box__overlay">
+          <div class="pwr-sec-video__button pwr-sec-video__button--small">
+            <span class="pwr-icon pwr-sec-video__icon pwr-sec-video__icon--as-button">
+              <svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 32 36.7" xml:space="preserve">
+              <polygon points="32,18.3 0,36.7 0,0 "/>
+              </svg>
+            </span>
+          </div>
+        </div> 
+        {% endif %}
+      </div>
+      <div class="pwr-video-box__below pwr--colored-box {% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+        {% if module.video_box.title %}<span class="pwr-video-box__title">{{ module.video_box.title }}</span>{% endif %}
+        {% if module.video_box.desc %}<span class="pwr-rich-text pwr-video-box__desc">{{ module.video_box.desc }}</span>{% endif %}    
+      </div>
+    {% if isLink or isVideo %}
+    </a>
+    {% else %}
+    </div>
+    {% endif %}
+
+  </div>
+
+
+</div>

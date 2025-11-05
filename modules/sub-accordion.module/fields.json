@@ -1,0 +1,171 @@
+[ {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "accordion",
+  "label" : "Accordion",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "56064e24-41c1-e9f8-fd14-6a29c6edc49a",
+    "name" : "title",
+    "label" : "Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Accordion Title i"
+  }, {
+    "id" : "7d5d21f0-e15c-c078-dcb2-727f5903931e",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Accordion description i"
+  }, {
+    "id" : "accordion.animation",
+    "name" : "animation",
+    "label" : "Animation",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "accordion.animation.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "accordion.animation.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Accordion Title i",
+    "description" : "Accordion description i"
+  } ]
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "d338889f-bab1-1703-1bb9-faae12e57261",
+    "name" : "box_color",
+    "label" : "Custom Box Background Color ",
+    "help_text" : "",
+    "inline_help_text" : "Leave blank for default colors",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "box_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]

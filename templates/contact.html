@@ -1,0 +1,97 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_contact.jpg
+  label: POWER THEME Contact
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}        
+        {# Section Hero #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "hero" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-hero', 
+                label='Hero',
+                title='CONTACT US', 
+                title_sel_heading='h1', 
+                description='', 
+                basic_info=[], 
+                layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"bg-contact-01",height:1067,'src':get_asset_url('../images/bgs/pwr-img_bg_contact.jpg'),width:1600},background_image_overlay:"color",background_image_position:"parallax",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_light.color,opacity:0},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Hero #}
+        
+        {# Section Form #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "form" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-form', 
+                label=' Form',
+                intro_to_title='', 
+                title='DROP US A LINE', 
+                layout={section_variant:"hor_55"}
+                %}
+                {% module_attribute "form" is_json=True %}
+                {"form_id":"08ee1308-6539-4308-a061-8f683d385e27","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                {% end_module_attribute %}
+                {% module_attribute "description" %}
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.<br><br><strong>ADDRESS</strong><span>: Mozartstr. 24, 82218 Munich, GERMANY</span><br><strong>PHONE</strong><span>:&nbsp; &nbsp; &nbsp; +49 123 456 789</span><br><strong>EMAIL</strong><span>:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><a href="mailto:info@maka-agency.com" rel=" noopener">contact@power.com</a><br><strong>WEB</strong><span>: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://www.maka-agency.com/">www.power.com</a></p>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Form #}
+
+        {# Section Steps #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "steps" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-steps', 
+                label='Steps',
+                intro_to_title='', 
+                title='', 
+                description='', 
+                step=[
+                    {description:"<p>Mozartstr. 24<br>82218 Munich, GERMANY</p>\\n<p>Tel: +49 123 456 789<br>E-Mail: <span>contact@power.com</span></p>",icon:{},image_field:{'src':""},title:"MUNICH",animation:{animation_type:"default",delay:50}},
+                    {description:"<p>Churchtown Rd Upper<br>Dundrum, D14 VP97, Irland</p>\\n<p>Tel: +353 123 456 789<br>E-Mail: <span>contact@power.com</span></p>",icon:{},img:{'src':""},title:"DUBLIN",animation:{animation_type:"default",delay:150}},
+                    {description:"<p>354 Metropolitan Ave<br>Brooklyn, NY 11211, US</p>\\n<p>Tel: +1 123 456 789<br>E-Mail: <span>contact@power.com</span></p>",icon:{},img:{'src':""},title:"NEW YORK",animation:{animation_type:"default",delay:250}},
+                    {description:"<p>Oosterdok 2<br>1011 VX Amsterdam, Netherlands</p>\\n<p>Tel: +31 123 456 789<br>E-Mail: <span>contact@power.com</span></p>",icon:{},img:{'src':""},title:"AMSTERDAM",animation:{animation_type:"default",delay:350}}
+                ], 
+                style={scheme:"dark"}, 
+                layout={centered:false,section_variant:"text_only"}, 
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Steps #}
+
+        {# Section Map #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "map" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-map', 
+                label='Map',
+                title='OUR OFFICE', 
+                desc='Headquarters, Munich', 
+                map_embed_code='<iframe title="Map Location" src="https://snazzymaps.com/embed/132243" width="100%" height="100%" style="border:none;"></iframe>', 
+                contact=True, 
+                cta='77b308a5-f601-4ca6-b079-98b16b13361a', 
+                phone='', 
+                layout={full_width:true,section_height:590,section_variant:"map_only"}, 
+                style={background:"gradient",scheme:"dark",background_gradient_direction:"vert",background_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100}}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Map #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,130 @@
+[ {
+  "id" : "46d32b2a-bcf3-565a-04ae-5b234674337e",
+  "name" : "main_title",
+  "label" : "Titulo principal",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Conoce nuestros"
+}, {
+  "id" : "11aebca2-e706-9127-eafe-cd25eeb89692",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Valores agregados"
+}, {
+  "id" : "16dad68c-df9f-a4e3-d49b-b4daee5b707a",
+  "name" : "description",
+  "label" : "Descripción",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>"
+}, {
+  "id" : "8461dc5d-02ea-593d-ddfa-43470af6a024",
+  "name" : "elements",
+  "label" : "Testimonios",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "115012c1-13e4-47c3-4876-c2043b0ff89c",
+    "name" : "item_title",
+    "label" : "Titulo del elemento",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Innova Club"
+  }, {
+    "id" : "cab0ff7c-bc9e-e0ae-b919-cdb4e6351c59",
+    "name" : "element_description",
+    "label" : "Descripción del elemento",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }, {
+    "id" : "053e3536-978a-9097-3074-83a43cb3725f",
+    "name" : "images",
+    "label" : "Imágenes del carrusel",
+    "required" : true,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/valores-demo.png",
+      "alt" : "valores-demo",
+      "loading" : "lazy",
+      "width" : 737,
+      "height" : 520,
+      "max_width" : 737,
+      "max_height" : 520
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "item_title" : "Innova Club",
+    "element_description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "images" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/valores-demo.png",
+      "alt" : "valores-demo",
+      "loading" : "lazy",
+      "width" : 737,
+      "height" : 520,
+      "max_width" : 737,
+      "max_height" : 520
+    }
+  } ]
+}, {
+  "id" : "91767fdf-2fca-d94f-2adc-59b712948ef3",
+  "name" : "image_star",
+  "label" : "Imagen superior",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Textured%20Star.png",
+    "alt" : "Textured Star",
+    "loading" : "lazy",
+    "width" : 288,
+    "height" : 288,
+    "max_width" : 288,
+    "max_height" : 288
+  }
+} ]

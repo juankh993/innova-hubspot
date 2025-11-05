@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon-module-search results</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search-results">
+            <rect id="Rectangle-Copy-3" stroke="#516F90" stroke-width="10" x="5" y="5" width="118" height="118"></rect>
+            <rect id="Rectangle-Copy-22" stroke="#516F90" stroke-width="7" x="19.5" y="19.5" width="57" height="19"></rect>
+            <circle id="Oval" stroke="#516F90" stroke-width="7" cx="97" cy="27" r="7.5"></circle>
+            <rect id="Rectangle-Copy-7" fill="#516F90" x="16" y="68" width="96" height="8"></rect>
+            <rect id="Rectangle-Copy-8" fill="#516F90" x="16" y="84" width="96" height="8"></rect>
+            <rect id="Rectangle-Copy-9" fill="#516F90" x="16" y="100" width="96" height="8"></rect>
+            <rect id="Rectangle-Copy-12" fill="#516F90" x="16" y="52" width="96" height="8"></rect>
+            <path d="M102,32 L110,40" id="Path-8" stroke="#516F90" stroke-width="6"></path>
+        </g>
+    </g>
+</svg>

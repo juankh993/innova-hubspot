@@ -1,0 +1,396 @@
+[ {
+  "id" : "eb05a5d3-0378-8449-3877-52e8b040ad57",
+  "name" : "principal_title",
+  "label" : "Titulo Principal Blanco",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Nuestros"
+}, {
+  "id" : "18f8140e-1407-881a-82b5-57a8f01fe05d",
+  "name" : "principal_subtitle",
+  "label" : "Titulo Principal Amarillo",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "diferenciales"
+}, {
+  "id" : "5a124863-5456-f667-d403-fd768faa78fb",
+  "name" : "items_acordion",
+  "label" : "Items del acordion ",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "99647d67-a825-d1e6-b9a8-8a44e9dbf6ff",
+    "name" : "item_type",
+    "label" : "Tipo de item",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "one_image", "Solo imagen" ], [ "slider_image", "Carusel" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "a888e6ef-97bf-6555-3f29-9ac1286184fa",
+    "name" : "acordion_image_title",
+    "label" : "Titulo Item de imagen",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Infraestructura"
+  }, {
+    "id" : "f1ac5201-9e6b-c7d3-e370-12c2a7cb205d",
+    "name" : "acordion_image_subtitle",
+    "label" : "Subitulo Item de imagen",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "icónica"
+  }, {
+    "id" : "9ed6a1cf-2f0f-2ad5-11b8-6c214d8aa1c4",
+    "name" : "acordion_image_description",
+    "label" : "Descripción Item de imagen",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Conoce nuestras diferentes sedes en el país, todas con el mismo modelo educativo innovador y espacios que inspiran."
+  }, {
+    "id" : "74f864a9-f2a3-2407-2f71-e3cdc46d3ffb",
+    "name" : "acordion_image_cta_text",
+    "label" : "Boton Item de imagen",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Conoce más"
+  }, {
+    "id" : "39e98236-75ef-37cb-ff5b-489052ec2f94",
+    "name" : "acordion_image_cta_url",
+    "label" : "Url Item de imagen",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://google.com/"
+  }, {
+    "id" : "2d909fca-f2c0-6b6f-3920-89f6b52a8b6d",
+    "name" : "acordion_item_image",
+    "label" : "Imagen Item ",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "one_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dummy-image.png",
+      "alt" : "vertical-acordion-slider-dummy-image",
+      "loading" : "lazy",
+      "width" : 577,
+      "height" : 425,
+      "max_width" : 577,
+      "max_height" : 425
+    }
+  }, {
+    "id" : "2f63f0ba-0d86-cca8-27cd-866836f1eae5",
+    "name" : "acordion_slider_title",
+    "label" : "Titulo Item de slider",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "slider_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "descubre los otros"
+  }, {
+    "id" : "ba1713a2-e438-1aec-295c-270c0838d1e5",
+    "name" : "acordion_slider_subtitle",
+    "label" : "Subtitulo Item de slider",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "slider_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "colegios innova"
+  }, {
+    "id" : "16428b4b-e79b-8306-5906-d3d784004401",
+    "name" : "acordion_slider_description",
+    "label" : "Descripción Item de slider",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "slider_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Conoce nuestras diferentes sedes en el país, todas con el mismo modelo educativo innovador y espacios que inspiran."
+  }, {
+    "id" : "4848ea33-ef21-a107-2930-fd292c816409",
+    "name" : "acordion_slider_cta_text",
+    "label" : "Texto boton Item de slider",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "slider_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "conoce más"
+  }, {
+    "id" : "e8bb2c78-2416-191c-aeeb-c5e53219e231",
+    "name" : "acordion_slider_cta_url",
+    "label" : "Url boton Item de slider",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_acordion.item_type",
+      "controlling_value_regex" : "slider_image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://google.com/"
+  }, {
+    "id" : "ff2b6012-acd2-a60a-7123-d9a0b5ea01ff",
+    "name" : "schools",
+    "label" : "Escuelas",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "e897924f-d116-4614-2ae2-117ea1046ad6",
+      "name" : "school_cta_text",
+      "label" : "Texto boton escuela",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Ver"
+    }, {
+      "id" : "ecdcbd3e-df04-741c-21af-28f6fbca4e5e",
+      "name" : "school_cta_url",
+      "label" : "Url boton escuela",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://google.com/"
+    }, {
+      "id" : "dec679a6-7204-e93d-350d-7356d1c379f5",
+      "name" : "school_city_name",
+      "label" : "Nombre ciudad escuela",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Bogotá"
+    }, {
+      "id" : "c9326a41-90e2-2d6f-14ef-5c5285ef39da",
+      "name" : "school_headquarter_name",
+      "label" : "Nombre sede escuela",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Cota"
+    }, {
+      "id" : "8a2056a7-2a05-c568-de0f-3ccc37a8cd60",
+      "name" : "school_image",
+      "label" : "Imagen Escuela",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dummy-image.png",
+        "alt" : "vertical-acordion-slider-dummy-image",
+        "loading" : "lazy",
+        "width" : 577,
+        "height" : 425,
+        "max_width" : 577,
+        "max_height" : 425
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "school_cta_text" : "Ver",
+      "school_cta_url" : "https://google.com/",
+      "school_city_name" : "Bogotá",
+      "school_headquarter_name" : "Cota",
+      "school_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dummy-image.png",
+        "alt" : "vertical-acordion-slider-dummy-image",
+        "loading" : "lazy",
+        "width" : 577,
+        "height" : 425,
+        "max_width" : 577,
+        "max_height" : 425
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "item_type" : "",
+    "acordion_image_title" : "Infraestructura",
+    "acordion_image_subtitle" : "icónica",
+    "acordion_image_description" : "Conoce nuestras diferentes sedes en el país, todas con el mismo modelo educativo innovador y espacios que inspiran.",
+    "acordion_image_cta_text" : "Conoce más",
+    "acordion_image_cta_url" : "https://google.com/",
+    "acordion_item_image" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dummy-image.png",
+      "alt" : "vertical-acordion-slider-dummy-image",
+      "loading" : "lazy",
+      "width" : 577,
+      "height" : 425,
+      "max_width" : 577,
+      "max_height" : 425
+    },
+    "acordion_slider_title" : "descubre los otros",
+    "acordion_slider_subtitle" : "colegios innova",
+    "acordion_slider_description" : "Conoce nuestras diferentes sedes en el país, todas con el mismo modelo educativo innovador y espacios que inspiran.",
+    "acordion_slider_cta_text" : "conoce más",
+    "acordion_slider_cta_url" : "https://google.com/",
+    "schools" : [ {
+      "school_cta_text" : "Ver",
+      "school_cta_url" : "https://google.com/",
+      "school_city_name" : "Bogotá",
+      "school_headquarter_name" : "Cota",
+      "school_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dummy-image.png",
+        "alt" : "vertical-acordion-slider-dummy-image",
+        "loading" : "lazy",
+        "width" : 577,
+        "height" : 425,
+        "max_width" : 577,
+        "max_height" : 425
+      }
+    } ]
+  } ]
+} ]

@@ -1,0 +1,47 @@
+{# *********************************************
+   * POWER Theme Mini Module Icon V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+  {%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+<div class="pwr-mini-icon pwr--clearfix 
+    {% if module.style.icon_style == 'no-bg' %} pwr-mini-icon--no-bg {% elif module.style.icon_style == 'circle' %} pwr-mini-icon--circle {% elif module.style.icon_style == 'square' %} pwr-mini-icon--square {% endif %} 
+    {% if module.layout.alignment == 'center' %} pwr-mini-icon--align-c {% elif module.layout.alignment == 'right' %}pwr-mini-icon--align-r{% endif %} 
+    {% if module.style.scheme == 'dark' %}pwr--dark{% elif module.style.scheme == 'light' %}pwr--light{% else %}pwr--primary{% endif %}" 
+    style="
+        {% if module.style.icon_style == 'square' and module.style.border_radius %} border-radius: {{module.style.border_radius}}px; {% endif %}
+        {% if module.style.custom_padding %} padding: {{module.style.padding_top_bottom}}px {{module.style.padding_left_right}}px; {% else %} padding: 15px 15px; {% endif %}
+        {% if module.style.background_color.color and !(module.style.icon_style == 'no-bg') %}background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity|int / 100 }});{% endif %} 
+        {% if module.layout.margin_top %}margin-top: {{module.layout.margin_top}}px;{% endif %} 
+        {% if module.layout.margin_bottom %}margin-bottom: {{module.layout.margin_bottom}}px;{% endif %} 
+        {% if module.layout.margin_right %}margin-right: {{module.layout.margin_right}}px;{% endif %} 
+        {% if module.layout.margin_left %}margin-left: {{module.layout.margin_left}}px;{% endif %}
+    "
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+    >
+
+    {# icon or image? #}
+    {% if module.layout.icon_variant == 'icon' and module.icon.icon %}
+    <span class="pwr-mini-icon__icon pwr-mini-icon__icon--{% if module.layout.icon_position == 'left'%}left{% else %}right{% endif %}" style="{% if module.style.icon_size %}font-size:{{ module.style.icon_size }}px;{% endif %} {% if module.style.icon_color.color %}fill: rgba({{ module.style.icon_color.color|convert_rgb }}, {{ module.style.icon_color.opacity|int / 100 }}); {% else %} fill: currentColor; {% endif %}">{% icon name="{{ module.icon.icon.name }}" style="{{ module.icon.icon.type }}" unicode="{{ module.icon.icon.unicode }}" %}</span>
+    {% elif module.layout.icon_variant == 'img' and module.icon.icon_img.src %}
+    <span class="pwr-mini-icon__icon-img-wrapper">
+        <img src="{{ module.icon.icon_img.src }}" alt="{{ module.icon.icon_img.alt }}" width="{{ module.icon.icon_img.width }}" height="{{ module.icon.icon_img.height }}" class="pwr-mini-icon__icon-img pwr-mini-icon__icon-img--{% if module.layout.icon_position == 'left'%}left{% else %}right{% endif %}" style="{% if module.style.icon_size %}width:{{module.style.icon_size}}px; height:auto; {% endif %} {% if module.style.icon_color.color %}fill: rgba({{ module.style.icon_color.color|convert_rgb }}, {{ module.style.icon_color.opacity|int / 100 }}); {% else %} fill: currentColor; {% endif %}"/>
+    </span>
+    {% endif %}
+
+</div>      

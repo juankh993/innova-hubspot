@@ -1,0 +1,57 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_events-overview.jpg
+  label: POWER THEME Events Overview
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='Events', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"bg-event-491412199",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_event.jpg'),width:1920},background_image_overlay:"color",background_image_position:"parallax",background_position:"top",desc_large:true,overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark",title_extra_large:false}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    boxes=[
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"event-alt-01",height:665,'src':get_asset_url('../images/boxes/events/pwr-img_event_01.jpg'),width:960},intro_to_title:"21-08-02, BERLIN, GERMANY",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:true,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"HACK & TALK",translation:{txt_link:"MORE INFO"},animation:{animation_type:"default",delay:50}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"event-alt-02",height:665,'src':get_asset_url('../images/boxes/events/pwr-img_event_02.jpg'),width:960},intro_to_title:"21-08-02, MUNICH, GERMANY",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"FEMALE C-LEVEL SEMINAR",translation:{txt_link:"SEE MORE"},animation:{animation_type:"default",delay:200}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"event-03-unsplash-2",height:907,'src':get_asset_url('../images/boxes/events/pwr-img_event_03.jpg'),width:1360},intro_to_title:"21-08-02, NEW YORK, USA",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"ARBUCKLE BIRTHDAY",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"event-04-unsplash",height:907,'src':get_asset_url('../images/boxes/events/pwr-img_event_04.jpg'),width:1360},intro_to_title:"21-08-02, TOKIO, JAPAN",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"DINNER PARTY - BETTER LATE THAN NEVER",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:50}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"bg-people-celebrating-796356481",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_people-celebrating.jpg'),width:1920},intro_to_title:"21-08-02, BERLIN, GERMANY",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"top"},title:"GO-LIVE CELEBRATION WITH AFTER DINNER PARTY",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:200}},
+                        {desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy.",filtering:{cats:""},img:{alt:"bg-exhibition-792158590",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_exhibition.jpg'),width:1920},intro_to_title:"21-08-02, PARIS, FRANCE",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"TRIPPO - EXHIBITION FOR BUILDING SUCCESSFULLY",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}}
+                    ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"3cols_rect"}, 
+                    style={background:"",box_style:"content_below",filter_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},smaller_content:true,style_filter:false,variant_content_below:"style-2"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+ 
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

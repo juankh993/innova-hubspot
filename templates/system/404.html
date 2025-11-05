@@ -1,0 +1,46 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+  label: POWER THEME 404 Error
+-->
+{% extends '../layouts/base.html' %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        <div class="pwr-sec-maintenance-error pwr--light pwr-sec--first-with-header"
+            style="background-color: rgba(244, 246, 250, 1.0)">
+            <div class="pwr-sec-maintenance-error__img-wrapper">
+                <img class="pwr-sec-maintenance-error__img pwr-sec-maintenance-error__img--top  pwr-sec-maintenance-error__img--centered"
+                    src={% image_src "500_img" 'src'="{{get_asset_url('../../images/system/pwr-img_system_404.png')}}", label="Image", no_wrapper=True %}
+                    alt="error 404" width="751" height="290">
+            </div>
+            <div class="page-center pwr--relative">
+                <div class="pwr-sec-maintenance-error__txt-wrapper pwr--align-c">
+                    <h1 class="pwr-sec-maintenance-error__title pwr--toc-ignore">
+                        {% module "title" path="@hubspot/text", label="Title", value="PAGE NOT FOUND.", no_wrapper=True %}
+                    </h1>
+                    <span
+                        class="pwr-rich-text pwr-sec-maintenance-error__desc">{% module "description", path="@hubspot/rich_text", label="Description" html='The page you were looking for at this URL could not be found.', no_wrapper=True %}</span>
+                    <div class="pwr-cta-container pwr-sec-maintenance-error__cta-container pwr--clearfix">
+                        <div class="pwr--neg-margin-lr-10">
+                            {% set home_link = "/" %}
+                            {% if company_domain|length > 0 %}
+                                {% set home_link = company_domain %}
+                            {% endif %}
+                            {% module_block module "ctas", path="@hubspot/rich_text", label="CTAs", no_wrapper=True %}
+                                {% module_attribute "html" %}
+                                <div class="pwr-cta-container__cta pwr-sec-maintenance-error__cta pwr-cta pwr-cta--primary-solid">
+                                    <a class="cta_button" href="{{ content.domain }}/" title="Back to Home Page">Back to Home Page</a></div>
+                                <div class="pwr-cta-container__cta pwr-sec-maintenance-error__cta pwr-cta pwr-cta--primary-solid">
+                                    <a class="cta_button" href="{{ content.domain }}/hs-search-results" title="Search Our Website">Search Our Website</a></div>
+                                {% end_module_attribute %}
+                            {% end_module_block %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

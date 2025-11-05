@@ -1,0 +1,463 @@
+/*********************************************/
+/* =^..^= =^..^= =^..^= =^..^= =^..^= =^..^= */
+/*                                           */
+/* Hubspot POWER THEME V1.1.4                */
+/* by maka Ageny                             */
+/*                                           */
+/* STYLE SETTINGS V1.0                       */
+/*                                           */
+/* =^..^= =^..^= =^..^= =^..^= =^..^= =^..^= */
+/*********************************************/
+
+/****************************************************************************/
+/*                                                                          */
+/* With this file we provide you with comfortable options to adjust         */
+/* some global style aspects of the POWER theme to your needs.              */
+/*                                                                          */
+/* Please clone the theme to be able to edit the code files if you need     */
+/* to do so.                                                                */
+/*                                                                          */
+/****************************************************************************/
+
+/*****************************************************************************
+
+    INDEX:
+
+    1. BASIC COLOR DEFINITIONS                              #bcd
+
+    2. SPECIFIC COLOR DEFINITIONS                           #scd
+        - Background
+        - Accent Background  
+        - Text
+        - Titles
+        - Links
+        - Buttons
+        - Navigation
+        - Social Icons & Form Errors
+
+    3. FONT-SETTINGS                                        #fs
+        - Basic and accent font types
+        - Font smooting
+        - Font sizes
+        - Font weights
+
+    4. ROUND EDGES                                          #re
+
+    5. EFFECTS                                              #eff
+        - 3D box effect
+        - Button hover effect
+
+    6. LAYOUT                                               #lay
+        - Main header menu position
+        - Content width
+        - Section padding
+        - Responsive breakpoints
+        - Mobile responsiveness size reduction factors
+
+*****************************************************************************/
+
+
+/* ==========================================================================
+   1. BASIC COLOR DEFINITIONS                               #bcd
+
+   These colors are used throughout the POWER template.
+
+   ========================================================================== */
+
+/* This color represents e.g. background color for dark-mode, dark text color, 
+ * is base for dark borders, ... 
+*/
+{% set baseColorDark                       = theme.colors.brand_colors.base_color_dark.color %}
+
+/* This color represents e.g. dark accent background color for boxes in front 
+ * of dark background (baseColorDark) 
+*/
+{% set accentColorDark                     = theme.colors.brand_colors.accent_color_dark.color %}
+
+/* This color represents e.g. background color for light-mode, 
+ * light text color, is base for light borders, ... 
+*/
+{% set baseColorLight                      = theme.colors.brand_colors.base_color_light.color %} 
+
+/* This color represents e.g. light accent background color for boxes in 
+ * front of light background (baseColorLight) 
+*/
+{% set accentColorLight                    = theme.colors.brand_colors.accent_color_light.color %}
+
+/* This color represents your primary brand color, e.g. 
+ * Accents / Hightlights, Hovers, Buttons, ... 
+*/
+{% set primaryColor                        = theme.colors.brand_colors.primary_color.color %}
+
+
+/* ==========================================================================
+   2. SPECIFIC COLOR DEFINITIONS                            #scd
+
+   In this section you have the possibility to set more specific colors for
+   common elements like text, titles, buttons, etc.
+
+   ========================================================================== */
+
+/* Background Colors */
+{% set hsBackgroundColorHTML               = theme.colors.hs.html.background.background_color.color %}
+
+{% set backgroundColorDarkScheme           = theme.colors.power.dark_scheme.background.background_color.color %}
+{% set backgroundColorLightScheme          = theme.colors.power.light_scheme.background.background_color.color %}
+
+/* Dark / Light accent background colors */
+{% set backgroundAccentColorDarkScheme     = theme.colors.power.dark_scheme.background.background_accent_color.color %}
+{% set backgroundAccentColorLightScheme    = theme.colors.power.light_scheme.background.background_accent_color.color %}
+
+/* Dark / Light text colors */
+{% set textColorDarkScheme                 = theme.colors.power.dark_scheme.text.text_color.color %}
+{% set textColorLightScheme                = theme.colors.power.light_scheme.text.text_color.color %} 
+
+/* Dark / Light intro title and title colors 
+ * For section intro + title, hero title, author page posts title and 
+ * blog overview (layout: 1 column)                                           
+*/
+{% set introTitleColorDarkScheme           = theme.colors.power.dark_scheme.titles.intro_title_color.color %} 
+{% set introTitleColorLightScheme          = theme.colors.power.light_scheme.titles.intro_title_color.color %} 
+{% set titleColorDarkScheme                = theme.colors.power.dark_scheme.titles.title_color.color %}
+{% set titleColorLightScheme               = theme.colors.power.light_scheme.titles.title_color.color %}
+
+/* Link-Colors */
+{% set hsLinkColor                         = theme.colors.hs.html.links.link_color.color %}
+{% set hsLinkHoverColor                    = theme.colors.hs.html.links.link_hover_color.color %}
+
+/* Dark / Light Link-Colors for POWER rich-text fields */
+{% set linkColorDarkScheme                 = theme.colors.power.dark_scheme.link.link_color.color %}
+{% set linkColorLightScheme                = theme.colors.power.light_scheme.link.link_color.color %}
+{% set linkHoverColorDarkScheme            = theme.colors.power.dark_scheme.link.link_hover_color.color %}
+{% set linkHoverColorLightScheme           = theme.colors.power.light_scheme.link.link_hover_color.color %}
+
+/* Primary / Dark / Light button background + text colors */
+{% set btnColorPrimary                     = theme.colors.power.ctas.btn_color_primary.color %}
+{% set btnColorDark                        = theme.colors.power.ctas.btn_color_dark.color %}
+{% set btnColorLight                       = theme.colors.power.ctas.btn_color_light.color %}
+{% set btnTextColorDark                    = theme.colors.power.ctas.btn_text_color_dark.color %}
+{% set btnTextColorLight                   = theme.colors.power.ctas.btn_text_color_light.color %}
+
+{% set hsBtnSubmitBackgroundColor          = theme.colors.hs.forms.submit_btn.background_color.color %}
+{% set hsBtnSubmitBackgroundHoverColor     = theme.colors.hs.forms.submit_btn.background_color_hover.color %}
+{% set hsBtnSubmitTextColor                = theme.colors.hs.forms.submit_btn.text_color.color %}
+{% set hsBtnSubmitTextHoverColor           = theme.colors.hs.forms.submit_btn.text_color_hover.color %}
+
+/* Dark / Light font color for navigation (Header / Footer) */
+{% set navFontColorDark                    = theme.colors.power.navigation.nav_font_color_dark.color %}
+{% set navFontColorLight                   = theme.colors.power.navigation.nav_font_color_light.color %}
+/* Hover opacity value for top-level navigation items (0 invisible, 1 fully visible) */
+{% set navHoverOpacity                     = .66 %}
+{% set footerHoverOpacity                  = .8 %}
+/* Hover background and font color for sub-level menu items (Dropdown, Mega-Menu, Burger-Menu) */
+{% set navHoverBackgroundColor             = theme.colors.power.navigation.nav_hover_background_color.color %} 
+{% set navHoverFontColor                   = theme.colors.power.navigation.nav_hover_font_color.color %}
+
+/* Social Icon color used for Header Top (light), Author Page, Media Content Split module */
+{% set socialIconColorLightScheme          = theme.colors.power.light_scheme.other.social_icon_color.color %}
+
+/* Colors for HubSpot's form module */
+{% set hsFormTitleBackgroundColor          = theme.colors.hs.forms.title_background_color %}
+{% set hsFormTitleTextColor                = theme.colors.hs.forms.title_text_color.color %}
+{% set hsFormBackgroundColor               = theme.colors.hs.forms.background_color %}
+{% set hsFormBorderColor                   = theme.colors.hs.forms.border_color %}
+{% set hsFormLabelColor                    = theme.colors.hs.forms.label_color.color %}
+{% set hsFormFieldBorderColor              = theme.colors.hs.forms.field_border_color %}
+{% set hsFormErrorColor                    = theme.colors.hs.forms.error_color.color %}
+
+/* Colors for POWER's form modules */
+{% set formLabelColorDarkScheme            = theme.colors.power.dark_scheme.forms.label_color.color %}
+{% set formLabelColorLightScheme           = theme.colors.power.light_scheme.forms.label_color.color %}
+{% set formFieldBorderColorDarkScheme      = theme.colors.power.dark_scheme.forms.field_border_color %}
+{% set formFieldBorderColorLightScheme     = theme.colors.power.light_scheme.forms.field_border_color %}
+{% set formErrorColorDarkScheme            = theme.colors.power.dark_scheme.forms.error_color.color %}
+{% set formErrorColorLightScheme           = theme.colors.power.light_scheme.forms.error_color.color %}
+
+
+/* ==========================================================================
+   3. FONT AND FONT-SIZES                                  #fs
+
+   If you have a custom or purchased font, upload the files via file-manager and
+   reference the font format(s) in the @font-face statement
+
+   Please note, that you have to clone the theme before to be able to edit the 
+   code files of the theme.
+
+   ========================================================================== */
+
+
+/* Custom / Purchased fonts configured via @font-face 
+ * 
+ * @font-face properties explained:
+ * font-family -> Official / Configured name of the font - this can be overwritten 
+ *                by the function local within src-attribute if a custom name is desired.
+ * src         -> Here the links to the different font-formats uploaded in file-manager 
+ *                are referenced
+ *                *.woff2 - format for all modern browsers
+ *                *.woff  - format for IE 11
+ *                *.eot   - format for IE 6 - IE 8
+ *                *.ttf   - format for Safari, Android, iOS
+ *                *.svg   - format for older iOS devices
+ * font-weight -> Font weight as number (e.g. 700) or name (e.g. bold)
+ * font-style  -> Font style e.g. italic
+ * 
+*/
+
+/*
+@font-face {
+    font-family: 'internal_font_name';
+    src: local('How_you_want_to_call_and_use_the_font'), 
+         url('https://cdn2.hubspot.net/hubfs/YOUR_HUBSPOT_ID/internal_font_name.woff') format('woff'),
+         url('https://cdn2.hubspot.net/hubfs/YOUR_HUBSPOT_ID/internal_font_name.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn2.hubspot.net/hubfs/YOUR_HUBSPOT_ID/internal_font_name.ttf') format('truetype'),
+         url('https://cdn2.hubspot.net/hubfs/YOUR_HUBSPOT_ID/internal_font_name.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+
+/* Font family to use in the template 
+ * 
+ * You can set the names of the fonts you have imported via
+ * @font-face above and optionally configure fall-back fonts (comma-separated)
+ * 
+*/
+{% set baseFontFamily                      = '{{ theme.typography.fonts.base_font.font_family.font }}, sans-serif' %}
+
+/* You can use a different accent font-family for titles, CTAs, Menu, ... */
+{% set accentFontFamily                    = '{{ theme.typography.fonts.accent_font.font_family.font }}, sans-serif' %}
+
+/* Switch font smoothing on (true) or off (false) */
+{% set useFontSmoothing                    = theme.typography.fonts.is_font_smoothing %} 
+
+/*
+ * Font-sizes IN PIXELS
+*/
+/* Font size used in the body and in rich-text fields  */
+{% set fontSizeBody                        = theme.typography.font_settings.body_.font_size.size %}
+/* Font size used for paragraphs in the body and in rich-text fields  */
+{% set fontSizeParagraph                   = theme.typography.font_settings.paragraph.font_size.size %}
+/* Font size used in the blog post body  */
+{% set fontSizePostBody                    = theme.typography.font_settings.post_body.font_size.size %}
+/* Font-size for intro title in section modules */
+{% set fontSizeSecTitleIntro               = theme.typography.font_settings.sec_intro_title.font_size.size %}
+/* Font-size for text description in section modules */
+{% set fontSizeSecDescription              = theme.typography.font_settings.sec_desc.font_size.size %}
+/* Font-size for buttons */
+{% set fontSizeButtons                     = theme.typography.font_settings.btns.font_size.size %}
+/* Font-sizes for headings */
+{% set fontSizeH1                          = theme.typography.font_settings.heading_one.font_size.size %}
+{% set fontSizeH2                          = theme.typography.font_settings.heading_two.font_size.size %}
+{% set fontSizeH3                          = theme.typography.font_settings.heading_three.font_size.size %}
+{% set fontSizeH4                          = theme.typography.font_settings.heading_four.font_size.size %}
+{% set fontSizeH5                          = theme.typography.font_settings.heading_five.font_size.size %}
+{% set fontSizeH6                          = theme.typography.font_settings.heading_six.font_size.size %}
+/* Font-sizes for navigation (header and footer) - we recommend small variations from the default value */
+{% set fontSizeTopHeader                   = theme.typography.font_settings.header.top_header.font_size.size %}
+{% set fontSizeHeader                      = theme.typography.font_settings.header.header.font_size.size %}
+{% set fontSizeBurger                      = theme.typography.font_settings.header.burger.font_size.size %}
+{% set fontSizeMegaMenu                    = theme.typography.font_settings.header.mega_menu.font_size.size %}
+
+{% set fontSizeFooterText                  = theme.typography.font_settings.footer.text.font_size.size %}
+{% set fontSizeFooterMenuTitles            = theme.typography.font_settings.footer.menu_titles.font_size.size %}
+{% set fontSizeFooterMenu                  = theme.typography.font_settings.footer.menu.font_size.size %}
+{% set fontSizeFooterLegal                 = theme.typography.font_settings.footer.legal_text.font_size.size %}
+/* Font-size for forms */
+{% set fontSizeFormLabels                  = theme.typography.font_settings.form.labels.font_size.size %}
+{% set fontSizeFormHelp                    = theme.typography.font_settings.form.help.font_size.size %}
+{% set fontSizeFormInputs                  = theme.typography.font_settings.form.inputs.font_size.size %}
+{% set fontSizeFormErrors                  = theme.typography.font_settings.form.errors.font_size.size %}
+{% set fontSizeFormLegalConsent            = theme.typography.font_settings.form.legal_consent.font_size.size %}
+
+/*
+ * Font-weights
+*/
+/* Font weight used in the body   */
+{% set fontWeightBody                      = theme.typography.font_settings.body_.font_weight %}
+/* Font weight used in paragraphs   */
+{% set fontWeightParagraph                 = theme.typography.font_settings.paragraph.font_weight %}
+/* Font weight used in the blog post body  */
+{% set fontWeightPostBody                  = theme.typography.font_settings.post_body.font_weight %}
+/* Font weight for intro title in section modules */
+{% set fontWeightSecTitleIntro             = theme.typography.font_settings.sec_intro_title.font_weight %}
+/* Font weight for text description in section modules */
+{% set fontWeightSecDescription            = theme.typography.font_settings.sec_desc.font_weight %}
+/* Font weight used for headings   */
+{% set fontWeightH1                        = theme.typography.font_settings.heading_one.font_weight %}
+{% set fontWeightH2                        = theme.typography.font_settings.heading_two.font_weight %}
+{% set fontWeightH3                        = theme.typography.font_settings.heading_three.font_weight %}
+{% set fontWeightH4                        = theme.typography.font_settings.heading_four.font_weight %}
+{% set fontWeightH5                        = theme.typography.font_settings.heading_five.font_weight %}
+{% set fontWeightH6                        = theme.typography.font_settings.heading_six.font_weight %}
+/* Font weight for buttons        */
+{% set fontWeightButtons                   = theme.typography.font_settings.btns.font_weight %}
+/* Font weights Header         */
+{% set fontWeightTopHeader                 = theme.typography.font_settings.header.top_header.font_weight %}
+{% set fontWeightHeader                    = theme.typography.font_settings.header.header.font_weight %}
+{% set fontWeightBurger                    = theme.typography.font_settings.header.burger.font_weight %}
+{% set fontWeightMegaMenu                  = theme.typography.font_settings.header.mega_menu.font_weight %}
+{% set fontWeightFooterText                = theme.typography.font_settings.footer.text.font_weight %}
+{% set fontWeightFooterMenuTitles          = theme.typography.font_settings.footer.menu_titles.font_weight %}
+{% set fontWeightFooterMenu                = theme.typography.font_settings.footer.menu.font_weight %}
+{% set fontWeightFooterLegal               = theme.typography.font_settings.footer.legal_text.font_weight %}
+/* Font weights for forms */
+{% set fontWeightFormLabels                = theme.typography.font_settings.form.labels.font_weight %}
+{% set fontWeightFormHelp                  = theme.typography.font_settings.form.help.font_weight %}
+{% set fontWeightFormInputs                = theme.typography.font_settings.form.inputs.font_weight %}
+{% set fontWeightFormErrors                = theme.typography.font_settings.form.errors.font_weight %}
+{% set fontWeightFormLegalConsent          = theme.typography.font_settings.form.legal_consent.font_weight %}
+
+
+/*
+ * Line-heights TRANSFORMED TO EM
+*/
+/* Line height used in the body   */
+{% set lineHeightBody                      = theme.typography.font_settings.body_.line_height / theme.typography.font_settings.body_.font_size.size %}
+/* Line height used in paragraphs   */
+{% set lineHeightParagraph                 = theme.typography.font_settings.paragraph.line_height / theme.typography.font_settings.paragraph.font_size.size %}
+/* Line height used in the blog post body  */
+{% set lineHeightPostBody                  = theme.typography.font_settings.post_body.line_height / theme.typography.font_settings.post_body.font_size.size %}
+/* Line height for intro title in section modules */
+{% set lineHeightSecTitleIntro             = theme.typography.font_settings.sec_intro_title.line_height / theme.typography.font_settings.sec_intro_title.font_size.size %}
+/* Line height for text description in section modules */
+{% set lineHeightSecDescription            = theme.typography.font_settings.sec_desc.line_height / theme.typography.font_settings.sec_desc.font_size.size %}
+/* Line height for headings */
+{% set lineHeightH1                        = theme.typography.font_settings.heading_one.line_height / theme.typography.font_settings.heading_one.font_size.size %}
+{% set lineHeightH2                        = theme.typography.font_settings.heading_two.line_height / theme.typography.font_settings.heading_two.font_size.size %}
+{% set lineHeightH3                        = theme.typography.font_settings.heading_three.line_height / theme.typography.font_settings.heading_three.font_size.size %}
+{% set lineHeightH4                        = theme.typography.font_settings.heading_four.line_height / theme.typography.font_settings.heading_four.font_size.size %}
+{% set lineHeightH5                        = theme.typography.font_settings.heading_five.line_height / theme.typography.font_settings.heading_five.font_size.size %}
+{% set lineHeightH6                        = theme.typography.font_settings.heading_six.line_height / theme.typography.font_settings.heading_six.font_size.size %}
+
+/*
+ * Letter-spacings IN PIXELS
+*/
+/* Letter-spacing used in the body   */
+{% set letterSpacingBody                   = theme.typography.font_settings.body_.letter_spacing %}
+/* Letter-spacing used in paragraphs   */
+{% set letterSpacingParagraph              = theme.typography.font_settings.paragraph.letter_spacing %}
+/* Letter-spacing used in the blog post body  */
+{% set letterSpacingPostBody               = theme.typography.font_settings.post_body.letter_spacing %}
+/* Letter-spacing for intro title in section modules */
+{% set letterSpacingSecTitleIntro          = theme.typography.font_settings.sec_intro_title.letter_spacing %}
+/* Letter-spacing for text description in section modules */
+{% set letterSpacingSecDescription         = theme.typography.font_settings.sec_desc.letter_spacing %}
+/* Letter-spacing used for headings   */
+{% set letterSpacingH1                     = theme.typography.font_settings.heading_one.letter_spacing %}
+{% set letterSpacingH2                     = theme.typography.font_settings.heading_two.letter_spacing %}
+{% set letterSpacingH3                     = theme.typography.font_settings.heading_three.letter_spacing %}
+{% set letterSpacingH4                     = theme.typography.font_settings.heading_four.letter_spacing %}
+{% set letterSpacingH5                     = theme.typography.font_settings.heading_five.letter_spacing %}
+{% set letterSpacingH6                     = theme.typography.font_settings.heading_six.letter_spacing %}
+/* Letter-spacing for buttons        */
+{% set letterSpacingButtons                = theme.typography.font_settings.btns.letter_spacing %}
+/* Letter-spacing Header         */
+{% set letterSpacingTopHeader              = theme.typography.font_settings.header.top_header.letter_spacing %}
+{% set letterSpacingHeader                 = theme.typography.font_settings.header.header.letter_spacing %}
+{% set letterSpacingBurger                 = theme.typography.font_settings.header.burger.letter_spacing %}
+{% set letterSpacingMegaMenu               = theme.typography.font_settings.header.mega_menu.letter_spacing %}
+{% set letterSpacingFooterText             = theme.typography.font_settings.footer.text.letter_spacing %}
+{% set letterSpacingFooterMenuTitles       = theme.typography.font_settings.footer.menu_titles.letter_spacing %}
+{% set letterSpacingFooterMenu             = theme.typography.font_settings.footer.menu.letter_spacing %}
+{% set letterSpacingFooterLegal            = theme.typography.font_settings.footer.legal_text.letter_spacing %}
+/* Letter-spacing for forms */
+{% set letterSpacingFormLabels             = theme.typography.font_settings.form.labels.letter_spacing %}
+{% set letterSpacingFormHelp               = theme.typography.font_settings.form.help.letter_spacing %}
+{% set letterSpacingFormInputs             = theme.typography.font_settings.form.inputs.letter_spacing %}
+{% set letterSpacingFormErrors             = theme.typography.font_settings.form.errors.letter_spacing %}
+{% set letterSpacingFormLegalConsent       = theme.typography.font_settings.form.legal_consent.letter_spacing %}
+
+/* Accent text-property for e.g. titles, button-texts, menu, ...
+ * Standard value -> text-transform: uppercase. To deactivate, use empty single quotation 
+*/
+{% set uppercaseTitles                     = 'uppercase' if theme.typography.font_settings.is_uppercase.titles else 'none' %}
+{% set uppercaseNavigation                 = 'uppercase' if theme.typography.font_settings.is_uppercase.nav else 'none' %}
+{% set uppercaseLinks                      = 'uppercase' if theme.typography.font_settings.is_uppercase.links else 'none' %}
+{% set uppercaseOther                      = 'uppercase' if theme.typography.font_settings.is_uppercase.other else 'none' %}
+
+/* ==========================================================================
+   4. ROUND EDGES                                           #re
+
+   0px is rectangular and 25px already pretty round
+   ========================================================================== */
+
+{% set borderRadius                        = theme.styling.corners.border_radius + 'px' %}
+/* Round edges on buttons */
+{% set borderRadiusBtn                     = theme.styling.corners.btns + 'px' %}
+/* Round edges on inputs */
+{% set borderRadiusInput                   = theme.styling.corners.inputs + 'px' %}
+/* Round edges on dropdowns */
+{% set borderRadiusMenu                    = theme.styling.corners.dropdowns + 'px' %}
+/* Round edges on boxes */
+{% set borderRadiusBox                     = theme.styling.corners.boxes + 'px' %}
+/* Round edges on images */
+{% set borderRadiusImg                     = theme.styling.corners.imgs + 'px' %}
+/* Round edges on checkboxes (max 6px) */
+{% set borderRadiusCheckbox                = theme.styling.corners.checkboxes + 'px' %} 
+
+
+/* ==========================================================================
+   5. EFFECTS                                               #eff
+   ========================================================================== */
+
+/* Switch 3D box effect on (true) or off (false) */
+{% set use3DBoxEffect                      = theme.fx.is_3d_effect %}
+
+/* Switch button hover effect on (true) or off (false) */
+{% set btnHoverSlideUpAnimation            = theme.fx.is_btn_effect %}
+
+
+
+/* ==========================================================================
+   6. LAYOUT                                                #lay
+   ========================================================================== */
+
+/* 
+ * Main header menu position
+ * 
+ * Position in percent.
+ * Automatically centered if header is full-width
+*/
+{% set headerMenuPositionLeft              = theme.layout.header_menu_pos + '%' %}
+
+/* Content width in pixel */
+{% set contentWidth                        = theme.layout.content_width %}
+
+/* Vertical section padding in pixel
+ * Relates to 'padding top' and 'padding bottom' setting in modules 
+*/
+{% set sectionPaddingSmall                 = theme.layout.spacing.sec_padding_small %}
+{% set sectionPaddingMedium                = theme.layout.spacing.sec_padding_medium %}
+{% set sectionPaddingLarge                 = theme.layout.spacing.sec_padding_large %}
+
+/* Horizontal section padding in pixel */
+{% set paddingHorDesktop                   = theme.resp.spacing.padding_hor_desktop %}
+{% set paddingHorMobile                    = theme.resp.spacing.padding_hor_mobile %}
+
+{% set hsPaddingFormTitleMobile            = theme.resp.spacing.padding_hor_mobile if theme.colors.hs.forms.title_background_color.opacity != 0 else 0 %}
+{% set hsPaddingFormTitleDesktop           = theme.resp.spacing.padding_hor_desktop if theme.colors.hs.forms.title_background_color.opacity != 0 else 0 %}
+
+{% set hsPaddingFormMobile                 = theme.resp.spacing.padding_hor_mobile if theme.colors.hs.forms.background_color.opacity != 0 || theme.colors.hs.forms.border_color.opacity != 0 else 0 %}
+{% set hsPaddingFormDesktop                = theme.resp.spacing.padding_hor_desktop if theme.colors.hs.forms.background_color.opacity != 0 || theme.colors.hs.forms.border_color.opacity != 0 else 0 %}
+
+/* Header Breakpoint (when does it change to a burger menu...) */
+{% set mqMaxHeader2Burger                  = theme.resp.header.header_breakpoint %}
+/* Responsive Breakpoints */ 
+{% set mqMaxDesktop                        = '1199px' %} 
+{% set mqMinDesktop                        = '1200px' %}
+{% set mqMaxDesktopSmaller                 =  '991px' %}
+{% set mqMinDesktopSmaller                 =  '992px' %}
+{% set mqMaxTablet                         =  '767px' %}
+{% set mqMinTablet                         =  '768px' %}
+{% set mqMaxMobile                         =  '575px' %}
+{% set mqMinMobile                         =  '576px' %}
+
+/* Mobile responsiveness size reduction factors used by macros */
+/* reduces font-sizes for mobile where applicable - by factor e.g. .25 => 25% */
+{% set fontSizeReduceByFactor              = theme.resp.font_sizes.reduce_font_size_by / 100 %}
+/* Not smaller than ... pixel */
+{% set fontSizeNotLowerThan                = theme.resp.font_sizes.min_font_size %}
+/* Reduces margins, paddings, etc. - by factor e.g. .25 => 25% */
+{% set sizeReduceByFactor                  = theme.resp.spacing.reduce_spacing_by / 100 %}
+

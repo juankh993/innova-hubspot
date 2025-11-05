@@ -1,0 +1,354 @@
+/**
+ * Featherlight – ultra slim jQuery lightbox
+ * Version 1.7.13 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2018, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+
+html.with-featherlight {
+    /* disable global scrolling when featherlights are visible */
+    overflow: hidden;
+}
+.featherlight {
+    display: none;
+
+    /* dimensions: spanning the background from edge to edge */
+    position:fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+
+    /* position: centering content */
+    text-align: center;
+
+    /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+    white-space: nowrap;
+
+    /* styling */
+    cursor: pointer;
+    background: #333;
+    /* IE8 "hack" for nested featherlights */
+    background: rgba(0, 0, 0, 0);
+
+    /* POWER 3D Box & Safari Fix */
+    {%- if use3DBoxEffect %}
+        transform: translateZ(101px);
+    {% endif -%}
+}
+/* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+.featherlight:last-of-type {
+    background: rgba(23, 27, 37,.9);
+}
+.featherlight:before {
+    /* position: trick to center content vertically */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.featherlight .featherlight-content {
+    /* make content container for positioned elements (close button) */ 
+    position: relative;
+
+    /* position: centering vertical and horizontal */
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+
+    /* dimensions: cut off images */
+/*    overflow: auto;*/
+
+    /* dimensions: handling large content */
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+
+    /* styling */
+    background: {{ baseColorLight }};
+    cursor: auto;
+
+    /* reset white-space wrapping */
+    white-space: normal;
+}
+/* contains the content */
+.featherlight .featherlight-inner {
+    /* make sure its visible */
+    display: block;
+}
+/* don't show these though */
+.featherlight script.featherlight-inner,
+.featherlight link.featherlight-inner,
+.featherlight style.featherlight-inner {
+    display: none;
+}
+.featherlight .featherlight-close-icon {
+    /* position: centering vertical and horizontal */
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+
+    /* dimensions: 25px x 25px */
+    line-height: 25px;
+    width: 25px;
+
+    /* styling */
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: {{ baseColorLight }}; /* Set the background in case it overlaps the content */
+    background: rgba(255, 255, 255, 0.3);
+    color: {{ textColorLightScheme }};
+    border: none;
+    padding: 0;
+}
+/* See http://stackoverflow.com/questions/16077341/how-to-reset-all-default-styles-of-the-html5-button-element */
+.featherlight .featherlight-close-icon::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+.featherlight .featherlight-image {
+    /* styling */
+    width: 100%;
+}
+
+.featherlight-iframe .featherlight-content {
+    /* removed the border for image croping since iframe is edge to edge */
+    border-bottom: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+.featherlight iframe {
+    /* styling */
+    border: none;
+}
+.featherlight * { /* See https://github.com/noelboss/featherlight/issues/42 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+    .featherlight .featherlight-content {
+        /* dimensions: maximize lightbox with for small screens */
+        margin-left: 0;
+        margin-right: 0;
+        max-height: 98%;
+        padding: 10px 10px 0;
+        border-bottom: 10px solid transparent;
+    }
+}
+/* hide non featherlight items when printing */
+@media print {
+    html.with-featherlight > * > :not(.featherlight) {
+        display: none;
+    }
+}
+/**
+ * Featherlight Gallery – an extension for the ultra slim jQuery lightbox
+ * Version 1.7.13 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2018, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+.featherlight-next,
+.featherlight-previous {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    bottom: 0;
+    left: 80%;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: rgba(0, 0, 0, 0)
+}
+.featherlight-previous {
+    left: 25px;
+    right: 80%
+}
+.featherlight-next:hover,
+.featherlight-previous:hover {
+    background: rgba(255, 255, 255, .25)
+}
+.featherlight-next span,
+.featherlight-previous span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 82%;
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    margin-top: -40px;
+    text-shadow: 0 0 5px {{ baseColorLight }};
+    color: {{ textColorDarkScheme }};
+    font-style: normal;
+    font-weight: 400
+}
+.featherlight-next span {
+    right: 5%;
+    left: auto
+}
+.featherlight-next:hover span,
+.featherlight-previous:hover span {
+    display: inline-block
+}
+.featherlight-first-slide.featherlight-last-slide .featherlight-next,
+.featherlight-first-slide.featherlight-last-slide .featherlight-previous,
+.featherlight-loading .featherlight-next,
+.featherlight-loading .featherlight-previous,
+.featherlight-swipe-aware .featherlight-next,
+.featherlight-swipe-aware .featherlight-previous {
+    display: none
+}
+
+@media only screen and (max-device-width:1024px) {
+    .featherlight-next:hover,
+    .featherlight-previous:hover {
+        background: 0 0
+    }
+    .featherlight-next span,
+    .featherlight-previous span {
+        display: block
+    }
+}
+@media only screen and (max-width:1024px) {
+    .featherlight-next,
+    .featherlight-previous {
+        top: 10px;
+        right: 10px;
+        left: 85%
+    }
+    .featherlight-previous {
+        left: 10px;
+        right: 85%
+    }
+    .featherlight-next span,
+    .featherlight-previous span {
+        margin-top: -30px;
+        font-size: 40px
+    }
+}
+
+/* Featherlight overwrites & extension */
+.featherlight,
+.featherlight:last-of-type {
+    background-color: rgba(0,0,0,.8);
+}
+.featherlight .featherlight-close-icon {
+    background-color: transparent;
+    color: {{ textColorDarkScheme }};
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+    right: -40px;
+    width: 23px;
+}
+.featherlight .featherlight-content {
+    background-color: transparent;
+    margin-left: 60px;
+    margin-right: 60px;
+    max-height: 100%; 
+    padding: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.featherlight-next {
+    width: 60px;
+    right: -60px;
+    left: auto;
+    top: 0;
+}
+.featherlight-previous {
+    width: 60px;
+    left: -60px;
+    right: auto;
+    top: 0;
+}  
+.featherlight-next:hover, 
+.featherlight-previous:hover {
+    background: transparent;
+}
+.featherlight-next:after, 
+.featherlight-previous:after {
+    background: transparent;
+    bottom: auto;
+    content: '';
+    display: block;
+    height: 25px;
+    left: auto;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
+    width: 25px;
+}
+.featherlight-next:after {
+    border-right: 3px solid {{ baseColorLight }};
+    border-top: 3px solid {{ baseColorLight }};
+    left: 10px;
+}
+.featherlight-previous:after {
+    border-bottom: 3px solid {{ baseColorLight }};
+    border-left: 3px solid {{ baseColorLight }};
+    right: 10px; 
+}
+
+.featherlight-next span, 
+.featherlight-previous span {
+    display: none !important;
+}
+.pwr-featherlight-info {
+    background-color: rgba(0,0,0,.5);
+    bottom: 0;
+    color: {{ textColorDarkScheme }};
+    max-height: 33%;
+    overflow-y: scroll;
+    padding: 30px 40px;
+    position: absolute;
+    width: 100%;
+}
+.pwr-featherlight-info__title {
+    margin: 0 0 5px;
+}
+.pwr-featherlight-info__desc {
+    display: inline-block; 
+}
+
+@media only screen and (max-width: {{ mqMaxTablet }}) {
+    .pwr-featherlight-info {
+        max-height: 150px;
+    }
+    .featherlight .featherlight-content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .featherlight-next {
+        right: 0;
+    }
+    .featherlight-previous {
+        left: 0;
+    } 
+    .featherlight .featherlight-close-icon {
+        right: 0;
+        top: -30px;
+    }
+}
+@media (max-width: 479px) {
+    .pwr-featherlight-info {
+        background-color: rgba(0,0,0,.8);
+        bottom: auto;
+        color: inherit;
+        margin: 0;
+        padding: 20px;
+        top: 100%;
+    }
+}

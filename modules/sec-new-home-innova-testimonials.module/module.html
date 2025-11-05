@@ -1,0 +1,164 @@
+<!-- seccion testimonios -->
+<section id="section-testimonials" class="relative w-full aspect-video xl:h-[90vh] bg-[#ffffff]">
+  <div class="w-32 lg:w-64 h-20 lg:h-40 absolute top-0 right-0 z-[10] -translate-y-2/3 lg:-translate-y-2/3"
+       id="testimonials-triangle">
+    <img src="https://www.innovaschools.edu.co/hubfs/Innova-Niza/cinta.png"
+         alt="cinta" class="w-full h-full object-contain" data-animate="figure-zoom-in">
+  </div>
+  <!-- Background -->
+  <div class="testimonials-background w-full h-full cursor-pointer relative" id="testimonials-background"
+       data-blendy-from="universal-video" data-video-id="{{ module.testimonios_lista[0].video_youtube_id }}">
+    <div id="custom-cursor" class="custom-cursor cursor-testimonials">
+      <img src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="" class="w-full h-full" />
+    </div>
+    <div class="w-full h-full">
+      <img src="{{ module.testimonios_lista[0].imagen_fondo.src }}" id="dynamic-image" alt="{{ module.testimonios_lista[0].imagen_fondo.alt }}"
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <!-- Testimonials -->
+  <div class="w-full lg:max-w-[90vw] xl:max-w-[75vw] 2xl:max-w-[60vw] bg-no-repeat bg-cover lg:absolute bottom-0 lg:-bottom-0 left-0 py-10 px-6 z-[2]"
+       id="testimonials-container">
+    <div class="testimonials-content w-full lg:w-11/12 xl:w-[90%] flex flex-col items-start justify-start">
+      <h2 class="testimonials-content--title flex flex-wrap mb-[16px] items-center gap-x-4" id="testimonials-content--title" >
+        <span class="uppercase text-[#F85245] font-['Otterco'] font-bold italic text-[44px] leading-[52px] tracking-[4.4px]">{{ module.seccion_titulo }}</span>
+        <span class="text-[#003B87] uppercase font-bold text-[32px] leading-[38px] tracking-[3.2px] testimonials-content--title--highlight">{{ module.seccion_subtitulo }}</span>
+      </h2>
+
+      <!-- carousel testimonios -->
+      <div class="flex flex-col w-full gap-[16px]">
+        <div  data-aos="fade-up"
+       data-aos-delay="500"
+       data-aos-duration="800"
+       data-aos-once="true"
+             class="swiper mb-4 lg:mb-10 max-w-full" id="testimonials-swiper">
+          <div class="swiper-wrapper">
+            {% for testimonio in module.testimonios_lista %}
+            <div class="swiper-slide" 
+                 data-video-id="{{ testimonio.video_youtube_id }}"
+                 data-background-image="{{ testimonio.imagen_fondo.src }}"
+                 data-author="{{ testimonio.estudiante_nombre }}"
+                 data-grade="{{ testimonio.estudiante_grado }}"
+                 data-author-image="{{ testimonio.estudiante_foto.src }}"
+                data-audio="{{ testimonio.testimonio_audio }}">
+              <div class="testimonials-content--item pb-0 lg:py-8 px-10 lg:px-14 [&_p]:text-[16px] [&_p]:leading-[18px] md:[&_p]:leading-[26px] md:[&_p]:text-[22px] [&_div]:text-[16px] [&_div]:leading-[18px] md:[&_div]:leading-[26px] md:[&_div]:text-[22px] text-[#003B87]" data-aos="fade-up">
+                {{ testimonio.testimonio_texto }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- Audio del testimonio -->
+        <div  data-aos="fade-up"
+       data-aos-delay="700"
+       data-aos-duration="800"
+       data-aos-once="true"
+             id="audio-section" class="md:pl-[56px] audio-player pb-[12px] md:pb-[8px]">
+          <audio id="audio-player__audio" class="audio-player__audio" controls>
+            <source src="{{ module.testimonios_lista[0].testimonio_audio }}" type="audio/mpeg" id="audio-source">
+              Your browser does not support the audio element.
+          </audio>
+          <img id="audio-player__cursor" class="audio-player__cursor" src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="cursor" />
+          <svg id="audio-player__line" class="audio-player__line" width="374" height="35" viewBox="0 0 374 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.32422 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M11.3242 6.32031L11.3242 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M20.3242 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M29.3242 2.32031L29.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M38.3242 2.32031L38.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M47.3242 2.32031L47.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M56.3242 2.32031L56.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M65.3242 2.32031L65.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M74.3242 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M83.3242 2.32031L83.3242 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M92.3242 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M101.324 6.32031L101.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M110.324 2.32031L110.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M119.324 6.32031L119.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M128.324 2.32031L128.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M137.324 2.32031L137.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M146.324 2.32031L146.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M155.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M164.324 2.32031L164.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M173.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M182.324 2.32031L182.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M191.324 2.32031L191.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M200.324 2.32031L200.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M209.324 6.32031L209.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M218.324 2.32031L218.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M227.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M236.324 2.32031L236.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M245.324 6.32031L245.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M254.324 2.32031L254.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M263.324 2.32031L263.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M272.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M281.324 2.32031L281.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M290.324 6.32031L290.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M299.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M308.324 2.32031L308.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M317.324 6.32031L317.324 28.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M326.324 2.32031L326.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M335.324 2.32031L335.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M344.324 2.32031L344.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M353.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M362.324 2.32031L362.324 32.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+            <path d="M371.324 10.3203V24.3203" stroke="#B5B5B5" stroke-width="4" stroke-linecap="round"/>
+           </svg>
+           <p id="audio-player__time" class="audio-player__time">00:00</p>
+          </div>
+        <!-- end Audio del testimonio -->
+        <div   data-aos="fade-up"
+       data-aos-delay="900"
+       data-aos-duration="800"
+       data-aos-once="true"
+             id="info-student-section" class="md:pl-[56px] flex items-center gap-8 w-full flex-col lg:flex-row justify-between">
+          <!-- nombre del estudiante -->
+          <div class="flex gap-[16px] items-center w-full" data-animate="text-fade-up" id="author-section">
+            <div class="h-12 w-12 lg:h-16 lg:w-16 rounded-full overflow-hidden">
+              <img src="https://placehold.co/100x100" id="author-image" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-[#003B87] text-sm lg:text-base leading-[18px] flex gap-3"
+                 style="font-family: 'Josefin Sans', sans-serif">
+              <span id="author-name">{{ module.testimonios_lista[0].estudiante_nombre }}</span> /
+              <span id="author-grade">{{ module.testimonios_lista[0].estudiante_grado }}</span>
+            </div>
+          </div>
+          <!-- end nombre del estudiante -->
+
+          <!-- botones de navegacion -->
+          <div class="flex  gap-[16px] items-center">
+            <!-- boton de navegacion anterior -->
+            <button class="secondary-circle-button" id="testimonials-swiper-prev">
+              <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.9785 35.0576C9.58967 35.0576 1.97851 27.4465 1.97851 18.0576C1.97851 8.66878 9.58967 1.05762 18.9785 1.05762C28.3674 1.05762 35.9785 8.66878 35.9785 18.0576C35.9785 27.4465 28.3674 35.0576 18.9785 35.0576Z" stroke="#003B87" stroke-width="2"/>
+<path d="M20.6406 24.5576C20.534 24.5566 20.4277 24.5332 20.3281 24.4883C20.2285 24.4433 20.1365 24.3767 20.0586 24.292L20.0527 24.2861L14.7305 18.6934C14.5718 18.5266 14.4785 18.2948 14.4785 18.0488C14.4786 17.803 14.5719 17.572 14.7305 17.4053L20.0527 11.8115C20.2106 11.6456 20.4198 11.5577 20.6318 11.5576C20.7901 11.5577 20.9471 11.6068 21.083 11.7021C21.2194 11.798 21.3297 11.9375 21.3955 12.1045C21.4613 12.2716 21.4792 12.4569 21.4453 12.6357C21.4115 12.8146 21.328 12.9755 21.21 13.0996L16.8281 17.7041L16.5 18.0488L16.8281 18.3936L21.21 22.998L21.2158 23.0049L21.2734 23.0693C21.3279 23.1369 21.3731 23.2134 21.4072 23.2969C21.4527 23.4082 21.4775 23.5287 21.4785 23.6514C21.4795 23.774 21.4568 23.8955 21.4131 24.0078C21.3694 24.1199 21.3057 24.2205 21.2266 24.3037C21.1474 24.3869 21.0543 24.4511 20.9541 24.4941C20.8539 24.5372 20.7473 24.5586 20.6406 24.5576Z" fill="#003B87" stroke="#003B87"/>
+</svg>
+
+            </button>
+            <!-- end boton de navegacion anterior -->
+            <!-- swiper pagination -->
+            <div class="swiper-pagination flex lg:hidden items-center justify-center static"
+                 id="testimonials-swiper-pagination"></div>
+            <!-- end swiper pagination -->
+
+            <!-- boton de navegacion siguiente -->
+            <button class="secondary-circle-button" id="testimonials-swiper-next">
+              <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.9785 1.05762C28.3674 1.05762 35.9785 8.66878 35.9785 18.0576C35.9785 27.4465 28.3674 35.0576 18.9785 35.0576C9.58968 35.0576 1.97852 27.4465 1.97852 18.0576C1.97852 8.66878 9.58968 1.05762 18.9785 1.05762Z" stroke="#003B87" stroke-width="2"/>
+<path d="M17.3164 11.5576C17.423 11.5586 17.5294 11.582 17.6289 11.627C17.7285 11.672 17.8206 11.7385 17.8984 11.8232L17.9043 11.8291L23.2266 17.4219C23.3852 17.5886 23.4785 17.8204 23.4785 18.0664C23.4785 18.3123 23.3851 18.5432 23.2266 18.71L17.9043 24.3037C17.7464 24.4696 17.5372 24.5576 17.3252 24.5576C17.1669 24.5575 17.0099 24.5084 16.874 24.4131C16.7376 24.3173 16.6274 24.1778 16.5615 24.0107C16.4957 23.8436 16.4779 23.6584 16.5117 23.4795C16.5456 23.3006 16.629 23.1398 16.7471 23.0156L21.1289 18.4111L21.457 18.0664L21.1289 17.7217L16.7471 13.1172L16.7412 13.1104L16.6836 13.0459C16.6291 12.9784 16.5839 12.9018 16.5498 12.8184C16.5043 12.707 16.4795 12.5865 16.4785 12.4639C16.4775 12.3412 16.5002 12.2197 16.5439 12.1074C16.5877 11.9953 16.6513 11.8947 16.7305 11.8115C16.8096 11.7284 16.9027 11.6642 17.0029 11.6211C17.1031 11.578 17.2097 11.5566 17.3164 11.5576Z" fill="#003B87" stroke="#003B87"/>
+</svg>
+
+            </button>
+            <!-- end boton de navegacion siguiente -->
+          </div>
+          <!-- end botones de navegacion -->
+        </div>
+      </div>
+      <!-- end carousel testimonios -->
+    </div>
+  </div>
+</section>
+
+
+<script>
+let testus= {{ module.testimonios_lista|tojson}}
+</script>

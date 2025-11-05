@@ -1,0 +1,166 @@
+
+
+/* ===== HERO SECTION LAYOUT ===== */
+@media (max-width: 1024px) {
+   
+    section[role="banner"] {
+        flex-direction: column;
+        position: relative;
+    }
+}
+
+/* Scroll interno de opciones de grado */
+#custom-grade-options {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Opción seleccionada */
+.selected-option {
+    background-color: #F2F4F6 !important;
+}
+
+/* Checkboxes */
+.checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.iti {
+    width: 100%;
+}
+
+/* Oculta el cursor nativo sobre el overlay */
+.video-overlay {
+    cursor: none;
+    position: relative;
+    /* para que el custom se posicione respecto a este contenedor */
+}
+
+/* Estilos del cursor personalizado */
+.video-custom-cursor {
+  bottom: 35px;
+  height: 100px;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  right: 21px;
+  transform: translate(-50%, -50%);
+  transition: opacity .2s ease;
+  width: 100px;
+}
+
+@media screen and (min-width: 1024px) {
+  .video-custom-cursor {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 164px;
+    height: 164px;
+  }
+}
+
+.overlay-cloud::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 51%, white 100%);
+    pointer-events: none;
+}
+
+.title-shape {
+    background-image: url('https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/image9.png'), url('https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/image9.png');
+    background-size: 100% 100%, 100% 100%;
+    background-position: 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    z-index: 44;
+}
+
+.hero-banner .hsfc-Step__Content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-Heading{
+  font-family: Otterco, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size:28px;
+  color:#003170;
+  letter-spacing: 0.1em;
+  line-height: 28px;
+  text-align:center;
+}
+.hero-banner .hsfc-FormWrapper .hsfc-Step h3.hsfc-Heading {
+  color:#f85245;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-RichText{
+  font-size:14px;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Row  span a {
+  text-decoration:underline;
+  color: #0000ff;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Row  span a:hover {
+    text-decoration:underline;
+  color: #003bb7;
+
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-Row{
+  margin-bottom:8px;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-Row [type=checkbox]:checked+span, [type=checkbox]:not(:checked)+span{
+font-size:14px;
+}
+
+.hero-banner .form-title, 
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DropdownOptions__Search{
+  display:none;
+  visibility:hidden;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DropdownOptions__List li:nth-last-child(-n+3) {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background:#f2f4f6;
+}
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]+span:before, [type=checkbox]:checked+span:after{
+  border:1px solid #003170;
+  border-radius:0;
+  height: 20px;
+  width: 20px;
+}
+
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]:checked+span:after {
+    background-color: #003b87;
+    height: 14px;
+    left: 7px;
+    width: 14px;
+}
+
+
+.form-logo {
+    max-width: 350px;
+    margin: 0 auto;
+    width: auto;
+    display: flex;
+    justify-content: center; 
+}
+
+.form-logo img {
+  object-fit: contain;
+}
+
+#banner-hero  [data-hsfc-id=Renderer] .hsfc-Step .hsfc-Step__Content {
+  padding-top: 0;
+}

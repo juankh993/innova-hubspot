@@ -1,0 +1,114 @@
+{# *********************************************
+   * POWER THEME Blog Post V1.0               
+   ********************************************* #}
+
+{%- if theme.seo.schema.is_schema_blog_post %}
+{% require_head %}
+<!-- Blog Post Schema  -->
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage"
+        },
+        "name": "{{ content.name|safe|striptags|escapejson }}",
+        "headline": "{{ content.name|safe|striptags|escapejson }}",
+        "image": "{{ content.featured_image }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ content.blog_author.full_name|escapejson }}"
+        },
+        "datePublished": "{{ content.publish_date|datetimeformat('%B %e, %Y %l %p') }}",
+        "dateModified": "{{ content.updated|datetimeformat('%B %e, %Y %l %p') }}",
+        "abstract": "{{ content.meta_description|striptags|safe|escapejson}}",
+        "text": "{{ content.post_body|striptags|safe|escapejson }}",
+        "url": "{{ content.absolute_url }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site_settings.company_name|escapejson }}",
+            "logo": { 
+                "@type": "ImageObject",
+                "url": "{{ site_settings.logo_src }}"
+            }
+        },
+        "inLanguage": "{{ content.language }}",
+        "wordCount": "{{ content.post_body|wordcount }}",
+        "keywords": "{{ content.tag_list }}"
+    }
+</script>
+{% end_require_head %}
+{% endif -%}
+
+{% macro get_min_by_words(words) %}
+  {% set avgWordPerMin = 130 %}
+  {% set wordCount = words | wordcount %}
+  {% set minutes = wordCount // avgWordPerMin %}
+  {% if minutes == 0 %}
+    {% set minutes = "< 1" %}
+  {% endif %}
+  {{ minutes }}
+{% endmacro %}
+
+<div class="pwr-post-body">
+  <progress id="pwr-progress-bar" max="0" value="0"></progress>
+  {% if module.script_link|trim != '' %}
+  <div class="pwr-post-social {% if module.layout.float %}pwr-post-social--is-float{% endif %}">
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+  <script type="text/javascript" src="{{ module.script_link }}"></script>
+  {% else %}
+    <div class="pwr-post-social">
+      {% blog_social_sharing "blog_social_sharing" overrideable=False, label='Blog Social Sharing' %}
+    </div>
+  {% endif %}
+  <div class="pwr-post-content">
+    {{ content.post_body }}
+
+    {% if module.layout.show_author %}
+    <div class="pwr-author-profile__wrapper pwr--sec-padding-t-md pwr--sec-padding-b-md">
+      <div class="pwr-author-profile">
+        {% if content.blog_post_author.avatar %}
+        <div class="pwr-avatar">
+          <div class="pwr-avatar__round">
+            <img src="{{ content.blog_post_author.avatar }}" alt="avatar" class="pwr-avatar__img" width="290">
+          </div>
+        </div>
+        {% endif %}
+        <div class="pwr-author-profile__info">
+          <a href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">
+            <h4 class="pwr-author-profile__name pwr--toc-ignore">{{ content.blog_post_author.display_name }}</h4>
+          </a>
+          {% if content.blog_post_author.bio -%}
+          <span class="pwr-author-profile__bio">{{ content.blog_post_author.bio }}</span>
+          {%- endif %}
+          <div class="pwr-author-profile__social">
+            {% if content.blog_post_author.email -%}
+            <a href="mailto:{{ content.blog_post_author.email }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="envelope" style="SOLID" unicode="f0e0" %}</a>
+            {%- endif %} 
+            {% if content.blog_post_author.website -%}
+            <a href="{{ content.blog_post_author.website }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="link" style="SOLID" unicode="f0c1" %}</a>
+            {%- endif %} 
+            {% if blog_author.has_social_profiles && content.blog_post_author.facebook -%}
+            <a href="{{ content.blog_post_author.facebook }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="facebook-f" style="SOLID" unicode="f39e" %}</a>
+            {%- endif %} 
+            {% if blog_author.has_social_profiles && content.blog_post_author.linkedin -%}
+            <a href="{{ content.blog_post_author.linkedin }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="linkedin-in" style="SOLID" unicode="f0e1" %}</a>
+            {%- endif %} 
+            {% if blog_author.has_social_profiles && content.blog_post_author.twitter -%}
+            <a href="{{ content.blog_post_author.twitter }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="twitter" style="SOLID" unicode="f099" %}</a>
+            {%- endif %} 
+          </div>
+        </div>
+      </div>                  
+    </div>
+    {% endif %}
+
+    {% if group.allow_comments %}
+    <div class="pwr-form pwr-post-comments  {% if !module.layout.show_author %}pwr--sec-padding-t-md{% endif %}">
+      <h4 class="pwr--margin-t-0">{{ module.translation.txt_comments_title }}</h4>
+      {% blog_comments "blog_comments" overrideable=False, label='Blog Comments' %}
+    </div>
+    {% endif %}
+  </div>
+</div>

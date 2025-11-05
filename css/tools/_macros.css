@@ -1,0 +1,31 @@
+/* ==========================================================================
+   MACROS                                                
+   ========================================================================== */
+
+   {% include '../_pwr-style-settings.css' %}
+
+    /* Is used to reduce font-sizes for smaller screens */
+    {% macro mobileReduceFontSize(value) -%}
+        {% set newVal = (value * (1 - fontSizeReduceByFactor))|round(0, 'ceil') %}
+        {% if newVal < fontSizeNotLowerThan %}
+            {% set newVal = fontSizeNotLowerThan %}
+        {% endif %}
+        {{ newVal }}
+    {%- endmacro %}
+
+    /* Is used to reduce spacing (padding, margin) for smaller screens */
+    {% macro mobileReduceSize(value) -%}
+        {% set newVal = (value * (1 - sizeReduceByFactor))|round(0, 'ceil') %}
+        {{ newVal }}
+    {%- endmacro %}
+
+    /* Generates rgba value from color object */
+    {% macro rgbaFromColor(colorVal) -%}
+        {% set colorhex = colorVal.color|convert_rgb %}
+        {% if colorVal.opacity != null %}
+            {% set coloropacity = colorVal.opacity / 100 %}
+        {% else %}
+            {% set coloropacity = '1' %}
+        {% endif %}
+        rgba({{ colorhex }}, {{ coloropacity }})
+    {%- endmacro %}

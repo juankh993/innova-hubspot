@@ -1,0 +1,153 @@
+[ {
+  "id" : "b2c0e9c2-5397-a3f7-c81d-f43a668f1ba5",
+  "name" : "decorative_image",
+  "label" : "Imagen decorativa",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/linea-derecha.png",
+    "alt" : "Decoración de sección",
+    "loading" : "lazy",
+    "width" : 207,
+    "height" : 587,
+    "max_width" : 207,
+    "max_height" : 587
+  }
+}, {
+  "id" : "beeae6db-7c6e-3958-9c10-f8d65bb6481a",
+  "name" : "title_principal",
+  "label" : "Título principal",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Educación que"
+}, {
+  "id" : "2402700a-6622-3de0-80f1-4c79e5642a5f",
+  "name" : "featured_title",
+  "label" : "Título resaltado",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "transforma"
+}, {
+  "id" : "769aa795-4f63-ff7a-f27f-bcda627ea838",
+  "name" : "slides",
+  "label" : "Iterador de tarjetas",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "1cc7e907-7f41-36de-daba-6c224e2bc5b0",
+    "name" : "slide_image",
+    "label" : "Imagen tarjeta",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "Imagen icónica",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    }
+  }, {
+    "id" : "0a39f399-580e-05cd-42d9-a1b46844e4b7",
+    "name" : "heading_title",
+    "label" : "Título de la tarjeta",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "infraestructura"
+  }, {
+    "id" : "d59cca51-db80-b1c8-88e5-b64e30c17a4e",
+    "name" : "heading_subtitle",
+    "label" : "subtítulo de la tarjeta",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "icónica"
+  }, {
+    "id" : "547b6e86-b081-a723-3864-d3385a0ddde1",
+    "name" : "description",
+    "label" : "Descripción de la tarjeta",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<span>Espacios diseñados para el aprendizaje de nuestros estudiantes: piscina semiolímpica, gaming room, maker space y canchas deportivas.</span>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "slide_image" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "Imagen icónica",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    },
+    "heading_title" : "infraestructura",
+    "heading_subtitle" : "icónica",
+    "description" : "<span>Espacios diseñados para el aprendizaje de nuestros estudiantes: piscina semiolímpica, gaming room, maker space y canchas deportivas.</span>"
+  }, {
+    "slide_image" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "Imagen icónica",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    },
+    "heading_title" : "infraestructura",
+    "heading_subtitle" : "icónica",
+    "description" : "<span>Espacios diseñados para el aprendizaje de nuestros estudiantes: piscina semiolímpica, gaming room, maker space y canchas deportivas.</span>"
+  }, {
+    "slide_image" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "Imagen icónica",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    },
+    "heading_title" : "infraestructura",
+    "heading_subtitle" : "icónica",
+    "description" : "<span>Espacios diseñados para el aprendizaje de nuestros estudiantes: piscina semiolímpica, gaming room, maker space y canchas deportivas.</span>"
+  } ]
+} ]

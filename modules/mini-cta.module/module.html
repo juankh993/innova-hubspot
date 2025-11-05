@@ -1,0 +1,30 @@
+{# *********************************************
+   * POWER Theme Mini Module CTA V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+   {%- macro get_aos(aos_el) %}
+    {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+      {%- if aos_el.animation_type == 'default' %}
+        data-aos="{{ theme.animation.aos.animation_type }}"
+      {% else %}
+        data-aos="{{ aos_el.animation_type }}"
+      {% endif -%} 
+      {%- if aos_el.delay %}
+        data-aos-delay="{{ aos_el.delay }}"
+      {% else %}
+        data-aos-delay="{{ theme.animation.aos.delay }}"
+      {% endif -%}
+    {% endif -%}  
+  {% endmacro -%}
+
+<div class="pwr-mini-cta pwr--clearfix {% if module.layout.alignment == 'center' %} pwr-mini-cta--align-c {% elif module.layout.alignment == 'right' %}pwr-mini-cta--align-r{% endif %} {% if module.style.cta_size == 'full-width' %}pwr-mini-cta--full-width{% endif %}" style="{% if module.layout.margin_top %}margin-top: {{module.layout.margin_top}}px;{% endif %} {% if module.layout.margin_bottom %}margin-bottom: {{module.layout.margin_bottom}}px;{% endif %} {% if module.layout.margin_right %}margin-right: {{module.layout.margin_right}}px;{% endif %} {% if module.layout.margin_left %}margin-left: {{module.layout.margin_left}}px;{% endif %}"
+  {# Animation on Scroll #}
+  {{ get_aos(module.animation) }}       
+>
+    {% if module.cta != 'null' && module.cta %}
+    <div class="pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+      {% cta "name" guid="{{module.cta}}" %}
+    </div>
+    {% endif %}
+</div> 

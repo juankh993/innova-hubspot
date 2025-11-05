@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon-module-hero</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" stroke="#516F90">
+            <rect id="Rectangle-Copy-3" stroke-width="10" fill-opacity="0.3" fill="#516F90" x="5" y="45" width="118" height="48"></rect>
+            <polyline id="Path-2" stroke-width="10" points="5.18719338 128 5.18719338 112 122.981567 112 122.981567 128"></polyline>
+            <polyline id="Path-3-Copy" stroke-width="10" fill="#FFFFFF" points="54 92.7856695 75 71.7856695 96 92.7856695"></polyline>
+            <polyline id="Path-3" stroke-width="10" fill="#FFFFFF" points="16 92.7856695 44.7856695 64 73.571339 92.7856695"></polyline>
+            <rect id="Rectangle-Copy-3" stroke-width="10" x="5" y="45" width="118" height="48"></rect>
+            <rect id="Rectangle-Copy-6" stroke-width="10" x="5" y="5" width="118" height="22"></rect>
+            <circle id="Oval" stroke-width="6" fill="#FFFFFF" cx="101" cy="64" r="5"></circle>
+        </g>
+    </g>
+</svg>

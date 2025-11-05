@@ -1,0 +1,189 @@
+/*********************************************/
+/* =^..^= =^..^= =^..^= =^..^= =^..^= =^..^= */
+/*                                           */
+/* CUSTOM STYLE OVERWRITES                   */
+/*                                           */
+/* =^..^= =^..^= =^..^= =^..^= =^..^= =^..^= */
+/*********************************************/
+
+{% include './_pwr-style-settings.css' %}
+
+/****************************************************************************/
+/*                                                                          */
+/* IF YOU WOULD LIKE TO OVERWRITE CSS STYLE SETTINGS TO FURTHER CUSTOMIZE   */ 
+/* THE TEMPLATE TO YOUR NEEDS, PLEASE USE THIS FILE                         */
+/*                                                                          */
+/****************************************************************************/
+
+/* EXAMPLE - Landing Page Overwrites */
+
+/* LP Heading - Lineheight */
+.lp-squeeze-wrapper h1,  
+.lp-basic-wrapper h1 {
+    line-height: 1.2em;
+}
+
+/* LP Horizontal Box - Left Content Vertical Top alignment */
+.lp-premium-content-wrapper .pwr-sec-form__content--v-align {
+    align-items: initial;
+}
+
+/* EXAMPLE - ENTRY PAGE OF DEMO SITE */
+
+/* Common */
+.pwr-entry-wrapper .pwr-sec__title {
+    line-height: 1.3em;
+}
+
+/* Hero */
+.pwr-entry-wrapper .pwr-hero {
+    height: 700px;
+}
+.pwr-entry-wrapper .pwr-hero__title {
+    font-size: 130px;
+    max-width: 950px;
+}
+.pwr-entry-wrapper .pwr-hero__desc {
+    max-width: 100%;
+}
+@media (max-width: 1100px ) {
+  .pwr-entry-wrapper .pwr-hero__title {
+      font-size: 110px;
+      line-height: 1em;
+  }
+}
+@media (max-width: 576px ) {
+  .pwr-entry-wrapper .pwr-hero__title {
+      font-size: 66px;
+  }
+}
+
+
+
+/* List of Templates */
+.pwr-entry-wrapper .pwr-image-box--smaller .pwr-image-box__title {
+    font-size: 15px;
+}
+.pwr-entry-wrapper .pwr-image-box.pwr-image-box--4cols.pwr-image-box--one-by-one .pwr-image-box__img {
+    height: 214px;
+
+}
+.pwr-entry-wrapper .pwr-image-box__below {
+    padding: 25px 0;
+  
+}
+
+/* CTA module titles */
+.pwr-entry-wrapper .pwr-sec-cta__title {
+    max-width: 880px;
+}
+
+/* Template Features */ 
+.pwr-entry-wrapper .pwr-sec-txt .pwr-sec-txt__title-intro {
+    margin-bottom: 5px;
+}
+.pwr-entry-wrapper .pwr-sec-steps .pwr-step__desc {
+    line-height: 1.8em;
+}
+.pwr-entry-wrapper .pwr-sec-steps:not(.pwr-sec-steps--with-intro) .pwr-step {
+    padding: 40px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 10px;
+}
+@media (max-width: 575px) {
+  .pwr-entry-wrapper .pwr-sec-steps .pwr-step {
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+
+/* Mockup and layout variant sections */
+.pwr-entry-wrapper .pwr-sec-mockup .pwr-sec-mockup__title-intro, 
+.pwr-entry-wrapper .pwr-sec-steps--with-intro .pwr-sec-steps__title-intro {
+    color: {{ primaryColor }};
+    font-size: 100px;
+    font-weight: 800;
+    margin-bottom: 0px;
+    line-height: 1em;
+    
+}
+.pwr-entry-wrapper .pwr-sec-mockup .pwr-sec-mockup_title, 
+.pwr-entry-wrapper .pwr-sec-steps--with-intro .pwr-sec-steps__title {
+    line-height: 1.3em;
+}
+.pwr-entry-wrapper .pwr-sec-steps .pwr-sec__title + .pwr-sec__desc {
+    margin-top: 15px;
+}
+.pwr-entry-wrapper .pwr-sec-mockup .pwr-sec-mockup__desc, 
+.pwr-entry-wrapper .pwr-sec-steps--with-intro .pwr-sec-steps__desc {
+    line-height: 1.8em;
+}
+.pwr-entry-wrapper .pwr-sec-steps--with-intro .pwr-step__img {
+    height: auto;
+    margin-bottom: 20px;
+}
+.pwr-entry-wrapper .pwr-sec-steps--with-intro .pwr-step {
+    margin: 0 10px 10px;
+    padding: 0;
+}
+@media (max-width: 575px) {
+  .pwr-entry-wrapper .pwr-sec-steps .pwr-step {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+  }
+}
+
+/* Modules and cross-browser section */
+.pwr-entry-wrapper .pwr-sec-maintenance-error__img--bottom {
+    margin-top: 60px;
+  
+@media (min-width: 768px) and (max-width: 1024px) {
+    .pwr-image-box-smaller .pwr-image-box__title {
+        font-size: 20px; /* Ajusta según sea necesario */
+    }
+
+    .pwr-image-box-4cols .pwr-image-box-one-by-one .pwr-image-box__img {
+        height: auto; /* Ajusta el alto para que no sea fijo */
+        width: 100% !important; /* Asegura que las imágenes no se desborden */
+    }
+
+    .pwr-image-box_below {
+        padding: 15px 0; /* Ajusta el espaciado */
+    }
+}
+  @media (min-width: 768px) and (max-width: 1139px) {
+    .row-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra los cuadros */
+    }
+
+    .row-fluid [class*="span"] {
+        width: calc(50% - 20px); /* Dos cuadros por fila */
+        min-height: auto; /* Evita que se estiren */
+        margin: 10px; /* Espaciado entre cuadros */
+    }
+}
+  @media (min-width: 768px) and (max-width: 819px) {
+    .row-fluid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .row-fluid [class*="span"] {
+        width: calc(50% - 20px) !important; /* Fuerza a dos columnas */
+        min-height: auto !important;
+        margin: 10px !important;
+    }
+}
+ ..pwr-abs-full {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    min-height: 300px !important; /* Ajusta el alto mínimo según la necesidad */
+}

@@ -1,0 +1,200 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_service.jpg
+  label: POWER THEME Services Single
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', 
+        label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='PROMOTE YOUR SERVICE', 
+                    title_sel_heading='h1', 
+                    layout={full_width:false,isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"img_vid",
+                        background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},
+                        background_gradient_direction:"diag_bl_tr",
+                        background_image:{alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        background_image_position:"parallax",
+                        background_position:"center",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},
+                        overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},
+                        overlay_gradient_opacity:80,
+                        scheme:"dark",
+                        title_extra_large:false
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    No doubt that you have awesome services. With our POWERful modules you can present them properly.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='', 
+                    layout={section_variant:"2col",padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md"}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    Service description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed-diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua . Lorem ipsum dolor sit amet, consetetur sadipscing elit. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat dolor sit
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Mockup',
+                    intro_to_title='', 
+                    title='SERVICE FEATURE ONE', 
+                    title_sel_heading='h2',
+                    mockup={alt:"mockup-computer-2",height:600,'src':get_asset_url('../images/mockups/pwr-img_mockup_surface.png'),width:993}, 
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"], 
+                    layout={content_width:45,full_width:true,max_mockup_width:993,mockup_width:100,section_variant:"mockup_right"}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    Whaaat? Can't believe what you are seeing? Rub your eyes as long as you want. We also have a module for presenting your device mockups. Position the image left or right.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='SCHEDULE A MEETING WITH AN EXPERT', 
+                    description='', 
+                    cta='777eba8b-a03f-4832-bbd1-fe2086b763ae', 
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        cta_style:"pwr-cta--regular-solid-primary-background",
+                        scheme:"dark"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Steps',
+                    intro_to_title='', 
+                    title='HERE IS HOW THE SERVICE WORKS', 
+                    step=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",title:"Sign Up",animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",title:"Download",animation:{animation_type:"default",delay:200}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",title:"Setup",animation:{animation_type:"default",delay:350}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",title:"Enjoy",animation:{animation_type:"default",delay:500}}
+                        ], 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p><span>Just follow these four simple steps, sit back, relax and let us do the rest for you and your team.</span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section Video #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "video" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-video', 
+                    label='Video',
+                    youtube_link='https://www.youtube.com/watch?v=eyQsYlBc7Ew', 
+                    layout={section_variant:"content"}, 
+                    style={background:"img_vid",background_image:{alt:"bg-video-161758688",height:1080,'src':get_asset_url('../images/video/pwr-img_video_meeting.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},scheme:"dark"}
+                    %}
+                    
+                    {% module_attribute "content" %}
+                    <h2>SERVICE VIDEO</h2><p>Showcase your awesome service with quality video content. <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p><table style="width: 100%;"><tbody><tr><td style="width: 50%;"><h3>27K</h3></td><td style="width: 50%;"><h3>1.2MIO</h3></td></tr><tr><td style="width: 50%;">Lorem ipsum dolor sit amet, <br>consetetur sadipscing elitr, sed<br>diam sit amet, consetetur elitr.</td><td style="width: 50%;">Lorem ipsum dolor sit amet, <br>consetetur sadipscing elitr, sed<br>diam sit amet, consetetur elitr.</td></tr></tbody></table>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Video #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonial Slider',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    testimonial=[
+                    {avatar:{alt:"team-small-07",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_01.png'),width:285},job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:"<span>“When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve.”</span>"},
+                    {avatar:{alt:"team-full-02",height:470,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:387},job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:"<span>“When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve.”</span>"},
+                    {avatar:{alt:"team-small-05",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"Astronaut,  Apollo 17",name_:"Gene Cernan",quote:"<span>“When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve.”</span>"},
+                    {avatar:{alt:"team-full-03-1",height:470,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:387},job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:"<span>“When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve.”</span>"}
+                    ], 
+                    slider={autoplay:false,autoplay_time:1000,nav_arrows:false,nav_bullets:true}, 
+                    layout={padding_bottom:"pwr--sec-padding-b-sm",section_variant:"multiple"}, 
+                    style={background:"",background_color:{color:"#ff0000",opacity:60},overlay_color:{color:theme.colors.brand_colors.primary_color.color,opacity:60},scheme:"light"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='SCHEDULE A MEETING WITH AN EXPERT', 
+                    description='', 
+                    cta='35cf1be6-1789-41f4-a76a-1e1ca3bf1327', 
+                    style={background:"img_vid",background_image:{alt:"bg-man-keyboard-519816976",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_man-keyboard.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

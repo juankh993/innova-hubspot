@@ -1,0 +1,77 @@
+<header class="submenu-header min-h-[80px]">
+    <nav
+      class="sticky bottom-0 flex justify-center items-center !max-w-[1324px] w-full h-20 !mx-auto bg-white rounded-tl-[10px] rounded-tr-[10px] lg:bg-[#003B87] lg:rounded-full z-50 uppercase border-2 border-white lg:top-4 lg:left-0 lg:right-0"
+      role="navigation" aria-label="Navegación principal" id="fixed-blue-nav">
+      <ul
+        class="flex justify-around w-full items-center [&>li>a]:text-white md:[&>li>a]:text-[14px] lg:[&>li>a]:text-[20px] [&>li>a]:transition-colors [&>li>a]:duration-150 [&>li>a]:ease-in-out px-[20px] lg:px-0"
+        role="tablist">
+        {% set section_ids = [
+            "section-education",
+            "section-value-props",
+            "section-testimonials",
+            "section-location"
+          ] %}
+        
+        {% set click_ids = [
+          "Menu_Diferenciales",
+          "Menu_Valores",
+          "Menu_Testimonios",
+          "Menu_Ubicación"
+        ] %}
+        
+        {% for item in module.nav_items %}
+          <li class="hidden lg:flex" role="presentation">
+            <a 
+              href="#{{ section_ids[loop.index0] }}"
+              id="{{ click_ids[loop.index0] }}"
+              class="tab-link px-2 py-1 rounded hover:text-[#FDB731] navbar-estilos Menu_botones"
+              role="tab">
+              {{ item.text_name }}
+            </a>
+          </li>
+        {% endfor %}
+        
+  
+  
+        {# Botón Desktop #}
+        <li class="hidden lg:flex justify-center items-center" role="presentation">
+          <a href="#banner-hero"
+            class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] border-2 border-[#003B87] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
+            role="tab"
+             id="CTA_Inscribete">
+            <span class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+            <span class="relative z-10 font-otterco uppercase texture-image">
+              {{ module.button_text }}
+            </span>
+            <svg class="alpha-target" width="24" height="24" viewBox="0 0 30 30" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 5.07422C17.1295 5.07422 21.6051 7.85987 24 12C21.6051 16.1401 17.1295 18.9258 12 18.9258C6.87052 18.9258 2.39491 16.1401 0 12C2.3949 7.85987 6.87049 5.07422 12 5.07422Z"
+                fill="#EDED70" />
+              <path
+                d="M16.0639 9.23948C15.8219 9.52398 15.4652 9.70233 15.0618 9.70233C14.3357 9.70233 13.7497 9.11634 13.7497 8.39023C13.7497 8.06326 13.8686 7.76602 14.0639 7.53672C13.4312 7.24373 12.7306 7.07812 11.9875 7.07812C9.26989 7.07812 7.07031 9.28195 7.07031 11.9953C7.07031 14.7087 9.27413 16.9125 11.9875 16.9125C14.7009 16.9125 16.9047 14.7087 16.9047 11.9953C16.9047 10.972 16.5905 10.0208 16.0597 9.23524"
+                fill="#03613D" />
+            </svg>
+          </a>
+        </li>
+  
+        {# Botón Mobile/Tablet #}
+        <li class="flex lg:hidden justify-center items-center w-full" role="presentation">
+          <a href="#banner-hero" class="secondary-button w-full sm:w-[60%] CTA_Inscribete" role="tab" id="CTA_Inscribete">
+            <span class="secondary-button__back">
+              {{ module.button_text }}
+            </span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 5.07422C17.1295 5.07422 21.6051 7.85987 24 12C21.6051 16.1401 17.1295 18.9258 12 18.9258C6.87052 18.9258 2.39491 16.1401 0 12C2.3949 7.85987 6.87049 5.07422 12 5.07422Z"
+                fill="#EDED70" />
+              <path
+                d="M16.0639 9.23948C15.8219 9.52398 15.4652 9.70233 15.0618 9.70233C14.3357 9.70233 13.7497 9.11634 13.7497 8.39023C13.7497 8.06326 13.8686 7.76602 14.0639 7.53672C13.4312 7.24373 12.7306 7.07812 11.9875 7.07812C9.26989 7.07812 7.07031 9.28195 7.07031 11.9953C7.07031 14.7087 9.27413 16.9125 11.9875 16.9125C14.7009 16.9125 16.9047 14.7087 16.9047 11.9953C16.9047 10.972 16.5905 10.0208 16.0597 9.23524"
+                fill="#03613D" />
+            </svg>
+          </a>
+        </li>
+  
+      </ul>
+    </nav>
+  </header>

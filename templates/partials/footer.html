@@ -1,0 +1,18 @@
+<!--
+  templateType: global_partial
+  label: POWER Footer
+-->
+<footer class="footer">
+ 
+  <div class="footer__container">
+    {%- if !content || !content.widgets.page_settings.body.header_footer_style && content.site_page || content.widgets.page_settings.body.header_footer_style == 'page' %}
+    	{% module "footer_page" path='../../modules/footer', logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"}, layout={footer_variant='full'}, label='PAGE Footer', overrideable=False %} 
+    {% endif -%}
+    {% if !content || !content.widgets.page_settings.body.header_footer_style && content.landing_page || content.widgets.page_settings.body.header_footer_style == 'landing_page' %}
+    	{% module "footer_lp" path='../../modules/footer', logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"}, layout={footer_variant='copyright_bar'}, label='LANDING PAGE Footer', overrideable=False %} 
+   	{% endif -%}
+    {%- if !content || !content.widgets.page_settings.body.header_footer_style && group || content.widgets.page_settings.body.header_footer_style == 'blog_post' %}
+        {% module "footer_blog" path='../../modules/footer', logo={override_inherited_src:true,"src":get_asset_url('../../images/logos/power/pwr-img_logo_power-white.svg'),width:113,height: 113,alt:"power theme logo"}, layout={footer_variant='full'}, label='BLOG Footer', overrideable=False %} 
+    {% endif -%}
+  </div>
+</footer>

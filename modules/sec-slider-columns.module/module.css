@@ -1,0 +1,18 @@
+.swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+  }
+
+  .swiper-paginacion .swiper-pagination-bullet {
+    background-color: #003B87 !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-paginacion .swiper-pagination-bullet-active {
+    background-color: #003B87 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #003B87 !important;
+    transform: scale(1.2) !important;
+  }

@@ -1,0 +1,137 @@
+{# *********************************************
+   * POWER Theme Sub Module Team V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{# style reduced #}
+{% macro get_reduced_style(team, isLink, href) %}
+  {% if isLink %}
+    <a href="{{ href }}" {% if team.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if team.link.no_follow %}rel="nofollow"{% endif %} class="pwr-team-member pwr-team-member--style-reduced {% if isLink %}pwr-team-member--is-link{% endif %}">
+      <div class="pwr-3D-box pwr--padding-b-md">    
+        <div class="pwr-team-member__img pwr-team-member__img--style-reduced pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if team.img %}data-bgset="{{ resize_image_url(team.img.src,300) }} 300w, {{ resize_image_url(team.img.src,600) }} 600w" data-sizes="auto" style="background-position: {{ module.style.image_horizontal_position }}% {{ module.style.image_vertical_position }}%;"{% endif %}>
+          <div class="pwr-team-member__overlay"></div>
+          <div class="pwr-team-member__info-box--style-reduced pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+            <span class="pwr-team-member__more-link">{{ module.translation.txt_link }}</span>
+          </div>
+        </div>
+      </div>
+      <span class="pwr-team-member__name">{{ team.name_ }}</span>
+      <span class="pwr-team-member__job-title pwr-team-member__job-title--style-reduced">{{ team.job_title }}</span>
+      <span class="pwr-team-member__more-link pwr-team-member__more-link--mobile">{{ module.translation.txt_link }}</span>
+    </a>
+  {% else %}
+    <div class="pwr-team-member pwr-team-member--style-reduced">
+      <div class="pwr--padding-b-md">    
+        <div class="pwr-team-member__img pwr-team-member__img--style-reduced lazyload" {% if team.img %}data-bgset="{{ resize_image_url(team.img.src,300) }} 300w, {{ resize_image_url(team.img.src,600) }} 600w" data-sizes="auto" style="background-position: {{ module.style.image_horizontal_position }}% {{ module.style.image_vertical_position }}%;"{% endif %}>
+        </div>
+      </div>
+      <span class="pwr-team-member__name">{{ team.name_ }}</span>
+      <span class="pwr-team-member__job-title pwr-team-member__job-title--style-reduced">{{ team.job_title }}</span>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{# style full #}
+{% macro get_full_style(team, isLink, href) %}
+  <div class="pwr-team-member pwr-team-member--style-full {% if isLink %}pwr-team-member--is-link{% endif %} pwr-touch-btn-container" style="z-index: {{ index }}">
+    <div class="pwr-3D-box">
+      <div class="pwr-team-member__img pwr-team-member__img--style-full pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if team.img %}data-bgset="{{ resize_image_url(team.img.src,400) }} 400w, {{ resize_image_url(team.img.src,800) }} 800w" data-sizes="auto" style="background-position: {{ module.style.image_horizontal_position }}% {{ module.style.image_vertical_position }}%;"{% endif %}>
+        <div class="pwr-team-member__overlay"></div>
+        <div class="pwr-touch-btn">{{ module.translation.txt_touch }}<span class="pwr-touch-btn__icon"></span></div> 
+        <div class="pwr-team-member__info-box--style-full pwr-3D-box__info-box pwr-3D-box__info-box--centered"> 
+          <span class="pwr-team-member__name">{{ team.name_ }}</span>
+          <span class="pwr-team-member__job-title pwr-team-member__job-title--style-full">{{ team.job_title }}</span>
+          {% if team.description %}
+          <span class="pwr-rich-text pwr-team-member__desc">{{ team.description }}</span> 
+          {% endif %}
+          {% if team.contact %}
+          <div class="pwr-team-member__contact">
+            {% if team.email %}
+            <a href="mailto:{{ team.email }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="envelope" style="SOLID" unicode="f0e0" %}</a>
+            {% endif %}
+            {% if team.phone %}
+            <a href="tel:{{ team.phone }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="phone" style="SOLID" unicode="f095" %}</a>
+            {% endif %}            
+            {% if team.facebook %}
+            <a href="{{ team.facebook }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="facebook-f" style="SOLID" unicode="f39e" %}</a>
+            {% endif %}
+            {% if team.twitter %}  
+            <a href="{{ team.twitter }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="twitter" style="SOLID" unicode="f099" %}</a>
+            {% endif %}
+            {% if team.linkedin %}  
+            <a href="{{ team.linkedin }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="linkedin-in" style="SOLID" unicode="f0e1" %}</a>
+            {% endif %}
+            {% if team.youtube %}  
+            <a href="{{ team.youtube }}?rel=author" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="youtube" style="SOLID" unicode="f167" %}</a>
+            {% endif %}
+            {% if team.skype %}  
+            <a href="skype:{{ team.skype }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="skype" style="SOLID" unicode="f17e" %}</a>
+            {% endif %}
+            {% if team.instagram %}  
+            <a href="{{ team.instagram }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="instagram" style="SOLID" unicode="f16d" %}</a>
+            {% endif %}
+            {% if team.reddit %}  
+            <a href="{{ team.reddit }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="reddit-alien" style="SOLID" unicode="f281" %}</a>
+            {% endif %}
+            {% if team.xing %}  
+            <a href="{{ team.xing }}" target="_blank" rel="noopener" class="pwr-social-icon">{% icon name="xing" style="SOLID" unicode="f168" %}</a>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if isLink %}
+          <a href="{{ href }}" {% if team.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if team.link.no_follow %}rel="nofollow"{% endif %} class="pwr-team-member__more-link pwr-team-member__more-link--style-full">{{ module.translation.txt_link }}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></a>
+          {% endif %}
+        </div>
+        <div class="pwr-team-member__name-tag {{module.style.name_box_style_variant}}">
+          <span class="pwr-team-member__name">{{ team.name_ }}</span>
+          <span class="pwr-team-member__job-title">{{ team.job_title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+
+
+
+<div class="pwr-sub-team {% if module.layout.section_variant == 'full' %}pwr-sec-team--style-full{% endif %} {% if module.layout.centered %}pwr--align-c{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+    
+  <div class="pwr-team-members pwr--clearfix">
+    
+    {% if module.team.link.url.href %}
+      {% set isLink = true %}
+      {% set href = module.team.link.url.href %}
+      {% if module.team.link.url.type == "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}            
+    {% else %}
+      {% set isLink = false %}
+    {% endif %}
+
+    {% if module.layout.section_variant == 'reduced' %}
+      {{ get_reduced_style(module.team, isLink, href) }}
+    {% elif module.layout.section_variant == 'full' %}
+      {{ get_full_style(module.team, isLink, href) }}
+    {% endif %}
+    
+  </div>
+
+</div>

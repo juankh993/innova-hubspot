@@ -1,0 +1,228 @@
+h3{
+   all: revert-layer;
+}
+.alpha-target {
+  mask-image: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png);
+  mask-mode: alpha;
+  mask-repeat: repeat;
+  mask-size: 100%;
+}
+
+.wave-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7.3px;
+  width: 100%;
+  height: 8px;
+  background-image: url('./public/assets/wave.svg');
+  background-repeat: repeat-x;
+}
+
+.tab-button {
+  color: #ffffff;
+}
+
+.navbar-estilos {
+  font-family: Otterco;
+  font-weight: 700; 
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+
+}
+
+.navbar-estilos.active {
+  color: #F85245;
+  background-color: #ffffff;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+}
+
+.navbar-estilos.active::before {
+  content: "";
+  position: absolute;
+  bottom: -10.8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 100px);
+  height: 37.5px;
+  background-image: url('https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/wave-new-home-tab.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  pointer-events: none;
+}
+
+.niza-estilos {
+  font-family: Otterco;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.overlay {
+
+  background-color: #122C3BCC
+}
+
+#pwr-header-fixed {
+  visibility: hidden;
+  display: none;
+}
+
+.secondary-button {
+  display: inline-flex;
+  height: 48px;
+  min-height: 48px;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 40px;
+  border: 2px solid #003b87;
+
+  color: #003b87;
+  text-align: center;
+
+  font-family: Otterco;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  span,
+  svg {
+    z-index: 1;
+  }
+
+  .secondary-button__back {
+    color: #003b87;
+    -webkit-text-fill-color: #003b87;
+    display: inline-block;
+    background-image: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+
+  &:hover {
+    &::before {
+      clip-path: circle(150% at 10% 0%);
+      transition: clip-path 0.3s ease-in-out;
+    }
+
+    .secondary-button__back {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-image: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png);
+      background-position: 50%;
+      background-size: cover;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003b87;
+    clip-path: circle(0% at 10% 0%);
+
+    transition: clip-path 0.3s ease-in-out;
+  }
+}
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]:checked+span:after {
+  left: 3.2px !important
+}
+
+.item-line {
+  width: 2px;
+  margin-top: 4px;
+  background-color: #cfe2e8;
+  flex-grow: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 0;
+}
+
+.accordion-content.open {
+  /* max-height se setea dinámicamente via JS */
+}
+
+/*.accordion-item button:hover .active-item {
+  background-color: #fce8c2 !important;
+}*/
+
+.tabs-home-title {
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  color: #003B87;
+}
+
+.tabs-home-description {
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #003B87;
+}
+
+#tabs-acordion-home {
+  width: 100%;
+}
+
+#sticky-cta-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+#sticky-cta-mobile.translate-y-full {
+  transform: translateY(100%);
+}
+
+#sticky-cta-mobile.translate-y-0 {
+  transform: translateY(0);
+}
+
+#sticky-cta-mobile.anchored {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .tabs-home-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .tabs-home-description {
+    font-weight: 700;
+    text-align: center;
+  }
+
+  /*.navbar-estilos.active::before {
+    bottom: -11px;
+    height: 38px;
+  }*/
+}

@@ -1,0 +1,115 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_career-overview.jpg
+  label: POWER THEME Career Overview
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='WE ARE HIRING!', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    basic_info=[], 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"bg-career-handshake-776540299",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_career-handshake.jpg'),width:1920},background_image_overlay:"color",background_image_position:"parallax",background_position:"center",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Simple Listing #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "simple-listing" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-simple-listing', 
+                    label='Simple Listing',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    list_item=[
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME HUBSPOT MARKETER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:150}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Part-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"LEAD MARKETER WITH EMAIL SKILLS",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:250}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Part-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"DEVOPS SOFTWARE ENGINEER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:350}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Remote"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"UI DEVELOPER FOR ECOMMERCE SITE",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:150}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Part-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"PART-TIME UI/UX DESIGNER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:250}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:350}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME WEB DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time, Remote"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-STACK DEV. FOR HUBSPOT",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:150}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:"Full-time, Remote"},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:250}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"MUNCIE, INDIANA"},{title:"COFFEE FLATRATE",icon:{name:"coffee",unicode:"f0f4",type:"SOLID"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr.",filtering:{},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},title:"PART-TIME LASAGNA EATER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:350}}
+                    ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--padding-t-0"}, 
+                    style={box_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},box_color_frontoverlay_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},filter_coloroverlay_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},overwrite_box_color:true,style_filter:true}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Simple Listing #}
+
+            {# Section Simple Listing #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "simple-listing" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-simple-listing', 
+                    label='Simple Listing',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    list_item=[
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"},{title:"+4 YEARS",icon:{name:"code",unicode:"f121",type:"SOLID"}},{title:"GIT",icon:{name:"code-branch",unicode:"f126",type:"SOLID"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"BERLIN, GERMANY"},{title:"WITH SALES SKILLS",icon:{name:"chart-line",unicode:"f201",type:"SOLID"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-TIME HUBSPOT MARKETER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"},{title:"HTML DESIRABLE",icon:{name:"html5",unicode:"f13b",type:"REGULAR"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"LEAD MARKETER WITH EMAIL SKILLS",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"LONDON, ENGLAND"},{title:"DOCKER GURU",icon:{name:"docker",unicode:"f395",type:"REGULAR"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"DEVOPS SOFTWARE ENGINEER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"REMOTE"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"UI DEVELOPER FOR ECOMMERCE SITE",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"PARIS, FRANCE"},{title:"ML/AI",icon:{name:"aws",unicode:"f375",type:"REGULAR"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-TIME JS BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"PART-TIME UI/UX DESIGNER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-TIME WEB DEVELOPER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-STACK DEV. FOR HUBSPOT",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"DUBLIN, IRELAND"}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{cats:""},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"FULL-TIME JAVA BACK-END DEVELOPER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}},
+                        {additional_info:[{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},title:"MUNCIE, INDIANA"},{title:"COFFEE FLATRATE",icon:{name:"coffee",unicode:"f0f4",type:"SOLID"}}],desc:"Lorem ipsum dolor sit amet, consetetur sadip scing elitr. sed diam nonumy eirmod tempor.",filtering:{},link:{no_follow:false,open_in_new_tab:false,url:{type:"EXTERNAL",href:"https://maka-agency-4740449.hs-sites.com/power-theme-career-job",content_id:null}},title:"PART-TIME LASAGNA EATER",translation:{txt_link:"GET HIRED NOW"},link_icon:{name:"arrow-right",unicode:"f061",type:"SOLID"},animation:{animation_type:"default",delay:50}}
+                        ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-sm",padding_top:"pwr--sec-padding-t-md",section_variant:"txt"}, 
+                    style={background:"",box_color_frontoverlay_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},filter_coloroverlay_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},overwrite_box_color:true,style_filter:true}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Simple Listing #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='GROW PERSONALLY AND PROFESSIONALLY', 
+                    description='', 
+                    cta='3aae108a-f997-45a8-9254-d588fafb682e', 
+                    layout={section_variant:"vertical"}, 
+                    style={background:"img_vid",background_image:{alt:"bg-office-meeting-table-unsplash",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-meeting-table.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark"}
+                    %}
+                    {% module_attribute "description" %}
+                    <span>Working for us means being part of creating products that shape the future of digital industries.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

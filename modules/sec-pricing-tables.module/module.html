@@ -1,0 +1,251 @@
+{#*********************************************
+ * POWER THEME Section Pricing Tables V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{%- macro random_int(len) -%}
+  {%- for _ in range(len) -%}
+    {{ range(10) | random }}
+  {%- endfor -%}
+{%- endmacro -%}
+
+{% set mhID1 = random_int(10) %}
+{% set mhID2 = random_int(10) %}
+{% set mhID3 = random_int(10) %}
+{% set mhID4 = random_int(10) %}
+{% set mhID5 = random_int(10) %}
+
+{% macro get_price_table_reduced(price_table) %}
+  <h4 class="pwr-price-table__title pwr-price-table__title--style-reduced pwr--toc-ignore" data-mh="{{ mhID1 }}">{{ price_table.title }}</h4>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-reduced" data-mh="{{ mhID2 }}">{{ price_table.description }}</span>
+  <span class="pwr-price-table__price pwr-price-table__price--style-reduced" data-mh="{{ mhID3 }}">{{ price_table.price }}</span>
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-cta--link pwr-price-table__cta" data-mh="{{ mhID4 }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}
+  <div class="pwr-cta--link pwr-price-table__cta" data-mh="{{ mhID4 }}">
+    <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>                    
+  </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro get_price_table_full_style_1(price_table) %}
+  <h4 class="pwr-price-table__title pwr-price-table__title--style-full pwr--toc-ignore" data-mh="{{ mhID1 }}">{{ price_table.title }}</h4>
+  <span class="pwr-price-table__price pwr-price-table__price--style-full-1" data-mh="{{ mhID2 }}">{{ price_table.price }}</span>
+  <div class="pwr-price-table-features pwr-price-table-features--style-full-1" data-mh="{{ mhID3 }}">
+    {% for feature in price_table.features %}
+    <div class="pwr-price-table-features__item pwr-price-table-features__item--style-full-1 {% if feature.deactivated %}pwr-price-table-features__item--disabled{% endif %}">
+      <span class="pwr-price-table-features__icon">{% icon name="check" style="SOLID" unicode="f00c" %}</span>
+      <span class="pwr-price-table-features__text">{{ feature.name_ }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-full-1" data-mh="{{ mhID4 }}">{{ price_table.description }}</span>
+  <!-- DEBUG: {{ price_table.btn_type }} -->
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-price-table__cta pwr-cta--long {% if price_table.style.highlighted %}pwr-cta--regular-solid-primary-background{% endif %}" data-mh="{{ mhID5 }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}  
+  <div class="pwr-price-table__cta pwr-cta--long {% if price_table.style.highlighted %}pwr-cta--regular-solid-primary-background{% endif %}" data-mh="{{ mhID5 }}">
+    <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>
+  </div>
+  {% endif %}
+{% endmacro %} 
+
+{% macro get_price_table_full_style_2(price_table) %}
+  <h2 class="pwr-price-table__title pwr--toc-ignore" data-mh="{{ mhID1 }}">{{ price_table.title }}</h2>
+  <span class="pwr-price-table__price pwr-price-table__price--style-full-2" data-mh="{{ mhID2 }}">{{ price_table.price }}</span>
+  <span class="pwr-rich-text pwr-price-table__desc pwr-price-table__desc--style-full-2" data-mh="{{ mhID3 }}">{{ price_table.description }}</span> 
+  <div class="pwr-price-table-features pwr-price-table-features--style-full-2" data-mh="{{ mhID4 }}">
+    {% for feature in price_table.features %}
+    <div class="pwr-price-table-features__item pwr-price-table-features__item--style-full-2 {% if feature.deactivated %}pwr-price-table-features__item--disabled{% endif %}">{{ feature.name_ }}</div>
+    {% endfor %}
+  </div>
+  {% if price_table.btn_type == 'cta' %}
+  <div class="pwr-price-table__cta pwr-cta--long {% if price_table.style.highlighted %}pwr-cta--regular-solid-primary-background{% endif %}" data-mh="{{ mhID5 }}">{% cta "name" guid="{{price_table.cta}}" %}</div>
+  {% elif price_table.btn_type == 'btn' %}
+  <div class="pwr-price-table__cta pwr-cta--long {% if price_table.style.highlighted %}pwr-cta--regular-solid-primary-background{% endif %}" data-mh="{{ mhID5 }}">
+    <a class="cta_button" {% if price_table.btn.link.url.href %}href="{% if price_table.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ price_table.btn.link.url.href }}"{% endif %} {% if price_table.btn.link.no_follow %}rel="nofollow"{% endif %} {% if price_table.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ price_table.btn.title }}">{{ price_table.btn.title }}</a>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+{% if module.intro_to_title || module.title || module.desc %}
+  {% set isIntro = true %}
+{% endif %}
+
+{% if module.anchor_link_id  %}<div class="pwr-anchor" id="{{ module.anchor_link_id }}"></div>{% endif %}
+<div class="pwr-sec-price-tables {% if isIntro %}pwr-sec-price-tables--with-intro{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }}"
+      {# Animation on Scroll #}
+      {{ get_aos(module.animation.section) }}       
+      {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+      {% elif bgImg.src && bgImgPos != 'parallax' %}
+      style="
+             background-image: url({{ resize_image_url(bgImg.src,2000) }});
+             background-image: -webkit-image-set(url({{ resize_image_url(bgImg.src,2000) }}) 1x, url({{ resize_image_url(bgImg.src,3000) }}) 2x);
+             background-size: cover;
+             background-position: {{ bgImgPos }};
+            "
+      {% elif bgImg.src && bgImgPos == 'parallax' %}
+      style="background-color: transparent;"
+      {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img src="{{ bgImg.src }}" class="pwr-parallax" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %} 
+  {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" {% if bgImgPos == 'parallax' %}class="pwr-parallax"{% endif %}></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+  <div class="page-center pwr--relative {% if module.layout.intro_centered %}pwr--align-c{% endif %}">
+    {% if isIntro %}
+    <div class="pwr-sec-price-tables__intro-sec">
+      {% if module.intro_to_title %}
+      <span class="pwr-sec__title-intro pwr-sec__title-intro--narrow pwr-sec-price-tables__title-intro"
+        {# Animation on Scroll #}
+        {{ get_aos(module.animation.intro_to_title) }}       
+        >      
+        {{ module.intro_to_title }}
+      </span>
+      {% endif %}
+      {% if module.title_sel_heading && module.title %}
+      <{{ module.title_sel_heading }} class="pwr-sec__title pwr-sec__title--narrow pwr-sec-price-tables__title"
+        {# Animation on Scroll #}
+        {{ get_aos(module.animation.title) }}       
+        >{{ module.title }}</{{ module.title_sel_heading }}>
+      {% endif %}        
+      {% if module.description %}<span class="pwr-rich-text pwr-sec__desc pwr-sec-price-tables__desc"
+        {# Animation on Scroll #}
+        {{ get_aos(module.animation.description) }}       
+        >        
+        {{ module.description }}
+      </span>{% endif %}
+    </div>
+    {% endif %} 
+    <div class="pwr-price-tables pwr--neg-margin-lr-10 pwr--clearfix">
+      {% for pt in module.price_tables %}
+      <div class="pwr-price-table {% if module.layout.section_variant == 'full' && module.style.table_style == 'style_2' %}pwr-price-table--opac{% else %}pwr--colored-box{% endif %} {% if module.style.overwrite_box_color %}{% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}{% endif %} {% if pt.style.highlighted %}pwr-price-table--highlighted{% endif %} {% if pt.style.recommended %}pwr-price-table--recommended{% endif %} {% if module.layout.box_centered %}pwr--align-c{% else %}pwr--align-l{% endif %}" {% if !(module.layout.section_variant == 'full' && module.style.table_style == 'style_2') && module.style.overwrite_box_color && module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}
+        {# Animation on Scroll #}
+        {{ get_aos(pt.animation) }}       
+      >
+        {% if pt.style.recommended %}
+        <div class="pwr-price-table__recommended">{{ module.translation.txt_recommended}}</div>
+        {% endif %}
+        {% if module.layout.section_variant == 'reduced' %}
+        {{ get_price_table_reduced(pt) }}
+        {% elif module.layout.section_variant == 'full' && module.style.table_style == 'style_1' %}
+        {{ get_price_table_full_style_1(pt) }}
+        {% elif module.layout.section_variant == 'full' && module.style.table_style == 'style_2' %}
+        {{ get_price_table_full_style_2(pt) }}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

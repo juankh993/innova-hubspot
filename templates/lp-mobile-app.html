@@ -1,0 +1,103 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-06-product.jpg
+  label: POWER THEME Landing Page Mobile App
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='pwr-bullet-points', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='LANDING PAGE', 
+                    title_sel_heading='h1', 
+                    description='Get early access to our new phone', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"mobile app mockup",height:700,'src':get_asset_url('../images/bgs/pwr-img_bg_mobile-app.jpg'),width:1400},
+                        background_image_overlay:"color",
+                        background_position:"bottom",
+                        desc_large:true,
+                        overlay_color:{color:theme.colors.brand_colors.base_color_light.color,opacity:0},
+                        scheme:"dark",
+                        title_extra_large:false,
+                        background_color_fallback:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100}
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='KEY FEATURES OF THE NEW VERSION'
+                    %}					  
+                    {% module_attribute "left" %}
+                    <ul><li>Cross browser optimized - FF, Safari, Chrome, IE11, Edge, Opera</li><li>Fully Responsive design - perfect on any device</li><li>Multi language ready - also standard texts &amp; menus</li><li>Retina image support for high-density pixel displays</li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li>Flexible - Customize font and color scheme to fit your brand</li><li>Great documentation - good for new or legacy users</li><li>Professional support - we love what we do and who we do it for</li><li>Many header- / footer-layouts and loads of easy-to-use modules</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='', 
+                    title='FILL OUT THE FORM AND GET IT WITHIN 3 DAYS', 
+                    title_sel_heading='h2', 
+                    description='<span>required fields *</span>', 
+                    style={background:"",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"3bc0a2dd-9eb0-4087-8f72-adf77d0a5878","form_type":"HUBSPOT","redirect_url":"https://maka-agency-4740449.hs-sites.com/power-theme-lp-thank-you","response_type":"inline"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Device Mockup',
+                    intro_to_title='', 
+                    title='CHECK OUT THE MATCHING RESPONSIVE MOBILE APP', 
+                    mockup={alt:"mockup-02",height:810,'src':get_asset_url('../images/mockups/pwr-img_mockup_display-phone.png'),width:1082}, 
+                    ctas=["1c1cc0d7-1675-469d-975f-5a7903eee20f"], 
+                    layout={content_width:45,full_width:true,mockup_width:45,section_variant:"mockup_left"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

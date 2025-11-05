@@ -1,0 +1,30 @@
+<!--
+  templateType: email_backup_unsubscribe_page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+  label: POWER THEME Email Backup Unsubscribe
+-->
+{% extends '../layouts/base.html' %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% module "hero" path='../../modules/sec-hero', 
+            title='EMAIL UNSUBSCRIBE', 
+            description='', 
+            layout={header_height:"x-small"}, 
+            style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"}, 
+            label='Hero' %}
+
+        <div class="pwr-email-unsub pwr--light" style="background-color: rgba(244, 246, 250, 1.0)">
+            <div class="page-center pwr--relative">
+                <div class="row-fluid pwr-form">
+                    {% module 'backup_unsubscribe'
+                        extra_classes='backup-unsubscribe',
+                        path='@hubspot/email_simple_subscription',
+                        label="Backup Unsubscribe" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

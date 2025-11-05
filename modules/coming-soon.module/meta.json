@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 191920858127,
+  "label" : "POWER Coming Soon",
+  "icon" : "../../../POWER%20THEME/images/icons/module/icon-module-coming-soon.svg",
+  "is_available_for_new_content" : true
+}

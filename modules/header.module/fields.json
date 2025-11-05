@@ -1,0 +1,908 @@
+[ {
+  "id" : "local_logo",
+  "name" : "local_logo",
+  "label" : "Overwrite global Logo",
+  "help_text" : "Here you can optionally overwrite the global logo settings",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : false,
+    "src" : null,
+    "alt" : null
+  }
+}, {
+  "id" : "sticky_logo",
+  "name" : "sticky_logo",
+  "label" : "Sticky Logo",
+  "help_text" : "Logo for the sticky header.\nIf this is not configured the global logo or locally configured logo will be used",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : false,
+    "src" : "",
+    "alt" : null,
+    "width" : null,
+    "height" : null,
+    "suppress_company_name" : false
+  }
+}, {
+  "id" : "is_header_menu",
+  "name" : "is_header_menu",
+  "label" : "Header Menu",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "header_menu",
+  "name" : "header_menu",
+  "label" : "Header Menu",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_header_menu",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "menu",
+  "display_width" : null,
+  "default" : 37851920043
+}, {
+  "id" : "is_header_top_menu",
+  "name" : "is_header_top_menu",
+  "label" : "Header Top Menu",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "header_top_menu",
+  "name" : "header_top_menu",
+  "label" : "Header Top Menu",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_header_top_menu",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "menu",
+  "display_width" : null
+}, {
+  "id" : "contact",
+  "name" : "contact",
+  "label" : "Contact Information",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "email",
+  "name" : "email",
+  "label" : "Email",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "contact",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "hello@power.com"
+}, {
+  "id" : "phone",
+  "name" : "phone",
+  "label" : "Phone",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "contact",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "+49 (0) 89 123 456"
+}, {
+  "id" : "phone_link",
+  "name" : "phone_link",
+  "label" : "Phone Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "contact",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "+4989123456"
+}, {
+  "id" : "btn_type",
+  "name" : "btn_type",
+  "label" : "Button Type",
+  "help_text" : "Choose between CTA and Button. CTA allows advanced analytics and is created using HubSpots CTA editor. Buttons do not offer any analytics but are better for performance.",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "none", "None" ], [ "btn", "Button" ], [ "cta", "CTA" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "btn"
+}, {
+  "id" : "header_cta",
+  "name" : "header_cta",
+  "label" : "Header CTA",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "btn_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "cta",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "cta",
+  "display_width" : null,
+  "default" : "fe13cfd2-f440-436b-858d-1cfae9387c7e"
+}, {
+  "id" : "header_btn",
+  "name" : "header_btn",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "btn_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "btn",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "header_btn.title",
+    "name" : "title",
+    "label" : "Button Title",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Purchase Now"
+  }, {
+    "id" : "header_btn.link",
+    "name" : "link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Purchase Now",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "search",
+  "name" : "search",
+  "label" : "Search",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "search_settings",
+  "name" : "search_settings",
+  "label" : "Search Settings",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "search",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "search_settings.limit",
+    "name" : "limit",
+    "label" : "Limit",
+    "help_text" : "Specifies the number of results to be shown per page",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 5
+  }, {
+    "id" : "search_settings.property",
+    "name" : "property",
+    "label" : "Search in Properties...",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "search_settings.property.title",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.property.meta_description",
+      "name" : "meta_description",
+      "label" : "Meta Description",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.property.html",
+      "name" : "html",
+      "label" : "Html",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.property.author_name",
+      "name" : "author_name",
+      "label" : "Author Name",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.property.author_handle",
+      "name" : "author_handle",
+      "label" : "Author Handle",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.property.tag",
+      "name" : "tag",
+      "label" : "Tag",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : true,
+      "meta_description" : true,
+      "html" : true,
+      "author_name" : true,
+      "author_handle" : true,
+      "tag" : true
+    }
+  }, {
+    "id" : "search_settings.search_type",
+    "name" : "search_type",
+    "label" : "Search in Page Types...",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "search_settings.search_type.pages",
+      "name" : "pages",
+      "label" : "Pages",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.search_type.blog_listings",
+      "name" : "blog_listings",
+      "label" : "Blog Listings",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.search_type.blog_posts",
+      "name" : "blog_posts",
+      "label" : "Blog Posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "search_settings.search_type.landing_pages",
+      "name" : "landing_pages",
+      "label" : "Landing Pages",
+      "help_text" : "By default, landing pages are not included in site search results because it will interfere with the conversion flow.",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "search_settings.search_type.knowledge_base_articles",
+      "name" : "knowledge_base_articles",
+      "label" : "Knowledge Base Articles",
+      "help_text" : "By default, knowledge-base articles are not included in site search results because it will interfere with the conversion flow.",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "pages" : true,
+      "blog_listings" : true,
+      "blog_posts" : true,
+      "landing_pages" : false,
+      "knowledge_base_articles" : false
+    }
+  }, {
+    "id" : "search_settings.blogs",
+    "name" : "blogs",
+    "label" : "Specific Blog(s)",
+    "help_text" : "Defaults to all blogs if nothing is configured",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "type" : "blog",
+    "display_width" : null
+  }, {
+    "id" : "search_settings.language",
+    "name" : "language",
+    "label" : "Language",
+    "help_text" : "Specifies the language of content to be searched. This parameter should obey the ISO639-1 format (e.g. es for Spanish).\nDefault: All languages",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "limit" : 5,
+    "property" : {
+      "title" : true,
+      "meta_description" : true,
+      "html" : true,
+      "author_name" : true,
+      "author_handle" : true,
+      "tag" : true
+    },
+    "search_type" : {
+      "pages" : true,
+      "blog_listings" : true,
+      "blog_posts" : true,
+      "landing_pages" : false,
+      "knowledge_base_articles" : false
+    },
+    "language" : ""
+  }
+}, {
+  "id" : "social_icons",
+  "name" : "social_icons",
+  "label" : "Social Icons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "social_icons.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "social_icons.internal_url",
+    "name" : "internal_url",
+    "label" : "Use Internal URL instead",
+    "help_text" : "Here anchor links or other types can be configured, e.g. tel:+49891233456",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "social_icons.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "social_icons.flip_icon_horizontally",
+    "name" : "flip_icon_horizontally",
+    "label" : "Flip Icon Horizontally",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "is_social_icons_header",
+  "name" : "is_social_icons_header",
+  "label" : "Use Social Icons in Header",
+  "help_text" : "Stands for social icons generally available in the burger layout, burger on mobile devices, and social icons for landing page headers",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_top_header",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "is_social_icons_top_header",
+  "name" : "is_social_icons_top_header",
+  "label" : "Use Social Icons in Top Header",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_top_header",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "layout",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "layout.section_variant",
+    "name" : "section_variant",
+    "label" : "Choose Layout...",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "dropdown", "Dropdown" ], [ "mega-menu", "Mega-Menu" ], [ "mega-menu-content-width", "Mega-Menu - Content Width" ], [ "mega-menu-screen-width", "Mega-Menu - Screen Width" ], [ "burger", "Burger" ], [ "burger_only", "Burger Only" ], [ "landing_page", "Landing Page" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dropdown"
+  }, {
+    "id" : "is_top_header",
+    "name" : "is_top_header",
+    "label" : "Top Header",
+    "help_text" : "Actives / Deactivates the little top header bar above the main header",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_variant" : "dropdown",
+    "is_top_header" : false
+  }
+}, {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.scheme",
+    "name" : "scheme",
+    "label" : "Color Scheme Header",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "style.color_scheme_top_header",
+    "name" : "color_scheme_top_header",
+    "label" : "Color Scheme Top Header",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dark"
+  }, {
+    "id" : "style.is_transparent",
+    "name" : "is_transparent",
+    "label" : "Transparent Header",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "style.is_transparent_top_header",
+    "name" : "is_transparent_top_header",
+    "label" : "Transparent Top Header",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "style.full_width",
+    "name" : "full_width",
+    "label" : "Content Full Width",
+    "help_text" : "Span header content across the whole screen width ",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "fixed_header",
+    "name" : "fixed_header",
+    "label" : "Fixed On Scroll",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "style.color_scheme_on_scroll",
+    "name" : "color_scheme_on_scroll",
+    "label" : "Color Scheme On Scroll",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "fixed_header",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dark"
+  }, {
+    "id" : "style.cta_style",
+    "name" : "cta_style",
+    "label" : "CTA Style",
+    "help_text" : "For Hubspot or custom button styles set in Hubspot, add the class pwr-cta--hubspot-style to the CTA settings under Advanced Options. This disables the CTA style configured here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "pwr-cta--primary-solid", "Solid Primary" ], [ "pwr-cta--regular-solid", "Solid Regular" ], [ "pwr-cta--regular-solid-primary-background", "Solid Regular For Primary Background" ], [ "pwr-cta--primary-border", "Border Primary" ], [ "pwr-cta--regular-border", "Border Regular" ], [ "pwr-cta--link", "Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "pwr-cta--primary-solid"
+  }, {
+    "id" : "style.cta_size",
+    "name" : "cta_size",
+    "label" : "CTA Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Regular" ], [ "pwr-cta--long", "Long" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  }, {
+    "id" : "df3343cd-1b5e-8224-2f5d-e330e227a40c",
+    "name" : "show_submenu",
+    "label" : "Would you like to show the submenu?",
+    "help_text" : "Hide or show sub menu",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "color_scheme_top_header" : "dark",
+    "is_transparent" : false,
+    "is_transparent_top_header" : false,
+    "full_width" : false,
+    "fixed_header" : true,
+    "color_scheme_on_scroll" : "dark",
+    "cta_style" : "pwr-cta--primary-solid",
+    "cta_size" : " ",
+    "show_submenu" : false
+  }
+}, {
+  "id" : "translation",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "translation.txt_placeholder",
+    "name" : "txt_placeholder",
+    "label" : "Search Input Placeholder",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Type search here. Hit enter to submit or escape to close."
+  }, {
+    "id" : "translation.txt_suggestions_title",
+    "name" : "txt_suggestions_title",
+    "label" : "Search Field Suggestions Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Quick results for \"{search_term}\""
+  }, {
+    "id" : "translation.txt_contact_phone_title",
+    "name" : "txt_contact_phone_title",
+    "label" : "Contact Phone Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "PHONE HOTLINE:"
+  }, {
+    "id" : "translation.txt_contact_email_title",
+    "name" : "txt_contact_email_title",
+    "label" : "Contact E-Mail Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "E-MAIL:"
+  }, {
+    "id" : "translation.txt_burger_close",
+    "name" : "txt_burger_close",
+    "label" : "Burger Menu - Close",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Close"
+  }, {
+    "id" : "translation.txt_burger_menu_contact",
+    "name" : "txt_burger_menu_contact",
+    "label" : "Burger Menu - Contact",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CONTACT"
+  }, {
+    "id" : "translation.txt_burger_search_title",
+    "name" : "txt_burger_search_title",
+    "label" : "Burger Menu - Search Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "SEARCH"
+  }, {
+    "id" : "translation.txt_burger_search_placeholder",
+    "name" : "txt_burger_search_placeholder",
+    "label" : "Burger Menu - Search Placeholder",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Type search here"
+  }, {
+    "id" : "translation.txt_burger_menu_language",
+    "name" : "txt_burger_menu_language",
+    "label" : "Burger Menu - Language",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "LANGUAGE"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_placeholder" : "Type search here. Hit enter to submit or escape to close.",
+    "txt_suggestions_title" : "Quick results for \"{search_term}\"",
+    "txt_contact_phone_title" : "PHONE HOTLINE:",
+    "txt_contact_email_title" : "E-MAIL:",
+    "txt_burger_close" : "Close",
+    "txt_burger_menu_contact" : "CONTACT",
+    "txt_burger_search_title" : "SEARCH",
+    "txt_burger_search_placeholder" : "Type search here",
+    "txt_burger_menu_language" : "LANGUAGE"
+  }
+} ]

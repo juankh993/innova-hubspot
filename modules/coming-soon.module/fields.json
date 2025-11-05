@@ -1,0 +1,627 @@
+[ {
+  "id" : "cc8c95de-1980-3c09-d340-85a469f03b50",
+  "name" : "intro_to_title",
+  "label" : "Intro To Title",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Intro Title"
+}, {
+  "id" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "COMING SOON - TITLE"
+}, {
+  "id" : "b05162a4-bcf6-2304-315a-6cd25e0b8dd9",
+  "name" : "title_sel_heading",
+  "label" : "Title - Header Type",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h1"
+}, {
+  "id" : "5c2279fd-c589-a52c-360b-f3ef4bb1bcaa",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Description. We are working hard to bring you our new website."
+}, {
+  "id" : "021425ef-3d97-4f31-f5a8-fcea71c5a626",
+  "name" : "release_datetime",
+  "label" : "Release Date & Time",
+  "required" : false,
+  "locked" : false,
+  "step" : 15,
+  "type" : "datetime",
+  "display_width" : null
+}, {
+  "id" : "ae482732-9c79-aaef-da2e-48575ca4085f",
+  "name" : "counter",
+  "label" : "Counter Format",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "all", "Days, Hours, Minutes and Seconds" ], [ "down_to_minutes", "Days, Hours and Minutes" ], [ "down_to_hours", "Days and Hours" ], [ "down_to_days", "Days  Only" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "all"
+}, {
+  "id" : "cdc6213b-e7fd-e29f-23f6-89a22cde897f",
+  "name" : "has_form",
+  "label" : "Use Form",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "b4b7244f-0ad1-281b-4d8a-e74ca49261d3",
+  "name" : "form_title",
+  "label" : "Form Title",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cdc6213b-e7fd-e29f-23f6-89a22cde897f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "GET INFORMED ON LAUNCH"
+}, {
+  "id" : "ea5c40d6-370d-ba5a-dc52-ddd0c353c4fb",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cdc6213b-e7fd-e29f-23f6-89a22cde897f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form."
+  }
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "48f5ab38-e739-beaa-fc67-e1b26c2ba973",
+    "name" : "centered",
+    "label" : "Centered",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "c6e084a3-7d44-deee-6966-6b32a065c78d",
+    "name" : "padding_top",
+    "label" : "Padding Top",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-t-0", "None" ], [ "pwr--sec-padding-t-sm", "Small" ], [ "pwr--sec-padding-t-md", "Medium" ], [ "pwr--sec-padding-t-lg", "Large" ], [ "pwr-sec--first-with-header", "First Section With Header" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "pwr-sec--first-with-header"
+  }, {
+    "id" : "2aa8eb22-e63e-e28a-737b-c5ee954b2fa2",
+    "name" : "padding_bottom",
+    "label" : "Padding Bottom",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-b-0", "None" ], [ "pwr--sec-padding-b-sm", "Small" ], [ "pwr--sec-padding-b-md", "Medium" ], [ "pwr--sec-padding-b-lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "centered" : true,
+    "padding_top" : "pwr-sec--first-with-header",
+    "padding_bottom" : " "
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "90111fcb-036a-f308-536f-0ff2789d6ad8",
+    "name" : "btn_style",
+    "label" : "Form Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "pwr-btn--primary-solid", "Solid Primary" ], [ "pwr-btn--regular-solid", "Solid Regular" ], [ "pwr-btn--regular-solid-primary-background", "Solid Regular For Primary Background" ], [ "pwr-btn--primary-border", "Border Primary" ], [ "pwr-btn--regular-border", "Border Regular" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "pwr-btn--primary-solid"
+  }, {
+    "id" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+    "name" : "background",
+    "label" : "Background",
+    "help_text" : "Optionally overwrite the default background with a custom background-color, a background-image / -video or a gradient",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Background Color" ], [ "img_vid", "Background Image / Video" ], [ "gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "1fc03c0b-792b-04d6-fd94-9245acc6ee7f",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "df6d581d-b1f2-8a9d-a318-1efce42ee696",
+    "name" : "background_image",
+    "label" : "Background Image / Placeholder Image (Video)",
+    "help_text" : "The image should be at least 2000 pixels in width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "picker" : "file",
+    "id" : "e05c6bbe-1104-c92d-1e4c-72e13b21e4a4",
+    "name" : "background_video",
+    "label" : "Background Video - *.mp4",
+    "help_text" : "If a custom video (*.mp4) is configured here, it will overwrite the background image.\nPlease make sure that the file size is not too big. A general rule of thumb is to keep reducing the file size until it starts to noticeably be degraded. Try to export videos in 720p and with a bitrate under 700kb/s ( preferably 500kb/s ).",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null
+  }, {
+    "id" : "815fa782-464b-4e26-f596-d156ddcd5ca8",
+    "name" : "youtube_link",
+    "label" : "Background Video - Youtube",
+    "help_text" : "Enter your Youtube Link or ID. This will overwrite the previously configured background image or custom background video *.mp4",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "bce7b890-f3a5-ef21-29c5-9cc6d4a9f795",
+    "name" : "background_position",
+    "label" : "Background Position / Parallax Effect",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom", "Bottom" ], [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ], [ "top", "Top" ], [ "parallax", "Parallax" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "35e07bf0-8869-84d6-bfb0-f9be2010807a",
+    "name" : "background_image_overlay",
+    "label" : "Background Image Overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "color", "Color" ], [ "gradient", "Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "e0b2e916-9c5a-fe86-d116-9aa9aab50c18",
+    "name" : "overlay_color",
+    "label" : "Overlay Color",
+    "help_text" : "Set the opacity to 0% if you do not want to use an overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    }
+  }, {
+    "id" : "793dd27a-344c-fde9-0c5c-d6e247d4f19e",
+    "name" : "overlay_gradient_direction",
+    "label" : "Overlay Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "595f9bc9-56f1-cc6f-8869-a1376e7f7995",
+    "name" : "overlay_gradient_color_1",
+    "label" : "Overlay Gradient Color 1",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d5022779-0958-7717-0787-49dc20c11f75",
+    "name" : "overlay_gradient_color_2",
+    "label" : "Overlay Gradient Color 2",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "91d2a009-ef2d-fbe2-c110-c7eba801de19",
+    "name" : "overlay_gradient_opacity",
+    "label" : "Overlay Gradient Opacity in %",
+    "help_text" : "General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors, if not 100% -> General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  }, {
+    "id" : "ad81404f-40cf-0a02-a76a-45bc72a5272a",
+    "name" : "background_gradient_direction",
+    "label" : "Background Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "00a049e6-ea9f-9ef1-eda1-570a6b30ed54",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8bb34386-47ba-da71-4690-592660474606",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "btn_style" : "pwr-btn--primary-solid",
+    "background" : "color",
+    "background_color" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : null
+    },
+    "background_position" : "center",
+    "background_image_overlay" : "color",
+    "overlay_color" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    },
+    "overlay_gradient_direction" : "hor",
+    "overlay_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_opacity" : 100,
+    "background_gradient_direction" : "hor",
+    "background_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "45e9b00d-21ff-c78c-05a0-0be13595ce46",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "059b21ae-a7cc-8abf-875b-71c241082aa9",
+    "name" : "txt_days",
+    "label" : "Countdown Text \"Days\"",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Days"
+  }, {
+    "id" : "fe8fdfe2-95dc-d08e-f5ac-89c36ef5e27d",
+    "name" : "txt_hours",
+    "label" : "Countdown Text \"Hours\"",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Hours"
+  }, {
+    "id" : "bfadf89f-cfeb-e870-be08-a5a31268ba60",
+    "name" : "txt_mins",
+    "label" : "Countdown Text \"Minutes\"",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Minutes"
+  }, {
+    "id" : "b2a18a59-359a-6657-613c-2d52f1a0ac92",
+    "name" : "txt_secs",
+    "label" : "Countdown Text \"Seconds\"",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Seconds"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_days" : "Days",
+    "txt_hours" : "Hours",
+    "txt_mins" : "Minutes",
+    "txt_secs" : "Seconds"
+  }
+} ]

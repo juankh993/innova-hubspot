@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="384px" height="384px" viewBox="0 0 384 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pwr-icon_entry_features_modules</title>
+    <g id="modules" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="384" height="384"></rect>
+        <g id="icon-modules" transform="translate(28.000000, 31.000000)" stroke="#3E35F1">
+            <g id="Group-4" stroke-linecap="round" stroke-linejoin="round" transform="translate(164.000000, 161.000000) rotate(90.000000) translate(-164.000000, -161.000000) translate(3.500000, -2.500000)" stroke-width="30">
+                <polygon id="Stroke-1" points="0 326.6665 135 326.6665 135 0.0015 0 0.0015"></polygon>
+                <polygon id="Stroke-3" points="185.015 326.6665 320.015 326.6665 320.015 0.0015 185.015 0.0015"></polygon>
+            </g>
+            <line x1="102.5" y1="0.5" x2="102.5" y2="135.5" id="Path-4" stroke-width="25"></line>
+            <line x1="102.5" y1="178" x2="102.5" y2="313" id="Path-4-Copy" stroke-width="25"></line>
+        </g>
+    </g>
+</svg>

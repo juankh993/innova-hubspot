@@ -1,0 +1,89 @@
+ <section class="-mt-[20px] py-10 sm:py-20 bg-[#7669FD] rounded-t-4xl relative vertical-carousel overflow-hidden min-h-screen flex items-center" id="inn-slider">
+        <div class="absolute left-0 top-0 w-[260px] h-[260px] pointer-events-none">
+            <img  src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-dotted-doodle.svg" alt="">
+        </div>
+        <div class="absolute right-0 bottom-0 sm:top-0 w-[100px] sm:w-auto h-auto pointer-events-none">
+            <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/vertical-acordion-slider-halfdonut-doodle.svg" alt="">
+        </div>
+        <div class="w-full max-w-[768px] xl:max-w-[1350px] m-auto relative text-white z-10 px-[20px] xl:px-[50px]">
+            <div class="inn-slider-bullets absolute top-[30%] xl:top-[50%] -left-12 xl:left-[25px] -translate-y-1/2 flex flex-col w-[20px]"></div>
+            <h2  class="flex flex-wrap md:flex-row items-center sm:items-start md:items-center xl:justify-center w-full mb-[30px] md:gap-[14px] text-left md:text-center max-sm:gap-[10px] relative z-5"><span class="font-['Otterco'] text-[36px] sm:text-[36px] md:text-[64px] uppercase block font-bold tracking-[1.4px] italic leading-[36px] md:leading-none">{{ module.principal_title }}</span> <span class="text-[28px] sm:text-[28px] md:text-[40px] block font-bold tracking-[2.8px] uppercase text-[#FDB731] leading-[30px] md:leading-none relative md:top-[1px]">{{ module.principal_subtitle }}</span></h2>
+            <ul class="h-[550px] sm:h-[720px] xl:h-[430px] relative w-full m-auto inn-list-slider slides">
+              {% for item in module.items_acordion %}
+               {% if item.item_type == "one_image" %}
+                <li class="absolute top-0 left-0 w-full h-full flex justify-center xl:items-center slide">
+                    <article class="w-full flex flex-col justify-between items-center gap-3 sm:gap-10 md:gap-20 xl:flex-row">
+                        <div class="inn-slider-content xl:ml-[30px]">
+                            <h3 class="mb-5 flex flex-col gap-[10px] leading-none">
+                                <span class="text-[24px] sm:text-[24px] md:text-[40px] font-bold uppercase tracking-[2.4px] md:tracking-[4px] leading-[24px] md:leading-[44px]">{{ item.acordion_image_title }}</span>
+                                <span class="font-['Otterco'] text-[32px] sm:text-[32px] md:text-[64px] italic font-bold uppercase tracking-[3.2px] md:tracking-[6.4px] leading-[32px] md:leading-[72px]">{{ item.acordion_image_subtitle }}</span>
+                            </h3>
+                            <p class="font-regular text-[16px] sm:text-[18px] md:text-[22px] leading-[18px] sm:leading-[26px] mb-5"><span class="font-regular text-[16px] sm:text-[16px] md:text-[22px] leading-[18px] sm:leading-[26px] mb-5">{{ item.acordion_image_description }}</span></p>
+                            <a href="{{ item.acordion_image_cta_url }}" class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete">
+                                 <span class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+                              <span class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">{{ item.acordion_image_cta_text }}</span>
+                                <img class="w-[20px] h-[20px] relative z-[10]" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/Eye.png" alt="">
+                            </a>
+                        </div>
+                        <div class="block w-full md:w-[560px] h-[424px] rounded-tl-[88px] rounded-br-[88px] rounded-tr-[20px] rounded-bl-[20px]">
+                            <picture class="inn-slider-picture block w-full md:w-[560px] h-full obsolute top-0 left-0 bottn-[100%] overflow-hidden rounded-tl-[88px] rounded-br-[88px] rounded-tr-[20px] rounded-bl-[20px]">
+                                <img class="w-full h-full object-cover" src="{{ item.acordion_item_image.src }}" alt="{{ item.acordion_item_image.alt }}">
+                            </picture>
+                        </div>
+                    </article>
+                </li>
+               {% elif item.item_type == "slider_image" %} 
+              <li class="absolute top-0 left-0 w-full h-full flex justify-center xl:items-center slide">
+                    <article class="w-full flex flex-col justify-between items-center gap-3 xl:flex-row ">
+                        <div class="inn-slider-content xl:ml-[30px]">
+                            <h3 class="mb-5 flex flex-col gap-[10px] leading-none">
+                                <span class="text-[24px] sm:text-[24px] md:text-[28px] font-bold uppercase tracking-[2.4px] md:tracking-[2.8px] leading-[24px] md:leading-[30px]">{{ item.acordion_slider_title }}</span>
+                                <span class="font-['Otterco'] text-[32px] sm:text-[32px] md:text-[50px] italic font-bold uppercase tracking-[3.2px] md:tracking-[2px] leading-[32px] md:leading-[46px]">{{ item.acordion_slider_subtitle }}</span>
+                            </h3>
+                            <p class="font-regular text-[16px] sm:text-[16px] md:text-[22px] leading-[18px] sm:leading-[26px] mb-5"><span class="font-regular text-[16px] sm:text-[16px] md:text-[22px] leading-[18px] sm:leading-[26px] mb-5">{{ item.acordion_slider_description }}</span></p>
+                            <a href="{{ item.acordion_slider_cta_url }}" class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete">
+                                 <span class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+                              <span class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">{{ item.acordion_slider_cta_text }}</span>
+                                <img class="w-[20px] h-[20px] relative z-[10]" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/Eye.png" alt="">
+                            </a>
+                        </div>
+                        <div class="block w-full max-w-[700px] rounded-tl-[88px] rounded-br-[88px] rounded-tr-[20px] rounded-bl-[20px]">
+                            <div class="inn-slider-picture">
+                                <div class="swiper inn-slider-swiper pt-10">
+                                    <div class="inn-slider-swiper-buttons flex justify-between items-center gap-2 w-full h-[36px] mb-5 relative max-w-[160px]">
+                                        <div class="swiper-button-prev rotate-[180deg] after:!content-[''] !relative !top-0 !left-0 !right-0 !bottom-0 !m-0 !w-[36px] !h-[36px] md:!w-[50px] md:!h-[50px]">
+                                            <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/swiper-next.svg" alt="navigation-prev">
+                                        </div>
+                                        <div class="swiper-pagination !relative !top-[10%] !left-[10%] !right-0 !bottom-0 !m-0 !w-auto"></div>
+                                        <div class="swiper-button-next after:!content-[''] !relative !top-0 !left-0 !right-0 !bottom-0 !m-0 !w-[37px] !h-[37px] md:!w-[50px] md:!h-[50px]">
+                                            <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/swiper-next.svg" alt="navigation-next">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-wrapper">
+                                      {% for item2 in item.schools %}
+                                        <div class="swiper-slide bg-white odd:rounded-bl-[60px] even:rounded-br-[60px]">
+                                            <picture class="block w-full h-[200px] sm:h-[226px]">
+                                                <img src="{{ item2.school_image.src }}" alt="{{ item2.school_image.alt }}" class="w-full h-full object-cover">
+                                            </picture>
+                                            <div class="p-5">
+                                                <h3 class="uppercase text-[#F85245] text-[15px] text-center tracking-[2px] font-bold"><span class="uppercase text-[#F85245] text-[16px] text-center tracking-[1.6px] font-bold leading-[16px]">{{ item2.school_city_name }}</span></h3>
+                                                <p class="text-[26px] font-bold italic tracking-[2px] text-[#003B87] text-center "><span class="font-['Otterco'] text-[32px] font-bold italic tracking-[2px] text-[#003B87] text-center leading-[34px] tracking-[3.2px]">{{ item2.school_headquarter_name }}</span></p>
+                                            </div>
+                                            <a href="{{ item2.school_cta_url }}" class="absolute top-3 right-3 flex items-center gap-2 sm:gap-5 p-2 sm:p-3 bg-[#F85245] rounded-full max-w-[185px] text-center text-[16] sm:text-[20px] uppercase italic font-bold group">
+                                                <span class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)] rounded-full"></span>
+                                                <span class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">{{ item2.school_cta_text }}</span>
+                                                <img class="w-[20px] h-[20px] relative z-10" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/Eye.png" alt="eye">
+                                            </a>
+                                        </div>
+                                      {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+               {% endif %}
+              {% endfor %}  
+            </ul>
+        </div>
+    </section>

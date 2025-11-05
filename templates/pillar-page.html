@@ -1,0 +1,299 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_pillar-page.jpg
+  label: POWER THEME Pillar Page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='PILLAR PAGE', 
+                    description='Boxed, Narrow Layout, Light TOC', 
+                    layout={header_height:"small"}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"spaceshuttle",height:1080,'src':get_asset_url('../images/video/pwr-img_video_rocket.jpg'),width:1920},
+                        background_image_overlay:"gradient",
+                        background_position:"center",
+                        desc_large:true,
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:100},
+                        overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},
+                        overlay_gradient_direction:"vert",
+                        scheme:"dark",
+                        youtube_link:"https://youtu.be/ybcCsfnyS20",
+                        background_color_fallback:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100}
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+            
+            {# Section Pillar Page TOC #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "pillar-page-toc" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/pillar-page-toc', 
+                    label='Pillar Page TOC',
+                    title='', 
+                    intro_to_title='', 
+                    description='', 
+                    layout={centered:false,expand_collapse:"1",narrow_content:true,section_variant:"overlay"}, 
+                    style={scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Pillar Page TOC #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='', 
+                    title='TOPICS OF THIS TOPIC CLUSTER', 
+                    boxes=[
+                        {filtering:{},internal_url:"#what-is-a-pillar-page",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"WHAT IS A PILLAR PAGE?",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{},internal_url:"#why-should-i-use-pillar-pages",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"WHY SHOULD I USE PILLAR PAGES?",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{},internal_url:"#pillar-pages-for-seo",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"PILLAR PAGES FOR SEO",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{},internal_url:"#decide-on-the-topic",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"DECIDE ON THE TOPIC",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}},
+                        {filtering:{},internal_url:"#which-keywords-are-targeted",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"WHICH KEYWORDS ARE TARGETED",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{},internal_url:"#set-internal-links",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"SET INTERNAL LINKS",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:150}},
+                        {filtering:{},internal_url:"#keep-updating-pillar-page",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"KEEP UPDATING PILLAR PAGE",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:250}},
+                        {filtering:{},internal_url:"#conclusion",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"CONTENT"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"CONCLUSION",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}}
+                        ], 
+                    layout={section_variant:"4cols"}, 
+                    style={background:"color",box_overlay_front:true}
+                    %}
+                    {% module_attribute "description" %}
+                    <p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='INTRODUCTION', 
+                    title='WHAT IS A PILLAR PAGE?', 
+                    layout={section_variant:"2col",padding_bottom:"pwr--padding-b-0"}, 
+                    style={background:""}
+                    %}
+                    {% module_attribute "left" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br>Lorem ipsum dolor <a href="https://www.google.com" rel="noopener" target="_blank" rel="noopener">sit amet, consetetur</a> sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ore magna aliquyam erat, sed diam voluptua.<br><br></p><h3 id="topic-clusters">Topic Clusters</h3><p>Lorem dolor sit amet, consetetur sadipscing elitr. Eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut la</p><p>&nbsp;</p><p><img src="{{get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_02.jpg')}}" alt="portfolio-new-02" width="475" style="width: 475px; margin: 0px 10px 10px 0px; float: left;"></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='INTRODUCTION', 
+                    title='WHY SHOULD I USE PILLAR PAGES?', 
+                    layout={section_variant:"2col"}
+                    %}
+                    {% module_attribute "left" %}
+                    <ul><li>Lorem ipsum dolor amet, consetetur sadipscing</li><li>Invidunt ut labore et dolore magna aliquyam erat</li><li>Accusam et justo duo dolores et ea rebum. Stet</li><li>Sanctus est Lorem ipsum dolor sit amet.</li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li>Lorem ipsum dolor sit amet, consetetur sadipscing</li><li><a href="https://www.google.com" rel="noopener" target="_blank" rel="noopener">Invidunt ut labore et dolore magna aliquyam erat, </a></li><li>Accusam et justo duo dolores et ea rebum. Stet</li><li>Sanctus est Lorem ipsum dolor sit amet.</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='GOOGLES SEARCH ALGORITHM HAS CHANGED', 
+                    cta='90ddfe68-2e6d-482f-b2a3-56be2088a90e', 
+                    style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "description" %}
+                    <span>Find out what you need to consider building a search engine optimized website</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='HOW EFFECTIVE ARE', 
+                    title='PILLAR PAGES FOR SEO', 
+                    layout={section_variant:"2col",padding_bottom:"pwr--padding-b-0"}
+                    %}
+                    {% module_attribute "left" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut la<br><br></p><img src="{{get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_04.jpg')}}" alt="portfolio-04" width="490" style="width: 490px; margin: 0px 10px 10px 0px;">
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut la<br><br></p><img src="{{get_asset_url('../images/boxes/portfolios/pwr-img_portfolio_05.jpg')}}" alt="portfolio-05" width="490" style="width: 490px;">
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='IMPLEMENTATION', 
+                    title='DECIDE ON THE TOPIC', 
+                    layout={section_variant:"2col"}
+                    %}
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. <br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut la<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amettur sadipscing elitr.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='IMPLEMENTATION', 
+                    title='WHICH KEYWORDS ARE TARGETED', 
+                    layout={section_variant:"1col"}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    <p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></p><h3 id="keyword-tools"><span>Keyword-Tools</span></h3><p><span><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='IMPLEMENTATION', 
+                    title='SET INTERNAL LINKS', 
+                    layout={section_variant:"1col"}, 
+                    style={background:"color",background_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100}}
+                    %}
+                    {% module_attribute "left" %}
+                    <p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></p><p><span><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='IMPLEMENTATION', 
+                    title='KEEP UPDATING PILLAR PAGE', 
+                    layout={section_variant:"1col"}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    <p><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </span><span><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='CONCLUSION', 
+                    layout={section_variant:"1col"}
+                    %}
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut la<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amettur sadipscing elitr.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+            
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='READY TO BUILD YOUR OWN PILLAR PAGE?', 
+                    description='Click on the button and jump directly to your HubSpot portal.', 
+                    cta='35cf1be6-1789-41f4-a76a-1e1ca3bf1327', 
+                    layout={section_variant:"vertical"}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"webinar-03-unsplash",height:907,'src':get_asset_url('../images/boxes/webinars/pwr-img_webinar_03.jpg'),width:1360},
+                        background_image_overlay:"gradient",
+                        background_position:"parallax",
+                        cta_style:"pwr-cta--primary-solid",
+                        overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},
+                        overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:100},
+                        overlay_gradient_direction:"vert",
+                        scheme:"dark"
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

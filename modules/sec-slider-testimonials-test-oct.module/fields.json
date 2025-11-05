@@ -1,0 +1,147 @@
+[ {
+  "id" : "5c2863a1-8f48-27ff-9ad8-c34bb0aa6b9f",
+  "name" : "seccion_titulo",
+  "label" : "Título principal",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "¿Qué dicen"
+}, {
+  "id" : "645b5b35-6f24-1267-99e8-5d9a365b59c8",
+  "name" : "seccion_subtitulo",
+  "label" : "Subtítulo destacado",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "nuestros estudiantes?"
+}, {
+  "id" : "b21b694c-fa88-57c3-9983-c052d6906b56",
+  "name" : "testimonios_lista",
+  "label" : "Testimonios",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "f4c8cc92-e6f7-6abc-451f-e8a5b771ec49",
+    "name" : "testimonio_texto",
+    "label" : "Testimonio del estudiante",
+    "required" : true,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<div><span>En Innova aprendemos diferente. No es solo escuchar al </span>profesor, es pensar, investigar y proponer ideas. Me gusta trabajar en equipo, hacer proyectos reales y sentir que lo que hago importa. Aquí no tengo miedo de equivocarme, porque todos estamos aprendiendo juntos.</div>"
+  }, {
+    "id" : "00517040-589e-6fba-315e-d5f95454dec8",
+    "name" : "estudiante_nombre",
+    "label" : "Nombre del estudiante",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Nombre estudiante"
+  }, {
+    "id" : "2e51d657-dbf8-e924-f227-a8f3f8ddcb96",
+    "name" : "estudiante_grado",
+    "label" : "Grado académico",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Estudiante X grado"
+  }, {
+    "id" : "c08c2719-a0dd-eb36-40c5-2424117832a9",
+    "name" : "estudiante_foto",
+    "label" : "Foto del estudiante",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "infraestructura",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    }
+  }, {
+    "id" : "67293126-e6e7-6b22-8763-92a4c1cb0550",
+    "name" : "imagen_fondo",
+    "label" : "Imagen de fondo testimonio",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/location-image.jpg",
+      "alt" : "Fondo seccion",
+      "loading" : "lazy",
+      "width" : 1128,
+      "height" : 588,
+      "max_width" : 1128,
+      "max_height" : 588
+    }
+  }, {
+    "id" : "85bdcf72-79b1-01d0-d81e-5d56fdc729ef",
+    "name" : "video_youtube_id",
+    "label" : "ID del video a mostrar",
+    "inline_help_text" : "Extraer solo el ID del video de YouTube, no la URL completa.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "testimonio_texto" : "<div><span>En Innova aprendemos diferente. No es solo escuchar al </span>profesor, es pensar, investigar y proponer ideas. Me gusta trabajar en equipo, hacer proyectos reales y sentir que lo que hago importa. Aquí no tengo miedo de equivocarme, porque todos estamos aprendiendo juntos.</div>",
+    "estudiante_nombre" : "Nombre estudiante",
+    "estudiante_grado" : "Estudiante X grado",
+    "estudiante_foto" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/infraestructura.png",
+      "alt" : "infraestructura",
+      "loading" : "lazy",
+      "width" : 281,
+      "height" : 280,
+      "max_width" : 281,
+      "max_height" : 280
+    },
+    "imagen_fondo" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/location-image.jpg",
+      "alt" : "Fondo seccion",
+      "loading" : "lazy",
+      "width" : 1128,
+      "height" : 588,
+      "max_width" : 1128,
+      "max_height" : 588
+    },
+    "video_youtube_id" : ""
+  } ]
+} ]

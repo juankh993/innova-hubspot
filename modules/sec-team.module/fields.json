@@ -1,0 +1,1671 @@
+[ {
+  "id" : "cc8c95de-1980-3c09-d340-85a469f03b50",
+  "name" : "intro_to_title",
+  "label" : "Intro To Title",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Intro Title"
+}, {
+  "id" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "SECTION TEAM - TITLE"
+}, {
+  "id" : "b05162a4-bcf6-2304-315a-6cd25e0b8dd9",
+  "name" : "title_sel_heading",
+  "label" : "Title - Header Type",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cd3717f4-102c-4d17-2bca-fb6bf0a1ce92",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
+  "id" : "8fe036b2-d10b-163e-7a7a-3b879f2df903",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span></p>"
+}, {
+  "id" : "10f6e5e4-28b3-e711-b83c-706db67b6b21",
+  "name" : "tabs",
+  "label" : "Tab",
+  "help_text" : "Make sure to select the layout beforehand. If you do NOT want to use tabs, the team members have to be added in the team property instead of this tabs property",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "f83535ec-2d2b-3443-513f-740e562c3902",
+    "name" : "tab_title",
+    "label" : "Tab Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Tab Title"
+  }, {
+    "id" : "551640d7-4067-6413-0ed4-43f589465e77",
+    "name" : "team",
+    "label" : "Team",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "b7b08c7a-20df-8810-6106-202adffd5141",
+      "name" : "name_",
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "show_emoji_picker" : true,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "NAME"
+    }, {
+      "id" : "6de2de58-d876-652b-8393-3e2d48448922",
+      "name" : "img",
+      "label" : "Image",
+      "help_text" : "We recommend to use the following image dimensions: For layout \"Reduced\" a width of 300 pixels (600 for retina displays) - for layout \"Full\" a width of 400 pixels (800 for retina displays)",
+      "required" : true,
+      "locked" : false,
+      "responsive" : false,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "src" : "",
+        "alt" : null,
+        "size_type" : null,
+        "width" : null,
+        "height" : null,
+        "max_width" : null,
+        "max_height" : null,
+        "loading" : "disabled"
+      }
+    }, {
+      "id" : "806851b5-284a-477a-6d64-2136a146f358",
+      "name" : "job_title",
+      "label" : "Job Title",
+      "required" : true,
+      "locked" : false,
+      "allow_new_line" : false,
+      "show_emoji_picker" : true,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Job Title"
+    }, {
+      "id" : "17dad2fc-0742-3094-7c42-60b8e57d5a72",
+      "name" : "description",
+      "label" : "Description",
+      "help_text" : "Only used for layout \"Full\"",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>"
+    }, {
+      "id" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+      "name" : "contact",
+      "label" : "Contact",
+      "help_text" : "Contact properties only used for layout \"Full\"",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "2b8236cb-b6ac-558d-248c-cbc4b9e33396",
+      "name" : "email",
+      "label" : "E-Mail",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "hello@power.com"
+    }, {
+      "id" : "7bca9d18-456d-2ad7-84e8-bc2c8e18c764",
+      "name" : "phone",
+      "label" : "Phone",
+      "help_text" : "Use a format suitable for usage as a link, e.g. +4940582291",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "+4940582291"
+    }, {
+      "id" : "1dd78cdd-46ef-ada9-5fc5-080d035ccf34",
+      "name" : "facebook",
+      "label" : "Facebook",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "accb7b85-721a-bda3-a616-1434ab40a1b5",
+      "name" : "twitter",
+      "label" : "Twitter",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "e8796969-552a-63df-51e6-f306c86a1d8e",
+      "name" : "linkedin",
+      "label" : "LinkedIn",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "8d2319fb-e8ec-3b91-3075-7ee6c1c1eadc",
+      "name" : "youtube",
+      "label" : "Youtube",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "613f0f50-916a-1651-247b-158daf696e9d",
+      "name" : "skype",
+      "label" : "Skype",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "305d2fad-4513-de9e-3f63-f9dae0dfcc90",
+      "name" : "instagram",
+      "label" : "Instagram",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "d95c523f-6ef2-2c90-f26f-793d9b6b4488",
+      "name" : "reddit",
+      "label" : "Reddit",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "22b6c0e1-9a2e-159d-21c7-20fb50914696",
+      "name" : "xing",
+      "label" : "Xing",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f27df4d2-5819-de63-91cb-6eb78e305401",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://www.facebook.com"
+    }, {
+      "id" : "54de1f77-7706-7563-83f3-2561b74f26a8",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "tabs.team.animation",
+      "name" : "animation",
+      "label" : "Animation",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "tabs.team.animation.animation_type",
+        "name" : "animation_type",
+        "label" : "Animation Type",
+        "required" : true,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "is_aos",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "default"
+      }, {
+        "id" : "tabs.team.animation.delay",
+        "name" : "delay",
+        "label" : "Delay",
+        "help_text" : "Values from 0 to 3000, with step 50ms",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "is_aos",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "text",
+        "min" : 0,
+        "max" : 3000,
+        "step" : 50,
+        "type" : "number",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "name_" : "NAME",
+      "job_title" : "Job Title",
+      "description" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>",
+      "contact" : true,
+      "email" : "hello@power.com",
+      "phone" : "+4940582291",
+      "facebook" : "https://www.facebook.com",
+      "twitter" : "https://www.facebook.com",
+      "linkedin" : "https://www.facebook.com",
+      "youtube" : "https://www.facebook.com",
+      "skype" : "https://www.facebook.com",
+      "instagram" : "https://www.facebook.com",
+      "reddit" : "https://www.facebook.com",
+      "xing" : "https://www.facebook.com",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "tab_title" : "Tab Title",
+    "team" : [ {
+      "name_" : "NAME",
+      "job_title" : "Job Title",
+      "description" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>",
+      "contact" : true,
+      "email" : "hello@power.com",
+      "phone" : "+4940582291",
+      "facebook" : "https://www.facebook.com",
+      "twitter" : "https://www.facebook.com",
+      "linkedin" : "https://www.facebook.com",
+      "youtube" : "https://www.facebook.com",
+      "skype" : "https://www.facebook.com",
+      "instagram" : "https://www.facebook.com",
+      "reddit" : "https://www.facebook.com",
+      "xing" : "https://www.facebook.com",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  } ]
+}, {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "team",
+  "label" : "Team",
+  "help_text" : "Make sure to select the layout beforehand. If you would like to use tabs, the team members have to be added with the tabs property and not this team property",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "4de9d33d-5da8-4b68-6e38-32074474996e",
+    "name" : "name_",
+    "label" : "Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "NAME"
+  }, {
+    "id" : "afae7b9b-cc2a-7981-ceed-6e32b0520489",
+    "name" : "img",
+    "label" : "Image",
+    "help_text" : "We recommend to use the following image dimensions: For layout \"Reduced\" a width of 300 pixels (600 for retina displays) - for layout \"Full\" a width of 400 pixels (800 for retina displays)",
+    "required" : true,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "56064e24-41c1-e9f8-fd14-6a29c6edc49a",
+    "name" : "job_title",
+    "label" : "Job Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Job Title"
+  }, {
+    "id" : "7d5d21f0-e15c-c078-dcb2-727f5903931e",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "Only used for layout \"Full\"",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>"
+  }, {
+    "id" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+    "name" : "contact",
+    "label" : "Contact",
+    "help_text" : "Contact properties only used for layout \"Full\"",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "e39f079c-49ed-12ee-4cb5-0b67b17e3c66",
+    "name" : "email",
+    "label" : "E-Mail",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "hello@power.com"
+  }, {
+    "id" : "a9b176fb-bb77-eba3-789b-cec623efa653",
+    "name" : "phone",
+    "label" : "Phone",
+    "help_text" : "Use a format suitable for usage as a link, e.g. +4940582291",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "+4940582291"
+  }, {
+    "id" : "7daa1aa9-4e45-7c54-e8d3-66bf8b3331ba",
+    "name" : "facebook",
+    "label" : "Facebook",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "92f57365-cb8f-70ac-9e00-ee1244906817",
+    "name" : "twitter",
+    "label" : "Twitter",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "6aa3331f-6699-2f52-9c48-6daa7209b24c",
+    "name" : "linkedin",
+    "label" : "LinkedIn",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "e3ad6550-4d89-070e-3fde-604cb2bac02b",
+    "name" : "youtube",
+    "label" : "Youtube",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "14f9ac90-4fc5-6a30-d106-bcbbd5838059",
+    "name" : "skype",
+    "label" : "Skype",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "8f671d3f-8fab-0e84-95f1-0d2f378e3fcf",
+    "name" : "instagram",
+    "label" : "Instagram",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "2a25ba83-cf35-b8f6-c7f6-76daa0f18a35",
+    "name" : "reddit",
+    "label" : "Reddit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "8ae08bb3-0b33-2ca7-53c0-6747e800e836",
+    "name" : "xing",
+    "label" : "Xing",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "924840eb-194b-e36a-4561-cb23381fdb52",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "team.animation",
+    "name" : "animation",
+    "label" : "Animation",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "team.animation.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "team.animation.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "name_" : "NAME",
+    "job_title" : "Job Title",
+    "description" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>",
+    "contact" : true,
+    "email" : "hello@power.com",
+    "phone" : "+4940582291",
+    "facebook" : "https://www.facebook.com",
+    "twitter" : "https://www.facebook.com",
+    "linkedin" : "https://www.facebook.com",
+    "youtube" : "https://www.facebook.com",
+    "skype" : "https://www.facebook.com",
+    "instagram" : "https://www.facebook.com",
+    "reddit" : "https://www.facebook.com",
+    "xing" : "https://www.facebook.com",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "18165749-133b-c4e3-e97c-eefdabc3d2b5",
+    "name" : "isTabs",
+    "label" : "Use  Tabs?",
+    "help_text" : "If true, the team members have to be configured in the tabs property. If this is deactivated and you do not want to use tabs, use the Slot property only",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "a44de396-9ae2-c2af-6627-a4948cd9def4",
+    "name" : "section_variant",
+    "label" : "Choose Layout",
+    "help_text" : "",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "reduced", "Reduced" ], [ "full", "Full" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "reduced"
+  }, {
+    "id" : "d60e2cd8-46a3-4012-e000-d4d79a8d92d8",
+    "name" : "centered",
+    "label" : "Centered",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "c6e084a3-7d44-deee-6966-6b32a065c78d",
+    "name" : "padding_top",
+    "label" : "Padding Top",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-t-0", "None" ], [ "pwr--sec-padding-t-sm", "Small" ], [ "pwr--sec-padding-t-md", "Medium" ], [ "pwr--sec-padding-t-lg", "Large" ], [ "pwr-sec--first-with-header", "First Section With Header" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  }, {
+    "id" : "2aa8eb22-e63e-e28a-737b-c5ee954b2fa2",
+    "name" : "padding_bottom",
+    "label" : "Padding Bottom",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Standard" ], [ "pwr--padding-b-0", "None" ], [ "pwr--sec-padding-b-sm", "Small" ], [ "pwr--sec-padding-b-md", "Medium" ], [ "pwr--sec-padding-b-lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "isTabs" : true,
+    "section_variant" : "reduced",
+    "centered" : true,
+    "padding_top" : " ",
+    "padding_bottom" : " "
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+    "name" : "background",
+    "label" : "Background",
+    "help_text" : "Optionally overwrite the default background with a custom background-color, a background-image / -video or a gradient",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Background Color" ], [ "img_vid", "Background Image / Video" ], [ "gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1fc03c0b-792b-04d6-fd94-9245acc6ee7f",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "df6d581d-b1f2-8a9d-a318-1efce42ee696",
+    "name" : "background_image",
+    "label" : "Background Image / Placeholder Image (Video)",
+    "help_text" : "The image should be at least 2000 pixels in width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "picker" : "file",
+    "id" : "85621e73-c446-5672-df98-0c5359f2c36e",
+    "name" : "background_video",
+    "label" : "Background Video - *.mp4",
+    "help_text" : "If a custom video (*.mp4) is configured here, it will overwrite the background image.\nPlease make sure that the file size is not too big. A general rule of thumb is to keep reducing the file size until it starts to noticeably be degraded. Try to export videos in 720p and with a bitrate under 700kb/s ( preferably 500kb/s ).",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null
+  }, {
+    "id" : "abd30497-cb8e-20d3-ee53-3a2e772c680c",
+    "name" : "youtube_link",
+    "label" : "Background Video - Youtube",
+    "help_text" : "Enter your Youtube Link or ID. This will overwrite the previously configured background image or custom background video *.mp4",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "bce7b890-f3a5-ef21-29c5-9cc6d4a9f795",
+    "name" : "background_position",
+    "label" : "Background Position / Parallax Effect",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom", "Bottom" ], [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ], [ "top", "Top" ], [ "parallax", "Parallax" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "35e07bf0-8869-84d6-bfb0-f9be2010807a",
+    "name" : "background_image_overlay",
+    "label" : "Background Image Overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "color", "Color" ], [ "gradient", "Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "color"
+  }, {
+    "id" : "e0b2e916-9c5a-fe86-d116-9aa9aab50c18",
+    "name" : "overlay_color",
+    "label" : "Overlay Color",
+    "help_text" : "Set the opacity to 0% if you do not want to use an overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    }
+  }, {
+    "id" : "793dd27a-344c-fde9-0c5c-d6e247d4f19e",
+    "name" : "overlay_gradient_direction",
+    "label" : "Overlay Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "595f9bc9-56f1-cc6f-8869-a1376e7f7995",
+    "name" : "overlay_gradient_color_1",
+    "label" : "Overlay Gradient Color 1",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d5022779-0958-7717-0787-49dc20c11f75",
+    "name" : "overlay_gradient_color_2",
+    "label" : "Overlay Gradient Color 2",
+    "help_text" : "Opacity setting only works in modern versions of Chrome, Safari and Opera. \nAlternatively you can configure the general opacity for the whole gradient overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "91d2a009-ef2d-fbe2-c110-c7eba801de19",
+    "name" : "overlay_gradient_opacity",
+    "label" : "Overlay Gradient Opacity in %",
+    "help_text" : "General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors, if not 100% -> General opacity for the gradient overlay. Overwrites individual opacity settings of the gradient colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img_vid",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 1,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  }, {
+    "id" : "ad81404f-40cf-0a02-a76a-45bc72a5272a",
+    "name" : "background_gradient_direction",
+    "label" : "Background Gradient Direction",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hor", "Horizontal - Left to Right" ], [ "vert", "Vertical - Top to Bottom" ], [ "diag_tl_br", "Diagonal - Top Left to Right Bottom" ], [ "diag_bl_tr", "Diagonal - Bottom Left to Top Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "hor"
+  }, {
+    "id" : "00a049e6-ea9f-9ef1-eda1-570a6b30ed54",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8bb34386-47ba-da71-4690-592660474606",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "31eebccd-7a5b-a980-3af5-472ae598e9d8",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "background" : "",
+    "background_color" : {
+      "color" : "#F4F6FA",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : null
+    },
+    "background_position" : "center",
+    "background_image_overlay" : "color",
+    "overlay_color" : {
+      "color" : "#1a1d17",
+      "opacity" : 40
+    },
+    "overlay_gradient_direction" : "hor",
+    "overlay_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "overlay_gradient_opacity" : 100,
+    "background_gradient_direction" : "hor",
+    "background_gradient_color_1" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.section",
+    "name" : "section",
+    "label" : "Section",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.section.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "none"
+    }, {
+      "id" : "animation.section.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.intro_to_title",
+    "name" : "intro_to_title",
+    "label" : "Intro to Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.intro_to_title.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.intro_to_title.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.title.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.title.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.description.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.description.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "animation.tabs",
+    "name" : "tabs",
+    "label" : "Tabs",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "animation.tabs.animation_type",
+      "name" : "animation_type",
+      "label" : "Animation Type",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "default"
+    }, {
+      "id" : "animation.tabs.delay",
+      "name" : "delay",
+      "label" : "Delay",
+      "help_text" : "Values from 0 to 3000, with step 50ms",
+      "inline_help_text" : "Leave blank for default value from theme settings.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "is_aos",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 0,
+      "max" : 3000,
+      "step" : 50,
+      "type" : "number",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "1b47ef91-8252-5bb7-5acd-5db3bd4836a0",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "66464839-7b7c-91de-9ed0-d320df76ed1f",
+    "name" : "txt_link",
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read full bio"
+  }, {
+    "id" : "12a07493-3eee-9782-27be-e318ee8da5c7",
+    "name" : "txt_touch",
+    "label" : "Touch Button Text",
+    "help_text" : "This is the text of the button shown on touch devices for layout style 'Full'.\nThe button indicates, that there is additional information in the hover state",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "TOUCH"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_link" : "Read More",
+    "txt_touch" : "TOUCH"
+  }
+}, {
+  "id" : "d138e7a7-df5b-3885-9474-7b08ab825ef6",
+  "name" : "anchor_link_id",
+  "label" : "Anchor Link ID",
+  "help_text" : "Anchor Link ID to Jump to a Specific Part of a Page https://www.yoursite.com/this-page#anchor-link-id. The ID must begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens (\"-\"), underscores (\"_\"), colons (\":\"), and periods (\".\")",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "^[A-Za-z]+[\\w\\-\\:\\.]*$",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

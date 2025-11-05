@@ -1,0 +1,178 @@
+
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/preview-template-landings.jpg
+  label: New Home Innova 2025
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+      
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+      {# Section New Banner Hero #}
+      {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "banner hero" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-new-home-innova-hero', 
+                label='Hero',
+                title='Ab', 
+                title_sel_heading='h1', 
+                description='Head of Marketing', 
+                layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                style={desc_large:true,scheme:"light"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+      
+            {# End Section New Hero #}
+       {# Section Banner Hero #}
+      {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "banner hero" 
+                full_width=true,
+                width=12,
+                path='../modules/banner-hero-form', 
+                label='Hero',
+                title='Ab', 
+                title_sel_heading='h1', 
+                description='Head of Marketing', 
+                layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                style={desc_large:true,scheme:"light"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+      
+            {# End Section Hero #}
+      
+      
+      {# Section navbar #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "navbar" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-navbar', 
+                    label='Navbar flotante',
+                    content='', 
+                    title='Navbar custom', 
+                   
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                     %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section navbar #}
+
+       {# Section slider columns #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "slider columns" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-slider-columns', 
+                    label='Educación que transforma',
+                    content='', 
+                    title='Educación que transforma', 
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section slider columns #}
+         {# Section accordion valores #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "accordion valores" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-accordion-slider', 
+                    label='Valores agregados',
+                    content='', 
+                    title='Educación que transforma', 
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section accordion valores #}
+      {# Section accordion valores #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "accordion valores reverse" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-accordion-slider-reverse', 
+                    label='Valores agregados Reverse',
+                    content='', 
+                    title='Educación que transforma', 
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section accordion valores #}
+      
+      {# Section slider testimonials #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "slider testimonials" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-slider-testimonials', 
+                    label='Testimonios estudiantes',
+                    content='', 
+                    title='qué dicen nuestros estudiantes', 
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section slider testimonials #}
+       {# Section CTA location #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "CTA location" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-banner-location', 
+                    label='Banner de ubicación',
+                    content='', 
+                    title='Banner de ubicación', 
+                    layout={section_height:350}, 
+                    style={desc_large:true,scheme:"light"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA location #}
+
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

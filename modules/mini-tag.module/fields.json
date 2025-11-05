@@ -1,0 +1,340 @@
+[ {
+  "id" : "9e988b2d-0a64-68a0-bb8d-17ebb1167cf8",
+  "name" : "tag",
+  "label" : "Tag",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "be39eb25-ab6e-8abc-53bc-fb9494cddaa4",
+    "name" : "title",
+    "label" : "Text",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Tag Title"
+  }, {
+    "id" : "dc500053-774d-c713-b4ba-cc1ef525e8a4",
+    "name" : "icon",
+    "label" : "Icon",
+    "inline_help_text" : "Choose from icon library",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "4926940a-9450-9e34-bb16-06dcbcc8ad66",
+    "name" : "icon_img",
+    "label" : "Icon Image",
+    "inline_help_text" : "Upload your custom icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Tag Title",
+    "icon" : { },
+    "icon_img" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }
+}, {
+  "id" : "e5a58307-23a4-43d9-7e85-865333dc608e",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "50ab922c-f46b-3d53-84b4-3145c0acce52",
+    "name" : "tag_variant",
+    "label" : "Choose Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no_icon", "No Icon" ], [ "icon", "Icon" ], [ "img", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "no_icon"
+  }, {
+    "id" : "6dbb32cd-d7d3-ffe9-7983-da874f8d6817",
+    "name" : "icon_position",
+    "label" : "Icon Position",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "50ab922c-f46b-3d53-84b4-3145c0acce52",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "no_icon",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "right"
+  }, {
+    "id" : "d9acae8d-6d29-fa89-257a-cbd1afaa2aa1",
+    "name" : "alignment",
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "95282d50-fd05-2a78-8d04-0daf8fbc723f",
+    "name" : "full_width",
+    "label" : "Full width",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "tag_variant" : "no_icon",
+    "icon_position" : "right",
+    "alignment" : "left",
+    "full_width" : false
+  }
+}, {
+  "id" : "ec62610d-3d6e-cdff-c824-439b3c72f823",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "16beae46-28bb-d06f-d9ad-9c0b51d05a25",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "fac1fbc6-e0a6-0e3f-d986-5062b2a68f6c",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "inline_help_text" : "Leave blank for default colors",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b105fc4d-c1d9-9f6f-59ad-ee1d45fa9ba6",
+    "name" : "icon_size",
+    "label" : "Icon Size",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null
+  }, {
+    "id" : "76cd09fb-7c4e-08bb-b43c-d5b600dd558e",
+    "name" : "icon_color",
+    "label" : "Icon Color",
+    "inline_help_text" : "Leave blank for default colors",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "9f046ccd-a88e-fbb8-4a72-4583f70b2c05",
+    "name" : "custom_padding",
+    "label" : "Custom Padding?",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "dc16b72a-c56e-c724-458a-a4cece99bd24",
+    "name" : "padding_top_bottom",
+    "label" : "Padding Top/Bottom",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "9f046ccd-a88e-fbb8-4a72-4583f70b2c05",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "220197fd-38fd-e60e-d064-c117ac0b1e8b",
+    "name" : "padding_left_right",
+    "label" : "Padding Left/Right",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "9f046ccd-a88e-fbb8-4a72-4583f70b2c05",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "icon_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "custom_padding" : false,
+    "padding_top_bottom" : 10,
+    "padding_left_right" : 10
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.animation_type",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "default"
+  }, {
+    "id" : "animation.delay",
+    "name" : "delay",
+    "label" : "Delay",
+    "help_text" : "Values from 0 to 3000, with step 50ms",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 3000,
+    "step" : 50,
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]

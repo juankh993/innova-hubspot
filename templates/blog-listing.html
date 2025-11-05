@@ -1,0 +1,225 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_blog-listing.jpg
+  label: POWER THEME Blog Listing Template
+-->
+{%- macro get_min_by_words(words) %}
+    {% set avgWordPerMin = 130 %}
+    {% set wordCount = words | wordcount %}
+    {% set minutes = wordCount // avgWordPerMin %}
+    {% if minutes == 0 %}
+        {% set minutes = "< 1" %}
+    {% endif %}
+    {{ minutes }}
+{% endmacro -%}
+
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper body-container-wrapper--blog-listing">
+    <div class="body-container body-container--blog-index">
+        <section class="blog-index">
+            <div class="blog-header">
+                {% if blog_author %}
+                    {% module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label=' Hero',
+                    title={{ group.public_title }},  
+                    description='',
+                    layout={header_height:"x-small",isSmall:true}, 
+                    style={scheme:"dark",background:"img_vid"}
+                    %}
+                {% else %}
+                    {% module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label=' Hero',
+                    title={{ group.public_title }},  
+                    description='',
+                    layout={header_height:"x-small",isSmall:true}, 
+                    style={scheme:"light",background:"img_vid"}
+                    %}
+                {% endif %}
+            </div>
+            <div class="blog-content">
+                {% if !blog_author && theme.blog.blog_listing.is_filter_bar -%}
+                <div class="pwr-filter">
+                    <div class="page-center pwr--relative">
+                        {% set topics = blog_topics('default', 250) %}
+                        <ul class="pwr-filter__list">
+                            <li class="pwr-filter__list-item">
+                                <a href="{{ group.absolute_url }}"
+                                    class="pwr-filter__link {% if tag == undefined %}active{% endif %}">{% module "txt_show_all" path="@hubspot/text", label="Filter - Standard Text - Show All", value="Show all", no_wrapper=True %}</a>
+                            </li>
+                            {% for topic in topics %}
+                            <li class="pwr-filter__list-item">
+                                <a href="{{ blog_tag_url(group.id, topic.slug) }}"
+                                    class="pwr-filter__link {% if tag == topic.slug %}active{% endif %}">{{ topic }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif -%}
+
+                <div class="pwr-blog-listing {% if blog_author %}pwr-blog-listing--author-page{% endif %}">
+                    <div class="pwr-blog-listing__content">
+                        {% if blog_author -%}
+                        <div class="pwr--grey-background">
+                            <div class="pwr-author-profile pwr-author-profile--author-page page-center">
+                                {% if blog_author.avatar %}
+                                <div class="pwr-avatar pwr-avatar__large">
+                                    <div class="pwr-avatar__round">
+                                        <img src="{{ blog_author.avatar }}" alt="avatar" class="pwr-avatar__img" width="290">
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <div class="pwr-author-profile__info">
+                                    <span class="pwr-author-profile__bio">{{ blog_author.bio }}</span>
+                                    <div class="pwr-author-profile__social">
+                                        {% if blog_author.email -%}
+                                        <a href="mailto:{{ blog_author.email }}" target="_blank" rel="noopener"
+                                            class="pwr-social-icon">{% icon name="envelope" style="SOLID" unicode="f0e0" %}</a>
+                                        {%- endif %}
+                                        {% if blog_author.website -%}
+                                        <a href="{{ blog_author.website }}" target="_blank" rel="noopener"
+                                            class="pwr-social-icon">{% icon name="link" style="SOLID" unicode="f0c1" %}</a>
+                                        {%- endif %}
+                                        {% if blog_author.has_social_profiles && blog_author.facebook -%}
+                                        <a href="{{ blog_author.facebook }}" target="_blank" rel="noopener"
+                                            class="pwr-social-icon">{% icon name="facebook-f" style="SOLID" unicode="f39e" %}</a>
+                                        {%- endif %}
+                                        {% if blog_author.has_social_profiles && blog_author.linkedin -%}
+                                        <a href="{{ blog_author.linkedin }}" target="_blank" rel="noopener"
+                                            class="pwr-social-icon">{% icon name="linkedin-in" style="SOLID" unicode="f0e1" %}</a>
+                                        {%- endif %}
+                                        {% if blog_author.has_social_profiles && blog_author.twitter -%}
+                                        <a href="{{ blog_author.twitter }}" target="_blank" rel="noopener"
+                                            class="pwr-social-icon">{% icon name="twitter" style="SOLID" unicode="f099" %}</a>
+                                        {%- endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%- endif %}
+
+                        <div class="page-center pwr--clearfix">
+                            {% if blog_author %}
+                            <h2 class="pwr-author-posts-title">{% module "txt_post_by" path="@hubspot/text", label="Listing - Standard Text - Blog Post by", value="Blog Post by", no_wrapper=True %}{{ ' ' + blog_author.display_name }}</h2>
+                            {% endif %}
+                            <div id="pwr-blog-listing__posts" class="pwr-blog-listing__posts pwr-blog-listing__posts--{{ theme.blog.blog_listing.layout }} pwr--neg-margin-lr-10 pwr--clearfix">
+                                {% for content in contents -%}
+                                    {% if not simple_list_page -%}
+                                        {% if theme.blog.blog_listing.layout == "1col" %}
+                                        <div class="pwr-post-item pwr-post-item--1col {% if !blog_author %}pwr-post-item--1col-centered{% endif %}">
+                                            <div class="pwr-post-item__img" {% if content.post_list_summary_featured_image %}style="background-image: url({{ resize_image_url(content.post_list_summary_featured_image,800) }});background-image: -webkit-image-set(url({{ resize_image_url(content.post_list_summary_featured_image,800) }}) 1x, url({{ resize_image_url(content.post_list_summary_featured_image,1600) }}) 2x);"{% endif %}></div>
+                                            <div class="pwr-post-item__info-box">
+                                                <div class="pwr-post-item__author" id="hubspot-author_data" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+                                                    {% if content.blog_post_author && theme.blog.blog_listing.show_author -%}
+                                                    <a class="pwr-post-item__name" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_post_author.display_name }}</a>
+                                                    {%- endif %}
+                                                    {% if theme.blog.blog_listing.show_date -%}
+                                                    <span class="pwr-post-item__date">{{ content.publish_date_localized }}</span>
+                                                    {%- endif %}
+                                                    {% if theme.blog.blog_listing.show_read_time -%}
+                                                    <span class="pwr-post-item__n-min-read">{{ get_min_by_words(content.post_body) + ' ' }}{% module "txt_min_read_2" path="@hubspot/text", label="Listing - Standard Text - Min read", value="min read", no_wrapper=True %}</span>
+                                                    {%- endif %}
+                                                </div>
+                                                <a class="pwr-post-item__title" href="{{content.absolute_url}}">
+                                                    <h2 class="pwr-post-item__title">{{ content.name }}</h2>
+                                                </a>
+                                                {% if theme.blog.blog_listing.show_summary -%}
+                                                <div class="pwr-post-item__desc">
+                                                  {% set summary = content.post_summary|safe|striptags %}
+                                                  {% if theme.blog.blog_listing.summary == 'meta' %}
+                                                    {% set summary = content.meta_description|safe|striptags %}
+                                                  {% endif %}
+                                                  {% if theme.blog.blog_listing.truncate -%}
+                                                  {{ summary|truncate(theme.blog.blog_listing.truncate_at|default(90)) }}
+                                                  {% else %}
+                                                  {{ summary }}
+                                                  {%- endif %}
+                                                </div>
+                                                {%- endif %}
+                                                <a class="pwr-post-item__more-link" href="{{ content.absolute_url }}">{% module "txt_link_2" path="@hubspot/text", label="Listing - Standard Text - Link", value="Start Reading", no_wrapper=True %}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></a>
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                        <a class="pwr-post-item pwr-post-item--{{ theme.blog.blog_listing.layout }}" href="{{ content.absolute_url }}"> 
+                                            <div class="pwr-3D-box">
+                                                <div class="pwr-post-item__content pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover pwr--colored-box">
+                                                    <div class="pwr-post-item__img" {% if content.post_list_summary_featured_image %}style="background-image: url({{ resize_image_url(content.post_list_summary_featured_image,600) }});background-image: -webkit-image-set(url({{ resize_image_url(content.post_list_summary_featured_image,600) }}) 1x, url({{ resize_image_url(content.post_list_summary_featured_image,1200) }}) 2x);" {% endif %}></div>
+                                                    <div class="pwr-post-item__overlay"></div>
+                                                    <div class="pwr-post-item__info-box pwr-3D-box__info-box">
+                                                        <div class="pwr-post-item__author" id="hubspot-author_data" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+                                                            {% if content.blog_post_author && theme.blog.blog_listing.show_author  -%}
+                                                            <span class="pwr-post-item__name">{{ content.blog_post_author.display_name }}</span>
+                                                            {%- endif %}
+                                                            {% if theme.blog.blog_listing.show_date -%}
+                                                            <span class="pwr-post-item__date">{{ content.publish_date_localized }}</span>
+                                                            {%- endif %}
+                                                            {% if theme.blog.blog_listing.show_read_time -%}
+                                                            <span class="pwr-post-item__n-min-read">{{ get_min_by_words(content.post_body) + ' ' }}{% module "txt_min_read" path="@hubspot/text", label="Listing - Standard Text - Min read", value="min read", no_wrapper=True %}</span>
+                                                            {%- endif %}
+                                                        </div>
+                                                        <h2 class="pwr-post-item__title">{{ content.name }}</h2>
+                                                        {% if theme.blog.blog_listing.show_summary -%}
+                                                        <div class="pwr-post-item__desc">
+                                                            {% set summary = content.post_summary|safe|striptags %}
+                                                            {% if theme.blog.blog_listing.summary == 'meta' %}
+                                                            {% set summary = content.meta_description|safe|striptags %}
+                                                            {% endif %}
+                                                            {% if theme.blog.blog_listing.truncate -%}
+                                                            {{ summary|truncate(theme.blog.blog_listing.truncate_at|default(90)) }}
+                                                            {% else %}
+                                                            {{ summary }}
+                                                            {%- endif %}
+                                                        </div>
+                                                        {%- endif %}
+                                                        <span class="pwr-post-item__more-link">{% module "txt_link" path="@hubspot/text", label="Listing - Standard Text - Link", value="Start Reading", no_wrapper=True %}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        {% endif %}
+                                    {% else %}
+                                    <h2 class="pwr-post-item-simple"><a
+                                            href="{{content.absolute_url}}">{{ content.name }}</a></h2>
+                                    {%- endif %}
+                                {%- endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if not simple_list_page -%}
+                    <div class="pwr-blog-pagination pwr-blog-pagination--{{ theme.blog.blog_listing.layout }} page-center {% if theme.blog.blog_listing.layout == '1col' %}pwr--align-l{% endif %}">
+                        <div class="pwr--neg-margin-lr-10">
+                            {%- if theme.blog.blog_listing.pagination == "load_more" %}
+                                {%- if next_page_num -%}
+                                    <a id="pwr-btn-load-more" class="cta_button pwr-cta--regular-border pwr-cta--long" href="{{ blog_page_link(next_page_num) }}">{% module "txt_load_more" path="@hubspot/text", label="Listing - Standard Text - Load More", value="Load more posts", no_wrapper=True %}</a>
+                                {% endif -%}
+                            {% else %}
+                                {%- if last_page_num %}
+                                    <a class="pwr-blog-pagination__btn" href="{{ blog_page_link(last_page_num) }}">{% module "txt_previous_post" path="@hubspot/text", label="Listing - Standard Text - Previous", value="Previous", no_wrapper=True %}</a>
+                                {% else %}
+                                    <a class="pwr-blog-pagination__btn pwr-blog-pagination__btn--disabled" href="#">{% module "txt_previous_post" path="@hubspot/text", label="Listing - Standard Text - Previous", value="Previous", no_wrapper=True %}</a>
+                                {%- endif %}
+                                    <a class="pwr-blog-pagination__btn" href="{{ blog_all_posts_url(group.id) }}">{% module "txt_all_posts" path="@hubspot/text", label="Listing - Standard Text - All", value="All", no_wrapper=True %}</a>
+                                {% if next_page_num -%}
+                                    <a class="pwr-blog-pagination__btn" href="{{ blog_page_link(next_page_num) }}">{% module "txt_next_post" path="@hubspot/text", label="Listing - Standard Text - Next", value="Next", no_wrapper=True %}</a>
+                                {% else %}
+                                    <a class="pwr-blog-pagination__btn pwr-blog-pagination__btn--disabled" href="#">{% module "txt_next_post" path="@hubspot/text", label="Listing - Standard Text - Next", value="Next", no_wrapper=True %}</a>
+                                {% endif -%}
+                            {% endif -%}
+                        </div>
+                    </div>
+                    {%- endif %}
+                </div> 
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock body %}

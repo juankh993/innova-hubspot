@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon-module-video</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="video">
+            <rect id="Rectangle-Copy-14" stroke="#516F90" stroke-width="10" x="5" y="5" width="118" height="86"></rect>
+            <rect id="Rectangle" fill="#516F90" x="0" y="115" width="24" height="10"></rect>
+            <rect id="Rectangle-Copy-69" fill-opacity="0.5" fill="#516F90" x="48" y="115" width="80" height="10"></rect>
+            <circle id="Oval" fill="#516F90" cx="36" cy="120" r="8"></circle>
+            <polygon id="Triangle" fill="#516F90" transform="translate(64.000000, 50.000000) rotate(90.000000) translate(-64.000000, -50.000000) " points="64 36 78 64 50 64"></polygon>
+        </g>
+    </g>
+</svg>

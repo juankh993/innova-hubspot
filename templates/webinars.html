@@ -1,0 +1,59 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_video-library.jpg
+  label: POWER THEME Webinars/Video Library
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='Webinars/Video Library', 
+                    title_sel_heading='h1', 
+                    description='Collection of Videos', 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"",
+                        desc_large:true,
+                        scheme:"light",
+                        title_extra_large:false
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+            
+            {# Section Video Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "video boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-video-boxes', 
+                    label='Video Boxes',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    video_box=[
+                        {youtube_link:"https://www.youtube.com/watch?v=AXQehZH4s84",desc:"Watch our free webinar to learn how to align your marketing systems with a seamless bi-directional data synchronisation.",filtering:{},img:{alt:"webinar-01-unsplash",height:907,'src':get_asset_url('../images/boxes/webinars/pwr-img_webinar_01.jpg'),width:1360},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}},style:{background_position:"center"},title:"TAME DATA CHAOS WITH DATA SYNC",animation:{animation_type:"default",delay:50}},
+                        {youtube_link:"https://www.youtube.com/watch?v=AXQehZH4s84",desc:"Reimagine your HubSpot workflows. Discover new strategies and ideas that can simplify your corporate workflows with HubSpot automations.",filtering:{},img:{alt:"webinar-03-unsplash",height:907,'src':get_asset_url('../images/boxes/webinars/pwr-img_webinar_03.jpg'),width:1360},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}},style:{background_position:"center"},title:"WORKFLOW PROCESS AUTOMATION",animation:{animation_type:"default",delay:50}},
+                        {youtube_link:"https://www.youtube.com/watch?v=AXQehZH4s84",desc:"Learn how to boost and build sustainable social media channels. Have a look behind the scenes of a multi-million follower instagram profile.",filtering:{},img:{alt:"webinar-02-unsplash",height:907,'src':get_asset_url('../images/boxes/webinars/pwr-img_webinar_02.jpg'),width:1360},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}},style:{background_position:"center"},title:"SUPERCHARGE YOUR SOCIAL MEDIA PROFILES",animation:{animation_type:"default",delay:200}},
+                        {youtube_link:"https://www.youtube.com/watch?v=AXQehZH4s84",desc:"How to become a convincing speaker through your perceived competence and successful communication. Don't be shy and get fried.",filtering:{},img:{alt:"webinar-04-unsplash",height:907,'src':get_asset_url('../images/boxes/webinars/pwr-img_webinar_04.jpg'),width:1360},link:{no_follow:false,open_in_new_tab:false,url:{href:"",type:"EXTERNAL"}},style:{background_position:"center"},title:"THE POWER OF SPEECH",animation:{animation_type:"default",delay:200}}
+                    ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Video Boxes #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

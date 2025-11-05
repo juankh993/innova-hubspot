@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 191920751938,
+  "label" : "POWER Sec Steps",
+  "icon" : "../../../POWER%20THEME/images/icons/module/icon-module-sec-steps.svg",
+  "is_available_for_new_content" : true
+}

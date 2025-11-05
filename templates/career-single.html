@@ -1,0 +1,167 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_career-job.jpg
+  label: POWER THEME Career Single
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='SENIOR JAVA DEVELOPER', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    basic_info=[{icon:{name:"calendar-alt",type:"REGULAR",unicode:"f073"},info:"20-06-21"},{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},info:"Dublin, Ireland"}], 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"bg-office-working-unsplash",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-working.jpg'),width:1920},background_image_overlay:"color",background_image_position:"parallax",background_position:"parallax",desc_large:true,overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section DnD #}
+            {# Job Summary #}
+            {% dnd_section full_width=false, padding={'top': 80,'bottom': 80,'left': 0,'right': 0}, background_color='#F4F6FA' %}
+                {% dnd_column padding={'top': 48,'bottom': 48,'left': 56,'right': 56}, background_color='#FFFFFF' %}
+                    {% dnd_row padding={'bottom':0} %}
+                        {% dnd_module path='@hubspot/rich_text' %}
+                            {% module_attribute 'html' %}
+                                <h2>WHAT DOES IT TAKE?</h2>
+                                <p style="font-size:18px;">We are looking for a nice person that loves to program, solve problems and has an interest in design and music. The team works perfectly together, everybody is in harmony and we are looking for someone who has a strong interest in app development. You should be as comfortable starting a project from scratch as you are jumping into existing code. Working on tight timelines is a status quo and you should also have experience working under stressful situations.</p>
+                            {% end_module_attribute %}
+                        {% end_dnd_module %}
+                    {% end_dnd_row %}
+
+                    {% dnd_row %}
+                        {# Mini-module CTA #}
+                        {% dnd_module
+                            path='../modules/mini-cta', 
+                            label='CTA',
+                            cta='b7f9e758-c2c5-4d81-a1ee-d16bd6b3e942', 
+                            layout={alignment:"left"}, 
+                            style={cta_style:"pwr-cta--primary-solid"} 
+                            %}
+                        {% end_dnd_module %}
+                    {% end_dnd_row %}    
+                {% end_dnd_column %}
+            {% end_dnd_section %}
+            {# End Section DnD #}
+            
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='RESPONSIBILITIES'
+                    %}
+                    {% module_attribute "left" %}
+                    <ul><li><span>Develop full stack web apps</span></li><li><span>Build solutions that drive business and are impactful</span></li><li>Explore new technologies and figure out how to use them best.</li><li><span>Attend extra training classes for coding.</span></li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li><span>Lead multiple projects with many moving gears</span></li><li><span>Come up with creative solutions to modern problems</span></li><li><span>Set high standards for your team and yourself.</span></li><li>Organize company-hackathons for challenging problems.</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Image Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-slider', 
+                    label='Image Slider',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    image=[
+                        {alt:"bg-office-unsplash-02",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-02.jpg'),width:1920},
+                        {alt:"bg-office-unsplash-01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-01.jpg'),width:1920},
+                        {alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920}
+                    ], 
+                    slider={nav_arrows:false,nav_bullets:true,navigation_bullets_overlay:true}, 
+                    layout={section_variant:"one_by_one_reduced"}, 
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Slider #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='REQUIREMENTS'
+                    %}
+                    {% module_attribute "left" %}
+                    <ul><li><span>Bachelor's degree in Science/IT/Computing</span></li><li><span>3-5 year IT experience.</span></li><li>Knowledge of all phases of the Software Development Lifecycle.</li><li><span>SQL/Oracle Database, UNIX, J2EE, including Java Servlets</span></li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li><span>Competent in verbal and written communication skills</span></li><li><span>Ability to work in a team-oriented, collaborative environment.</span></li><li><span>Willingness to contribute time and effort to work assigned.</span></li><li>Motivated to learn new tools and technologies.</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='ABOUT US', 
+                    title='OUR MISSION AND VISION', 
+                    layout={padding_bottom:" ",padding_top:" "}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='GROW PERSONALLY AND PROFESSIONALLY', 
+                    cta='77b308a5-f601-4ca6-b079-98b16b13361a', 
+                    layout={section_variant:"vertical"}, 
+                    style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span class="pwr-rich-text pwr-sec-cta__desc pwr-sec-cta__desc--vertical"><span>Working for us means being part of creating products that shape the future of digital industries.</span></span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

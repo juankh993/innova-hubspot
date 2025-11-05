@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 191920751918,
+  "label" : "POWER Sec Breadcrumbs",
+  "icon" : "../../../POWER%20THEME/images/icons/module/icon-module-sec-breadcrumbs.svg",
+  "is_available_for_new_content" : true
+}

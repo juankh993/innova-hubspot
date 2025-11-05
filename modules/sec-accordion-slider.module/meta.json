@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 191925201554,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../POWER THEME INNOVA/js/third_party/animations.js",
+    "name" : "animations.js"
+  } ],
+  "label" : "Accordion slider",
+  "is_available_for_new_content" : true
+}

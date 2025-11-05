@@ -1,0 +1,396 @@
+{# *********************************************
+   * POWER Theme Section Blog Posts Preview V1.1
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{%- macro random_int(len) -%}
+  {%- for _ in range(len) -%}
+    {{ range(10) | random }}
+  {%- endfor -%}
+{%- endmacro -%}
+
+{% set mhID = random_int(10) %}
+
+{%- macro get_min_by_words(words) %}
+  {%- set avgWordPerMin = 130 %}
+  {%- set wordCount = words | wordcount %}
+  {%- set minutes = wordCount // avgWordPerMin %}
+  {%- if minutes == 0 %}
+    {%- set minutes = "< 1" %}
+  {% endif -%}
+  {{ minutes }}
+{% endmacro -%}
+
+{% macro post_formatter_standard(blog_post, index, count) %}
+<a class="pwr-post-item" href="{{blog_post.url}}">
+  <div class="pwr-3D-box">
+    <div class="pwr-post-item__content pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover pwr--colored-box {% if module.style.overwrite_box_color %}{% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}{% endif %}" {% if module.style.overwrite_box_color && module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+      <div class="pwr-post-item__img lazyload" {% if  blog_post.featured_image %}style="background-image: url({{ resize_image_url(blog_post.featured_image,600) }});background-image: -webkit-image-set(url({{ resize_image_url(blog_post.featured_image,600) }}) 1x, url({{ resize_image_url(blog_post.featured_image,1200) }}) 2x);"{% endif %}></div>
+      <div class="pwr-post-item__overlay"></div>
+      <div class="pwr-post-item__info-box pwr-3D-box__info-box">
+        <div class="pwr-post-item__author" id="hubspot-author_data" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+          {% if module.layout.show_author -%}
+          <span class="pwr-post-item__name">{{ blog_post.blogAuthor }}</span>
+          {%- endif %}
+          {% if module.layout.show_date -%}
+          <span class="pwr-post-item__date">{{ blog_post.publish_date_localized }}</span>                        
+          {%- endif %}
+          {% if module.layout.show_read_time -%}
+          <span class="pwr-post-item__n-min-read">{{ module.translation.txt_read_time|format(get_min_by_words(blog_post.post_body)) }}</span>
+          {%- endif %}
+        </div>
+        <h3 class="pwr-post-item__title pwr--toc-ignore">{{ blog_post.name }}</h3>
+        {% if module.layout.show_summary -%}
+        <div class="pwr-post-item__desc">
+          {% set summary = blog_post.post_summary|safe|striptags %}
+          {% if module.layout.summary == 'meta' %}
+            {% set summary = blog_post.meta_description|safe|striptags %}
+          {% endif %}
+          {% if module.layout.truncate -%}
+          {{ summary|truncate(module.layout.truncate_at|default(90)) }}
+          {% else %}
+          {{ summary }}
+          {%- endif %}
+        </div>
+        {%- endif %}
+        <span class="pwr-post-item__more-link">{{ module.translation.txt_link }}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></span>
+      </div>
+    </div>
+  </div>
+</a>
+{% endmacro %}
+
+{% macro post_formatter_large(blog_post, index, count) %}
+  <a class="pwr-rel-post-item pwr-rel-post-item--large" href="{{ blog_post.url }}">
+    <div class="pwr-3D-box pwr--padding-b-md">    
+      <div class="pwr-rel-post-item__img pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if blog_post.featured_image %}style="background-image: url({{ resize_image_url(blog_post.featured_image,500) }});background-image: -webkit-image-set(url({{ resize_image_url(blog_post.featured_image,500) }}) 1x, url({{ resize_image_url(blog_post.featured_image,1000) }}) 2x);"{% endif %}>
+        <div class="pwr-post-item__overlay"></div>
+        <div class="pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+          <span class="pwr-rel-post-item__more-link pwr-rel-post-item__more-link--centered">{{ module.translation.txt_link }}</span>
+        </div>             
+      </div>
+    </div>
+    <h3 class="pwr-rel-post-item__title pwr--toc-ignore" data-mh="{{ mhID }}">{{ blog_post.name }}</h3>
+  </a>
+{% endmacro %}
+
+{% macro post_formatter_small(blog_post, index, count) %}
+  <a class="pwr-rel-post-item pwr-rel-post-item--small" href="{{ blog_post.url }}">
+    <div class="pwr-rel-post-item__img pwr-rel-post-item__img--small lazyload" {% if blog_post.featured_image %}style="background-image: url({{ resize_image_url(blog_post.featured_image,500) }});background-image: -webkit-image-set(url({{ resize_image_url(blog_post.featured_image,500) }}) 1x, url({{ resize_image_url(blog_post.featured_image,1000) }}) 2x);"{% endif %}>
+      <div class="pwr-rel-post-item__img-overlay">
+        <div class="pwr-rel-post-item__overlay-icon">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</div>
+      </div>
+    </div>
+    <h3 class="pwr-rel-post-item__title pwr-rel-post-item__title--small pwr--toc-ignore">{{ blog_post.name }}</h3>
+    <span class="pwr-sec_posts-item__border {% if verticalLayout %}pwr-sec_posts-item__border--vertical-layout{% endif %}"></span>
+  </a>
+{% endmacro %}
+
+{% macro post_formatter_text(blog_post, index, count) %}
+  <div class="pwr-rel-post-item__wrapper--text">
+    <a class="pwr-rel-post-item" href="{{ blog_post.url }}">
+      {% if module.layout.show_author -%}
+      <div class="pwr-post-item__name pwr--margin-b-sm" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">{{ blog_post.blogAuthor }}</div>
+      {%- endif %}
+      {% if module.layout.show_date -%}
+      <span class="pwr-post-item__date">{{ blog_post.publish_date_localized }}</span>                        
+      {%- endif %}
+      {% if module.layout.show_read_time -%}
+      <span class="pwr-post-item__n-min-read pwr--margin-b-sm">{{ module.translation.txt_read_time|format(get_min_by_words(blog_post.post_body)) }}</span>
+      {%- endif %}
+      <h3 class="pwr-rel-post-item__title pwr-rel-post-item__title--text pwr--toc-ignore">{{ blog_post.name }}</h3>
+      {% if module.layout.show_summary -%}
+      <div class="pwr-rel-post-item__summary pwr--margin-b-sm">
+        {% set summary = blog_post.post_summary|safe|striptags %}
+        {% if module.layout.summary == 'meta' %}
+          {% set summary = blog_post.meta_description|safe|striptags %}
+        {% endif %}
+        {% if module.layout.truncate -%}
+        {{ summary|truncate(module.layout.truncate_at|default(90)) }}
+        {% else %}
+        {{ summary }}
+        {%- endif %}
+      </div>
+      {%- endif %}
+      <span class="pwr-rel-post-item__more-link">{{ module.translation.txt_link }}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></span>           
+    </a>
+  </div>
+{% endmacro %}
+
+{% set verticalLayout = module.layout.section_variant == 'large_vert' || module.layout.section_variant == 'small_vert' || module.layout.section_variant == 'text' || module.layout.section_variant == 'standard' %}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+{% if module.anchor_link_id  %}<div class="pwr-anchor" id="{{ module.anchor_link_id }}"></div>{% endif %}
+<div class="pwr-sec-posts {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if verticalLayout %}pwr-sec-posts--vertical-layout{% endif %} {% if module.layout.section_variant == 'small_hor' || module.layout.section_variant == 'small_vert' %}pwr-sec-posts--small{% endif %}{{ module.layout.padding_top }} {{ module.layout.padding_bottom }} lazyload" 
+      {# Animation on Scroll #}
+      {{ get_aos(module.animation.section) }}       
+      {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+      {% elif bgImg.src && bgImgPos != 'parallax' %}
+      {# Lazy load and resposive images for background-image #}           
+      data-bgset="{{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_xs * 2 }}w [(max-width: 575px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_s * 2 }}w [(max-width: 767px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_m * 2 }}w [(max-width: 991px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l) }} {{ theme.performance.images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_l * 2 }}w [(max-width: 1199px)] |
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_max_size * theme.performance.retina_images.image_retina_scaling_factor) }}"
+      data-sizes="auto"
+      style="background-size: cover;background-position: {{ bgImgPos }};"
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+        style="background-color: transparent;"
+     {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            " 
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+  {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+  <div class="page-center pwr--relative">
+    <div class="row-fluid">
+      
+  {% if module.intro_to_title || module.title || module.desc || (module.cta && module.cta != 'null') %}
+      <div class="pwr-sec-posts__intro-sec pwr-sec-posts__intro-sec--{{ module.layout.section_variant|replace('_','-') }} {% if module.layout.centered %}pwr-sec-posts__intro-sec--centered pwr--align-c{% endif %}">
+        {% if module.intro_to_title %}
+        <span class="pwr-sec__title-intro pwr-sec__title-intro--narrow pwr-sec-posts__title-intro"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.intro_to_title) }}       
+          >
+        {{ module.intro_to_title }}</span>
+        {% endif %}
+        {% if module.title_sel_heading && module.title %}
+        <{{ module.title_sel_heading }} class="pwr-sec__title pwr-sec__title--narrow pwr-sec-posts__title" 
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.title) }}       
+          >{{ module.title }}</{{ module.title_sel_heading }}>
+        {% endif %}
+        {% if module.description %}  
+        <div class="pwr-rich-text pwr-sec__desc pwr-sec-posts__desc"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.description) }}       
+          >
+        {{ module.description }}</div>
+        {% endif %}
+        {% if module.btn_type == 'cta' && module.cta != 'null' && module.cta %}
+        <div class="pwr-sec-posts__cta {% if !verticalLayout %}pwr-sec-posts__cta--horizontal-layout{% endif %} {% if !module.intro_to_title %}pwr-sec-posts__cta--no-intro-title{% endif %} pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.button) }}       
+        >
+        {% cta "name" guid="{{module.cta}}" %}
+        </div>
+        {% elif module.btn_type == 'btn' %}         
+        <div class="pwr-sec-posts__cta {% if !verticalLayout %}pwr-sec-posts__cta--horizontal-layout{% endif %} {% if !module.intro_to_title %}pwr-sec-posts__cta--no-intro-title{% endif %} pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.button) }}       
+        >
+          <a class="cta_button" {% if module.btn.link.url.href %}href="{% if module.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ module.btn.link.url.href }}"{% endif %} {% if module.btn.link.no_follow %}rel="nofollow"{% endif %} {% if module.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ module.btn.title }}">{{ module.btn.title }}</a>                    
+        </div>  
+        {% endif %}
+      </div>
+  {% endif %}
+ 
+      <div class="pwr-sec-posts__container pwr-sec-posts__container--{{ module.layout.section_variant|replace('_','-') }} {% if module.layout.section_variant == 'standard' %}pwr--neg-margin-lr-10 pwr--clearfix{% endif %}"
+          {# Animation on Scroll #}
+          {{ get_aos(module.animation.blog_posts) }}       
+      >        
+        {%- if group.id %}
+          {% set blog_id = group.id %}
+        {% else %}
+          {% set blog_id = module.filter.blog_id|default('default')  %}
+        {% endif -%}
+        
+        {%- if module.filter.type_of_filter == 'related' %}
+
+          {%- set filter_tags = [] -%}
+          {%- for tag in module.filter.tags -%}
+            {% if tag %}{%- do filter_tags.append(tag) -%}{% endif %}
+          {%- endfor -%}
+
+          {% set tags_total_list = '' %}
+          {% if content.topic_list && (content.topic_list + filter_tags)|length > 0 %}
+            {% set tags_total_list = (content.topic_list + filter_tags)|join(', ')|default('') %}
+          {% elif filter_tags|length > 0 %}
+            {% set tags_total_list = filter_tags|join(', ')|default('') %}
+          {% endif %}
+        
+          {% if content.blog_post_author.display_name && module.filter.author_s %}
+            {% set authors_total = content.blog_post_author.display_name + ', ' + module.filter.author_s %}
+          {% else %}
+            {% set authors_total = module.filter.author_s|default('')  %}
+          {% endif %}
+
+          {% set post_override = module.filter.force_post_s|default('') %}
+        
+
+          {% if module.layout.section_variant == 'standard' %}
+              {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_standard", limit=3 %}  
+          {% elif module.layout.section_variant == 'large_hor' %}
+              {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_large", limit=2 %}
+          {% elif module.layout.section_variant == 'large_vert' %}    
+              {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_large", limit={{ module.layout.nr_posts }} %}
+          {% elif module.layout.section_variant == 'small_hor' || module.layout.section_variant == 'small_vert' %}
+              {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_small", limit={{ module.layout.nr_posts }} %}
+          {% elif module.layout.section_variant == 'text' %}
+              {% related_blog_posts limit=3, blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_text" %}
+          {% endif %}
+        
+        {% else %}
+        
+            {%- set posts = [] -%}
+            {%- set limit = 3 -%}
+            {%- if module.layout.section_variant == 'large_hor' %}
+              {% set limit = 2 %}
+            {% elif module.layout.section_variant == 'large_vert' || module.layout.section_variant == 'small_hor' || module.layout.section_variant == 'small_vert' %}
+              {% set limit = module.layout.nr_posts %}
+            {% endif -%}
+        
+            {%- if module.filter.type_of_filter == 'popular' %}
+              {% set posts = blog_popular_posts(blog_id, limit, module.filter.popular_tag, module.filter.popular_time_frame) %}
+            {% elif module.filter.type_of_filter == 'recent' %}
+              {% set posts = blog_recent_posts(blog_id, limit) %}
+            {% elif module.filter.type_of_filter == 'recent_by_tags' %}
+              {%- set recent_filter_tags = [] -%}
+              {%- for tag in module.filter.recent_tags -%}
+                {% if tag %}{%- do recent_filter_tags.append(tag) -%}{% endif %}
+              {%- endfor -%}
+
+              {% set tags_total_array = '' %}
+              {% if content.topic_list && (content.topic_list + recent_filter_tags)|length > 0 %}
+                {% set tags_total_array = (content.topic_list + recent_filter_tags) %}
+              {% elif recent_filter_tags|length > 0 %}
+                {% set tags_total_array = recent_filter_tags %}
+              {% endif %}
+        
+              {% set posts = blog_recent_tag_posts(blog_id, tags_total_array, limit) %}
+            {% elif module.filter.type_of_filter == 'recent_by_author' %}
+              {% set author_slug = module.filter.recent_author %}
+              {% if author_slug|trim|length == 0 && content.blog_post_author.slug %}
+                {% set author_slug = content.blog_post_author.slug %}
+              {% endif %}
+              {% set posts = blog_recent_author_posts(blog_id, author_slug, limit) %}
+            {% endif -%}
+        
+            {%- for post in posts %}
+                {% set tmp = '' %}
+                {% if module.layout.section_variant == 'standard' %}
+                  {% set tmp = post_formatter_standard(post, loop.index, loop.length) %}
+                {% elif module.layout.section_variant == 'large_hor' || module.layout.section_variant == 'large_vert' %}
+                  {% set tmp = post_formatter_large(post, loop.index, loop.length) %}
+                {% elif module.layout.section_variant == 'small_hor' || module.layout.section_variant == 'small_vert' %}
+                  {% set tmp = post_formatter_small(post, loop.index, loop.length) %}
+                {% elif module.layout.section_variant == 'text' %}
+                  {% set tmp = post_formatter_text(post, loop.index, loop.length) %}
+                {% endif %}
+                {{ tmp }}
+            {% endfor -%}
+        
+        {% endif -%}
+      </div>
+    </div>
+  </div> 
+</div>

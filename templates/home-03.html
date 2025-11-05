@@ -1,0 +1,159 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-03.jpg
+  label: POWER THEME Home 03
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='A THEME MADE WITH PASSION', 
+                    title_sel_heading='h1',
+                    cta='77b308a5-f601-4ca6-b079-98b16b13361a',
+                    layout={full_width:false,header_height:"large",isSmall:false,title_extra_large:false},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"woman working laptop with coffee",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_woman-laptop-table-coffee.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:50},
+                        scheme:"dark"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    For building responsive quality websites with ease and the new Drag and Drop area of the Hubspot CMS.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Services #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "services" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-services', 
+                    label='Services',
+                    intro_to_title='WHAT MAKES US SO POWERFUL',
+                    title='CHECK OUT OUR SERVICES',
+                    description='',
+                    services=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Web Development",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-right",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"list",type:"SOLID",unicode:"f03a"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Project Management",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-up",delay:150}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"bullhorn",type:"SOLID",unicode:"f0a1"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Marketing",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-left",delay:250}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"chart-line",type:"SOLID",unicode:"f201"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Business Growth",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-right",delay:350}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"linkedin-in",type:"REGULAR",unicode:"f0e1"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Social Media",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-up",delay:450}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"code-branch",type:"SOLID",unicode:"f126"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Networking",translation:{txt_link:"More about this service"},animation:{animation_type:"fade-left",delay:550}}
+                    ],
+                    layout={section_variant:"style-3"}, 
+                    style={background:"color"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Services #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonial',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    testimonial=[{avatar:{alt:"team-small-07",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:"When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you're looking at something that is very strange, but yet is very, very familiar, because you're beginning to see the Earth evolve."}],
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md"},
+                    style={background:"img_vid",background_image:{alt:"woman working with laptop",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_afro-woman-laptop.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark"},
+                    slider={autoplay:false},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section Accordion #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "accordion" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-accordion', 
+                    label='Accordion',
+                    intro_to_title='',
+                    title='HOW CAN WE HELP YOU?',
+                    accordion=[
+                        {description:"<p>If you have time constraints, a limited budget or have no clue how to code, a theme is a good choice. Countless hours of work were invested in the POWER theme such that you save yourself a ton of time, headaches and money.</p>",title:"Why a theme?",animation:{animation_type:"default",delay:50}},
+                        {description:"<p>The POWER theme is intuitive, easy-to-use and well documented. With our module options you\'ll have all the control you desire - no matter if you are in marketing, design or coding.</p>",title:"Is a theme the right fit for me?",animation:{animation_type:"default",delay:250}},
+                        {description:"You have a vast amount of color &amp; styling options - Detailed options that allow you to control typography, color schemes and styles across all templates and many options to overwrite styles on a per module basis. Of course you can change the logo too.",title:"Can i use my own branding?",animation:{animation_type:"default",delay:450}},
+                        {description:'Once, you purchased our theme from the Hubspot marketplace, you will find all templates,&nbsp; modules and assets in HubSpots design manager under the folder POWER. We highly recommend starting with our detailed documentation: <a href="https://www.maka-agency.com/documentation/" rel="noopener" target="_blank">read documentation</a>.',title:"How to get started?",animation:{animation_type:"default",delay:150}},
+                        {description:'You got stuck in your building process? Get in touch with us through the live-chat option on <a href="https://www.maka-agency.com" rel="noopener" target="_blank">our website</a> or contact us through our <a href="https://www.maka-agency.com/contact/" rel="noopener" target="_blank">contact form</a> and we will do our best to help you.',title:"How do i get support?",animation:{animation_type:"default",delay:350}},
+                        {description:'Your requirements exceed the functionality of our POWER theme? Whaaat? Are you building a space ship?! 😜 Do nott worry, we also offer a custom service to implement your individual projects. <a href="https://www.maka-agency.com/contact/" rel="noopener">Reach out now</a>',title:"What about special requirements?",animation:{animation_type:"default",delay:550}
+                        }],
+                        layout={section_variant:"2col"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p><span>We want to simplify your life. In the following you see answers to some questions that might arise.&nbsp;</span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Accordion #}
+
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    intro_to_title='BLOG PREVIEW',
+                    title='WHAT WE HAVE TO SAY',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:4,section_variant:"small_hor",show_author:false,show_date:false,show_read_time:false,show_summary:false,truncate:false},
+                    style={background:"color"},,
+                    animation={blog_posts:{delay:400},section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    With our blog post preview you have lots of different layout and extensive filter options to promote and push your content.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='LET\'S BUILD SOMETHING TOGETHER',
+                    btn_type='btn',
+                    btn={title:"Follow the magic",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}},
+                    cta='3aae108a-f997-45a8-9254-d588fafb682e',
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"vertical"},
+                    style={background:"img_vid",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},background_gradient_color_1:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_image:{alt:"man typing on computer keyboard",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_hands-typing.jpg'),width:1920},background_image_overlay:"color",background_image_position:"center",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_color_1:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:50},overlay_gradient_direction:"vert",overlay_gradient_opacity:100,scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "description" %}
+                    By working with POWER you can reach your goals in no-time. You will master your new POWER like a pro!
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

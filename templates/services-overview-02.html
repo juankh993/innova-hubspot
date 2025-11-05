@@ -1,0 +1,188 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_service-overview-02.jpg
+  label: POWER THEME Services Overview 02
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='OUR SERVICES', 
+                    title_sel_heading='h1',
+                    layout={full_width:false,isSmall:true,title_extra_large:false},
+                    style={background:"",scheme:"light"}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    We offer a wide array of professional and constantly optimized services aimed at simplifying your life
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='',
+                    title='BUSINESS INTELLIGENCE',
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"],
+                    img={alt:"blog-feature-01",height:742,'src':get_asset_url('../images/boxes/services/pwr-img_service_meeting-three.jpg'),width:1280},
+                    style={background:"color",cta_style:"pwr-cta--link",media_position:"left"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='',
+                    title='SUPPORT & COMMUNICATION',
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"],
+                    img={alt:"service-split-communication-02",height:907,'src':get_asset_url('../images/bgs/pwr-img_bg_office-03.jpg'),width:1360},
+                    layout={section_variant:"img_right"},
+                    style={background:"color",cta_style:"pwr-cta--link",media_position:"left"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='', 
+                    title='PROJECT MANAGEMENT',
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"], 
+                    img={alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920}, 
+                    style={background:"color",cta_style:"pwr-cta--link"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span> 
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+            
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    title='TRAINING & EDUCATION', 
+                    intro_to_title='', 
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"], 
+                    img={alt:"bg-service-education-unsplash-02",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_education.jpg'),width:1920}, 
+                    layout={section_variant:"img_right"}, 
+                    style={background:"color",cta_style:"pwr-cta--link",media_position:"left"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span> 
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='', 
+                    title='EVALUATION & VISUALISATION', 
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"], 
+                    img={alt:"service-split-05",height:907,'src':get_asset_url('../images/boxes/services/pwr-img_service_meeting-whiteboard.jpg'),width:1360}, 
+                    style={background:"color",cta_style:"pwr-cta--link"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span> 
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    title='CORPORATE PERFORMANCE', 
+                    intro_to_title='', 
+                    ctas=["90ddfe68-2e6d-482f-b2a3-56be2088a90e"], 
+                    img={alt:"service-split-06",height:907,'src':get_asset_url('../images/boxes/services/pwr-img_service_handshake-man.jpg'),width:1360}, 
+                    layout={section_variant:"img_right"}, 
+                    style={background:"color",cta_style:"pwr-cta--link",media_position:"right"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "desc" %}
+                    <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='GET IN TOUCH WITH ONE OF OUR EXPERTS', 
+                    cta='35cf1be6-1789-41f4-a76a-1e1ca3bf1327', 
+                    style={
+                        background:"",
+                        cta_style:"pwr-cta--regular-solid-primary-background",
+                        scheme:"primary"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span>And generate leads with our Call-To-Action module.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

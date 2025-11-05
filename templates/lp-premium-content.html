@@ -1,0 +1,95 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-01-premium-content.jpg
+  label: POWER THEME Landing Page Premium Content
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='LANDING PAGE', 
+                    description='We analyse your SEO performance', 
+                    layout={header_height:"small"}, 
+                    style={
+                        background:"img_vid",
+                        background_color_fallback:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},
+                        background_image:{alt:"woman looking at laptop screen",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_afro-woman-laptop.jpg'),width:1920},
+                        background_position:"top",
+                        desc_large:true,
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        scheme:"dark"
+                        }
+                    %}
+                    {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label=' Form',
+                    intro_to_title='', 
+                    title='GET YOUR CUSTOM REPORT NOW', 
+                    title_sel_heading='h2', 
+                    layout={centered:false,padding_top:" ",section_variant:"hor_boxed"}, 
+                    style={
+                        background:"",
+                        box_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        box_scheme:"dark",
+                        btn_style:"pwr-btn--regular-solid-primary-background",
+                        overlay_color:{opacity:40},
+                        overwrite_box_color:true,
+                        scheme:"light"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.<br><br></p><p><img src="{{get_asset_url('../images/mockups/pwr-img_mockup_laptop-top.png')}}" alt="laptop mockup top" width="600" style="width: 600px;"></p><p><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                    {% end_module_attribute %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"9d8d49d6-8926-49e5-a46c-3a34c3944b8b","form_type":"HUBSPOT","message":"Thanks for submitting the form.","redirect_id":10875758465,"response_type":"inline"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+            {# Section Services #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "services" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-services', 
+                    label='Services',
+                    intro_to_title='', 
+                    title='WE OFFER EVEN MORE THINGS', 
+                    title_sel_heading='h2', 
+                    services=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Web Development",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.",icon:{name:"list",type:"SOLID",unicode:"f03a"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Project Management",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:200}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.",icon:{name:"bullhorn",type:"SOLID",unicode:"f0a1"},icon_img:{'src':""},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Marketing",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:350}}
+                        ], 
+                    layout={centered:false,section_variant:"style-3"}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>We know you like that specific service but check our other services, too. You will love them.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Services #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

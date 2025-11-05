@@ -1,0 +1,114 @@
+<div class="block lg:hidden relative py-10 bg-[#ffffff]">
+  <div id="cinta" class="absolute w-[142px] left-0 -top-1/2 pointer-events-none">
+    <img class="w-full h-full object-contain"
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/cinta-naranja-home.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
+  </div>
+</div>
+<section id="section-schools-network" 
+         class="relative overflow-x-clip min-h-[660px] school-network-section bg-[#ffffff]">
+  <div class="container mx-auto px-4 py-20 lg:py-16 lg:px-[80px]">
+    <div class="grid grid-cols-1 lg:!grid-cols-2 gap-0 md:gap-12 items-start 2xl:pb-[48px]" id="valores-content-reverse"
+      data-animate="text-fade-up">
+     <!-- Columna izquierda: títulos, descripción y lista -->
+      <div class="content-column">
+        <!-- Títulos y descripción -->
+        <div class="mb-[24px]">
+          <h3
+            class="font-['Otterco'] text-[32px] leading-[32px] tracking-[3.2px] uppercase font-bold italic md:text-[44px] md:leading-[52px] tracking-[4.4px] text-[#f85245]"
+             id="valores-subtitle-reverse"
+            data-animate="fade-up">
+            {{ module.main_title }}
+          </h3>
+          <h2
+            class="font-['Josefin Sans'] text-[24px]  tracking-[2.4px] uppercase font-bold md:text-[32px] md:leading-[38px] md:tracking-[3.2px] text-[#044C8D]"
+             data-animate="fade-up">
+             {{ module.subtitle }}
+          </h2>
+        </div>
+        <div class="text-[#003b87] [&_span]:text-[16px] [&_span]:leading-[18px] [&_span]:md:text-[18px] [&_span]:md:leading-[22px] mb-8 !mx-0"
+          id="description-network-school" data-animate="fade-up">
+          {{ module.description }}
+        </div>
+
+        <!-- Acordeones -->
+        <div id="valores-acordeones-reverse" class="space-y-2 mt-[32px]" data-animate="fade-up">
+         
+          {% set snake = item.item_title|lower|replace(' ', '_') %}
+          <div 
+             class="accordion-item-reverse  rounded-lg transition-all duration-300"
+             data-accordion-id="{{ item.item_title|slugify }}" 
+             data-index="{{ loop.index0 }}"
+           >
+            {% for list_item in module.list_items %}
+            <button 
+                type="button" 
+                    id="ValoresAgre_{{ snake }}"
+                class="button-reverse flex w-full items-stretch gap-[16px] text-left group ValoresAgre_elementos"
+                aria-expanded="false"
+            >
+              <div class="flex flex-col items-center flex-grow max-w-[48px] max-h-[48px]">
+                <img src="{{ list_item.network_list_item_icon.src }}" class="w-full h-full object-contain" alt="{{ list_item.network_list_item_icon.alt }}" />
+
+              </div>
+              <div class="flex-1 flex flex-col w-full">
+                <h4 class="font-['Otterco'] text-[28px] leading-[28px] tracking-[2.8px] md:text-[32px] md:leading-[34px] md:tracking-[3.2px] uppercase font-bold text-[#003b87] accordion-title-reverse accordion-title italic"
+                  >
+                  {{ list_item.network_list_item_title }}
+                </h4>
+                <div class="accordion-content-reverse ">
+                  <div class="pt-[8px] pb-[32px] md:pb-[28px] accordion-text">
+                    <p class="text-[#F85245] font-bold text-[16px] leading-[18px] md:text-[18px] md:leading-[22px]">
+                      {{ list_item.network_list_item_subtitle }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </button>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Columna derecha: imagen gif -->
+      <div id="valores-carousel-col-reverse" class="relative block slider-column h-full flex items-center" data-animate="fade-up">
+        <div class="image-wraper relative  slider-desktop">
+                <div
+                  class="relative h-auto lg:max-w-[652px] lg:mx-auto overflow-hidden rounded-tl-[80px] rounded-tr-[8px] rounded-br-[80px] rounded-bl-[8px]  w-full xl:w-auto xl:h-auto">
+                  <img src="{{ module.image_schools.src }}" 
+                       class="w-full h-full object-contain xl:rounded-tl-[80px] xl:rounded-tr-[8px] xl:rounded-br-[80px] xl:rounded-bl-[8px] xl:object-fill md:aspect-[4/5] md:object-cover object-cover aspect-[1/1] lg:aspect-auto" 
+                       alt="{{ module.image_schools.alt }}" />
+                </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Sección de Aliados -->
+    <div class="pt-[48px] md:pt-0 mx-auto max-w-[473px] overflow-hidden md:pt-[40px]">
+      <p class="text-[28px] leading-[33px] tracking-[2.8px] uppercase text-[#F85245] font-bold text-center italic"
+         style="font-family: 'Otterco', sans-serif; font-size:28px; line-height:33px; letter-spacing:2.8px;">
+        {{ module.allies_title }}
+      </p>
+
+     <div class="schools-network-swiper" >  
+         <div class="swiper-wrapper">
+            {% for allie in module.allies %}
+            <div class="swiper-slide">
+                <img src="{{ allie.allie_image.src }}" 
+                     class="w-full h-full object-contain max-w-[147px] max-h-[58px] mx-auto" 
+                     alt="{{ allie.allie_image.alt }}" />
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# JavaScript for interactions #} {% require_js position="footer" %}
+
+
+
+
+{% end_require_js %}

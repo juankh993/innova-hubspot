@@ -1,0 +1,323 @@
+{# *********************************************
+   * POWER Theme Footer V1.0               
+   ********************************************* #}
+
+{% set variant_wrapper_class = '' %}
+{%- if module.layout.footer_variant == 'full' %}
+  {% set variant_wrapper_class = 'pwr-footer-full' %}
+{% elif module.layout.footer_variant == 'reduced' %}
+  {% set variant_wrapper_class = 'pwr-footer-reduced' %}
+{% elif module.layout.footer_variant == 'simple_link' %}
+  {% set variant_wrapper_class = 'pwr-footer-link' %}
+{% elif module.layout.footer_variant == 'copyright_bar' %}
+  {% set variant_wrapper_class = 'pwr-footer--copyright' %}
+{% endif -%}
+
+{%- macro layout_full() %}
+  <div class="{% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %}">
+    <div class="pwr-footer__content pwr-footer-full__content">
+      <div class="row-fluid">
+        {% if !module.layout.hide_company_info %}
+        <div class="pwr-footer-company-info">
+          <div class="pwr-footer__logo pwr-footer__logo--large">
+            {% set logo_link = "/" %}
+            {%- if company_domain|length > 0 %}
+              {% set logo_link = company_domain %}
+            {% endif -%}
+            {% if module.logo.override_inherited_src && module.logo.src != 'null' %}
+            <a href="{{ logo_link }}"><img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}" /></a>
+            {% else %}
+            {% logo "logo" link="{{ logo_link }}" alt="logo" suppress_company_name="{{ module.logo.suppress_company_name }}" %}
+            {% endif %}
+          </div>
+          <div class="pwr-rich-text pwr-footer-company-info__desc">{{ module.statement }}</div>
+          {% if module.social_icons|length > 0 %}
+          <div class="pwr-footer-company-info__icons">
+            {% for social_icon in module.social_icons %}
+              {% if social_icon.internal_url|length > 0 %}
+                {% set isLink = true %}
+                {% set isInternalLink = true %}
+                {% set href = social_icon.internal_url %}
+              {% else if social_icon.link.url.href %}
+                {% set isLink = true %}
+                {% set href = social_icon.link.url.href %}
+                {% if social_icon.link.url.type == "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}  
+              {% else %}
+                {% set isLink = false %}
+              {% endif %}
+              <{% if isLink %}a href="{{ href }}" {% if social_icon.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if social_icon.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-social-icon" aria-label="Social Icon">
+                {% if social_icon.flip_icon_horizontally %}<div class="pwr--flip-hor">{% endif %}
+                {% if social_icon.icon %}{% icon name="{{ social_icon.icon.name }}" style="{{ social_icon.icon.type }}" unicode="{{ social_icon.icon.unicode }}" %}{% endif %}
+                {% if social_icon.flip_icon_horizontally %}</div>{% endif %}
+              </{% if isLink %}a{% else %}div{% endif %}>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if module.menu %}
+        {% set nodes = menu(module.menu) %}
+        {% set nrCols = nodes.children|length %}
+        <div class="pwr-footer-full__menu {% if !module.layout.hide_company_info && !module.layout.hide_subscription_form %}pwr-footer-full__menu--small-width{% elif !module.layout.hide_company_info || !module.layout.hide_subscription_form %}pwr-footer-full__menu--medium-width{% else %}pwr-footer-full__menu--full-width{% endif %} pwr-footer-full__menu--{{nrCols}}col pwr-js-menu">
+          {% menu overrideable=False, root_key='vertical', flyouts='false', max_levels=2, flow='vertical', label='footer navigation', id={{ module.menu }} %}
+        </div>
+        {% endif %}
+
+        {% if !module.layout.hide_subscription_form %}
+        <div class="pwr-footer-subscribe">
+          <span class="pwr-footer-subscribe__title">{{ module.subscription_title }}</span>
+          <div class="pwr-form pwr-footer-subscribe__form">
+            {% form "subscribe" form_to_use='{{ module.subscription_form.form_id }}' no_title=True response_response_type='{{ module.subscription_form.response_type }}' response_message='{{ module.subscription_form.message }}' response_redirect_id={{ module.subscription_form.redirect_id }} response_redirect_url='{{ module.subscription_form.redirect_url }}', gotowebinar_webinar_key='{{ module.form.gotowebinar_webinar_key }}' %}
+          </div>
+          <div class="pwr-rich-text pwr-footer-subscribe__hint">{{ module.subscription_hint }}</div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  <div class="pwr-footer-legal">
+    <div class="pwr-footer-legal__content">
+      <span class="pwr-footer__item pwr-footer-legal__notice">{{ module.legal_notice }}</span>
+      {% if module.menu_legal %}
+      <span class="pwr-footer__item pwr-footer-legal__menu pwr-js-menu">
+        {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='1', flow='horizontal', label='legal menu', id={{ module.menu_legal }} %}
+      </span>
+      {% endif -%}    
+    </div>
+    {% if module.layout.hide_subscription_form %}
+    <div class="pwr-footer-legal__back-to-top">
+      <a href="#" id="pwr-js-back-to-top" class="pwr-back-to-top" aria-label="Back to top">
+        <span class="pwr-back-to-top__icon pwr-icon">
+          <svg version="1.1" id="arrow_backtotop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 18.2 11.7" xml:space="preserve">
+            <polygon points="2.2,11.7 0,9.6 9.1,0 18.2,9.6 16,11.7 9.1,4.4 "/>
+          </svg>
+        </span>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+{% endmacro -%}
+
+{%- macro layout_reduced() %}
+  <div class="{% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %}">
+    <div class="pwr-footer-reduced__content pwr--clearfix">
+      <div class="pwr-footer-reduced__logo pwr-footer__logo">
+        {% set logo_link = "/" %}
+        {%- if company_domain|length > 0 %}
+          {% set logo_link = company_domain %}
+        {% endif -%}
+        {% if module.logo.override_inherited_src && module.logo.src != 'null' %}
+        <a href="{{ logo_link }}"><img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}" /></a>
+        {% else %}
+        {% logo "logo" link="{{ logo_link }}" alt="logo" suppress_company_name="{{ module.logo.suppress_company_name }}" %}
+        {% endif %}
+      </div>
+      <div class="pwr-footer-reduced__statement pwr-rich-text">
+        {{ module.statement }}     
+      </div>
+      {%- if module.menu_right %}
+      <div class="pwr-footer__menu pwr-footer-reduced__menu pwr-js-menu">
+        {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='1', flow='horizontal', label='footer navigation', id={{ module.menu_right }} %}
+      </div>   
+      {% endif -%}
+    </div>    
+    <div class="pwr-footer-legal">
+      <div class="pwr-footer-legal__content">
+        <span class="pwr-footer__item pwr-footer-legal__notice">{{ module.legal_notice }}</span>
+        {%- if module.menu_legal %}
+        <span class="pwr-footer__item pwr-footer-legal__menu pwr-js-menu">
+          {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='1', flow='horizontal', label='legal menu', id={{ module.menu_legal }} %}
+        </span>
+        {% endif -%} 
+      </div>
+    </div>
+  </div>
+{% endmacro -%}
+
+{%- macro layout_simple_link() %}
+  <div class="{% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %}">
+    {% if module.link_text || module.cta %}
+    <div class="pwr-footer-link__cta">
+      {% if module.cta && module.cta != 'null' %}    
+        {% cta "name" guid="{{module.cta}}" %}
+      {% else %}
+        {% if module.link.url.href %}
+          {% set href = module.link.url.href %}
+          {% if module.link.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}            
+        {% endif %}
+        <a href="{{ href }}" class="pwr-link">{{ module.link_text }}</a>
+      {% endif %}
+    </div>
+    {% endif %}
+    <span class="pwr-footer-link__copyright">{{ module.legal_notice }}</span>
+    {% if module.social_icons|length > 0 %}
+    <div class="pwr-footer-link__icons">
+      {% for social_icon in module.social_icons %}
+         {% if social_icon.internal_url|length > 0 %}
+          {% set isLink = true %}
+          {% set isInternalLink = true %}
+          {% set href = social_icon.internal_url %}
+        {% else if social_icon.link.url.href %}
+          {% set isLink = true %}
+          {% set href = social_icon.link.url.href %}
+          {% if social_icon.link.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}  
+        {% else %}
+          {% set isLink = false %}
+        {% endif %}
+        <{% if isLink %}a href="{{ href }}" {% if social_icon.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if social_icon.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-social-icon">
+          {% if social_icon.flip_icon_horizontally %}<div class="pwr--flip-hor">{% endif %}
+          {% if social_icon.icon %}{% icon name="{{ social_icon.icon.name }}" style="{{ social_icon.icon.type }}" unicode="{{ social_icon.icon.unicode }}" %}{% endif %}
+          {% if social_icon.flip_icon_horizontally %}</div>{% endif %}
+        </{% if isLink %}a{% else %}div{% endif %}>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+{% endmacro -%}
+
+{%- macro layout_copyright_bar() %}
+  <div class="pwr-footer-legal {% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %} ">
+    <div class="pwr-footer-legal__content">
+      <span class="pwr-footer__item pwr-footer-legal__notice">{{ module.legal_notice }}</span>
+      {% if module.menu_legal %}
+      <span class="pwr-footer__item pwr-footer-legal__menu pwr-js-menu">
+        {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='1', flow='horizontal', label='legal menu', id={{ module.menu_legal }} %}
+      </span>
+      {% endif -%}   
+    </div>
+  </div>
+{% endmacro -%}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+<div class="pwr-footer {{ variant_wrapper_class }} {% if (module.layout.footer_variant == 'copyright_bar' || module.layout.footer_variant == 'simple_link') && module.layout.centered %}pwr--align-c{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} lazyload"
+     {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+     {% elif bgImg.src && bgImgPos != 'parallax' %}
+      {# Lazy load and resposive images for background-image #}           
+      data-bgset="{{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_xs * 2 }}w [(max-width: 575px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_s * 2 }}w [(max-width: 767px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_m * 2 }}w [(max-width: 991px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l) }} {{ theme.performance.images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_l * 2 }}w [(max-width: 1199px)] |
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_max_size * theme.performance.retina_images.image_retina_scaling_factor) }}"
+      data-sizes="auto"
+      style="background-size: cover;background-position: {{ bgImgPos }};"
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+      style="background-color: transparent;"
+     {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+   {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+
+  {%- if module.layout.footer_variant == 'full' %}
+    {{ layout_full() }}
+  {% elif module.layout.footer_variant == 'reduced' %}
+    {{ layout_reduced() }}
+  {% elif module.layout.footer_variant == 'simple_link' %}
+    {{ layout_simple_link() }}
+  {% elif module.layout.footer_variant == 'copyright_bar' %}
+    {{ layout_copyright_bar() }}
+  {% endif -%}
+
+</div>

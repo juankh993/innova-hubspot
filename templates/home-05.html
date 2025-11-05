@@ -1,0 +1,162 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-05.jpg
+  label: POWER THEME Home 05
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='POWERFUL THEMES', title_sel_heading='h1',
+                    layout={full_width:false,header_height:"large",isSmall:false,title_extra_large:true},
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        scheme:"dark",
+                        title_extra_large:true
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    The only HubSpot theme that covers all aspects: elegance, easy customization and customer-1st approach.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='WHAT WE DO',
+                    title='WE DEVELOP DIGITAL STRATEGIES AND SERVICES',
+                    boxes=[
+                        {filtering:{},img:{alt:"blog-feature-01",height:742,'src':get_asset_url('../images/boxes/services/pwr-img_service_meeting-three.jpg'),width:1280},intro_to_title:"01",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"left"},title:"Business Intelligence",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:50}},
+                        {filtering:{},img:{alt:"service-split-communication-02",height:907,'src':get_asset_url('../images/boxes/services/pwr-img_service_office-booth.jpg'),width:1360},intro_to_title:"02",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Support & Communication",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:200}},
+                        {filtering:{},img:{alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920},intro_to_title:"03",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Project Management",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:350}},
+                        {filtering:{},img:{alt:"bg-service-education-unsplash-02",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_education.jpg'),width:1920},intro_to_title:"04",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Training & Education",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:500}},
+                        {filtering:{},img:{alt:"service-split-05",height:907,'src':get_asset_url('../images/boxes/services/pwr-img_service_meeting-whiteboard.jpg'),width:1360},intro_to_title:"05",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Evaluation & Visualisation",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:650}},
+                        {filtering:{},img:{alt:"service-split-06",height:907,'src':get_asset_url('../images/boxes/services/pwr-img_service_handshake-man.jpg'),width:1360},intro_to_title:"06",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"Corporate Performance",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:800}}
+                        ],
+                    layout={section_variant:"3cols_rect"},
+                    style={background:"color",box_overlay_front:true}
+                    %}
+                    {% module_attribute "description" %}
+                    We want to simplify your life. If you need any help in the decision process, we are right by your side. We are ready to take off together with you.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='ABOUT US',
+                    title='OUR MISSION, VISION AND NEW MANIFESTO',
+                    layout={section_variant:"right"}
+                    %}
+                    {% module_attribute "right" %}
+                    <span>With our text module you can create one- or two-column layouts (centered or not) or even this layout with the title on the left and text on the right. All of our row modules have an optional intro title, title, padding settings, loads of different background options, like background-color, background-image, background-gradient, background-video (*.mp4 or Youtube) and it does not stop there.</span><br><br><span>With our 49 modules you are able to build up your website fast and fit the design to your branding easily. Our template comes with 69+ templates like this page to give you a head-start and lots of examples on how to use our modules.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Logo Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "logo-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-logo-slider', 
+                    label='Logo Slider',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    client_logo=[
+                        {alt:"client-logo-01",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_01.png'),width:600},
+                        {alt:"client-logo-10",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_02.png'),width:600},
+                        {alt:"client-logo-07",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_03.png'),width:600},
+                        {alt:"client-logo-09",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_04.png'),width:600},
+                        {alt:"client-logo-05",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_05.png'),width:600},
+                        {alt:"client-logo-02",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_06.png'),width:600},
+                        {alt:"client-logo-06",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_07.png'),width:600},
+                        {alt:"client-logo-08",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_08.png'),width:600},
+                        {alt:"client-logo-04",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_09.png'),width:600}
+                        ],
+                    layout={centered:true,padding_bottom:"pwr--sec-padding-b-sm",padding_top:"pwr--sec-padding-t-sm"},
+                    style={background:"color"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Logo Slider #}
+
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    intro_to_title='BLOG PREVIEW',
+                    title='WHAT WE HAVE TO SAY',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:2,padding_bottom:"pwr--sec-padding-b-md",section_variant:"large_hor"},
+                    style={background:"gradient",background_gradient_color_1:{color:"#242934",opacity:100},background_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:100},scheme:"dark"},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    With our blog post preview you have lots of different layout and extensive filter options to promote and push your content.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='GET IN TOUCH WITH US',
+                    title='LET\'S START YOUR NEXT PROJECT',
+                    layout={centered:true,section_variant:"vert_narrow"},
+                    style={
+                        background:"color",
+                        background_color:{color:"#ebedf0",opacity:100},
+                        scheme:"light"
+                        }
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"141e2ddf-c81b-46e9-bf23-7e9b838f1292","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                    {% end_module_attribute %}
+                    {% module_attribute "description" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

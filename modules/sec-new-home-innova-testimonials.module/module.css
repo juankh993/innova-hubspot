@@ -1,0 +1,63 @@
+#testimonials-container{
+  background-image:url('{{ module_asset_url("Fondo_testimonios.png") }}'),url('{{ module_asset_url("Fondo_testimonios.png") }}');
+  background-position: 100% 108%, 100% 100%;
+ }
+
+.testimonials-content--item {
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+   &::before {
+       background-image:url('{{ module_asset_url("open-quote.png") }}');
+    }
+
+    &::after {
+        bottom: 0;
+        right: 0;
+        top: unset;
+        left: unset;
+       background-image:url('{{ module_asset_url("close-quote.png") }}');
+    }
+}
+
+
+.testimonials-background .cursor-testimonials {
+  display: none !important;
+}
+
+ .audio-player__audio {
+        display: none;
+    }
+    .audio-player {
+        display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+    }
+    .audio-player__cursor {
+        width: 74px;
+        height: 74px;
+        cursor: pointer;
+    }
+    .audio-player__line {
+        width: 100%;
+        height: 100%;
+    }
+.swiper-pagination{
+  position: relative !important;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  top:0 !important;
+  bottom:0 !important;
+}

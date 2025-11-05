@@ -1,0 +1,185 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_setup.jpg
+  label: POWER THEME Setup Guide
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+
+        {# Section Hero #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "hero" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-hero', 
+                label='Hero',
+                title='Setup Guide', 
+                description='<p>This page serves as a first starting-point to customize the POWER THEME to your brand identity.</p>', 
+                layout={header_height:"x-small",centered:false}, 
+                style={scheme:"dark"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Hero #}
+
+        {# Section Accordion #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "accordion" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-accordion', 
+                label='Accordion',
+                intro_to_title='OK, let\'s go',
+                title='WHERE TO START?',
+                accordion=[
+                    {description:"<p>The brand colors will be derived to all further color settings outside of the brand color section. Let's go to (Colors => POWER => Light Scheme).</p>",title:"Awesome. What next?",animation:{animation_type:"default",delay:50}},
+                    {description:"<p>Just to see whats possible and to get into theme settings, change background, text and title colors for the light scheme and reverse back to the theme defaults by clicking on the icon that appears next to the setting you changed.</p>",title:"And now?",animation:{animation_type:"default",delay:50}}
+                ],
+                layout={section_variant:"2col",padding_top:"pwr--sec-padding-t-md",padding_bottom:"pwr--sec-padding-b-md"}
+                %}
+                {% module_attribute "description" %}
+                <p><span>Let's begin by setting your primary brand color first (Colors => Brand Colors). You can see your changes taking effect on the header CTA button or when you hover over the first accordion item below. Don't worry, you can always revert your changes.</p>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Accordion #}
+
+        {# Section Accordion #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "accordion" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-accordion', 
+                label='Accordion',
+                intro_to_title='Dark scheme',
+                title='OH YEAH',
+                accordion=[
+                    {description:"<p>Go to (Fonts => Basic Setup) to configure your base and accent font-family. Latter will be used for navigation, titles, menus, etc.</p><p>After that you are free to change the font-sizes, font-weights, line-heights and letter-spacings for specific elements like headings or body text (Fonts => Formatting).<br>The following section will help you to review your settings. </p>",title:"How about font-settings next?",animation:{animation_type:"default",delay:50}}
+                ],
+                layout={section_variant:"1col",padding_top:"pwr--sec-padding-t-md",padding_bottom:"pwr--sec-padding-b-md"},
+                style={scheme:"dark"}
+                %}
+                {% module_attribute "description" %}
+                <p><span>Some of our POWER modules allow an easy switch between dark and light scheme like this POWER section module. To learn more about POWER section modules and our brand new POWER sub modules and POWER mini modules feel free to <a href="https://www.maka-agency.com/power-theme-documentation/" target="_blank" rel="noopener">visit our documentation</a>.</span></p>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Accordion #}
+
+        {# Section DnD - Typography #}
+        {% dnd_section
+            padding={ 
+                'default': { 'bottom': 80, 'top': 80 },
+                'mobile': { 'bottom': 40, 'top': 40 }
+            } 
+        %}
+            {% dnd_column offset=0, width=6, padding={ 'left': 0} %} 
+                {% dnd_row %}
+                    {% dnd_module path='@hubspot/rich_text', label='Intro Typo' %}
+                        {% module_attribute 'html' %}
+                            <h3>Typography</h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+                            <h1>H1 Heading {{ theme.typography.font_settings.heading_one.font_size.size }}</h1>
+                            <h2>H2 Heading {{ theme.typography.font_settings.heading_two.font_size.size }}</h2>
+                            <h3>H3 Heading {{ theme.typography.font_settings.heading_three.font_size.size }}</h3>
+                            <h4>H4 Heading {{ theme.typography.font_settings.heading_four.font_size.size }}</h4>
+                            <h5>H5 Heading {{ theme.typography.font_settings.heading_five.font_size.size }}</h5>
+                            <h6>H6 Heading {{ theme.typography.font_settings.heading_six.font_size.size }}</h6>
+                            <span>Body text is {{ theme.typography.font_settings.body_.font_size.size }}px and this sentence here is NOT defined as an HTML paragraph. Lorem ipsum dolor sit amet.</span>
+                            <p>(Not) very different, but this parapraph is indeed a HTML paragraph and it's font size is {{ theme.typography.font_settings.body_.font_size.size }}px. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.</p>
+                        {% end_module_attribute %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+            {% end_dnd_column %}
+        {% end_dnd_section %}
+        {# End Section DnD - Typography #}
+
+        {# Section Text #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "text" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-text', 
+                label='Text',
+                intro_to_title='',
+                title='',
+                layout={section_variant:"1col",padding_top:"pwr--sec-padding-t-md",padding_bottom:"pwr--sec-padding-b-md"},
+                style={scheme:"dark"}
+                %}
+                {% module_attribute "left" %}
+                <p><strong>TIP:</strong> With the 'View on:' option at the top center you have the ability to switch the preview of your settings to other POWER templates or pages you created with this theme.</p>
+                <p>We hope you are happy with your first configurations and that you got an idea of how the theme settings work.<br>The next section comes in handy if you need to change the base colors for the listed POWER CTA styles ;)</p>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Text #}
+
+        {# Section DnD - CTAs #}
+        {% dnd_section
+            padding={ 
+                'default': { 'bottom': 80, 'top': 80 },
+                'mobile': { 'bottom': 40, 'top': 40 }
+            } 
+        %}
+            {% dnd_column offset=0, width=6, padding={ 'left': 0} %} 
+                {% dnd_row %}
+                    {% dnd_module path='@hubspot/rich_text', label='Intro Typo' %}
+                        {% module_attribute 'html' %}
+                        <div style="padding: 0 15px 15px;">
+                            <h3>POWER CTA Styles - Light Scheme</h3>
+                            <p><a class="cta_button pwr-cta pwr-cta--link" href="#">CTA Link</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--regular-solid" href="#">Regular Solid</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--primary-solid" href="#">Primary Solid</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--regular-border" href="#">Regular Border</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--primary-border" href="#">Primary Border</a></p>
+                        </div>
+                        {% end_module_attribute %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+            {% end_dnd_column %}
+            {% dnd_column offset=6, width=6 %} 
+                {% dnd_row %}
+                    {% dnd_module path='@hubspot/rich_text', label='Intro Typo' %}
+                        {% module_attribute 'html' %}
+                        <div class="pwr--dark" style="padding: 0 15px 15px;">
+                            <h3>POWER CTA Styles - Dark Scheme</h3>
+                            <p><a class="cta_button pwr-cta pwr-cta--link" href="#">CTA Link</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--regular-solid" href="#">Regular Solid</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--primary-solid" href="#">Primary Solid</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--regular-border" href="#">Regular Border</a></p>
+                            <p><a class="cta_button pwr-cta pwr-cta--primary-border" href="#">Primary Border</a></p>
+                        </div>
+                        {% end_module_attribute %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+            {% end_dnd_column %}
+        {% end_dnd_section %}
+        {# End Section DnD - CTAs #}
+
+        {# Section CTA #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "cta" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-cta', 
+                label='CTA',
+                intro_to_title='',
+                title='CHECK OUT THE POWER THEME DOCUMENTATION',
+                description='',
+                cta='e806d0e3-272f-4a8b-91b2-c544a2deab27',
+                layout={section_variant:"horizontal",padding_top:"pwr--sec-padding-t-md",padding_bottom:"pwr--sec-padding-b-md"},
+                style={cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"},
+                animation={section:{animation_type:"default",delay:50}}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

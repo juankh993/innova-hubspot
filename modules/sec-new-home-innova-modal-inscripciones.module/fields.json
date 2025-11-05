@@ -1,0 +1,178 @@
+[ {
+  "id" : "1e4444d9-90ed-05aa-5e46-1f0291774928",
+  "name" : "show_registrations_modal",
+  "label" : "Mostrar modal inscripciones",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "eb736552-6860-d06b-b4a2-88e8d65b8d6d",
+  "name" : "doodle_icon",
+  "label" : "Doodle Sol",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-sol.png",
+    "alt" : "doodle-sol",
+    "loading" : "lazy",
+    "width" : 344,
+    "height" : 339,
+    "max_width" : 344,
+    "max_height" : 339
+  }
+}, {
+  "id" : "dc45e62f-ed7d-7bc4-0843-56d617428bca",
+  "name" : "modal_image",
+  "label" : "Imagen Modal",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/inscripciones-modal.png",
+    "alt" : "inscripciones-modal",
+    "loading" : "lazy",
+    "width" : 2210,
+    "height" : 1468,
+    "max_width" : 2000,
+    "max_height" : 1328.5067873303167
+  }
+}, {
+  "id" : "adc81291-8ce8-23fb-9267-19fc7cc1c3fb",
+  "name" : "modal_title",
+  "label" : "Titulo Modal",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "tenemos inscripciones abiertas"
+}, {
+  "id" : "a38be58f-0653-5d0d-e821-993f0e7ecdd1",
+  "name" : "modal_subtitle",
+  "label" : "Subtitulo Modal",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "haz parte de innova"
+}, {
+  "id" : "16f84544-8a58-d438-ab8a-4eb0bb9f5b49",
+  "name" : "modal_description",
+  "label" : "Descripción Modal",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Innova Schools promueve el aprendizaje activo, colaborativo y apoyado en tecnología mediante el socioconstructivismo y el conectivismo."
+}, {
+  "id" : "cb789dfe-92ab-c785-6ab9-117bc561807a",
+  "name" : "modal_contact_us_text",
+  "label" : "Comunicate con nosotros texto",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "¡Comuniquese con nosotros!"
+}, {
+  "id" : "845bc413-c5ce-0183-6ab4-acdf72cdcd0f",
+  "name" : "modal_button_text",
+  "label" : "Texto Boton",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "¡Inscripciones abiertas!"
+}, {
+  "id" : "b193f6a6-adca-4e6e-c131-e74b51358960",
+  "name" : "modal_button_link",
+  "label" : "Enlace Boton",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_registrations_modal",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "https://google.com/"
+} ]

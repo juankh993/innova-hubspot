@@ -1,0 +1,46 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+  label: POWER THEME Search Results
+-->
+{% extends '../layouts/base.html' %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% module "hero" path='../../modules/sec-hero', 
+            title='SEARCH: {search_term}', 
+            description='', 
+            layout={header_height:"x-small"}, 
+            label='Hero' %}
+        {% module "search-results" path='../../modules/search-results', 
+            settings={
+                blogs:[],
+                limit:5,
+                property:{
+                    author_handle:true,
+                    author_name:true,
+                    html:true,
+                    meta_description:true,
+                    tag:true
+                },
+                type:{
+                    blog_listings:true,
+                    blog_posts:true,
+                    landing_pages:false,
+                    pages:true
+                }
+            }, 
+            translation={
+                txt_no_results_hint:"Try rewording your query, or browse through our site.",
+                txt_suggestions_title:'Quick results for "{search_term}"'
+            }, 
+            style={
+                background:"color",
+                scheme:"light"
+            }, 
+            label='Search Results' 
+        %}
+    </div>
+</main>
+{% endblock body %}

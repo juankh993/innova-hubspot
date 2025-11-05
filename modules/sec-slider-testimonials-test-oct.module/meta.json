@@ -1,0 +1,29 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 198782721541,
+  "other_assets" : [ {
+    "url" : "https://contenidos.innovaschools.edu.co/hubfs/draw-shape-op.png",
+    "autoload" : false,
+    "name" : "draw-shape-op.png"
+  }, {
+    "url" : "https://contenidos.innovaschools.edu.co/hubfs/open-quote.png",
+    "autoload" : false,
+    "name" : "open-quote.png"
+  }, {
+    "url" : "https://contenidos.innovaschools.edu.co/hubfs/close-quote.png",
+    "autoload" : false,
+    "name" : "close-quote.png"
+  }, {
+    "url" : "https://contenidos.innovaschools.edu.co/hubfs/triangle.png",
+    "autoload" : false,
+    "name" : "triangle.png"
+  }, {
+    "url" : "https://contenidos.innovaschools.edu.co/hubfs/Fondo_testimonios.png",
+    "autoload" : false,
+    "name" : "Fondo_testimonios.png"
+  } ],
+  "label" : "sec-slider-testimonials-test-oct",
+  "is_available_for_new_content" : true
+}

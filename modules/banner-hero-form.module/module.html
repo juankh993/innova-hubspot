@@ -1,0 +1,94 @@
+<section class="w-full flex relative xl:min-h-[85vh] hero-banner overflow-hidden" role="banner" aria-label="Banner principal de Innova Niza">
+
+  <div class="flex relative overflow-hidden w-full flex-col min-[769px]:flex-row">
+    <!-- Bloque de video -->
+    <div class="relative w-full min-h-[478px] min-[769px]:h-full flex justify-center items-center min-[769px]:absolute top-0 left-0 overflow-x-hidden">
+      <div data-aos="fade-right" data-aos-delay="300" class="top-[-24px] md:top-0 relative w-full h-full aspect-square xl:aspect-video overflow-x-hidden">
+        <iframe class="absolute left-0 top-0 w-full h-full hidden"
+                src="https://www.youtube.com/embed/{{ module.video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ module.video_id }}"
+                title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
+        </iframe>
+        <video class="absolute left-0 top-0 w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="{{ module.banner_video_preview }}"
+            type="video/mp4">
+        </video>
+
+        <!-- Overlay para abrir modal -->
+        <div
+             class="absolute inset-0 video-overlay z-[4]"
+             style="cursor: none;"
+             data-blendy-from="universal-video"
+             data-video-id="{{ module.video_id }}"
+             role="button"
+             tabindex="0"
+             aria-label="Abrir video principal"
+             >
+          <!-- Cursor custom -->
+          <div id="video-cursor" class="video-custom-cursor">
+            <img src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="cursor" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row w-full items-stretch lg:items-center gap-6 relative">
+
+    <!-- Título bajo el video -->
+    <div id="video-title" class="flex items-center lg:justify-center absolute inset-x-0 max-w-full min-[469px]:max-w-[70%] title-shape lg:max-w-[90%] w-full overflow-visible bottom-0 pointer-events-none">
+      <!-- Fondo con imagen -->
+      <div class="relative max-w-6xl lg:mx-auto pt-6 lg:pt-14 pb-6 lg:pb-12 px-4 lg:px-10">
+        <!-- Título centrado -->
+        <h1 data-aos="fade-right" 
+            class="flex flex-col justify-start font-bold uppercase tracking-wide leading-none text-[40px] text-[#003B87]">
+          {{ module.banner_welcome }} <br>
+          <span class="italic text-[28px] lg:text-[64px] text-[#F85245]">
+           {{ module.school_campus }}
+          </span>
+        </h1>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- Bloque de formulario -->
+    <div class="w-full flex flex-col justify-center bg-white relative z-[5] overlay-cloud">
+    <div>
+      <h2 class="flex flex-col items-center text-center px-6 lg:px-10 hidden">
+        <span
+              class="font-otterco font-bold italic text-[28px] leading-[28px] tracking-[0.1em] uppercase text-[#003170]">{{ module.form_title }}</span>
+        <span class="font-otterco font-bold italic uppercase text-[28px] leading-[28px] text-[#F85245]">{{ module.form_subtitle }}</span>
+      </h2>
+      
+      <div class="form-logo">
+        <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+      </div>
+      
+      <div id="banner-hero">
+      {% form
+          form_to_use="{{ module.form_field.form_id }}"
+          response_response_type="{{ module.form_field.response_type }}"
+          response_message="{{ module.form_field.message }}"
+          response_redirect_id="{{ module.form_field.redirect_id }}"
+          response_redirect_url="{{module.form_field.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+        %}
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Figures -->
+  
+  <div id="banner-sun"
+       class="absolute w-72 left-0 top-0 pointer-events-none hidden lg:block translate-x-[-38%] -translate-y-1/2 z-[9]">
+    <img class="w-full h-full object-contain"
+         src="https://contenidos.innovaschools.edu.co/hubfs/Textured%20Star.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
+  </div>
+</section>
+<!-- external Figure -->
+<div class="hidden lg:block relative py-10">
+  <div id="cinta" class="absolute w-72 xl:w-64 2xl:w-72 right-0 top-0 pointer-events-none hidden lg:block z-[9] -translate-y-2/3	">
+    <img class="w-full h-full object-contain"
+         src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cinta.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
+  </div>
+</div>

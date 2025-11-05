@@ -1,0 +1,30 @@
+#inn-slider .slide {
+  pointer-events: none;
+}
+#inn-slider .slide.active {
+  pointer-events: all;
+}
+#inn-slider .inn-slider-bullet.active span {
+  width: 22px;
+  height: 22px;
+  background-color: #37358B;
+  border: 5px solid #A7B2F2;
+}
+#inn-slider .inn-slider-bullet.active::after {
+  height: 30px;
+}
+#inn-slider .inn-slider-swiper-buttons .swiper-pagination-bullet {
+  background-color: #FFFFFF;
+}
+
+.inn-slider-swiper-buttons .swiper-button-next svg,
+.inn-slider-swiper-buttons .swiper-button-prev svg {
+  display: none !important;
+}
+
+/*# sourceMappingURL=main.css.map */
+@media screen and (max-width: 744px) {
+.swiper-pagination-bullets-dynamic {
+        transform: translateX(-30%) !important;
+    }
+   }

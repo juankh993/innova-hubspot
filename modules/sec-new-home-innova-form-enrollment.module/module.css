@@ -1,0 +1,236 @@
+
+
+/* ===== HERO SECTION LAYOUT ===== */
+@media (max-width: 1024px) {
+   
+    section[role="banner"] {
+        flex-direction: column;
+        position: relative;
+    }
+}
+@media (min-width: 1921px) {
+  
+.vertical-center{
+  align-items:center;
+    }
+}
+
+/* Scroll interno de opciones de grado */
+#custom-grade-options {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Opción seleccionada */
+.selected-option {
+    background-color: #F2F4F6 !important;
+}
+
+/* Checkboxes */
+.checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.iti {
+    width: 100%;
+}
+
+.hero-banner .hsfc-Step__Content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-Heading{
+  font-family: Otterco, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size:28px;
+  color:#003170;
+  letter-spacing: 0.1em;
+  line-height: 28px;
+  text-align:center;
+}
+.hero-banner .hsfc-FormWrapper .hsfc-Step h3.hsfc-Heading {
+  color:#f85245;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-RichText{
+  font-size:14px;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Row  span a {
+  text-decoration:underline;
+  color: #0000ff;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Row  span a:hover {
+    text-decoration:underline;
+  color: #003bb7;
+
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-Row{
+  margin-bottom:8px;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DataPrivacyField .hsfc-Row [type=checkbox]:checked+span, [type=checkbox]:not(:checked)+span{
+font-size:14px;
+}
+
+.hero-banner .form-title, 
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-DropdownOptions__Search{
+  display:none;
+  visibility:hidden;
+}
+
+.hero-banner .hsfc-FormWrapper input[name="0-1/grado_que_cursa_su_hijo"] ~ .hsfc-DropdownOptions .hsfc-DropdownOptions__List li:nth-last-child(-n+3) {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background:#f2f4f6;
+}
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]+span:before, [type=checkbox]:checked+span:after{
+  border:1px solid #003170;
+  border-radius:0;
+  height: 20px;
+  width: 20px;
+}
+
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]:checked+span:after {
+    background-color: #003b87;
+    height: 14px;
+    left: 7px;
+    width: 14px;
+}
+
+
+.form-logo {
+    max-width: 350px;
+    margin: 0 auto;
+    width: auto;
+    display: flex;
+    justify-content: center; 
+}
+
+.form-logo img {
+  object-fit: contain;
+}
+
+#banner-hero  [data-hsfc-id=Renderer] .hsfc-Step .hsfc-Step__Content {
+  padding-top: 0;
+}
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=text],
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=email],
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=tel],
+[data-hsfc-id=Renderer] .hsfc-PhoneInput:not(.hsfc-PhoneInput--rtl) .hsfc-PhoneInput__FlagAndCaret
+{
+background-color:#003170;
+  border-color:#FFFFFF;
+}
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]+span:before{
+    border-color:#FFFFFF;
+}
+
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=text]::placeholder,
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=email]::placeholder,
+div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=tel]::placeholder,
+[data-hsfc-id=Renderer] .hsfc-PhoneInput:not(.hsfc-PhoneInput--rtl)>.hsfc-TextInput{
+color:#CFE2E8;
+}
+
+[data-hsfc-id=Renderer] .hsfc-DropdownInput__Caret>span,
+[data-hsfc-id=Renderer] .hsfc-PhoneInput__FlagAndCaret__Caret{
+border-top-color:#FFFFFF !important;
+}
+
+.form-enrollment-title{
+  font-family: 'Otterco';
+  font-weight: 700;
+  font-style: italic;
+  font-size:80px;
+  line-height: 75px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  color:#ffffff; 
+}
+
+.form-enrollment-title span{
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-size:22px;
+    line-height: 26px;
+    text-transform: none;
+    display: block;
+    letter-spacing: 0;
+    padding-top: 36px;
+}
+
+[data-hsfc-id=Renderer] .hsfc-PhoneInput:not(.hsfc-PhoneInput--rtl) .hsfc-PhoneInput__FlagAndCaret, div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=email], div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=tel], div:not(.pwr-form)>.hs_cos_wrapper_type_form input[type=text]{
+color:#ffffff;
+}
+
+[data-hsfc-id=Renderer] .hsfc-Button{
+  width: 100% !important;
+  max-width: 351px !important;
+  font-size: 20px !important;
+}
+
+[type="checkbox"]:checked + span{
+  font-size:14px !important;
+}
+.hero-banner .hsfc-CheckboxField [type="checkbox"]:checked + span::after{
+background-color: #ffffff;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step .hsfc-Heading{
+  font-family:'Otterco'; 
+  font-weight:bold; 
+  font-style:italic;
+  text-transform:uppercase; 
+  font-size:24px; 
+  line-height:28px; 
+  letter-spacing:2.4px; 
+  color:#ffffff;
+}
+
+.hero-banner .hsfc-FormWrapper .hsfc-Step h3.hsfc-Heading{
+  font-size:44px; 
+  line-height:52px; 
+  letter-spacing:4.4px; 
+  color:#F85245;
+}
+[data-hsfc-id=Renderer] .hsfc-Row:first-child {
+  margin-bottom:0px!important;
+}
+
+[data-hsfc-id=Renderer] .hsfc-CheckboxField label{
+  display:grid !important;
+  justify-content: flex-start !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) { 
+[data-hsfc-id="Renderer"] .hsfc-Row:has(.hsfc-CheckboxField:nth-child(2):last-child) {
+  display: grid !important;
+    grid-template-columns: auto auto !important;
+    align-items: center !important;
+}
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .form-enrollment-title{
+    font-size:50px;
+    line-height: 46px;
+    letter-spacing: 2px;
+  }
+  .form-enrollment-title span{
+    font-size:18px;
+    line-height: 22px;
+    padding-top: 27px;
+}
+}

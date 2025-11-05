@@ -1,0 +1,164 @@
+{# *********************************************
+   * POWER Theme Sub Module Image Boxes V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{%- macro get_background_image(box_size, img_src, isMasonry, layout) %}
+  {%- if box_size == 'pwr-image-box--one-by-one' || !isMasonry %}
+  data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_m / 2) }} {{ theme.performance.images.image_width_m }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 3) }} {{ theme.performance.images.image_width_l }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 3) }} {{ theme.performance.images.image_width_l * 2 }}w"
+  data-sizes="auto"
+  {% elif box_size == 'pwr-image-box--two-by-one' %}
+  data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l * 2 }}w"
+  data-sizes="auto"
+  {% else %}
+  data-bgset="{{ resize_image_url(img_src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l }}w, 
+              {{ resize_image_url(img_src,theme.performance.images.image_width_l / 2) }} {{ theme.performance.images.image_width_l * 2 }}w"
+  data-sizes="auto"
+  {% endif -%}
+{% endmacro -%}
+
+{% macro get_image_box_style_content_overlay(box, isLink, isInternalLink, href) %}
+<div class="pwr-image-box pwr-image-box--one-by-one {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %} {% if isLink %}pwr-image-box--is-link{% endif %} pwr-touch-btn-container ">
+  <div class="pwr-3D-box">
+    <div class="pwr-image-box__img pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ module.style.background_position}}; min-height:{{ module.layout.box_height}}px;"{% endif %}>
+      <div class="pwr-touch-btn">{{ module.translation.txt_touch }}<span class="pwr-touch-btn__icon"></span></div>
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-image-box__front {% if module.style.hide_front %}pwr-image-box__front--hide{% endif %} pwr-3D-box__info-box">
+        <span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>
+        <span class="pwr-image-box__title">{{ box.title }}</span>
+      </div>
+      <div class="pwr-image-box__back pwr-3D-box__info-box">
+        {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+        {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+        {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}
+        {% if isLink %}
+        <a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box__more-link">{{ module.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if module.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div> 
+{% endmacro %}
+
+{% macro get_image_box_style_content_below_1(box, isLink, isInternalLink, href) %}
+{% if isLink %}
+<a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box pwr-image-box--style-below-1 pwr-image-box--one-by-one pwr-image-box--is-link {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %}">
+  <div class="pwr-3D-box">
+    <div class="pwr-image-box__img pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ module.style.background_position}}; min-height:{{ module.layout.image_height}}px;"{% endif %}>
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--centered">{{ module.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if module.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+    </div>
+  </div>
+  <div class="pwr-image-box__below">
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}
+    <span class="pwr-image-box__more-link pwr-image-box__more-link--mobile">{{ module.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if module.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+  </div>
+</a>
+{% else %}
+<div class="pwr-image-box pwr-image-box--style-below-1 pwr-image-box--one-by-one {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %}">
+  <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ module.style.background_position}}; min-height:{{ module.layout.image_height}}px;"{% endif %}></div>
+  <div class="pwr-image-box__below">
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}    
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro get_image_box_style_content_below_2(box, isLink, isInternalLink, href) %}
+{% if isLink %}
+<a href="{{ href }}" {% if box.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if box.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %} class="pwr-image-box pwr-image-box--style-below-2 pwr-image-box--one-by-one pwr-image-box--is-link {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %}">
+  <div class="pwr-3D-box">
+    <div class="pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover">
+      <div class="pwr-image-box__overlay {% if module.style.box_overlay_front %}pwr-image-box__overlay--front{% endif %}"></div>
+      <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ module.style.background_position}}; min-height:{{ module.layout.image_height}}px;"{% endif %}></div>
+      <div class="pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--centered">{{ module.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if module.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+      <div class="pwr-image-box__below pwr--colored-box {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" style="{% if module.style.box_color.color %}background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }});{% endif %}  min-height:{{ module.layout.content_below_height }}px;">
+        {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+        {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+        {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}   
+        <span class="pwr-image-box__more-link pwr-image-box__more-link--mobile">{{ module.translation.txt_link }}{% if box.link_icon %}<span class="pwr-image-box__icon {% if module.translation.txt_link|trim == '' %}pwr-image-box__icon--no-text{% endif %}">{% icon name="{{ box.link_icon.name }}" style="{{ box.link_icon.type }}" unicode="{{ box.link_icon.unicode }}" %}</span>{% endif %}</span>
+      </div>
+    </div>
+  </div>
+</a>
+{% else %}
+<div class="pwr-image-box pwr-image-box--style-below-2 pwr-image-box--one-by-one {% if module.style.smaller_content %}pwr-image-box--smaller{% endif %}">
+  <div class="pwr-image-box__img lazyload" {% if box.img %}{{ get_background_image(box.layout.size, box.img.src, isMasonry, layout) }} style="background-position:{{ module.style.background_position}}; min-height:{{ module.layout.image_height}}px;"{% endif %}></div>
+  <div class="pwr-image-box__below pwr--colored-box {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" style="{% if module.style.box_color.color %}background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }});{% endif %} min-height:{{ module.layout.content_below_height }}px;">
+    {% if box.intro_to_title %}<span class="pwr-image-box__intro">{{ box.intro_to_title }}</span>{% endif %}
+    {% if box.title %}<span class="pwr-image-box__title">{{ box.title }}</span>{% endif %}
+    {% if box.desc %}<span class="pwr-rich-text pwr-image-box__desc">{{ box.desc }}</span>{% endif %}    
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+
+<div class="pwr-sub-image-boxes {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+
+  <div class="pwr-js-masonry__container pwr-sec-image-boxes__container {% if module.layout.centered %}pwr-sec-image-boxes__container--centered pwr--align-c{% endif %} pwr--clearfix">
+             
+          {% if module.boxes.internal_url|length > 0 %}
+            {% set isLink = true %}
+            {% set isInternalLink = true %}
+            {% set href = module.boxes.internal_url %}
+          {% elif module.boxes.link.url.href|length > 0 %}
+            {% set isLink = true %}
+            {% set href = module.boxes.link.url.href %}
+            {% if module.boxes.link.url.type == "EMAIL_ADDRESS" %}
+             {% set href = "mailto:" + href %}
+            {% endif %}            
+          {% else %}
+            {% set isLink = false %} 
+          {% endif %}
+          
+          {% if module.style.box_style == 'content_overlay' %}
+            {{ get_image_box_style_content_overlay(module.boxes, isLink, isInternalLink, href) }}
+          {% elif module.style.box_style == 'content_below' %}
+            {% if module.style.variant_content_below == 'style-1' %}
+              {{ get_image_box_style_content_below_1(module.boxes, isLink, isInternalLink, href) }}
+            {% else %}
+              {{ get_image_box_style_content_below_2(module.boxes, isLink, isInternalLink, href) }}
+            {% endif %}
+          {% endif %} 
+           
+  </div>
+ 
+</div> 

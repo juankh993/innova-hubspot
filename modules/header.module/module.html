@@ -1,0 +1,451 @@
+{# *********************************************
+   * POWER Theme Header V1.1               
+   * - Page-Editor Fix
+   ********************************************* #}
+
+{# HS Page Editor Fix - Avoid big layout shifts from SVG icons, menus, etc. #}
+{%- set pageEditorFix = "" %}
+{% if request.full_url|length > request.full_url|replace('https://preview.hs-sites.com/content-rendering','')|length %}
+ <style>
+    .pwr--page-editor-fix {
+        max-height: 120px;
+    }
+ </style>
+ {%- set pageEditorFix = "pwr--page-editor-fix" %}
+ {% endif %}
+ {# End Fix #}
+
+{%- if theme.seo.schema.is_schema_basic %}
+{% require_head %}
+<!-- Basic Schema  -->
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "{{ site_settings.company_name|escapejson }}",
+        {%- if site_settings.logo_src %}
+        "logo": { 
+            "@type": "ImageObject",
+            "url": "{{ site_settings.logo_src }}"
+        },
+        {% endif -%}
+        {%- if module.email %}"email": "{{ module.email|escapejson }}",{% endif -%}
+        "url": "{{ content.absolute_url }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "{{ site_settings.company_country }}",
+            "addressRegion": "{{ site_settings.company_state }}",
+            "addressLocality": "{{ site_settings.company_city }}",
+            "postalCode":"{{ site_settings.company_zip }}",
+            "streetAddress": "{{ site_settings.company_street_address1 }}"
+        },
+        {%- if module.phone %}
+        "telephone": "{{ module.phone }}",
+        {% endif -%}
+        "knowsLanguage": "{{ content.language }}"
+    }
+</script>
+{% end_require_head %}
+{% endif -%}
+
+{% set is_hs = content.widgets.page_settings.body.is_overwrite_header_settings %}
+{% set hs = content.widgets.page_settings.body.header_settings %}
+
+{% set local = {
+  'local_logo': module.local_logo if !is_hs || !hs.local_logo else hs.local_logo, 
+  'sticky_logo': module.sticky_logo if !is_hs || !hs.sticky_logo else hs.sticky_logo, 
+  'btn_type': module.btn_type if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.btn_type,
+  'header_cta': module.header_cta if !is_hs || !hs.header_cta || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_cta,
+  'header_btn': {
+    'title': module.header_btn.title if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.title,
+    'link': {
+      'open_in_new_tab': module.header_btn.link.open_in_new_tab if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.link.open_in_new_tab,
+      'no_follow': module.header_btn.link.no_follow if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.link.no_follow,
+      'url': {
+        'content_id': module.header_btn.link.url.content_id if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.link.url.content_id,
+        'type': module.header_btn.link.url.type if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.link.url.type,
+        'href': module.header_btn.link.url.href if !is_hs || !hs.btn_type || hs.btn_type == 'inherit' else hs.header_btn.link.url.href
+      }
+    }
+  },
+  'style': {
+    'scheme': module.style.scheme if !is_hs || !hs.style.scheme is defined else hs.style.scheme|replace('inherit', module.style.scheme),
+    'color_scheme_on_scroll': module.style.color_scheme_on_scroll if !is_hs || !hs.style.color_scheme_on_scroll is defined else hs.style.color_scheme_on_scroll|replace('inherit', module.style.color_scheme_on_scroll),
+    'color_scheme_top_header': module.style.color_scheme_top_header if !is_hs || !hs.style.color_scheme_top_header is defined else hs.style.color_scheme_top_header|replace('inherit', module.style.color_scheme_top_header),
+    'is_transparent': module.style.is_transparent if !is_hs || !hs.style.is_transparent is defined else hs.style.is_transparent|replace('inherit', module.style.is_transparent),
+    'is_transparent_top_header': module.style.is_transparent_top_header if !is_hs || !hs.style.is_transparent_top_header is defined else hs.style.is_transparent_top_header|replace('inherit', module.style.is_transparent_top_header)
+  }
+} %}
+
+{% set hasTranslatedVersions = [] %}
+{% for translation in content.translated_content %}
+  {% if translation.published %}
+    {% do hasTranslatedVersions.append(1) %}
+  {% endif %}
+{% endfor %}
+
+{%- if module.layout.is_top_header %}
+<div id="pwr-header-top" class="pwr-header-top {% if local.style.color_scheme_top_header == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if local.style.is_transparent_top_header %}pwr-header-top--transparent{% endif %} {{ pageEditorFix }}">
+  <div class="{% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %} pwr--clearfix">
+    {% if module.is_header_top_menu %}
+        {% if module.header_top_menu %}
+        <div class="pwr-header-top__menu {% if local.style.color_scheme_top_header == "dark" %}pwr-header-top__menu--dark{% endif %} pwr-js-menu">
+          {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='1', flow='horizontal', label='', id={{ module.header_top_menu }} %}
+        </div>
+        {% endif -%}
+    {% endif %}
+
+    {% if module.is_social_icons_top_header && module.social_icons|length > 0 -%}
+    <div class="pwr-header-top__social">
+      {% for social_icon in module.social_icons %}
+        {% if social_icon.internal_url|length > 0 %}
+          {% set isLink = true %}
+          {% set isInternalLink = true %}
+          {% set href = social_icon.internal_url %}
+        {% else if social_icon.link.url.href %}
+          {% set isLink = true %}
+          {% set href = social_icon.link.url.href %}
+          {% if social_icon.link.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}  
+        {% else %}
+          {% set isLink = false %}
+        {% endif %}
+        <{% if isLink %}a href="{{ href }}" {% if social_icon.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if social_icon.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-social-icon" aria-label="Social Icon">
+          {% if social_icon.flip_icon_horizontally %}<div class="pwr--flip-hor">{% endif %}
+          {% if social_icon.icon %}{% icon name="{{ social_icon.icon.name }}" style="{{ social_icon.icon.type }}" unicode="{{ social_icon.icon.unicode }}" %}{% endif %}
+          {% if social_icon.flip_icon_horizontally %}</div>{% endif %}
+        </{% if isLink %}a{% else %}div{% endif %}>
+      {% endfor %}
+    </div>
+    {% endif -%}
+
+  </div>
+</div>
+{% endif -%}
+
+{% if module.style.show_submenu %}
+<div id="pwr-js-burger" class="pwr-burger {% if local.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {{ pageEditorFix }}">
+  <a href="#" id="pwr-js-burger__trigger-close" class="pwr-burger__trigger-close">
+    <span class="pwr-burger__icon-close"></span>{{ module.translation.txt_burger_close }}
+  </a>
+  {% if module.is_header_menu && module.layout.section_variant != "landing_page" %}
+      {% if module.header_menu %}
+          <div class="pwr-burger__menu pwr-js-menu">
+              {% menu overrideable=False, root_type='site_root', flyouts='false', max_levels='4', flow='vertical', label='main navigation', id={{ module.header_menu }} %}
+          </div>
+      {% endif %}
+  {% endif %}
+  <div class="pwr-burger-bottom-bar">
+    {% if module.search %}
+    <div class="pwr-burger-bottom-bar__item">
+      <a href="#" id="pwr-js-burger-search__trigger" class="pwr-burger-bottom-bar__item-link pwr-burger-search__trigger">
+        <div class="pwr-header-right-bar__icon pwr--padding-r-sm">{% icon name="search" style="SOLID" unicode="f002" %}</div>
+        <span>{{ module.translation.txt_burger_search_title }}</span>
+      </a>
+      <div id="pwr-js-burger-search__inner" class="pwr-burger-bottom-bar__inner pwr-burger-search__inner pwr-form pwr-form--style-1">
+        <div class="hs-search-field__bar"> 
+          <form action="/{{ site_settings.content_search_results_page_path }}">
+            <div class="pwr--relative">
+              <input type="text" id="pwr-js-burger-search__input" class="pwr-burger-search__input hs-search-field__input" name="term" autocomplete="off" aria-label="Search" placeholder="{{ module.translation.txt_burger_search_placeholder }}">
+              <button class="pwr-search-field__icon" type="submit" aria-label="Search Button">{% icon name="search" style="solid" unicode="f002" %}</button>
+            </div>
+            <input type="hidden" name="limit" value={{ module.search_settings.limit | default(5) }} >
+            {% if !module.search_settings.property.title || !module.search_settings.property.meta_description || !module.search_settings.property.html || !module.search_settings.property.author_name || !module.search_settings.property.author_handle || !module.search_settings.property.tag %}
+            {% if module.search_settings.property.title %}
+            <input type="hidden" name="property" value='title'>
+            {% endif %}
+            {% if module.search_settings.property.meta_description %}
+            <input type="hidden" name="property" value='description'>
+            {% endif %}
+            {% if module.search_settings.property.html %}
+            <input type="hidden" name="property" value='html'>
+            {% endif %}
+            {% if module.search_settings.property.author_name %}
+            <input type="hidden" name="property" value='author_full_name'>
+            {% endif %}
+            {% if module.search_settings.property.author_handle %}
+            <input type="hidden" name="property" value='author_handle'>
+            {% endif %}
+            {% if module.search_settings.property.tag %}
+            <input type="hidden" name="property" value='tag'>
+            {% endif %}
+            {% endif %}            
+            {% if !module.search_settings.search_type.pages || !module.search_settings.search_type.blog_listings || !module.search_settings.search_type.blog_posts || module.search_settings.search_type.landing_pages %}
+            {% if module.search_settings.search_type.pages %}
+            <input type="hidden" name="type" value='SITE_PAGE'>
+            {% endif %}
+            {% if module.search_settings.search_type.blog_listings %}
+            <input type="hidden" name="type" value='LISTING_PAGE'>
+            {% endif %}
+            {% if module.search_settings.search_type.blog_posts %}
+            <input type="hidden" name="type" value='BLOG_POST'>
+            {% endif %}
+            {% if module.search_settings.search_type.landing_pages %}
+            <input type="hidden" name="type" value='LANDING_PAGE'>
+            {% endif %}
+            {% if module.search_settings.search_type.knowledge_base_articles %}
+            <input type="hidden" name="type" value='KNOWLEDGE_ARTICLE'>
+            {% endif %}
+            {% endif %}
+            {% if module.search_settings.language %}
+            <input type="hidden" name="language" value={{ module.search_settings.language | default('en') }} >
+            {% endif %}
+            {% for blog_id in module.search_settings.blogs %}
+            <input type="hidden" name="groupId" value={{ blog_id }} >
+            {% endfor %}
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if hasTranslatedVersions %}
+    <div class="pwr-burger-bottom-bar__item">
+      <a href="#"  id="pwr-js-burger-language__trigger" class="pwr-burger-bottom-bar__item-link pwr-burger-language__trigger">{{ module.translation.txt_burger_menu_language }} &ndash; {{ content.language }}</a>
+      <div id="pwr-js-burger-language__inner" class="pwr-burger-bottom-bar__inner pwr-burger-language__inner hs-skip-lang-url-rewrite">
+        {% for translation in content.translated_content %}
+          {% if translation.published %}
+            <a class="pwr-burger-bottom-bar__item-link pwr-burger-language__link" data-language="{{ translation.language }}" href="/{{ translation.slug || translation.language }}">{{ translation.language }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if module.contact %}
+    <div class="pwr-burger-bottom-bar__item {% if local.btn_type != 'none' %}pwr--margin-b-sm{% endif %}">
+      <a href="#" id="pwr-js-burger-contact__trigger" class="pwr-burger-bottom-bar__item-link pwr-burger-contact__trigger">
+        {{ module.translation.txt_burger_menu_contact }}
+      </a>
+      <div id="pwr-js-burger-contact__inner" class="pwr-burger-bottom-bar__inner pwr-burger-contact__inner">
+        {% if module.phone %}              
+        <span class="pwr-burger-contact__title">{{ module.translation.txt_contact_phone_title }}</span>
+        <a href="tel:{{ module.phone_link }}" class="pwr-burger-bottom-bar__item-link pwr-burger-contact__link {% if module.email %}pwr--margin-b-sm{% endif %}" category="header-navigation" action="telephone" label="telephone">{{ module.phone }}</a>
+        {% endif %}
+        {% if module.email %}
+        <span class="pwr-burger-contact__title">{{ module.translation.txt_contact_email_title }}</span>
+        <a href="mailto:{{ module.email }}" class="pwr-burger-bottom-bar__item-link pwr-burger-contact__link" category="header-navigation" action="email" label="email">{{ module.email }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    {% if local.btn_type == 'cta' && local.header_cta != 'null' && local.header_cta %}        
+    <div class="pwr-burger-bottom-bar__item pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+      {% cta "header cta" guid="{{local.header_cta}}" %}
+    </div>
+    {% elif local.btn_type == 'btn' && local.header_btn.link.url.type == 'CONTENT' %}  
+    {% set content_link = content_by_id(local.header_btn.link.url.content_id) %}
+    <div class="pwr-burger-bottom-bar__item pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">  
+      <a class="cta_button" {% if content_link.absolute_url %}href="{{ content_link.absolute_url }}"{% endif %} {% if local.header_btn.link.no_follow %}rel="nofollow"{% endif %} {% if local.header_btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ local.header_btn.title }}">{{ local.header_btn.title }}</a>                    
+    </div>            
+    {% elif local.btn_type == 'btn' && local.header_btn.link.url.type != 'CONTENT' %}  
+    <div class="pwr-burger-bottom-bar__item pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+      <a class="cta_button" {% if local.header_btn.link.url.href %}href="{% if local.header_btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ local.header_btn.link.url.href }}"{% endif %} {% if local.header_btn.link.no_follow %}rel="nofollow"{% endif %} {% if local.header_btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ local.header_btn.title }}">{{ local.header_btn.title }}</a>                    
+    </div>            
+    {% endif %}
+    {% if (module.is_social_icons_header || !module.layout.is_top_header) && module.social_icons|length > 0 -%}
+    <div class="pwr-burger-bottom-bar__item pwr-burger-social">
+      {% for social_icon in module.social_icons %}
+         {% if social_icon.internal_url|length > 0 %}
+          {% set isLink = true %}
+          {% set isInternalLink = true %}
+          {% set href = social_icon.internal_url %}
+        {% else if social_icon.link.url.href %}
+          {% set isLink = true %}
+          {% set href = social_icon.link.url.href %}
+          {% if social_icon.link.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}  
+        {% else %}
+          {% set isLink = false %}
+        {% endif %}
+        <{% if isLink %}a href="{{ href }}" {% if social_icon.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if social_icon.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-social-icon" aria-label="Social Icon">
+          {% if social_icon.flip_icon_horizontally %}<div class="pwr--flip-hor">{% endif %}
+          {% if social_icon.icon %}{% icon name="{{ social_icon.icon.name }}" style="{{ social_icon.icon.type }}" unicode="{{ social_icon.icon.unicode }}" %}{% endif %}
+          {% if social_icon.flip_icon_horizontally %}</div>{% endif %}
+        </{% if isLink %}a{% else %}div{% endif %}>
+      {% endfor %}
+    </div>
+    {% endif -%}
+  </div>
+</div>
+{% if module.style.fixed_header %}
+<div id="pwr-header-fixed__spacer" class="pwr-header-fixed__spacer"></div>
+{% endif %}
+<div {% if module.style.fixed_header %}id="pwr-header-fixed" style="display: block; visibility:visible;"{% endif %} class="pwr-header {% if module.style.fixed_header %}pwr-header-fixed{% elif !module.style.fixed_header && local.style.is_transparent %}pwr-header-abs{% endif %} {% if local.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if local.style.is_transparent %}pwr-header--transparent{% endif %} {% if local.style.color_scheme_on_scroll == 'dark' %}pwr-header--dark-on-scroll{% elif local.style.color_scheme_on_scroll == 'light' %}pwr-header--light-on-scroll{% endif %} {{ pageEditorFix }}">
+  <div class="{% if module.style.full_width %}pwr--full-width{% else %}page-center{% endif %} pwr-header--padding">
+    <div class="pwr-header-full pwr--clearfix">
+      <div class="pwr-header-logo {% if local.sticky_logo.override_inherited_src %}pwr-header-logo--has-sticky{% endif %}">
+        {% set logo_link = "/" %}
+        {% if company_domain|length > 0 %}
+          {% set logo_link = company_domain %}
+        {% endif %}
+        {% if !local.local_logo.override_inherited_src %}
+        {% logo "logo" link="{{ logo_link }}" alt="logo" suppress_company_name="{{ module.logo.suppress_company_name }}" %}
+        {% else %}
+        <a href="{{ logo_link }}" aria-label="Back to Home"><img src="{{ local.local_logo.src }}" alt="{{ local.local_logo.alt }}" class="pwr-header-logo__img" width="{{ local.local_logo.width }}" height="{{ local.local_logo.height }}" /></a>
+        {% endif %}
+        {% if local.sticky_logo.override_inherited_src %}
+        <a href="{{ logo_link }}" aria-label="Back to Home"><img src="{{ local.sticky_logo.src }}" alt="{{ local.sticky_logo.alt }}" class="pwr-header-logo__img--sticky" width="{{ local.sticky_logo.width }}" height="{{ local.sticky_logo.height }}" /></a>
+        {% endif %}
+      </div>
+      {% if module.layout.section_variant != 'burger' && module.layout.section_variant != 'burger_only' %}
+      <div id='pwr-js-header__menu' class="pwr-header__menu {% if module.layout.section_variant == 'mega-menu-content-width' || module.layout.section_variant == 'mega-menu-screen-width' %}pwr-header__menu--mega-menu{% endif %} pwr-header__menu--{{ module.layout.section_variant }} {% if !module.contact && !module.search && !(local.btn_type != 'none') %}pwr-header__menu--right {% if hasTranslatedVersions %}pwr-header__menu--right-with-lang{% endif %}{% endif %}">
+        {% if module.is_header_menu && module.layout.section_variant != "landing_page" %}
+          {% if module.header_menu %}
+            <div class="pwr-js-menu">
+              {% if module.layout.section_variant == 'dropdown' %}
+                {% menu overrideable=False, root_type='site_root', flyouts='true', max_levels='4', flow='horizontal', label='main navigation', id={{ module.header_menu }} %}
+              {% else %}
+                {% menu overrideable=False, root_type='site_root', flyouts='true', max_levels='3', flow='horizontal', label='main navigation', id={{ module.header_menu }} %}
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endif -%}     
+      </div>
+      {% endif %}
+      {% if module.layout.section_variant != 'burger_only' %}
+      <div id="pwr-js-header-right-bar" class="pwr-header-right-bar {% if module.layout.section_variant == 'burger' %}pwr-header-right-bar--with-burger{% elif module.layout.section_variant == "landing_page" %}pwr-header-right-bar--lp{% endif %}">
+      {% if (module.is_social_icons_header || !module.layout.is_top_header) && module.layout.section_variant == 'landing_page' && module.social_icons|length > 0 -%}
+      <div class="pwr-header-right-bar__item pwr-header-right-bar__social">
+        {% for social_icon in module.social_icons %}
+           {% if social_icon.internal_url|length > 0 %}
+            {% set isLink = true %}
+            {% set isInternalLink = true %}
+            {% set href = social_icon.internal_url %}
+          {% else if social_icon.link.url.href %}
+            {% set isLink = true %}
+            {% set href = social_icon.link.url.href %}
+            {% if social_icon.link.url.type == "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}  
+          {% else %}
+            {% set isLink = false %}
+          {% endif %}
+          <{% if isLink %}a href="{{ href }}" {% if social_icon.link.open_in_new_tab && !isInternalLink %}target="_blank" rel="noopener"{% endif %} {% if social_icon.link.no_follow && !isInternalLink %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-social-icon" aria-label="Social Icon">
+            {% if social_icon.flip_icon_horizontally %}<div class="pwr--flip-hor">{% endif %}
+            {% if social_icon.icon %}{% icon name="{{ social_icon.icon.name }}" style="{{ social_icon.icon.type }}" unicode="{{ social_icon.icon.unicode }}" %}{% endif %}
+            {% if social_icon.flip_icon_horizontally %}</div>{% endif %}
+          </{% if isLink %}a{% else %}div{% endif %}>
+        {% endfor %}
+      </div>
+      {% endif -%}
+        {% if module.contact %}
+          <div class="pwr-header-right-bar__item pwr-header-right-bar__phone">
+            <a href="#" class="pwr-header-right-bar__link" aria-label="Contact Information">
+              <div class="pwr-header-right-bar__icon pwr--flip-hor">{% icon name="phone" style="SOLID" unicode="f095" %}</div>
+            </a>
+            <div class="pwr-dropdown pwr-dropdown--phone">
+              {% if module.phone %}              
+                <span class="pwr-dropdown__title">{{ module.translation.txt_contact_phone_title }}</span>
+                <a href="tel:{{ module.phone_link }}" class="pwr-dropdown__link {% if module.email %}pwr--margin-b-sm{% endif %}" category="header-navigation" action="telephone" label="telephone">{{ module.phone }}</a>
+              {% endif %}
+              {% if module.email %}
+                <span class="pwr-dropdown__title">{{ module.translation.txt_contact_email_title }}</span>
+                <a href="mailto:{{ module.email }}" class="pwr-dropdown__link" category="header-navigation" action="email" label="email">{{ module.email }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if module.search %}
+        <div class="pwr-header-right-bar__item pwr-header-right-bar__search">
+          <a href="#" id="pwr-js-header-search__trigger" aria-label="Search" class="pwr-header-right-bar__link">
+            <div class="pwr-header-right-bar__icon">{% icon name="search" style="SOLID" unicode="f002" %}</div>
+          </a>
+        </div>
+        {% endif %}
+        {% if hasTranslatedVersions %}
+        <div class="pwr-header-right-bar__item pwr-header-right-bar__language-switcher">
+          <a href="#" class="pwr-header-right-bar__link">{{ content.language }}</a>
+          <div class="pwr-dropdown pwr-dropdown--language hs-skip-lang-url-rewrite">
+            {% for translation in content.translated_content %}
+              {% if translation.published %}
+              <a class="pwr-dropdown__link pwr-header-right-bar__language-link" data-language="{{ translation.language }}" href="/{{ translation.slug || translation.language }}">{{ translation.language }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        {% if local.btn_type == 'cta' && local.header_cta != 'null' && local.header_cta %}        
+        <div class="pwr-header-right-bar__item pwr-header-right-bar__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+          {% cta "header cta" guid="{{local.header_cta}}" %}
+        </div>
+        {% elif local.btn_type == 'btn' && local.header_btn.link.url.type == 'CONTENT' %}  
+        {% set content_link = content_by_id(local.header_btn.link.url.content_id) %}
+        <div class="pwr-header-right-bar__item pwr-header-right-bar__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+          <a class="cta_button" {% if content_link.absolute_url %}href="{{ content_link.absolute_url }}"{% endif %} {% if local.header_btn.link.no_follow %}rel="nofollow"{% endif %} {% if local.header_btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ local.header_btn.title }}">{{ local.header_btn.title }}</a>                    
+        </div>     
+        {% elif local.btn_type == 'btn' && local.header_btn.link.url.type != 'CONTENT' %}  
+          <div class="pwr-header-right-bar__item pwr-header-right-bar__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}">
+            <a class="cta_button" {% if local.header_btn.link.url.href %}href="{% if local.header_btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ local.header_btn.link.url.href }}"{% endif %} {% if local.header_btn.link.no_follow %}rel="nofollow"{% endif %} {% if local.header_btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ local.header_btn.title }}">{{ local.header_btn.title }}</a>                    
+          </div>     
+        {% endif %}
+      </div>
+      {% endif %}
+      <div id="pwr-js-header-search" class="pwr-header-search hs-search-field">
+        <div class="pwr-header-search__inner">
+          <div class="hs-search-field__bar"> 
+            <form action="/{{ site_settings.content_search_results_page_path }}">
+              <div class="pwr--relative">
+                <input type="text" id="pwr-header-search__input" class="pwr-header-search__input hs-search-field__input" name="term" autocomplete="off" aria-label="Search" placeholder="{{ module.translation.txt_placeholder }}">
+                <button class="pwr-search-field__icon" type="submit" aria-label="Search Button">{% icon name="search" style="solid" unicode="f002" %}</button>
+                <a href="#" id="pwr-js-header-search__close" aria-label="Close Search" class="pwr-header-search__close">
+                  <span class="pwr-header-search__close-icon"></span>
+                </a>
+              </div>
+              <input type="hidden" name="limit" value={{ module.search_settings.limit | default(5) }} >
+              {% if !module.search_settings.property.title || !module.search_settings.property.meta_description || !module.search_settings.property.html || !module.search_settings.property.author_name || !module.search_settings.property.author_handle || !module.search_settings.property.tag %}
+              {% if module.search_settings.property.title %}
+              <input type="hidden" name="property" value='title'>
+              {% endif %}
+              {% if module.search_settings.property.meta_description %}
+              <input type="hidden" name="property" value='description'>
+              {% endif %}
+              {% if module.search_settings.property.html %}
+              <input type="hidden" name="property" value='html'>
+              {% endif %}
+              {% if module.search_settings.property.author_name %}
+              <input type="hidden" name="property" value='author_full_name'>
+              {% endif %}
+              {% if module.search_settings.property.author_handle %}
+              <input type="hidden" name="property" value='author_handle'>
+              {% endif %}
+              {% if module.search_settings.property.tag %}
+              <input type="hidden" name="property" value='tag'>
+              {% endif %}
+              {% endif %}            
+              {% if !module.search_settings.search_type.pages || !module.search_settings.search_type.blog_listings || !module.search_settings.search_type.blog_posts || module.search_settings.search_type.landing_pages %}
+              {% if module.search_settings.search_type.pages %}
+              <input type="hidden" name="type" value='SITE_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.blog_listings %}
+              <input type="hidden" name="type" value='LISTING_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.blog_posts %}
+              <input type="hidden" name="type" value='BLOG_POST'>
+              {% endif %}
+              {% if module.search_settings.search_type.landing_pages %}
+              <input type="hidden" name="type" value='LANDING_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.knowledge_base_articles %}
+              <input type="hidden" name="type" value='KNOWLEDGE_ARTICLE'>
+              {% endif %}
+              {% endif %}
+              {% if module.search_settings.language %}
+              <input type="hidden" name="language" value={{ module.search_settings.language | default('en') }} >
+              {% endif %}
+              {% for blog_id in module.search_settings.blogs %}
+              <input type="hidden" name="groupId" value={{ blog_id }} >
+              {% endfor %}
+            </form>
+          </div>
+        </div>
+      </div>
+      <a href="#" id="pwr-js-burger__trigger-open" class="pwr-burger__trigger-open {% if module.layout.section_variant != 'burger' && module.layout.section_variant != 'burger_only' %}pwr-burger__trigger-open--mobile-only{% endif %}">
+        <div class="pwr-burger__icon-open">
+          <span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+{% endif -%}

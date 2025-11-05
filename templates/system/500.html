@@ -1,0 +1,29 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+  label: POWER THEME 500 Error
+-->
+{% extends '../layouts/base.html' %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        <div class="pwr-sec-maintenance-error pwr--light pwr-sec--first-with-header"
+            style="background-color: rgba(244, 246, 250, 1.0)">
+            <div class="pwr-sec-maintenance-error__img-wrapper">
+                <img class="pwr-sec-maintenance-error__img pwr-sec-maintenance-error__img--top  pwr-sec-maintenance-error__img--centered"
+                    src={% image_src "error 500" 'src'="{{get_asset_url('../../images/system/pwr-img_system_500.png')}}", label="Image", no_wrapper=True %}
+                    alt="error 500" width="713" height="293">
+            </div>
+            <div class="page-center pwr--relative">
+                <div class="pwr-sec-maintenance-error__txt-wrapper pwr--align-c">
+                    <h1 class="pwr-sec-maintenance-error__title pwr--toc-ignore">
+                        {% module "title" path="@hubspot/text", label="Title", value="SOMETHING WENT WRONG", no_wrapper=True %}
+                    </h1>
+                    <span class="pwr-rich-text pwr-sec-maintenance-error__desc">{% module "description", path="@hubspot/rich_text", label="Description" html='Server error 500. We apologize for the inconvenience and are fixing the problem. <br>Please try again at a later stage.', no_wrapper=True %}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

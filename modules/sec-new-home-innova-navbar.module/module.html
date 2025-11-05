@@ -1,0 +1,138 @@
+<header class="fixed top-0 left-0 w-full bg-white z-10" id="inn-header">
+  <div>
+    <div class=" flex  py-[21px] px-[24px] md:py-[18px] md:px-[56px] justify-between items-center">
+      <picture>
+        <a href="{{ module.logo_url }}">
+          <img class="logo" src="{{ module.logo_image.src }}" alt="{{ module.logo_image.alt }}">
+        </a>
+      </picture>
+      <div id="header-menu-items" class="md:list-none md:flex md:items-center">
+      </div>
+      <button id="menu-button" class=" cursor-pointer">
+        <svg id="lines" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.94922 1.6665L18.6159 18.3332M1.94922 18.3332L18.6159 1.6665" stroke="#044C8D" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <svg id="x-icon" width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.28125 11H26.7812M8.78125 20.6166H26.7812M1.78125 1.3833H26.7812" stroke="#044C8D" stroke-width="2"
+            stroke-miterlimit="10" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+    <section id="header-nav" class="h-[calc(100vh_-_80px)] hidden md:py-[40px]">
+      <div class="md:flex md:gap-[122px] md:relative">
+        <nav
+          class="px-[24px] md:py-0 md:pl-[50px] overflow-auto h-[calc(100vh-86px)] md:h-auto flex flex-col justify-start items-start py-[40px]">
+          <p class="font-['Josefin Sans'] font-bold text-[16px] leading-[18px] text-[#FF6D62] pb-[16px]">
+            Menú</p>
+          <ul>
+            {% for item in module.menu_items %}
+            <li class="header-nav-menu {% if item.has_dropdown %}has-dropdown{% endif %}" {% if item.has_dropdown
+              %}id="home-dropdown" {% endif %}>
+
+              <a class="py-[14px] px-[10px] font-['Josefin Sans'] font-bold text-[22px] leading-[26px] text-[#003B87] uppercase {% if item.has_dropdown %}flex items-center gap-[12px]{% else %}block{% endif %} cursor-pointer hover:bg-[#E5E9EE] hover:rounded-[100px] hover:w-fit"
+                href="{% if item.has_dropdown %}#{% else %}{{ item.item_menu_url }}{% endif %}">
+                {{ item.item_menu_text }}
+
+                {% if item.has_dropdown %}
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.3135 1.33789C13.3125 1.45456 13.2888 1.5702 13.2441 1.67676C13.2106 1.75668 13.1654 1.83013 13.1113 1.89551L13.0547 1.95801L13.0488 1.96387L7.85742 7.28613C7.70014 7.44729 7.48969 7.53613 7.27246 7.53613C7.05523 7.53612 6.84477 7.4473 6.6875 7.28613L1.49609 1.96387C1.3384 1.80223 1.2481 1.58019 1.24805 1.34668C1.24816 1.17291 1.29859 1.00402 1.3916 0.861328C1.4846 0.718729 1.61564 0.60903 1.7666 0.544921C1.91738 0.480989 2.08295 0.464603 2.24219 0.49707C2.40149 0.52964 2.54972 0.610259 2.66699 0.730468L6.94043 5.1123L7.27246 5.45312L7.60449 5.1123L11.8779 0.730469L11.8838 0.724609L11.9443 0.666016C12.0076 0.610937 12.0786 0.566564 12.1543 0.533203C12.2552 0.488761 12.3636 0.464839 12.4727 0.463867C12.5815 0.462929 12.6896 0.484837 12.791 0.527344C12.8926 0.569969 12.9866 0.633038 13.0654 0.713867C13.1442 0.794669 13.2072 0.89177 13.25 0.999023C13.2927 1.1062 13.3144 1.22147 13.3135 1.33789Z"
+                    fill="#003B87" stroke="#003B87" stroke-width="0.928125" />
+                </svg>
+                {% endif %}
+              </a>
+
+              {% if item.has_dropdown %}
+              <div class="dropdown-wrapper">
+                <div
+                  class="md:grid md:grid-cols-2 items-center md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:gap-[24px] bg-[#ffffff]">
+                  <!-- Images -->
+                  <picture id="home-dropdown-image" class="hidden">
+                    {% if item.dropdown_default_image.src %}
+                    <img class="default-image rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px]"
+                      src="{{ item.dropdown_default_image.src }}" alt="{{ item.dropdown_default_image.alt }}">
+                    {% endif %}
+
+                    {% for dropdown_item in item.dropdown_items %}
+                    <img data-school="{{ dropdown_item.item_dropdown_slug }}"
+                      class="hidden rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px]"
+                      src="{{ dropdown_item.item_dropdown_image.src }}" alt="{{ dropdown_item.item_dropdown_image }}">
+                    {% endfor %}
+                  </picture>
+
+                  <!-- Dropdown List -->
+                  <ul class="hidden">
+                    {% for dropdown_item in item.dropdown_items %}
+                    <li data-school="{{ dropdown_item.item_dropdown_slug }}"
+                      class="font-['Josefin Sans'] font-bold text-[12px] leading-[20px] tracking-[1.2px] text-[#003B87] uppercase py-[20px] pl-[24px] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-[#CFE2E84D] after:via-[#A1B0B599] after:to-[#CFE2E84D] hover:bg-[#F2F4F6] cursor-pointer flex gap-[8px] group hover-item">
+                      <img class="w-0 opacity-0 group-hover:w-auto group-hover:opacity-100 transition-all duration-1000 ease-in-out overflow-hidden flex-shrink-0"
+                        src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/icon-redirection.svg"
+                        alt="icon-redirection">
+                      <a class="-translate-x-4 group-hover:translate-x-0 transition-transform duration-1000 ease-in-out" href="{{ dropdown_item.item_dropdown_url }}">{{ dropdown_item.item_dropdown_name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              {% endif %}
+            </li>
+            {% endfor %}
+
+            <a class="mt-[20px] md:mt-[40px] relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
+              href="{{ module.url_boton }}">
+              <span
+                class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+              <span
+                class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">
+                {{ module.cta_button_text }}
+              </span>
+              <svg class="relative z-10" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.8008 14.2393L9.09375 12.7256L9.09961 12.7119L9.08691 12.7275L7.10645 15.1416H7.10547C7.00855 15.2654 6.87723 15.328 6.70996 15.3281C6.63971 15.3281 6.58031 15.3172 6.53223 15.2959H6.53125C6.42891 15.2581 6.34712 15.1943 6.28516 15.1055C6.22318 15.0165 6.19244 14.9183 6.19238 14.8105V11.9541L13.2627 3.28906L13.2529 3.28125L13.2539 3.28027L4.50684 10.8486L1.27734 9.52539H1.27637C1.17646 9.48755 1.09961 9.43128 1.0459 9.35742C0.992166 9.28351 0.961242 9.191 0.953125 9.08008L0.954102 9.00195C0.959149 8.92617 0.977475 8.85836 1.00977 8.79883C1.05278 8.71955 1.12003 8.65389 1.21191 8.60254L14.833 0.745117C14.9139 0.696638 15.0002 0.671875 15.0918 0.671875C15.1996 0.671945 15.2967 0.701528 15.3828 0.760742C15.4719 0.825561 15.534 0.901399 15.5703 0.987305C15.6066 1.07341 15.6168 1.17109 15.6006 1.2793L13.5059 13.8516C13.4789 14.0078 13.3928 14.1294 13.2471 14.2158C13.1717 14.2589 13.0878 14.2803 12.9961 14.2803C12.937 14.2803 12.8712 14.2663 12.8008 14.2393Z"
+                  fill="white" stroke="white" stroke-width="0.012278" />
+              </svg>
+            </a>
+          </ul>
+
+        </nav>
+        <article id="header-contact" class="hidden md:block">
+          <p class="font-['Josefin Sans'] font-bold text-[16px] leading-[18px] text-[#FF6D62] pb-[16px] md:pb-[24px]">
+            Contact us</p>
+          <ul class="md:flex md:flex-col md:gap-[16px] md:pb-[48px]">
+            {% for item in module.means_contact %}
+            <li class="md:font-['Josefin Sans'] md:font-normal md:text-[18px] md:leading-[22px] md:text-[#044C8D]">
+              {{ item.text_contact }}</li>
+            {% endfor %}
+
+          </ul>
+          <p class="font-['Josefin Sans'] font-bold text-[16px] leading-[18px] text-[#FF6D62] pb-[16px] md:pb-[24px]">
+            Siguenos en</p>
+          <ul class="md:flex md:gap-[15px]">
+            {% for item in module.social_media %}
+            <li>
+              <a href="{{ item.url_social_media }}">
+                <img class="cursor-pointer" src="{{ item.icon_social_media.src }}"
+                  alt="{{ item.icon_social_media.alt }}">
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+      <p
+        class="z-1 hidden md:block md:font-['Josefin Sans'] md:font-normal md:text-[16px] md:leading-[18px] md:text-[#044C8D] md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 pb-[24px]">
+        {{ module.copyright_text }}</p>
+      <picture class="hidden md:block md:absolute md:bottom-0 md:right-0">
+        <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodles-navbar-menu.png"
+          alt="dodles-navbar-menu">
+      </picture>
+    </section>
+  </div>
+  <div>
+
+  </div>
+</header>
+<div id="scroll-sentinel"></div>

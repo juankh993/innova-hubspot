@@ -1,0 +1,168 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-04.jpg
+  label: POWER THEME Home 04
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='BREATHE LIFE INTO YOUR BRAND', 
+                    title_sel_heading='h1',
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    layout={full_width:false,header_height:"large",isSmall:false,title_extra_large:false},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-business-couple-from-top-1116851186",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_afro-woman-laptop.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},
+                        scheme:"dark"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    We\'ve spent a long time creating unique and beautiful modules. POWER is a complete solution at your fingertips.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Services #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "services" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-services', 
+                    label='Services',
+                    intro_to_title='WHAT MAKES US SO POWERFUL',
+                    title='CHECK OUT OUR SERVICES',
+                    services=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"WEB DEVELOPMENT",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",icon:{name:"list",type:"SOLID",unicode:"f03a"},icon_img:{'src':""},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"PROJECT MANAGEMENT",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"},open_in_new_tab:false,no_follow:false},translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:200}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",icon:{name:"bullhorn",type:"SOLID",unicode:"f0a1"},icon_img:{'src':""},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"MARKETING",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"},open_in_new_tab:false,no_follow:false},translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",icon:{name:"chart-line",type:"SOLID",unicode:"f201"},icon_img:{'src':""},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"BUSINESS GROWTH",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"},open_in_new_tab:false,no_follow:false},translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:500}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",icon:{name:"linkedin-in",type:"REGULAR",unicode:"f0e1"},icon_img:{'src':""},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"SOCIAL MEDIA",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"},open_in_new_tab:false,no_follow:false},translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:650}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",icon:{name:"code-branch",type:"SOLID",unicode:"f126"},icon_img:{'src':""},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"NETWORKING",link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"},open_in_new_tab:false,no_follow:false},translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:800}}
+                        ],
+                    layout={section_variant:"style-2"},
+                    style={background:"color",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    As you may have noticed this is yet another layout variation of our services module
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Services #}
+
+            {# Section Media Content Split #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "media-content-split" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-media-content-split', 
+                    label='Media Content Split',
+                    intro_to_title='APP PROMOTION',
+                    title='THE WORLD LEADING POWER APP FOR YOUR BUSINESS', 
+                    title_sel_heading='h2',
+                    desc='',
+                    contact=False,
+                    link='', 
+                    logo={alt:"logo-appstore",height:66,'src':get_asset_url('../images/logos/other/pwr-img_logo_appstore.svg'),width:195},
+                    video='https://cdn2.hubspot.net/hubfs/4740449/mockup-watch-compressed.mp4',
+                    youtube_link='',
+                    layout={section_height:540},
+                    style={
+                        background:"color",
+                        background_color:{color:"#212631",opacity:100},
+                        media_position:"center",
+                        scheme:"dark"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Media Content Split #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Steps',
+                    intro_to_title='INBOUND PROCESS',
+                    title='FOUR STEPS FOR YOUR SUCCESS',
+                    step=[
+                        {description:"Get the attention of your target audience using and optimizing the right content strategy.",title:"Attract",animation:{animation_type:"default",delay:50}},
+                        {description:"Convert them into leads using Call-To-Actions, Contact Forms and smart Landing Pages.",title:"Convert",animation:{animation_type:"default",delay:200}},
+                        {description:"Convert your leads to sales using HubSpots Lead Management, E-Mails and Workflows.",title:"Close",animation:{animation_type:"default",delay:350}},
+                        {description:"Don\'t stop after closing. Keep your customers happy to guarantee a long-term relationship.",title:"Delight",animation:{animation_type:"default",delay:500}}
+                        ],
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "description" %}
+                    Solve your problems using HubSpots inbound methodology in a way you want them to be solved and achieve incredible results.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+            
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    intro_to_title='',
+                    title='WHAT WE HAVE TO SAY',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:4,section_variant:"small_vert"}, 
+                    style={background:""},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                    {% module_attribute "description" %}
+                    With our blog post preview you have lots of different layout and extensive filter options to promote and push your content.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='NEWSLETTER SIGN-UP',
+                    title='DON\'T MISS OUT ON THE LATEST NEWS ON OUR JOURNEY',
+                    layout={centered:false,section_variant:"hor_55"},
+                    style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},btn_style:"pwr-btn--regular-border",scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"4bcfdd7d-3e28-4daf-9f1c-a31533173be9","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                    {% end_module_attribute %}
+                    {% module_attribute "description" %}
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

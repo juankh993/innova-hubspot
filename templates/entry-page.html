@@ -1,0 +1,605 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_entry.jpg
+  label: POWER THEME Entry Page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='pwr-entry-wrapper', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Intro',
+                    title='THIS IS POWER',
+                    ctas=["cdb8ca17-a724-4af0-b152-1da25bedb8b4"],
+                    layout={centered:True,full_width:False,header_height:"regular"},
+                    style={background:"img_vid",background_image:{alt:"rocket-2",height:1080,'src':get_asset_url('../images/entry/videos/pwr-img_entry_video_rocket-front.jpg'),width:1920},background_image_overlay:"gradient",cta_size:" ",cta_style:"pwr-cta--primary-solid",desc_large:False,overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:30},overlay_gradient_color_2:{color:"#1e222c",opacity:100},overlay_gradient_direction:"vert",scheme:"dark",youtube_link:"https://youtu.be/oolHG6nTAEU"}
+                    %}
+                    {% module_attribute "description" %}
+                    A HubSpot theme to showcase your work as an exceptionally unique experience.<br>45+ templates, 44 custom modules. Flexible, easy-to-use, well-organized and professionally designed.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='List of all Templates',
+                    intro_to_title='', 
+                    title='', 
+                    title_sel_heading='h2', 
+                    description='', 
+                    filter_active_category='HOME', 
+                    is_filter_cat_all=False, 
+                    boxes=[
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-01",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-01.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 01",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:50}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-02",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-02.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 02",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:150}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-03",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-03.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 03",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:250}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-04",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-04.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 04",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:350}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-05",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-05.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 05",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:50}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-06",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-06.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 06",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:150}},
+                        {desc:"",filtering:{cats:"HOME"},         img:{alt:"power-thumbnail-Home-07",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Home-07.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"HOME 07",                          translation:{txt_link:"View Page"},animation:{animation_type:"default",delay:250}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-About-us-01",             height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_About-us-01.png'),width:480},                      layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"ABOUT US 01",                      translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-About-us-02",             height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_About-us-02.png'),width:480},                      layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"ABOUT US 02",                      translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-About-me",                height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_About-me.png'),width:480},                         layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"ABOUT ME",                         translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Services-Overview-01",    height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Service-Overview-01.png'),width:480},              layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"SERVICE OVERVIEW 01",              translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Services-Overview-02",    height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Service-Overview-02.png'),width:480},              layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"SERVICE OVERVIEW 02",              translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Service-Single",          height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Service.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"SERVICE DETAIL",                   translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Product",                 height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Product.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"PRODUCT PAGE",                     translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"PILLAR PAGE"},  img:{alt:"power-thumbnail-Pillar-Page-01-Boxed",    height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Pillar-Page.png'),width:480},                      layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"PILLAR PAGE",                      translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Career-Overview-01",      height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Career-Overview.png'),width:480},                  layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"CAREER OVERVIEW",                  translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Career-Single",           height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Career-Detail.png'),width:480},                    layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"JOB PAGE",                         translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Contact-us-01",           height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Contact.png'),width:480},                          layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"CONTACT",                          translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Events-Overview",         height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Events-Overview.png'),width:480},                  layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"EVENTS OVERVIEW",                  translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Event-Single",            height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Events-Detail.png'),width:480},                    layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"EVENT DETAIL",                     translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Resources",               height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Resources.png'),width:480},                        layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"RESOURCES",                        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Webinars",                height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Webinars.png'),width:480},                         layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"WEBINARS",                         translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-FAQs",                    height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_FAQs.png'),width:480},                             layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"FAQs",                             translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SUBPAGE"},      img:{alt:"power-thumbnail-Legal-01",                height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Legal.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LEGAL",                            translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"PORTFOLIO"},    img:{alt:"power-thumbnail-Portfolio-Overview-01",   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Portfolio-Overview.png'),width:480},               layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"PORTFOLIO OVERVIEW",               translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"PORTFOLIO"},    img:{alt:"power-thumbnail-Portfolio-Single",        height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Portfolio-Detail.png'),width:480},                 layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"PORTFOLIO DETAIL",                 translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"BLOG"},         img:{alt:"power-thumbnail-Blog-Overview-01",        height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Blog-Overview-01.png'),width:480},                 layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"BLOG OVERVIEW",                    translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"BLOG"},         img:{alt:"power-thumbnail-Blog-Post-01",            height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Blog-Post-01.png'),width:480},                     layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"BLOG POST",                        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"BLOG"},         img:{alt:"power-thumbnail-Blog-Author",             height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Blog-Author.png'),width:480},                      layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"BLOG AUTHOR",                      translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-01",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-01.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 01 - PREMIUM",        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-02",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-02.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 02 - BIG FORM",       translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-03",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-03.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 03 - QUOTE",          translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-04",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-04.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 04 - WEBINAR",        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-05",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-05.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 05 - EVENT",          translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-06",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-06.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 06 - MOBILE APP",     translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-07",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-07.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 07 - BASIC",          translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-10",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-08.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 10 - SQUEEZE",        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"LANDING PAGE"}, img:{alt:"power-thumbnail-LP-11",                   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_LP-09.png'),width:480},                            layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"LANDING PAGE 11 - THANK YOU",      translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Error-404",               height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Error-404.png'),width:480},                        layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"ERROR 404",                        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Error-500",               height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Error-500.png'),width:480},                        layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"ERROR 500",                        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Email-Unsubscribe",       height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Email-Unsubscribe.png'),width:480},                layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"EMAIL UNSUBSCRIBE",                translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Email-Com-Preferences",   height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Communication-Preferences.png'),width:480},        layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"COMMUNICATION PREFERENCES",        translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Email-Unsubscribe-Conf",  height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Email-Unsubscribe-Confirmation.png'),width:480},   layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"EMAIL UNSUBSCRIBE CONFIRMATION",   translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Password",                height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Password.png'),width:480},                         layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"PASSWORD",                         translation:{txt_link:"View Page"}},
+                        {desc:"",filtering:{cats:"SYSTEM"},       img:{alt:"power-thumbnail-Search",                  height:360,'src':get_asset_url('../images/entry/thumbnails/pwr-img_entry_thumbnail_Search.png'),width:480},                           layout:{size:"pwr-image-box--one-by-one"},    link:{no_follow:False,open_in_new_tab:True,url:{href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}},   link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"}, style:{background_position:"top"},  title:"SEARCH",                           translation:{txt_link:"View Page"}}
+                        ], 
+                    layout={centered:True,no_gutter:False,padding_top:"pwr--padding-t-0",section_variant:"4cols"}, 
+                    style={background:"color",background_color:{color:"#1e222c",opacity:100},box_style:"content_below",scheme:"dark",smaller_content:True,style_filter:False}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Features Overview Intro',
+                    intro_to_title='WHAT MAKES POWER SO POWERFUL?',
+                    title='POWER THEME FEATURES',
+                    title_sel_heading='h2',
+                    left='', 
+                    right='',
+                    layout={section_variant:"2col",centered:True,padding_bottom:"pwr--padding-b-0"},
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps"  
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Features Overview',
+                    intro_to_title='',
+                    title='', 
+                    title_sel_heading='h1',
+                    description='',
+                    step=[
+                        {description:"We have done all the magic behind the scenes. Simply use the HubSpot drag-and-drop editor and our countless module-options to create and customize your website with ease.",icon:{},img:{alt:"icon-coding-1",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_coding.svg'),width:48},title:"NO CODING REQUIRED",animation:{animation_type:"default",delay:50}},
+                        {description:"<span>Easily switch between various layouts, dark/light color scheme, CTA-styles, padding, and many more. Configure backgrounds with custom color, gradient, image or video.&nbsp;</span>",icon:{},img:{alt:"icon-modules",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_modules.svg'),width:48},title:"POWERFUL MODULES",animation:{animation_type:"default",delay:150}},
+                        {description:"<span>Your website will look stunning on all devices. Interactive elements enrich the mobile experience. Don\'t worry, font-sizes and paddings are adapted accordingly.</span>",icon:{},img:{alt:"icon-phone",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_responsive.svg'),width:48},title:"RESPONSIVE DESIGN",animation:{animation_type:"default",delay:250}},
+                        {description:"<p>POWER is multi-language ready. All standard texts in the modules are translatable. Once translated you can switch the languages directly from the header bar.</p>",icon:{},img:{alt:"icon-multi-language-2",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_language.svg'),width:48},title:"MULTI-LANGUAGE",animation:{animation_type:"default",delay:350}},
+                        {description:"Optimized to work with all common browsers used by your customers and partners: Chrome, Firefox, Safari, Internet Explorer 11, Edge, and Opera.",icon:{},img:{alt:"icon-browser",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_cross-browser.svg'),width:48},title:"CROSS-BROWSER TESTED",animation:{animation_type:"default",delay:50}},
+                        {description:"<span>We made sure that your website also looks perfect on displays with higher pixel density while having an eye on the performance of your website.</span>",icon:{},img:{alt:"icon-eye",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_retina.svg'),width:48},title:"RETINA IMAGE SUPPORT",animation:{animation_type:"default",delay:150}},
+                        {description:"Free consultations: 15-minute pre-purchase and 2-hour after-sale. Free live- chat and e-mail support. Refundable purchase. Customization services.",icon:{},img:{alt:"icon-services-1",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_service.svg'),width:48},title:"TOP-NOTCH SERVICE",animation:{animation_type:"default",delay:250}},
+                        {description:"Our documentation is detailed and covers all features of POWER. We constantly improve it based on your requests to ensure enjoyable usability.",icon:{},img:{alt:"icon-multi-language",height:48,'src':get_asset_url('../images/entry/icons/pwr-img_entry_features_documentation.svg'),width:48},title:"GREAT DOCUMENTATION",animation:{animation_type:"default",delay:350}}],
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--padding-t-0",section_variant:"img"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+            
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Mobile ready',
+                    intro_to_title='',
+                    title='PIXEL PERFECT DESIGN - MOBILE READY', 
+                    title_sel_heading='h2',
+                    ctas=[],
+                    mockup={alt:"mockup-02",height:810,'src':get_asset_url('../images/mockups/pwr-img_mockup_display-phone.png'),width:1082},
+                    layout={content_width:45,full_width:True,max_mockup_width:700,mockup_width:50,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--padding-t-0",section_variant:"mockup_left"},
+                    style={background:"color",background_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},background_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},background_gradient_color_2:{color:"#b4b9bc",opacity:100},background_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    One glance and you will know that something special is involved. The magic comes from a consistent design system built upon over-critical perfectionism.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='No Coding',
+                    intro_to_title='NO',
+                    title='CODING REQUIRED', 
+                    title_sel_heading='h2',
+                    ctas=[],
+                    mockup={alt:"mockup-01-3",height:875,'src':get_asset_url('../images/mockups/pwr-img_mockup_pro-display-2.png'),width:1200},
+                    layout={full_width:True,max_mockup_width:700,mockup_width:50,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"mockup_right"},
+                    style={background:"gradient",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},background_gradient_color_1:{color:"#F2F3F4",opacity:100},background_gradient_color_2:{color:"#D9DEE1",opacity:100},background_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    We have done all the magic behind the scenes. Using this template requires no coding skills. Simply use the HubSpot Editor to create and customize your website.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section DnD #}
+            {% dnd_section
+                background_color={ 'r': 23,'g': 27,'b': 37,'a': 1.0 },
+                padding={ 
+                    'default': { 'top':125, 'bottom': 0},
+                    'mobile': { 'top': 95, 'bottom': 0, 'left': 40, 'right': 40 }
+                }
+                %}
+                {% dnd_column full_width=false, max_width={{theme.layout.content_width}} %}
+                {% dnd_row %}
+                    {% dnd_module path='@hubspot/rich_text', label='Cross Browser Text' %}
+                        {% module_attribute 'html' %}
+                        <div style="text-align: center; color: {{ theme.colors.power.dark_scheme.text.text_color.color }};">
+                            <div style="font-size: 18px;margin-bottom:20px;">Chrome, Firefox, Safari, Internet Explorer 11, Edge, and Opera.</div>
+                            <h2 style="margin: 0; line-height:1.14em;">CROSS BROWSER OPTIMIZED</h2>
+                        </div>
+                        {% end_module_attribute %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+                {% dnd_row margin={'top': 60,'bottom': 0} %}
+                    {% dnd_module module "img" 
+                        full_width=false,
+                        width=12,
+                        path='@hubspot/image', 
+                        horizontal_alignment='CENTER',
+                        label='Cross Browser Image',
+                        img={alt:"cross-browser",'src':get_asset_url('../images/mockups/pwr-img_mockup_cross-browser.png'),width:1200}
+                        %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+                {% end_dnd_column %}
+            {% end_dnd_section %}
+            {# End Section DnD #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Header Types',
+                    intro_to_title='10+',
+                    title='HEADER TYPES',
+                    step=[
+                        {description:"",icon:{},img:{alt:"header-Basic",                            height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_basic.svg'),width:288},title:"BASIC",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"header-Basic Full-Width",                 height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_basic-full-width.svg'),width:288},title:"FULL WIDTH",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"header-with CTA",                         height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_with-cta.svg'),width:288},title:"CTA",animation:{animation_type:"default",delay:250}},
+                        {description:"",icon:{},img:{alt:"header-with Contact Info",                height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_with-contact-info.svg'),width:288},title:"CONTACT INFO",animation:{animation_type:"default",delay:350}},
+                        {description:"",icon:{},img:{alt:"header-with Top Bar",                     height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_with-top-bar.svg'),width:288},title:"TOP BAR",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"header-Hamburger",                        height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_hamburger.svg'),width:288},title:"HAMBURGER",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"header-Social Only",                      height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_social-only.svg'),width:288},title:"SOCIAL ONLY",animation:{animation_type:"default",delay:250}},
+                        {description:"",icon:{},img:{alt:"header-Mega Menu",                        height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_mega-menu.svg'),width:288},title:"MEGA MENU",animation:{animation_type:"default",delay:350}},
+                        {description:"",icon:{},img:{alt:"header-Mega Menu Container Width",        height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_mega-menu-container-width.svg'),width:288},title:"MEGA MENU - CONTENT",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"header-Mega Menu Full Width",             height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_mega-menu-full-width.svg'),width:288},title:"MEGA MENU - FULL",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"header-Dark",                             height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_dark.svg'),width:288},title:"DARK",animation:{animation_type:"default",delay:250}},
+                        {description:"",icon:{},img:{alt:"header-Transparent",                      height:200,'src':get_asset_url('../images/entry/headers/pwr-img_entry_header_transparent.svg'),width:288},title:"TRANSPARENT",animation:{animation_type:"default",delay:350}}
+                    ],
+                    layout={section_variant:"img"},
+                    style={scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    <div></p>Various header types with plenty of options for your header area. Select the right one for you.</p></div>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section DnD #}
+            {% dnd_section
+                background_color={ 'r': 244,'g': 246,'b': 250,'a': 1.0 },
+                full_width=true,
+                padding={ 
+                'default': { 'bottom': 140, 'top': 125, 'left': 0, 'right':0 },
+                'mobile': { 'bottom': 105, 'top': 95, 'left': 40, 'right': 40 }
+                },
+                margin={'bottom': 0, 'top': 0}
+                %}
+                {% dnd_column full_width=true padding={'top':0, 'bottom':0,'left':0,'right':0 } margin={'top':0, 'bottom':0} %}
+                    {% dnd_row margin={'top':0,'bottom':80} %}
+                        {% dnd_module path='@hubspot/rich_text', label='Build Anything Text' %}
+                            {% module_attribute 'html' %}
+                            <div style="text-align: center;">
+                                <div style="font-size: 18px;margin-bottom:20px;">49 CUSTOM POWER MODULES</div>
+                                <h2 style="margin: 0; line-height:1.14em;">BUILD ANYTHING YOU WANT</h2>
+                            </div>
+                            {% end_module_attribute %}
+                        {% end_dnd_module %}
+                    {% end_dnd_row %}
+                    {% dnd_row padding={'left':0,'right':0} margin={'top': 60, 'bottom':0} %}
+                        {% dnd_module module "img" 
+                                full_width=true,
+                                padding={'left':0,'right':0},
+                                width=12,
+                                path='@hubspot/image', 
+                                horizontal_alignment='CENTER',
+                                label='Build Anything Image',
+                                img={alt:"modules-5",'src':get_asset_url('../images/mockups/pwr-img_mockup_entry_dnd.jpg'),width:2000}
+                                %}
+                        {% end_dnd_module %}
+                    {% end_dnd_row %}
+                {% end_dnd_column %}
+            {% end_dnd_section %}
+            {# End Section DnD #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='Video Options',
+                    title='WE OFFER VARIOUS VIDEO OPTIONS. USE THEM AND FEEL LIKE STEVEN SPIELBERG.',
+                    title_sel_heading='h2',
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"vertical"},
+                    style={background:"img_vid",background_image:{alt:"video-comp-3",height:720,'src':get_asset_url('../images/entry/videos/pwr-img_entry_video_videos.jpg'),width:1280},background_image_overlay:"gradient",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:95},overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_direction:"vert",scheme:"dark",youtube_link:"https://youtu.be/bW3cDkDCFeI"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    {% module_attribute "description" %}
+                    POWER has dedicated modules to promote your awesome video content, but that\'s not all. Every section module has the ability to use video as background with optional color overlays or even gradient overlays.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Background Options',
+                    intro_to_title='+6',
+                    title='BACKGROUND OPTIONS', 
+                    title_sel_heading='h2',
+                    ctas=[],
+                    mockup={alt:"mockup-backgrounds-03",height:916,'src':get_asset_url('../images/mockups/pwr-img_mockup_pro-display-backgrounds.png'),width:1200},
+                    layout={content_width:45,full_width:True,max_mockup_width:700,mockup_width:50,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"mockup_left"},
+                    style={background:"gradient",background_color:{color:"#D9DEE1",opacity:100},background_gradient_color_1:{color:"#F2F3F4",opacity:100},background_gradient_color_2:{color:"#D9DEE1",opacity:100},background_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    There are unlimited background possibilities for each section module. Style options include solid backgrounds, gradients, images and videos. All these with optional color- or gradient-overlays. The parallax effect is also included.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Color Scheme',
+                    intro_to_title='',
+                    title='DARK or LIGHT SCHEME', 
+                    title_sel_heading='h2',
+                    ctas=[],
+                    mockup={alt:"mockup-light-dark-02",height:992,'src':get_asset_url('../images/mockups/pwr-img_mockup_light-dark.png'),width:1150},
+                    layout={content_width:50,full_width:True,max_mockup_width:700,mockup_width:50,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--padding-t-0",section_variant:"mockup_right"},
+                    style={background:"color",background_color:{color:"#D9DEE1",opacity:100},background_gradient_color_1:{color:"#F2F3F4",opacity:100},background_gradient_color_2:{color:"#D9DEE1",opacity:100},background_gradient_direction:"vert",background_image_overlay:"gradient",overlay_gradient_color_1:{color:"#F2F3F4",opacity:100},overlay_gradient_color_2:{color:"#D9DEE1",opacity:100},overlay_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    Separate the module sections visually. Switch between dark and light color schemes with one magical click. No need for a manual change of styles for each element. On top of this, additional style customizations are also possible. All of these offered possibilities make your design configuration time-saving.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='Stock Images',
+                    title='ALL STOCK IMAGES ARE LICENSED*, INCLUDED AND READY TO BE USED WITH THIS PACK.', 
+                    title_sel_heading='h2',
+                    cta='1c1cc0d7-1675-469d-975f-5a7903eee20f',
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"vertical"},
+                    style={background:"img_vid",background_image:{alt:"bg-stocks",height:1080,'src':get_asset_url('../images/entry/videos/pwr-img_entry_video_stocks.jpg'),width:1920},background_image_overlay:"gradient",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:95},overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_direction:"vert",scheme:"dark",youtube_link:"https://youtu.be/bJb-1-dkioo"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    {% module_attribute "description" %}
+                    <p>*You are allowed to use all included images <strong>in combination with the POWER Theme</strong> for your website and e-mails.&nbsp;<br>Please keep in mind that you are not allowed to use the included images in any other context.&nbsp;</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Portfolio Layouts',
+                    intro_to_title='3+',
+                    title='PORTFOLIO LAYOUTS',
+                    step=[
+                        {description:"",icon:{},img:{alt:"portfolio preview 3 columns",height:198,'src':get_asset_url('../images/entry/portfolios/pwr-img_entry_portfolio_3-col.svg'),width:286},title:"3 COLUMN",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"portfolio preview 3 columns minimal",height:198,'src':get_asset_url('../images/entry/portfolios/pwr-img_entry_portfolio_3-col-minimal.svg'),width:286},title:"3 COLUMN MINIMAL",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"portfolio preview masonry",height:198,'src':get_asset_url('../images/entry/portfolios/pwr-img_entry_portfolio_masonry.svg'),width:285},title:"MASONRY",animation:{animation_type:"default",delay:250}}
+                        ],
+                    layout={section_variant:"img"},
+                    style={scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>You do great work? Give your products and services the stage they deserve. Four predefined POWER portfolio templates, endless possibilities.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section DnD #}
+            {% dnd_section
+                background_color={ 'r': 244,'g': 246,'b': 250,'a': 1.0 },
+                background_linear_gradient={
+                    'direction': 'to bottom',
+                    'colors': [
+                    '#F4F6FA',
+                    '#D9DEE1'
+                    ]
+                }
+                padding={ 
+                'default': { 'bottom': 0, 'top': 125 },
+                'mobile': { 'top': '95', 'left': '40', 'right': '40' }
+                }
+                %}
+                {% dnd_column full_width=true, max_width={{theme.layout.content_width}} %}
+                {% dnd_row %}
+                    {% dnd_module path='@hubspot/rich_text', label='Fully Customizable Text' %}
+                        {% module_attribute 'html' %}
+                        <div style="text-align: center;">
+                            <div style="font-size: 18px;margin-bottom:20px;">49 CUSTOM POWER MODULES</div>
+                            <h1 style="margin: 0; line-height:1.14em;">FULLY CUSTOMIZABLE</h1>
+                        </div>
+                        {% end_module_attribute %}
+                    {% end_dnd_module %}
+                    {% end_dnd_row %}
+                {% dnd_row margin={'top': 60,'bottom': 0} %}
+                    {% dnd_module module "img" 
+                        full_width=true,
+                        width=12,
+                        path='@hubspot/image', 
+                        horizontal_alignment='CENTER',
+                        label='Fully Customizable Image',
+                        img={alt:"mockup-customizable-2",'src':get_asset_url('../images/mockups/pwr-img_mockup_module-options-1.png'),width:1200}
+                        %}
+                    {% end_dnd_module %}
+                {% end_dnd_row %}
+                {% end_dnd_column %}
+            {% end_dnd_section %}
+            {# End Section DnD #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='Refund',
+                    title='30-DAY MONEY-BACK GUARANTEE', 
+                    title_sel_heading='h2',
+                    cta='655805e0-c9d0-4ec6-9ba8-b1b32edb33a1',
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"vertical"},
+                    style={background:"img_vid",background_image:{alt:"bg-money",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_money-back-guarantee.jpg'),width:1920},background_image_overlay:"gradient",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:95},overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_direction:"vert",scheme:"dark",youtube_link:""},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    {% module_attribute "description" %}
+                    <p><span>Our theme does not match your expectations? Request a refund for up to 30 days after purchase. Scout\'s Honor!</span></p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Documentation',
+                    intro_to_title='',
+                    title='DETAILED DOCUMENTATION', 
+                    title_sel_heading='h2',
+                    ctas=["e806d0e3-272f-4a8b-91b2-c544a2deab27"],
+                    mockup={alt:"mockup-documentation-04",height:1133,'src':get_asset_url('../images/mockups/pwr-img_mockup_displays-documentation.png'),width:1200},
+                    layout={content_width:50,full_width:True,max_mockup_width:700,mockup_width:45,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"mockup_right"},
+                    style={background:"img_vid",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},background_gradient_color_1:{color:"#F2F3F4",opacity:100},background_gradient_color_2:{color:"#D9DEE1",opacity:100},background_gradient_direction:"vert",background_image_overlay:"gradient",overlay_gradient_color_1:{color:"#f2f3f4",opacity:100},overlay_gradient_color_2:{color:"#D9DEE1",opacity:100},overlay_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    We offer detailed documentation covering all features of POWER. We constantly improve it based on your requests, in order to ensure enjoyable, valuable user experience. Our documentation is well-structured, made to help both the new and legacy users. Read about how-to-get-started, up until expert-level topics.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Support',
+                    intro_to_title='24/7',
+                    title='TOP-NOTCH SUPPORT', 
+                    title_sel_heading='h2',
+                    ctas=[],
+                    mockup={alt:"mockup-livechat-support-02",height:1015,'src':get_asset_url('../images/mockups/pwr-img_mockup_laptop-livechat-support-1.png'),width:1200},
+                    layout={content_width:50,full_width:True,max_mockup_width:700,mockup_width:45,padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-sm",section_variant:"mockup_left"},
+                    style={background:"color",background_color:{color:"#D9DEE1",opacity:100},background_gradient_color_1:{color:"#F2F3F4",opacity:100},background_gradient_color_2:{color:"#D9DEE1",opacity:100},background_gradient_direction:"vert",scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    Do you have questions regarding our theme? Did you get stuck in the building process? We have the answers to all of your questions. Contact us via the free live-chat or contact form. Do you need specific custom solutions? We also offer design customization and development services.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Blog Layouts',
+                    intro_to_title='6+',
+                    title='BLOG LAYOUTS',
+                    step=[
+                        {description:"",icon:{},img:{alt:"blog-full-width-3-col",height:198,          'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_full-width-3-col.svg'),width:285},title:"FULL WIDTH 3 COLUMN",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"blog-full-width-2-col-sidebar",height:198,  'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_full-width-2-col.svg'),width:285},title:"FULL WIDTH 2 COL. SIDEBAR",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"blog-full-width-list",height:198,           'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_full-width-1-col.svg'),width:285},title:"FULL WIDTH LIST",animation:{animation_type:"default",delay:250}},
+                        {description:"",icon:{},img:{alt:"blog-full-width-list-sidebar",height:198,   'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_boxed-3-col.svg'),width:285},title:"FULL WIDTH LIST SIDEBAR",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"blog-boxed-3-col",height:198,               'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_boxed-2-col.svg'),width:285},title:"BOXED 3 COLUMN",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"blog-boxed-2-col-sidebar",height:198,       'src':get_asset_url('../images/entry/blogs/pwr-img_entry_blog_boxed-1-col.svg'),width:285},title:"BOXED 2 COL. SIDEBAR",animation:{animation_type:"default",delay:250}}
+                        ],
+                    layout={section_variant:"img"},
+                    style={scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    Generating and presenting exceptional blog content is very important. Choose between 6 visually appealing layouts.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='We Give Back',
+                    title='WE GIVE BACK. WITH EVERY PACK SOLD, WE PLANT 100* TREES ALL AROUND THE WORLD.', 
+                    title_sel_heading='h2',
+                    cta='5baadbe1-3573-4d92-b593-ae718a6c8748',
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"vertical"},
+                    style={background:"img_vid",background_image:{alt:"entry-forest-01b",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_forest.jpg'),width:1920},background_image_overlay:"gradient",background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:30},overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:10},overlay_gradient_direction:"vert",scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span>*The number of trees may vary depending on the project we support. You can request a confirmation of our donation with all the details, anytime.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label='Footer Layouts',
+                    intro_to_title='6+',
+                    title='FOOTER LAYOUTS',
+                    step=[
+                        {description:"",icon:{},img:{alt:"footer-full-navigation",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_full-navigation.svg'),width:285},title:"FULL NAVIGATION",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"footer-about+navigation",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_about+navigation.svg'),width:285},title:"ABOUT + NAVIGATION",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"footer-about+navigation+newsletter",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_about+navigation+newsletter.svg'),width:285},title:"ABOUT + NAVIGATION + NEWSLETTER",animation:{animation_type:"default",delay:250}},
+                        {description:"",icon:{},img:{alt:"footer-reduced",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_reduced.svg'),width:285},title:"REDUCED",animation:{animation_type:"default",delay:50}},
+                        {description:"",icon:{},img:{alt:"footer-minimal",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_minimal.svg'),width:285},title:"MINIMAL",animation:{animation_type:"default",delay:150}},
+                        {description:"",icon:{},img:{alt:"footer-big-email",height:198,'src':get_asset_url('../images/entry/footers/pwr-img_entry_footer_big-email.svg'),width:285},title:"BIG E-MAIL",animation:{animation_type:"default",delay:250}}
+                        ],
+                    layout={padding_bottom:" ",section_variant:"img"},
+                    style={scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>Various footer types with plenty of options for your footer area. Select the right one for you.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='TAKE OFF WITH POWER!', 
+                    title_sel_heading='h1',
+                    cta='714d97f9-84fd-4817-a6f8-e6ac3a170edb',
+                    layout={padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"vertical"},
+                    style={background:"img_vid",background_image:{alt:"rocket-1",height:1080,'src':get_asset_url('../images/video/pwr-img_video_rocket.jpg'),width:1920},background_image_overlay:"gradient",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_color_1:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},overlay_gradient_color_2:{color:theme.colors.brand_colors.base_color_dark.color,opacity:100},overlay_gradient_direction:"vert",scheme:"dark",youtube_link:"https://youtu.be/ybcCsfnyS20"},
+                    animation={section:{animation_type:"default",delay:50} }
+                    %}
+                    {% module_attribute "description" %}
+                    <span>You will work with a unique, beautiful, and complete theme made entirely for the HubSpot CMS.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

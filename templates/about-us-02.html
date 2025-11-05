@@ -1,0 +1,168 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_about-us-02.jpg
+  label: POWER THEME About Us 02
+-->
+{% extends './layouts/base.html' %} 
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+        {# Section Hero #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "hero" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-hero', 
+                label='Hero',
+                title='ABOUT US', 
+                title_sel_heading='h1', 
+                layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                style={background:"img_vid",background_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},background_gradient_direction:"diag_bl_tr",background_image:{alt:"about-us-02-1",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_about-us-02.jpg'),width:1920},background_image_overlay:"color",background_image_position:"parallax",background_position:"top",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:0},overlay_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:40},overlay_gradient_color_2:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},overlay_gradient_opacity:80,scheme:"dark"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Hero #}
+
+        {# Section Text Tabs #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "text" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-text', 
+                label='Text Tabs'
+                tab=[{content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"",content_title_sel_heading:"h2",field_group:{is2Cols:false},tab_title:"Vision"},{content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_right:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",content_title:"",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"Mission"},{content:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",content_title:"",content_title_sel_heading:"h2",layout:{is2Cols:false},tab_title:"Manifesto"}], 
+                layout={section_variant:"tabs_vert_centered",padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Text Tabs #}
+        
+        {# Section Video #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "video" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-video', 
+                label='Video',
+                youtube_link='https://www.youtube.com/watch?v=AXQehZH4s84', 
+                layout={section_height:300,section_variant:"button"}, 
+                style={background:"img_vid",background_image:{alt:"bg-office-unsplash-01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-01.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40} },
+                animation={section:{animation_type:"default",delay:50} }
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Video #}
+        
+        {# Section Team #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "team" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-team', 
+                label='Team',
+                intro_to_title='', 
+                title='MEET OUR AMAZING TEAM', 
+                tabs='[
+                    {"tab_title":"C-Level","team":[
+                        {"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Laura Laurati","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"CEO, Managing Director","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Laura Laurati","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com","animation":{"animation_type":"default","delay":50}},
+                        {"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Morten Mortinho","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"","job_title":"CFO, Head of Finance","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Morten Mortinho","phone":"","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"","animation":{"animation_type":"default","delay":200}},
+                        {"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Ergen Mudal","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_04.jpg\'),"width":387},"instagram":"https://www.linkedin.com","job_title":"CTO, Head of Coding","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Ergen Mudal","phone":"+4940582291","reddit":"https://www.reddit.com","skype":"https://www.skype.com","twitter":"","xing":"https://www.xing.com","youtube":"","animation":{"animation_type":"default","delay":350}}
+                    ]},
+                    {"tab_title":"Developers","team":[{"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Charles Eden","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"","job_title":"Coding Wizard","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Charles Eden","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com"},{"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Sandra Torres","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"Software Engineer","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Sandra Torres","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com"}]},
+                    {"tab_title":"Designers","team":[{"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Angela Carter","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"UI/UX Designer","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Angela Carter","phone":"+4940582291","reddit":"","skype":"https://www.skype.com","twitter":"https://www.twitter.com","xing":"","youtube":""}]},
+                    {"tab_title":"Consultants","team":[{"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Michael Hill","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"https://www.instagram.com","job_title":"Tech Consultant","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Michael Hill","phone":"+4940582291","reddit":"","skype":"https://www.skype.com","twitter":"","xing":"","youtube":"https://www.youtube.com"}]},
+                    {"tab_title":"Trainees","team":[{"contact":true,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","google_plus":"https://www.facebook.com","img":{"alt":"Angelica Eaglin","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"Marketing","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Angelica Eaglin","phone":"","reddit":"","skype":"","twitter":"","xing":"https://www.xing.com","youtube":""}]}
+                ]',
+                layout={isTabs:true,section_variant:"full"}, 
+                style={background:"color"}
+                %}
+                {% module_attribute "description" %}
+                <p>This is one of the eye catching layout variants of our team module. Portrait your team members with their name, job position, personal bio, social links, photo and optionally group them by department.</p>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %} 
+        {# End Section Team #}
+
+        {# Section Testimonial #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "testimonial" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-testimonial', 
+                label='Testimonial',
+                intro_to_title='', 
+                title='', 
+                description='', 
+                testimonial=[{avatar:{alt:"team-small-07",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_04.png'),width:285},job_title:"Astronaut, Apollo 17",name_:"Gene Cernan",quote:'"When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you are looking at something that is very strange, but yet is very, very familiar, because you are beginning to see the Earth evolve."'}], 
+                slider={autoplay:false}, 
+                style={scheme:"light"},
+                animation={section:{animation_type:"default",delay:50} }
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Testimonial #}
+
+        {# Section Image Slider #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "image-slider" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-image-slider', 
+                label='Image Slider',
+                intro_to_title='', 
+                title='', 
+                description='', 
+                image=[{alt:"bg-people-celebrating-796356481",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_people-celebrating.jpg'),width:1920},{alt:"bg-office-unsplash-02",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-02.jpg'),width:1920},{alt:"bg-office-unsplash-01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-01.jpg'),width:1920}], 
+                slider={autoplay:true,nav_arrows:false,nav_bullets:true,navigation_bullets_overlay:true}, 
+                layout={section_variant:"one_by_one_reduced"}, 
+                style={scheme:"dark"}
+                %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Image Slider #}
+
+        {# Section Form #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "form" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-form', 
+                label='Form',
+                intro_to_title='GET IN TOUCH', 
+                title='LET\'S HAVE A CHAT AND TALK ABOUT YOU', 
+                description='', 
+                layout={centered:true,section_variant:"vert_narrow"}, 
+                style={background:"",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"light"}
+                %}
+                {% module_attribute "form" is_json=True %}
+                {"form_id":"e16b6989-f90b-4528-9e17-2a8143f0e80c","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section Form #}
+
+        {# Section CTA #}
+        {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+            {% dnd_module module "cta" 
+                full_width=true,
+                width=12,
+                path='../modules/sec-cta', 
+                label='CTA',
+                title='LET\'S BUILD SOMETHING TOGETHER', 
+                cta='35cf1be6-1789-41f4-a76a-1e1ca3bf1327', 
+                layout={section_variant:"vertical"}, 
+                style={background:"img_vid",background_image:{alt:"bg-home1",height:1088,'src':get_asset_url('../images/bgs/pwr-img_bg_hands-typing.jpg'),width:1631},background_position:"parallax",overlay_color:{color:"#1a1d17",opacity:40},scheme:"dark"}
+                %}
+                {% module_attribute "description" %}
+                <span>By working with POWER you can reach your goals in no-time. You will master your new POWER like a pro!</span>
+                {% end_module_attribute %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+        {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

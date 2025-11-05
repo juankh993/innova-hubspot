@@ -1,0 +1,33 @@
+[ {
+  "id" : "8c1bea7e-5c41-ba2e-f55d-4568cd904d2a",
+  "name" : "welcome_title",
+  "label" : "Titulo Bienvenida",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Bienvenido a innova"
+}, {
+  "id" : "92552b26-f1b5-6338-cd64-1323a7270904",
+  "name" : "welcome_description",
+  "label" : "Descripción Bienvenida",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<strong>Matricúlate,</strong> y descubre el colegio donde cada niño encuentra su pasión."
+}, {
+  "id" : "3dcfbe27-3536-a2c8-4c9a-c959f2978ed7",
+  "name" : "form_field",
+  "label" : "Elegir Formulario",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Gracias por enviar el formulario."
+  }
+} ]

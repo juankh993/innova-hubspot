@@ -1,0 +1,545 @@
+[ {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "team",
+  "label" : "Team",
+  "help_text" : "Make sure to select the layout beforehand. If you would like to use tabs, the team members have to be added with the tabs property and not this team property",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4de9d33d-5da8-4b68-6e38-32074474996e",
+    "name" : "name_",
+    "label" : "Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "NAME"
+  }, {
+    "id" : "afae7b9b-cc2a-7981-ceed-6e32b0520489",
+    "name" : "img",
+    "label" : "Image",
+    "help_text" : "We recommend to use the following image dimensions: For layout \"Reduced\" a width of 300 pixels (600 for retina displays) - for layout \"Full\" a width of 400 pixels (800 for retina displays)",
+    "required" : true,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "56064e24-41c1-e9f8-fd14-6a29c6edc49a",
+    "name" : "job_title",
+    "label" : "Job Title",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Job Title"
+  }, {
+    "id" : "7d5d21f0-e15c-c078-dcb2-727f5903931e",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "Only used for layout \"Full\"",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>"
+  }, {
+    "id" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+    "name" : "contact",
+    "label" : "Contact",
+    "help_text" : "Contact properties only used for layout \"Full\"",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "e39f079c-49ed-12ee-4cb5-0b67b17e3c66",
+    "name" : "email",
+    "label" : "E-Mail",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "hello@power.com"
+  }, {
+    "id" : "a9b176fb-bb77-eba3-789b-cec623efa653",
+    "name" : "phone",
+    "label" : "Phone",
+    "help_text" : "Use a format suitable for usage as a link, e.g. +4940582291",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "+4940582291"
+  }, {
+    "id" : "7daa1aa9-4e45-7c54-e8d3-66bf8b3331ba",
+    "name" : "facebook",
+    "label" : "Facebook",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "92f57365-cb8f-70ac-9e00-ee1244906817",
+    "name" : "twitter",
+    "label" : "Twitter",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "6aa3331f-6699-2f52-9c48-6daa7209b24c",
+    "name" : "linkedin",
+    "label" : "LinkedIn",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "e3ad6550-4d89-070e-3fde-604cb2bac02b",
+    "name" : "youtube",
+    "label" : "Youtube",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "14f9ac90-4fc5-6a30-d106-bcbbd5838059",
+    "name" : "skype",
+    "label" : "Skype",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "8f671d3f-8fab-0e84-95f1-0d2f378e3fcf",
+    "name" : "instagram",
+    "label" : "Instagram",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "2a25ba83-cf35-b8f6-c7f6-76daa0f18a35",
+    "name" : "reddit",
+    "label" : "Reddit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "8ae08bb3-0b33-2ca7-53c0-6747e800e836",
+    "name" : "xing",
+    "label" : "Xing",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "530313ec-9070-6cfc-2102-c5fc6af3dedf",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://www.facebook.com"
+  }, {
+    "id" : "924840eb-194b-e36a-4561-cb23381fdb52",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "name_" : "NAME",
+    "img" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    },
+    "job_title" : "Job Title",
+    "description" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>",
+    "contact" : true,
+    "email" : "hello@power.com",
+    "phone" : "+4940582291",
+    "facebook" : "https://www.facebook.com",
+    "twitter" : "https://www.facebook.com",
+    "linkedin" : "https://www.facebook.com",
+    "youtube" : "https://www.facebook.com",
+    "skype" : "https://www.facebook.com",
+    "instagram" : "https://www.facebook.com",
+    "reddit" : "https://www.facebook.com",
+    "xing" : "https://www.facebook.com",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a44de396-9ae2-c2af-6627-a4948cd9def4",
+    "name" : "section_variant",
+    "label" : "Choose Layout",
+    "help_text" : "",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "reduced", "Reduced" ], [ "full", "Full" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "reduced"
+  }, {
+    "id" : "d60e2cd8-46a3-4012-e000-d4d79a8d92d8",
+    "name" : "centered",
+    "label" : "Centered",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_variant" : "reduced",
+    "centered" : true
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "5e4752db-3917-0bb1-19c2-18229334b024",
+    "name" : "name_box_style_variant",
+    "label" : "Choose Name Box Style",
+    "help_text" : "",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "a44de396-9ae2-c2af-6627-a4948cd9def4",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "full",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ " ", "Boxed" ], [ "pwr-team-member__name-tag--style-full-width", "Boxed Full Width" ], [ "pwr-team-member__name-tag--style-no-bg", "No Background" ], [ "pwr-team-member__name-tag--style-gradient", "Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : " "
+  }, {
+    "id" : "ee98e61b-9102-7f34-0313-fb7a42cf32a2",
+    "name" : "image_vertical_position",
+    "label" : "Image Vertical Position",
+    "help_text" : "Values in %. Changes are only visible, if image is cropped in height.",
+    "inline_help_text" : "0 = top, 50 = middle, 100 = bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "e5d37c70-8566-c024-220a-2575c7b2f3f2",
+    "name" : "image_horizontal_position",
+    "label" : "Image Horizontal Position",
+    "help_text" : "Values in %. Changes are only visible, if image is cropped in width.",
+    "inline_help_text" : "0 = left of image, 100 = right of image",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 50
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "scheme" : "light",
+    "name_box_style_variant" : " ",
+    "image_vertical_position" : 0,
+    "image_horizontal_position" : 50
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.animation_type",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "default"
+  }, {
+    "id" : "animation.delay",
+    "name" : "delay",
+    "label" : "Delay",
+    "help_text" : "Values from 0 to 3000, with step 50ms",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 3000,
+    "step" : 50,
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "1b47ef91-8252-5bb7-5acd-5db3bd4836a0",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "66464839-7b7c-91de-9ed0-d320df76ed1f",
+    "name" : "txt_link",
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "12a07493-3eee-9782-27be-e318ee8da5c7",
+    "name" : "txt_touch",
+    "label" : "Touch Button Text",
+    "help_text" : "This is the text of the button shown on touch devices for layout style 'Full'.\nThe button indicates, that there is additional information in the hover state",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "TOUCH"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_link" : "Read More",
+    "txt_touch" : "TOUCH"
+  }
+} ]

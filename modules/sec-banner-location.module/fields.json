@@ -1,0 +1,134 @@
+[ {
+  "id" : "919b4873-2722-9ae4-8be2-55e3285745a8",
+  "name" : "testimonial_title",
+  "label" : "Titulo principal",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Ubicación Innova"
+}, {
+  "id" : "f84c929d-bf15-314a-1f88-81f0bc0eee05",
+  "name" : "school_name",
+  "label" : "Nombre de la sede",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Niza"
+}, {
+  "id" : "2056ed44-8e23-218f-cd82-de57be2692ac",
+  "name" : "school_address",
+  "label" : "Dirección sede",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Cra. 59b #129B-45, Barrio ciudad jardín Norte. "
+}, {
+  "id" : "87ab6df9-7d2e-3bf4-013f-d725917274a4",
+  "name" : "school_address_complement",
+  "label" : "Complemento dirección sede",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Localidad de suba, Bogotá"
+}, {
+  "id" : "49bc8616-e45d-8a1e-0391-5e85a78931c8",
+  "name" : "background_image",
+  "label" : "Imagen de fondo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/location-image.jpg",
+    "alt" : "location-image",
+    "loading" : "lazy",
+    "width" : 1128,
+    "height" : 588,
+    "max_width" : 1128,
+    "max_height" : 588
+  }
+}, {
+  "id" : "a527209e-aa8f-502b-eee7-0641c0707bbd",
+  "name" : "icon_mobile",
+  "label" : "Icono location mobile ",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/icono-mobile.png",
+    "alt" : "icono-mobile",
+    "loading" : "lazy",
+    "width" : 335,
+    "height" : 285,
+    "max_width" : 335,
+    "max_height" : 285
+  }
+}, {
+  "id" : "5e5a0692-cd9d-bd55-030e-7315f91e2d83",
+  "name" : "icon_desktop",
+  "label" : "Icono location desktop ",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/icono-ubicacion.png",
+    "alt" : "icono-ubicacion",
+    "loading" : "lazy",
+    "width" : 401,
+    "height" : 288,
+    "max_width" : 401,
+    "max_height" : 288
+  }
+}, {
+  "id" : "542f92c3-23a4-2689-2bf6-2a04bbce51a6",
+  "name" : "button_name",
+  "label" : "Nombre del botón",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Ver en google maps"
+}, {
+  "id" : "e5072412-0505-23db-8e89-697edd6fac63",
+  "name" : "location_url",
+  "label" : "Enlace de ubicación",
+  "inline_help_text" : "Agrega el enlace de la ubicación del colegio. ",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "https://maps.app.goo.gl/FMvee7Ds9KLJ9xFz5",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+} ]

@@ -1,0 +1,28 @@
+.whatsapp-button {
+  position: fixed;
+  display: flex;
+  width: 64px;
+  height: 64px;
+  min-width: 62.633px;
+  min-height: 62.633px;
+  padding: 15.658px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 52.194px;
+  border: 2px solid #FFFFFF;
+  background: #8CC63F;
+  right: 47px;
+  bottom: 30px;
+  z-index: 999;
+}
+
+@media screen and (max-width:1024px) {
+   .whatsapp-button {
+      bottom: 86px;
+      right: 23px;
+  }
+}
+
+.dnd-section:has(.whatsapp-button) {
+  padding: 0px !important;
+}

@@ -1,0 +1,45 @@
+{# *********************************************
+   * POWER Theme Sub Module Steps V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+<div class="pwr-sub-steps {% if module.layout.centered %}pwr-sec-steps--centered pwr--align-c{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+
+    
+  <div class="pwr-steps pwr--clearfix">
+
+    <div class="pwr-step">
+      {% if module.layout.section_variant == 'steps' %}
+        <div class="pwr-step__count">{{ module.step.step_index }}</div>
+      {% elif module.layout.section_variant == 'icon' && module.step.icon %}
+        <div class="pwr-step__icon" {% if module.style.icon_size %}style="font-size:{{module.style.icon_size}}px" {% endif %}>{% icon name="{{ module.step.icon.name }}" style="{{ module.step.icon.type }}" unicode="{{ module.step.icon.unicode }}" %}</div>
+      {% elif module.layout.section_variant == 'img' && module.step.img.src %}
+        <img src="{{ module.step.img.src }}" alt="{{ module.step.img.alt }}" width="{{ module.step.img.width }}" height="{{ module.step.img.height }}" class="pwr-step__img" {% if module.style.icon_size %}style="width:{{module.style.icon_size}}px; height:auto;" {% endif %}/>
+      {% endif %}
+      <span class="pwr-step__title" {% if module.style.title_color.color %}style="color: rgba({{ module.style.title_color.color|convert_rgb }}, {{ module.style.title_color.opacity|int / 100 }})"{% endif %}>{{ module.step.title }}</span>
+      <span class="pwr-rich-text pwr-step__desc">{{ module.step.description }}</span> 
+    </div>
+
+  </div>
+    
+
+</div>

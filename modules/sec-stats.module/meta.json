@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 191920751936,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/third_party/Waypoints.js",
+    "name" : "Waypoints.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/third_party/CounterUp2.js",
+    "name" : "CounterUp2.js"
+  } ],
+  "label" : "POWER Sec Stats Counter",
+  "icon" : "../../../POWER%20THEME/images/icons/module/icon-module-sec-stats.svg",
+  "is_available_for_new_content" : true
+}

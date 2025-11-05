@@ -1,0 +1,180 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-07.jpg
+  label: POWER THEME Home 07
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='POWER. A BEAUTIFUL AND MODERN HUBSPOT THEME', 
+                    title_sel_heading='h1',
+                    description='',
+                    layout={full_width:false,header_height:"regular",isSmall:true,title_extra_large:false},
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},
+                        scheme:"light"
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Video #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "video" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-video', 
+                    label='Video',
+                    content='',
+                    video_title='ABOUT US',
+                    youtube_link='https://www.youtube.com/watch?v=AXQehZH4s84',
+                    layout={full_width:true,section_variant:"title"},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-office-unsplash-01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-01.jpg'),width:1920},
+                        background_position:"parallax",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:20},
+                        scheme:"dark"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Video #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='OUR MISSION',
+                    title='WHAT DRIVES US?',
+                    layout={section_variant:"2col"},
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Video #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "video" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-video', 
+                    label='Video',
+                    video_title='Video Title',
+                    content='',
+                    youtube_link='https://youtu.be/4jNf6yCRZmg',
+                    layout={full_width:true,section_height:360,section_variant:"button"},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"POWER-Video-Forest",height:1080,'src':get_asset_url('../images/video/pwr-img_video_forest.jpg'),width:1920},
+                        background_position:"parallax",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:10},
+                        scheme:"dark",
+                        youtube_link:"https://youtu.be/4jNf6yCRZmg"
+                        },
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Video #}
+
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Device Mockup',
+                    intro_to_title='WE LOVE CODE, BUT...',
+                    title='YOU DON\'T HAVE TO LOVE CODE. WE GOT YOUR BACK.',
+                    mockup={alt:"mockup-01-3",height:875,'src':get_asset_url('../images/mockups/pwr-img_mockup_pro-display-2.png'),width:1200},
+                    btn_type='btn',
+                    btns=[{title:"Follow the magic",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}}],
+                    ctas=["3aae108a-f997-45a8-9254-d588fafb682e"],
+                    layout={full_width:true,padding_bottom:" ",padding_top:" ",section_variant:"mockup_right"},
+                    style={btn_style:"pwr-btn--primary-border"}
+                    %}
+                    {% module_attribute "description" %}
+                    We provide you with a clean and effective code behind the scenes. You will work with HubSpot\'s drag-and-drop editor and our POWERful module options.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+            {# Section Map #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "map" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-map', 
+                    label='Map',
+                    intro_to_title='',
+                    title='OUR OFFICE',
+                    desc='Headquarters, Munich',
+                    contact=True,
+                    map_embed_code='<iframe title="Map Location" src="https://snazzymaps.com/embed/132243" width="100%" height="100%" style="border:none;"></iframe>', 
+                    btn_type='btn',
+                    btn={title:"Get in touch",link:{open_in_new_tab:True,url:{href:"http://www.maka-agency.com/contact/",type:"EXTERNAL"}}},
+                    cta='777eba8b-a03f-4832-bbd1-fe2086b763ae',
+                    layout={section_height:650,section_variant:"box-right"},
+                    style={scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Map #}
+
+            {# Section Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    intro_to_title='',
+                    title='WHAT WE HAVE TO SAY',
+                    description='',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    filter={blog_id:37821962406},
+                    layout={nr_posts:3,padding_bottom:"pwr--sec-padding-b-lg",padding_top:"pwr--sec-padding-t-lg",section_variant:"text",show_author:false},
+                    style={
+                        background:"gradient",
+                        background_gradient_color_1:{color:theme.colors.power.light_scheme.background.background_color.color,opacity:100},
+                        background_gradient_color_2:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},
+                        cta_style:"pwr-cta--link",
+                        scheme:"light"},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Post Preview #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

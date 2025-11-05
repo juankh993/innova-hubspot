@@ -1,0 +1,149 @@
+{# *********************************************
+   * POWER Theme Section Breadcrumbs V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+<div class="pwr-sec-breadcrumbs {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.style.background == 'primary_color' %}pwr--primary{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }}"
+      {# Animation on Scroll #}
+      {{ get_aos(module.animation.section) }}       
+      {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+      {% elif bgImg.src && bgImgPos != 'parallax' %}
+      {# Lazy load and resposive images for background-image #}           
+      data-bgset="{{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_xs) }} {{ theme.general.responsive_images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_xs * theme.general.retina_images.image_retina_scaling_factor) }} {{ theme.general.responsive_images.image_width_xs * 2 }}w [(max-width: {{ theme.general.responsive_images.image_width_xs }}px)] | 
+                  {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_s) }} {{ theme.general.responsive_images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_s * theme.general.retina_images.image_retina_scaling_factor) }} {{ theme.general.responsive_images.image_width_s * 2 }}w [(max-width: {{ theme.general.responsive_images.image_width_s }}px)] | 
+                  {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_m) }} {{ theme.general.responsive_images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_m * theme.general.retina_images.image_retina_scaling_factor) }} {{ theme.general.responsive_images.image_width_m * 2 }}w [(max-width: {{ theme.general.responsive_images.image_width_m }}px)] | 
+                  {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_l) }} {{ theme.general.responsive_images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_width_l * theme.general.retina_images.image_retina_scaling_factor) }} {{ theme.general.responsive_images.image_width_l * 2 }}w [(max-width: {{ theme.general.responsive_images.image_width_l }}px)] |
+                  {{ resize_image_url(bgImg.src,theme.general.responsive_images.image_max_size * theme.general.retina_images.image_retina_scaling_factor) }}"
+      data-sizes="auto"
+      {% elif bgImg.src && bgImgPos == 'parallax' %}
+        style="background-color: transparent;"
+      {% elif bgGradientDir %}
+        style="
+              background: {{ bgGradientColor1 }};
+              background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+              background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+              background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+              "     
+      {% endif %}
+      >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+  {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+                                       background: {{ bgGradientColor1 }};
+                                       background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                                       background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                                       background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                                       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+                                       opacity: {{ generalOpacity }};
+                                       "></div>
+  {% endif %}
+  <div class="page-center pwr--relative">
+    <ul class="pwr-sec-breadcrumbs__list">
+      {% for bc in module.breadcrumb %}
+        {% if bc.link.url.href %}
+        <li class="pwr-sec-breadcrumbs__list-item" 
+            {# Animation on Scroll #}
+            {{ get_aos(bc.animation) }}       
+        >
+          <a href="{{ bc.link.url.href }}" {% if bc.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if bc.link.no_follow %}rel="nofollow"{% endif %} class="pwr-sec-breadcrumbs__link {% if loop.last %}active{% endif %}">{{ bc.title }}</a>
+        </li>
+      {% endif %}
+      {% endfor %}  
+    </ul>
+  </div>
+</div>

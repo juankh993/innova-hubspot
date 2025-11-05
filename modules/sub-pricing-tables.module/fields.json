@@ -1,0 +1,470 @@
+[ {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "price_table",
+  "label" : "Price Table",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "56064e24-41c1-e9f8-fd14-6a29c6edc49a",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "TABLE TITLE"
+  }, {
+    "id" : "7d5d21f0-e15c-c078-dcb2-727f5903931e",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>"
+  }, {
+    "id" : "6fb5a362-0a37-a2f7-b916-965b7b2aedf6",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "$149/mo"
+  }, {
+    "id" : "68818b45-56cb-03f8-bb0d-d713e9aef3d6",
+    "name" : "features",
+    "label" : "Feature",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "f52c02b5-752a-9f99-6b9e-7bf1f6dbbaf6",
+      "name" : "name_",
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<strong>1</strong> Feature Name"
+    }, {
+      "id" : "507bd6f2-7d55-234d-eb0e-85891ac475e0",
+      "name" : "deactivated",
+      "label" : "Deactivated",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "name_" : "<strong>1</strong> Feature Name",
+      "deactivated" : false
+    } ]
+  }, {
+    "id" : "btn_type",
+    "name" : "btn_type",
+    "label" : "Button Type",
+    "help_text" : "Choose between CTA and Button. CTA allows advanced analytics and is created using HubSpots CTA editor. Buttons do not offer any analytics but are better for performance.",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "btn", "Button" ], [ "cta", "CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "cta"
+  }, {
+    "id" : "2563d89e-a150-4bf9-e425-662f81af71a1",
+    "name" : "cta",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "btn_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null
+  }, {
+    "id" : "price_table.btn",
+    "name" : "btn",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "btn_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "price_table.btn.title",
+      "name" : "title",
+      "label" : "Button Title",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button Title"
+    }, {
+      "id" : "price_table.btn.link",
+      "name" : "link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "TABLE TITLE",
+    "description" : "<span>Description. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>",
+    "price" : "$149/mo",
+    "features" : [ {
+      "name_" : "<strong>1</strong> Feature Name",
+      "deactivated" : false
+    } ]
+  }
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a44de396-9ae2-c2af-6627-a4948cd9def4",
+    "name" : "section_variant",
+    "label" : "Choose Layout",
+    "help_text" : "",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "reduced", "Reduced" ], [ "full", "Full" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "full"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_variant" : "full"
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "832a81bb-08c0-7b0f-8d1e-d525b8c3b261",
+    "name" : "table_style",
+    "label" : "Table Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "a44de396-9ae2-c2af-6627-a4948cd9def4",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "full",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "style_1", "Style 1" ], [ "style_2", "Style 2" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "style_1"
+  }, {
+    "id" : "fc346a5a-d7c6-fc40-7646-d5510cfd2d27",
+    "name" : "highlighted",
+    "label" : "Highlighted",
+    "help_text" : "Accent color background",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "ecffe3ce-c678-229f-603c-25300a45a49f",
+    "name" : "recommended",
+    "label" : "Recommended",
+    "help_text" : "Recommended Tag on top",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "recommended_color_scheme",
+    "label" : "Recommended Text Color",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "ecffe3ce-c678-229f-603c-25300a45a49f",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "204bc3fb-0eb6-258d-41a2-d80b2c6abc6e",
+    "name" : "recommended_color",
+    "label" : "Custom Recommended Background Color",
+    "inline_help_text" : "Leave blank for default colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "ecffe3ce-c678-229f-603c-25300a45a49f",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#3e30f1",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "876006e9-4960-d131-f3f0-f46d5d021c62",
+    "name" : "box_scheme",
+    "label" : "Box Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "d23b0c80-07f0-e0a1-daef-fddb893d7008",
+    "name" : "box_color",
+    "label" : "Custom Box Background Color ",
+    "inline_help_text" : "Leave blank for default colors",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "2fcf8d24-9284-c5de-e2a0-77459f79fb27",
+    "name" : "cta_style",
+    "label" : "CTA Style",
+    "help_text" : "For Hubspot or custom button styles set in Hubspot, add the class pwr-cta--hubspot-style to the CTA settings under Advanced Options. This disables the CTA style configured here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "pwr-cta--primary-solid", "Solid Primary" ], [ "pwr-cta--regular-solid", "Solid Regular" ], [ "pwr-cta--regular-solid-primary-background", "Solid Regular For Primary Background" ], [ "pwr-cta--primary-border", "Border Primary" ], [ "pwr-cta--regular-border", "Border Regular" ], [ "pwr-cta--link", "Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "pwr-cta--primary-solid"
+  }, {
+    "id" : "8e5f3a7d-f5e4-452c-a01e-7a5a92ba4c09",
+    "name" : "cta_size",
+    "label" : "CTA Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ " ", "Regular" ], [ "pwr-cta--long", "Long" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "table_style" : "style_1",
+    "highlighted" : false,
+    "recommended" : false,
+    "recommended_color_scheme" : "light",
+    "recommended_color" : {
+      "color" : "#2254fe",
+      "opacity" : 100
+    },
+    "box_scheme" : "light",
+    "box_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "cta_style" : "pwr-cta--primary-solid"
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.animation_type",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "default"
+  }, {
+    "id" : "animation.delay",
+    "name" : "delay",
+    "label" : "Delay",
+    "help_text" : "Values from 0 to 3000, with step 50ms",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 3000,
+    "step" : 50,
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "8c5cfa39-0d5d-93df-8c4c-058849e980db",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0a53e3ff-fbb7-3e66-8910-a1a47fe50134",
+    "name" : "txt_recommended",
+    "label" : "Recommended Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Recommended"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_recommended" : "Recommended"
+  }
+} ]

@@ -1,0 +1,45 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-08-squeeze.jpg
+  label: POWER THEME Landing Page Squeeze
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Device Mockup #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "device-mockup" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-device-mockup', 
+                    label='Device Mockup',
+                    intro_to_title='', 
+                    title='GET THE SECRET TO SUCCESS EBOOK FOR FREE', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    is_form=True, 
+                    mockup={alt:"LP-envelope-cut-3",height:860,'src':get_asset_url('../images/mockups/pwr-img_mockup_envelope.png'),width:840}, 
+                    layout={content_width:55,full_width:true,mockup_width:50,padding_top:"pwr-sec--first-with-header",section_variant:"mockup_right"}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg_cta-small",'src':get_asset_url('../images/bgs/pwr-img_bg_people-celebrating-blurred.jpg'),width:2000},
+                        background_image_overlay:"color",
+                        background_image_position:"center",
+                        cta_style:"pwr-cta--regular-border",
+                        scheme:"dark"
+                        }
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"a50fe84c-57dd-435a-ac33-ea0e981c2c6f","form_type":"HUBSPOT","message":"<p>Thank you for submitting the form</p>","response_type":"inline"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Device Mockup #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

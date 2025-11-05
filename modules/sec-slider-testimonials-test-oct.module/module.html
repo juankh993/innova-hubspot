@@ -1,0 +1,99 @@
+<!-- seccion testimonios -->
+<section id="section-testimonials" class="relative w-full aspect-video xl:h-[90vh]">
+  <div class="w-32 lg:w-64 h-20 lg:h-40 absolute bottom-0 right-0 z-[1] translate-y-[36%] lg:translate-y-[36%]"
+       id="testimonials-triangle">
+    <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Innova-Niza/cinta.png"
+         alt="triangle shape" class="w-full h-full object-contain" data-animate="figure-zoom-in">
+  </div>
+  <!-- Background -->
+  <div class="testimonials-background w-full h-full cursor-pointer relative" id="testimonials-background"
+       data-blendy-from="universal-video" data-video-id="{{ module.testimonios_lista[0].video_youtube_id }}">
+    <div id="custom-cursor" class="custom-cursor cursor-testimonials">
+      <img src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="" class="w-full h-full" />
+    </div>
+    <div class="w-full h-full">
+      <img src="{{ module.testimonios_lista[0].imagen_fondo.src }}" id="dynamic-image" alt="{{ module.testimonios_lista[0].imagen_fondo.alt }}"
+           class="w-full h-full object-cover" />
+    </div>
+  </div>
+  <!-- Testimonials -->
+  <div class="w-full lg:max-w-[90vw] xl:max-w-[75vw] 2xl:max-w-[60vw] bg-no-repeat bg-cover lg:absolute bottom-0  left-0 py-10 px-6 z-[2]"
+       id="testimonials-container">
+    <div class="testimonials-content w-full lg:w-11/12 xl:w-[80%] flex flex-col items-start justify-start">
+      <h2 class="testimonials-content--title flex flex-wrap mb-[16px] items-center gap-x-4" id="testimonials-content--title" data-animate="title-animation">
+        <span class="uppercase">{{ module.seccion_titulo }}</span>
+        <span class="testimonials-content--title--highlight">{{ module.seccion_subtitulo }}</span>
+      </h2>
+
+      <!-- carousel testimonios -->
+      <div class="flex flex-col w-full">
+        <div class="swiper mb-4 lg:mb-10" id="testimonials-swiper">
+          <div class="swiper-wrapper">
+            {% for testimonio in module.testimonios_lista %}
+            <div class="swiper-slide" 
+                 data-video-id="{{ testimonio.video_youtube_id }}"
+                 data-background-image="{{ testimonio.imagen_fondo.src }}"
+                 data-author="{{ testimonio.estudiante_nombre }}"
+                 data-grade="{{ testimonio.estudiante_grado }}"
+                 data-author-image="{{ testimonio.estudiante_foto.src }}">
+              <div class="testimonials-content--item pb-0 lg:py-8 px-10 lg:px-14 [&_p]:text-[16px] [&_p]:leading-[18px] md:[&_p]:leading-[26px] md:[&_p]:text-[22px] [&_div]:text-[16px] [&_div]:leading-[18px] md:[&_div]:leading-[26px] md:[&_div]:text-[22px]" data-aos="fade-up">
+                {{ testimonio.testimonio_texto }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="flex items-center gap-8 w-full flex-col lg:flex-row justify-between">
+          <!-- nombre del estudiante -->
+          <div class="flex gap-[16px] items-center w-full" data-animate="text-fade-up" id="author-section">
+            <div class="h-12 w-12 lg:h-16 lg:w-16 rounded-full overflow-hidden">
+              <img src="https://placehold.co/100x100" id="author-image" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-[#003B87] text-sm lg:text-base leading-[18px] flex gap-3"
+                 style="font-family: 'Josefin Sans', sans-serif">
+              <span id="author-name">{{ module.testimonios_lista[0].estudiante_nombre }}</span> /
+              <span id="author-grade">{{ module.testimonios_lista[0].estudiante_grado }}</span>
+            </div>
+          </div>
+          <!-- end nombre del estudiante -->
+
+          <!-- botones de navegacion -->
+          <div class="flex  gap-[16px] items-center">
+            <!-- boton de navegacion anterior -->
+            <button class="secondary-circle-button" id="testimonials-swiper-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                      d="M9.66211 14.5C9.55548 14.499 9.44916 14.4756 9.34961 14.4307C9.25001 14.3857 9.15796 14.3191 9.08008 14.2344L9.07422 14.2285L3.75195 8.63574C3.5933 8.46897 3.5 8.23718 3.5 7.99121C3.50005 7.74535 3.59337 7.51438 3.75195 7.34766L9.07422 1.75391C9.23208 1.58802 9.44129 1.50005 9.65332 1.5C9.81162 1.50013 9.96862 1.54921 10.1045 1.64453C10.2409 1.74033 10.3512 1.87984 10.417 2.04688C10.4828 2.21399 10.5006 2.39924 10.4668 2.57813C10.4329 2.75697 10.3495 2.91784 10.2314 3.04199L5.84961 7.64648L5.52148 7.99121L5.84961 8.33594L10.2314 12.9404L10.2373 12.9473L10.2949 13.0117C10.3494 13.0792 10.3946 13.1558 10.4287 13.2393C10.4742 13.3506 10.499 13.4711 10.5 13.5938C10.501 13.7164 10.4783 13.8379 10.4346 13.9502C10.3909 14.0623 10.3272 14.1629 10.248 14.2461C10.1689 14.3292 10.0758 14.3934 9.97559 14.4365C9.8754 14.4796 9.76878 14.501 9.66211 14.5Z"
+                      fill="#003B87" stroke="#003B87" />
+              </svg>
+            </button>
+            <!-- end boton de navegacion anterior -->
+            <!-- swiper pagination -->
+            <div class="swiper-pagination flex lg:hidden items-center justify-center static"
+                 id="testimonials-swiper-pagination"></div>
+            <!-- end swiper pagination -->
+
+            <!-- boton de navegacion siguiente -->
+            <button class="secondary-circle-button" id="testimonials-swiper-next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                      d="M6.33789 1.5C6.44452 1.50101 6.55084 1.5244 6.65039 1.56934C6.74999 1.61433 6.84204 1.68089 6.91992 1.76562L6.92578 1.77148L12.248 7.36426C12.4067 7.53103 12.5 7.76282 12.5 8.00879C12.5 8.25466 12.4066 8.48562 12.248 8.65234L6.92578 14.2461C6.76792 14.412 6.5587 14.5 6.34668 14.5C6.18838 14.4999 6.03137 14.4508 5.89551 14.3555C5.7591 14.2597 5.64884 14.1202 5.58301 13.9531C5.5172 13.786 5.49935 13.6008 5.5332 13.4219C5.56706 13.243 5.65048 13.0822 5.76855 12.958L10.1504 8.35352L10.4785 8.00879L10.1504 7.66406L5.76855 3.05957L5.7627 3.05273L5.70508 2.98828C5.65061 2.92076 5.6054 2.84419 5.57129 2.76074C5.52577 2.64937 5.50101 2.52889 5.5 2.40625C5.49899 2.28361 5.52171 2.1621 5.56543 2.0498C5.60914 1.93773 5.6728 1.83708 5.75195 1.75391C5.83113 1.67075 5.92419 1.60657 6.02441 1.56348C6.1246 1.52042 6.23122 1.49903 6.33789 1.5Z"
+                      fill="#003B87" stroke="#003B87" />
+              </svg>
+            </button>
+            <!-- end boton de navegacion siguiente -->
+          </div>
+          <!-- end botones de navegacion -->
+        </div>
+      </div>
+      <!-- end carousel testimonios -->
+    </div>
+  </div>
+</section>
+
+
+<script>
+let testus= {{ module.testimonios_lista|tojson}}
+    console.log(testus)
+</script>

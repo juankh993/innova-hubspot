@@ -1,0 +1,483 @@
+[ {
+  "id" : "a89600ef-a49a-c1d5-b101-edbfe1209cd0",
+  "name" : "boxes",
+  "label" : "Image Box",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "afae7b9b-cc2a-7981-ceed-6e32b0520489",
+    "name" : "img",
+    "label" : "Image",
+    "help_text" : "We recommend to use the following image dimensions: \n3-column layout and 1x1 image -> width/height = 400 pixels (800 for retina displays) \n4-column layout and 1x1 image -> width/height = 300 pixels (600 for retina displays)\nFor sizes 2x1 -> double width, 1x2 -> double height, 2x2 -> double both",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "id" : "461dae61-c837-31f6-882f-f23551bee6ca",
+    "name" : "intro_to_title",
+    "label" : "Intro To Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "01"
+  }, {
+    "id" : "56064e24-41c1-e9f8-fd14-6a29c6edc49a",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Box Title"
+  }, {
+    "id" : "89cf3231-49b3-5660-26e6-9e6a488d0a0a",
+    "name" : "desc",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Box Description</p>"
+  }, {
+    "id" : "87c0382f-7c7d-8435-8732-df9c883e76a2",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "2f3b9e59-8559-0130-6536-15ccac61ef13",
+    "name" : "internal_url",
+    "label" : "Use Internal URL instead",
+    "help_text" : "Here anchor links or other types can be configured, e.g. tel:+49891233456",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "008a296c-49f8-054b-50ba-c5439f18ccdb",
+    "name" : "link_icon",
+    "label" : "Link Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "arrow-right",
+      "unicode" : "f061",
+      "type" : "SOLID"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "img" : {
+      "src" : "",
+      "alt" : null
+    },
+    "intro_to_title" : "01",
+    "title" : "Box Title",
+    "desc" : "<p>Box Description</p>",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "link_icon" : {
+      "name" : "arrow-right",
+      "unicode" : "f061",
+      "type" : "SOLID"
+    }
+  }
+}, {
+  "id" : "9f44d539-7e44-b29d-f473-fd5fd625600b",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c90b5bd1-61fe-e499-d611-b0e5a44cb05b",
+    "name" : "centered",
+    "label" : "Centered",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "949c5a86-473e-cc2d-d340-63db26642167",
+    "name" : "box_height",
+    "label" : "Box Height",
+    "help_text" : "Minimum box height for \"content overlay\" style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content_overlay",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 300,
+    "max" : 1200,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 300
+  }, {
+    "id" : "365e99fe-02da-e5c3-41d8-28e9b44452a4",
+    "name" : "image_height",
+    "label" : "Image Height",
+    "help_text" : "Image height for \"content below\" style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content_below",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 200,
+    "max" : 1200,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 200
+  }, {
+    "id" : "f31be3eb-f037-663e-7f11-0f60b7db99e7",
+    "name" : "content_below_height",
+    "label" : "Content Below Height",
+    "help_text" : "Height of area below image for \"content below with background\" style. Height of content is the minimum height. ",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "28f7ffe3-005c-df18-7bf8-3c132236058c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "style-2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 0,
+    "max" : 1200,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "centered" : false,
+    "box_height" : 300,
+    "image_height" : 200,
+    "content_below_height" : 0
+  }
+}, {
+  "id" : "231266df-0a2f-9b1c-b375-6b27e397d21c",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+    "name" : "box_style",
+    "label" : "Box Style",
+    "required" : true,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "content_overlay", "Content Overlay" ], [ "content_below", "Content Below" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "content_overlay"
+  }, {
+    "id" : "28f7ffe3-005c-df18-7bf8-3c132236058c",
+    "name" : "variant_content_below",
+    "label" : "Content Below Style",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content_below",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "style-1", "Transparent" ], [ "style-2", "With Background Color" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "style-1"
+  }, {
+    "id" : "a1baa8f2-a43c-9d57-f432-3ea87840a2fe",
+    "name" : "scheme",
+    "label" : "Color Scheme",
+    "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.\nNote: You can optionally overwrite the background with further settings",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "light"
+  }, {
+    "id" : "a28388d3-fd00-3716-5574-6e6683db0c04",
+    "name" : "smaller_content",
+    "label" : "Smaller Font Size and Padding?",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "cffa9d5a-4409-e79d-752e-bff5a4943d7d",
+    "name" : "box_overlay_front",
+    "label" : "Use Overlay on Box Front?",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content_overlay",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "ffd277ea-f91e-3917-2869-fa2a071d8a58",
+    "name" : "hide_front",
+    "label" : "Hide Info on Front?",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "325afdbb-3e00-d06b-00f4-1cdb9964a775",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content_overlay",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "b87b6f1e-c904-2fe6-eec1-6a4f2474f473",
+    "name" : "box_color",
+    "label" : "Custom Box Background Color ",
+    "inline_help_text" : "Leave blank for default box colors",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "28f7ffe3-005c-df18-7bf8-3c132236058c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "style-2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0056ac34-a4f5-5a77-f329-686397fc6aa8",
+    "name" : "background_position",
+    "label" : "Image Background Position",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bottom", "Bottom" ], [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ], [ "top", "Top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "box_style" : "content_overlay",
+    "variant_content_below" : "style-1",
+    "scheme" : "light",
+    "smaller_content" : false,
+    "box_overlay_front" : false,
+    "hide_front" : false,
+    "box_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_position" : "center"
+  }
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation",
+  "inline_help_text" : "Please open preview in a new tab/window to preview the animations.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "is_aos",
+    "name" : "is_aos",
+    "label" : "Animate on Scroll?",
+    "help_text" : "Turn on/off animation on scroll for this module.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "animation.animation_type",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "default", "Default" ], [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "default"
+  }, {
+    "id" : "animation.delay",
+    "name" : "delay",
+    "label" : "Delay",
+    "help_text" : "Values from 0 to 3000, with step 50ms",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_aos",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "min" : 0,
+    "max" : 3000,
+    "step" : 50,
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "8adcb6d2-73ac-2d68-3bc6-04816499df29",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5dbb0c7a-714d-be32-f592-99a5c78db2f7",
+    "name" : "txt_link",
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "8bb0edb0-9719-2deb-28bf-84cab2265240",
+    "name" : "txt_touch",
+    "label" : "Touch Button Text",
+    "help_text" : "This is the text of the button shown on touch devices.\nThe button indicates, that there is additional information in the hover state",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "TOUCH"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_link" : "Read More",
+    "txt_touch" : "TOUCH"
+  }
+} ]

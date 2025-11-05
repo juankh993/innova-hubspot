@@ -1,0 +1,167 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-05-event.jpg
+  label: POWER THEME Landing Page Event
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='BIG CONFERENCE 2021', 
+                    title_sel_heading='h1', 
+                    description='', 
+                    basic_info=[{icon:{name:"calendar-alt",type:"REGULAR",unicode:"f073"},info:"21-02-15"},{icon:{name:"map-marker-alt",type:"SOLID",unicode:"f3c5"},info:"Dublin, Ireland"}], 
+                    layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-exhibition-792158590",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_exhibition.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        background_image_position:"parallax",
+                        background_position:"parallax",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        scheme:"dark"
+                        }
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-text', 
+                    label='Text',
+                    intro_to_title='', 
+                    title='EVENT INTRODUCTION', 
+                    layout={section_variant:"2col"}, 
+                    style={background:"color"}
+                    %}
+                    {% module_attribute "left" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='', 
+                    title='SIGN UP FOR THE EVENT NOW', 
+                    description='', 
+                    style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},btn_style:"pwr-btn--regular-solid-primary-background",scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"3bc0a2dd-9eb0-4087-8f72-adf77d0a5878","form_type":"HUBSPOT","redirect_url":"https://maka-agency-4740449.hs-sites.com/power-theme-lp-thank-you","response_type":"redirect"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+            {# Section Team #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "team" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-team', 
+                    label='Team',
+                    intro_to_title='', 
+                    title='OUR SPEAKERS AT THE EVENT', 
+                    team=[
+                        {contact:true,description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",email:"hello@power.com",facebook:"https://www.facebook.com",img:{alt:"team-small-06",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_01.png'),width:285},job_title:"CTO, Head of Coding",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Laura Laurati",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.youtube.com",animation:{animation_type:"default",delay:50}},
+                        {contact:true,description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",email:"hello@power.com",facebook:"https://www.facebook.com",img:{alt:"team-small-07",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"CTO, Head of Coding",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Laura Laurati",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.youtube.com",animation:{animation_type:"default",delay:200}},
+                        {contact:true,description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",email:"hello@power.com",facebook:"https://www.facebook.com",img:{alt:"team-small-05",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_03.png'),width:285},job_title:"CTO, Head of Coding",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Laura Laurati",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.youtube.com",animation:{animation_type:"default",delay:350}},
+                        {contact:true,description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;",email:"hello@power.com",facebook:"https://www.facebook.com",img:{alt:"team-small-08",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_05.png'),width:285},job_title:"CTO, Head of Coding",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/power-theme-about-me",type:"EXTERNAL"}},linkedin:"https://www.linkedin.com",name_:"Laura Laurati",phone:"+4940582291",twitter:"https://www.twitter.com",youtube:"https://www.youtube.com",animation:{animation_type:"default",delay:500}}
+                        ], 
+                    layout={isTabs:false}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Team #}
+
+            {# Section Schedule #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "schedule" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-schedule', 
+                    label='Schedule',
+                    intro_to_title='', 
+                    tabs=[
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"},{desc_left:"AUDITORIUM",desc_right:"Sarah Skedul&nbsp;- Founder of Druugle AG",title_left:"11:30AM - 1:30PM",title_right:"LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR"},{desc_left:"ROOM R4.02",desc_right:"Ergi Kayote - CCO, Actionkraft",title_left:"2:00PM - 4:30PM",title_right:"WEBDESIGN TRENDS 2019 INBOUND DESIGN"}],tab_title:"Monday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Tuesday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Wednesday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Thursday"},
+                        {slot:[{desc_left:"AUDITORIUM",desc_right:"Laura Laurati - CTO, Head of Coding",title_left:"9:30AM - 11:30AM",title_right:"WELCOME SPEECH AND INTRODUCTION"}],tab_title:"Friday"}
+                        ], 
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Schedule #}
+
+            {# Section Logo Slider #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "logo-slider" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-logo-slider', 
+                    label='Logo Slider',
+                    intro_to_title='', 
+                    title='OUR PARTNERS LOREM IPSUM', 
+                    description='', 
+                    client_logo=[
+                        {alt:"client-logo-10",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_01.png'),width:600},
+                        {alt:"client-logo-04",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_02.png'),width:600},
+                        {alt:"client-logo-05",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_03.png'),width:600},
+                        {alt:"client-logo-06",height:600,'src':get_asset_url('../images/logos/transparent/pwr-img_logo_wobg_04.png'),width:600}
+                        ], 
+                    layout={centered:true}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Logo Slider #}
+
+            {# Section Map #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "map" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-map', 
+                    label='Map',
+                    title='OUR OFFICE', 
+                    desc='Headquarters, Munich', 
+                    map_embed_code='<iframe title="Map Location" src="https://snazzymaps.com/embed/132243" width="100%" height="100%" style="border:none;"></iframe>',
+                    contact=True, 
+                    cta='77b308a5-f601-4ca6-b079-98b16b13361a', 
+                    phone='', 
+                    layout={full_width:true,section_height:590}, 
+                    style={scheme:"dark"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Map #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

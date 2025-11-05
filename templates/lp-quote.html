@@ -1,0 +1,110 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-03-quote.jpg
+  label: POWER THEME Landing Page Quote
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='LANDING PAGE', 
+                    description='Let us manage your business growth', 
+                    layout={header_height:"small"}, 
+                    style={desc_large:true,background:"",background_color_fallback:{color:"#1a1d17",opacity:100}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Video #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "video" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-video', 
+                    label='Video',
+                    content='', 
+                    video_title='WATCH VIDEO', 
+                    youtube_link='https://www.youtube.com/watch?v=AXQehZH4s84', 
+                    layout={section_height:350}, 
+                    style={background:"img_vid",overlay_color:{color:"#1a1d17",opacity:20},scheme:"dark",youtube_link:"https://youtu.be/ybcCsfnyS20"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Video #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='', 
+                    title='GET A QUOTE', 
+                    description='', 
+                    style={background:"color"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"3bc0a2dd-9eb0-4087-8f72-adf77d0a5878","form_type":"HUBSPOT","redirect_id":10875758465,"response_type":"inline"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+            {# Section Steps #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "steps" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-steps', 
+                    label=' Steps',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    step=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",icon:{},img:{alt:"product icon",height:64,'src':get_asset_url('../images/icons/pwr-img_icon_product-01.svg'),width:64},title:"STEP ONE",animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",icon:{},img:{alt:"product icon",height:64,'src':get_asset_url('../images/icons/pwr-img_icon_product-02.svg'),width:64},title:"STEP TWO",animation:{animation_type:"default",delay:150}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",icon:{},img:{alt:"product icon",height:64,'src':get_asset_url('../images/icons/pwr-img_icon_product-03.svg'),width:64},title:"STEP THREE",animation:{animation_type:"default",delay:250}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit amet, consetetur elitr.",icon:{},img:{alt:"product icon",height:64,'src':get_asset_url('../images/icons/pwr-img_icon_product-04.svg'),width:64},title:"STEP FOUR",animation:{animation_type:"default",delay:350}}
+                        ], 
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"img"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Steps #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonial',
+                    intro_to_title='', 
+                    title='', 
+                    description='', 
+                    testimonial=[{job_title:"Natural Historian",name_:"David Attenborough",quote:"“<span>It seems to me that the natural world is the greatest source of excitement; the greatest source of visual beauty; the greatest source of intellectual interest. It is the greatest source of so much in life that makes life worth living.</span>”"}], 
+                    slider={nav_arrows:false}, 
+                    layout={section_variant:"one_by_one_style2"}, 
+                    style={background:"img_vid",background_image:{alt:"women chatting in office",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-women-chat.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.primary_color.color,opacity:90},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

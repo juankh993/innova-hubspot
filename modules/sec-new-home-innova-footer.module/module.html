@@ -1,0 +1,84 @@
+<footer id="new-footer" class="bg-[#003B87] text-[#FFFFFF] relative lg:pb-[48px] overflow-hidden">
+    <img id="footer-hand" class="absolute md:w-auto md:h-auto w-[122px] h-[127px] bottom-[148px] top-auto right-0 left-auto  md:top-auto md:left-auto md:right-[18px] md:bottom-[200px]" 
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/footer-hand-doodle.svg" 
+         alt="footer-hand-doodle"
+          data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="1000"
+         data-aos-once="true"
+          data-aos-offset="-200">
+    <img id="footer-sund" class="absolute hidden lg:block md:w-auto md:h-auto md:top-auto md:left-auto md:right-0 md:bottom-0" 
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/footer-sun-doodle.svg" 
+         alt="footer-sun-doodle"
+          data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="1000"
+         data-aos-once="true"
+          data-aos-offset="-200">
+   <img class="absolute block lg:hidden w-[187px] h-[194px] right-0 bottom-0" 
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/footer-sun-mobile-doodle.svg" 
+         alt="footer-sun-doodle"
+         data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="1000"
+         data-aos-once="true"
+         data-aos-offset="-200">
+    <img id="footer-halfmoon" class="absolute md:right-[210px] md:left-auto md:bottom-[2px] md:top-auto left-[-17px] bottom-0" 
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/footer-halfmoon-doodle.svg" 
+         alt="footer-halfmoon-doodle"
+          data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="1000"
+         data-aos-once="true"
+          data-aos-offset="-200">
+        <section class="px-[42px] lg:px-[80px] pt-[64px] pb-[84px] xl:pb-0 relative z-1">
+            <!-- Principal grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr]  gap-[64px] md:gap-[80px] xl:gap-[174px] pb-[32px]">
+                <!-- Logo & Contact -->
+                <div class="flex flex-col gap-[32px]">
+                    <img src="{{ module.footer_logo.src }}"
+                        alt="{{ module.footer_logo.alt }}" class="footer-logo">
+                    <div class="hidden lg:flex flex-col gap-[8px]">
+                         {{ module.contacts }}
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="grid grid-cols-2 xl:grid-cols-4 gap-x-[25px] gap-y-[64px]">
+                  {% for item in module.items_list %}
+                    <div>
+                        <h3
+                            class="footer-list-title">
+                            {{ item.list_title }}
+                       </h3>
+                        <ul class="flex flex-col gap-[8px]">
+                           	{% for item2 in item.links_list %}
+                            <li>
+                                <a class="footer-list-item"
+                                    href="{{ item2.item_url }}">
+                                    {{ item2.item_title }}
+                                </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="lg:hidden flex flex-col gap-[8px]">
+                   {{ module.contacts }}
+                </div>
+            </div>
+            <div class="text-center flex flex-col gap-[24px]">
+                <ul class="flex justify-center gap-[15px]">
+                  {% for item in module.iconos_redes_sociales %}
+                    <li>
+                        <a href="{{ item.social_media_url }}" target="_blank">
+                            <img src="{{ item.social_media_logo.src }}" alt="{{ item.social_media_logo.alt }}"
+                                class="w-[20px] h-[20px]">
+                        </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <p class="footer-copyright">{{ module.footer_copyright }}</p>
+            </div>
+        </section>
+    </footer>

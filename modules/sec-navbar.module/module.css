@@ -1,0 +1,135 @@
+.alpha-target {
+  mask-image: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png);
+  mask-mode: alpha;
+  mask-repeat: repeat;
+  mask-size: 100%;
+}
+
+.wave-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7.3px;
+  width: 100%;
+  height: 8px;
+  background-image: url('./public/assets/wave.svg');
+  background-repeat: repeat-x;
+}
+
+
+.navbar-estilos{
+  font-family: Otterco;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+
+}
+
+
+
+.niza-estilos{
+  font-family: Otterco;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.overlay{
+
+  background-color: #122C3BCC
+}
+
+#pwr-header-fixed{
+  visibility:hidden;
+  display:none;
+}
+
+.row-fluid-wrapper:has(.submenu-header) {
+  top: calc(100dvh - 80px);
+  position: sticky;
+  z-index: 99;
+}
+
+@media screen and (min-width: 1024px) {
+  .row-fluid-wrapper:has(.submenu-header) {
+    position: sticky;
+    top: 10px;
+    z-index:99;
+  }
+}
+
+.secondary-button {
+  display: inline-flex;
+  height: 48px;
+  min-height: 48px;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 40px;
+  border: 2px solid #003b87;
+
+  color: #003b87;
+  text-align: center;
+
+  font-family: Otterco;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  span, svg {
+    z-index: 1;
+  }
+
+  .secondary-button__back {
+    color: #003b87;
+    -webkit-text-fill-color: #003b87;
+    display: inline-block;
+    background-image: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+
+  &:hover {
+    &::before {
+      clip-path: circle(150% at 10% 0%);
+      transition: clip-path 0.3s ease-in-out;
+    }
+
+    .secondary-button__back {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-image: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png);
+      background-position: 50%;
+      background-size: cover;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003b87;
+    clip-path: circle(0% at 10% 0%);
+
+    transition: clip-path 0.3s ease-in-out;
+  }
+}
+
+.hero-banner .hsfc-CheckboxField [type=checkbox]:checked+span:after {
+  left: 3.2px !important
+}

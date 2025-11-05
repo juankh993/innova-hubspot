@@ -1,0 +1,134 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-04-webinar.jpg
+  label: POWER THEME Landing Page Webinar
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='pwr-bullet-points', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                        full_width=true,
+                        width=12,
+                        path='../modules/sec-hero', 
+                        label='Hero',
+                        title='LANDING PAGE', 
+                        title_sel_heading='h1', 
+                        description='Webinar: "The power of speech"', 
+                        layout={full_width:false,header_height:"small",isSmall:true,title_extra_large:false}, 
+                        style={
+                            background:"img_vid",
+                            background_image:{alt:"bg-webinar-lp",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_webinar-lp.jpg'),width:1920},
+                            background_image_overlay:"color",
+                            background_position:"center",
+                            desc_large:true,
+                            overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},
+                            scheme:"dark",
+                            title_extra_large:false,
+                            background_color_fallback:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100}
+                            }
+                        %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Text #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "text" 
+                        full_width=true,
+                        width=12,
+                        path='../modules/sec-text', 
+                        label=' Text',
+                        intro_to_title='', 
+                        title='WHAT YOU WILL LEARN'
+                        %}
+                        
+                    {% module_attribute "left" %}
+                    <ul><li>Writing with Authors: The Art of Speeches and Presentations</li><li>Self-confident Appearance - Tips from the Pros</li><li>Fluent Speaking and Improvisation in front of an Audience</li><li>Find and Cultivate Body Language for a great Impression</li></ul>
+                    {% end_module_attribute %}
+                    {% module_attribute "right" %}
+                    <ul><li>Writing with Authors: The Art of Speeches and Presentations</li><li>Self-confident Appearance - Tips from the Pros</li><li>Fluent Speaking and Improvisation in front of an Audience</li><li>Find and Cultivate Body Language for a great Impression</li></ul>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Text #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                        full_width=true,
+                        width=12,
+                        path='../modules/sec-testimonial', 
+                        label=' Testimonial',
+                        intro_to_title='', 
+                        title='', 
+                        description='', 
+                        testimonial=[{job_title:"Natural Historian",name_:"David Attenborough",quote:"<p>“<span>It seems to me that the natural world is the greatest source of excitement; the greatest source of visual beauty; the greatest source of intellectual interest. It is the greatest source of so much in life that makes life worth living.</span>”</p>"}], 
+                        slider={nav_arrows:false}, 
+                        layout={section_variant:"one_by_one_style2"}, 
+                        style={
+                            background:"img_vid",
+                            background_image:{alt:"office women chatting",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-women-chat.jpg'),width:1920},
+                            background_position:"parallax",
+                            overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},
+                            scheme:"dark"
+                            },
+                        animation={section:{animation_type:"default",delay:50}}
+                        %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section Stats Counter #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "stats" 
+                        full_width=true,
+                        width=12,
+                        path='../modules/sec-stats', 
+                        label='Stats Counter',
+                        intro_to_title='', 
+                        title='', 
+                        description='', 
+                        stats=[
+                            {number:"1234",suffix:"",title:"GRADUATES"},
+                            {number:"4321",suffix:"",title:"SPEECHES"},
+                            {number:"543",suffix:"",title:"JOBS"},
+                            {number:"5",suffix:"",title:"GOLDEN MICS"}
+                        ], 
+                        style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"},
+                        animation={section:{animation_type:"default",delay:50}}
+                        %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Stats Counter #}
+
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                        full_width=true,
+                        width=12,
+                        path='../modules/sec-form', 
+                        label='Form',
+                        intro_to_title='REGISTER NOW', 
+                        title='WATCH AND LEARN', 
+                        title_sel_heading='h2', 
+                        description='', 
+                        layout={centered:true,section_variant:"vert_narrow"}, 
+                        style={background:"color",background_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},scheme:"light"},
+                        animation={section:{animation_type:"default",delay:50}}
+                        %}
+                        {% module_attribute "form" is_json=True %}
+                        {"form_id":"4bcfdd7d-3e28-4daf-9f1c-a31533173be9","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                        {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

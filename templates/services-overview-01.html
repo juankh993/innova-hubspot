@@ -1,0 +1,107 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_service-overview-01.jpg
+  label: POWER THEME Services Overview 01
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='OUR SERVICES', 
+                    title_sel_heading='h1',
+                    layout={full_width:false,header_height:"regular",isSmall:true,title_extra_large:false},
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bg-office-man-whiteboard-1120072736",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-man-whiteboard.jpg'),width:1920},
+                        background_image_overlay:"color",
+                        background_image_position:"center",
+                        background_position:"center",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},
+                        scheme:"dark"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    We offer a wide array of professional and constantly optimized services aimed at simplifying your life
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Services #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "services" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-services', 
+                    label='Services',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    services=[
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Web development",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"list",type:"SOLID",unicode:"f03a"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Project Management",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:200}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"bullhorn",type:"SOLID",unicode:"f0a1"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Marketing",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:350}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"chart-line",type:"SOLID",unicode:"f201"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Business Growth",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:50}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"linkedin-in",type:"REGULAR",unicode:"f0e1"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Social Media",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:200}},
+                        {description:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",icon:{name:"code-branch",type:"SOLID",unicode:"f126"},icon_img:{'src':""},link:{url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-service-single",type:"EXTERNAL"}},style:{icon_color:{opacity:100}},title:"Networking",translation:{txt_link:"More about this Service"},animation:{animation_type:"default",delay:350}}
+                        ], 
+                    layout={section_variant:"style-3"},
+                    style={background:"color"},
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Services #}
+
+            {# Section Image Boxes #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "image-boxes" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-image-boxes', 
+                    label='Image Boxes',
+                    intro_to_title='PROUD TO PRESENT',
+                    title='OUR MOST RECENT SHOWCASES',
+                    description='',
+                    is_filter_cat_all=False,
+                    boxes=[
+                        {desc:"MARKETING, WEB DEVELOPMENT",field_group:{background_position:"center"},filtering:{},img:{alt:"IMPLEMENTED BI-SOLUTION",height:900,'src':get_asset_url('../images/boxes/featured/pwr-image_featured_01.jpg'),width:900},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},title:"IMPLEMENTED BI-SOLUTION",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:50}},
+                        {desc:"MARKETING",filtering:{},img:{alt:"NEW CORPORATE IDENTITY",height:900,'src':get_asset_url('../images/boxes/featured/pwr-image_featured_02.jpg'),width:900},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:true,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"NEW CORPORATE IDENTITY",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:200}},
+                        {desc:"BUSINESS GROWTH",filtering:{},img:{alt:"OPTIMIZED INFRASTRUCTURE",height:900,'src':get_asset_url('../images/boxes/featured/pwr-image_featured_03.jpg'),width:900},intro_to_title:"",layout:{size:"pwr-image-box--one-by-one"},link:{no_follow:false,open_in_new_tab:false,url:{href:"https://maka-agency-4740449.hs-sites.com/power-theme-case-study",type:"EXTERNAL"}},link_icon:{name:"arrow-right",type:"SOLID",unicode:"f061"},style:{background_position:"center"},title:"OPTIMIZED INFRASTRUCTURE",translation:{txt_link:"Read More"},animation:{animation_type:"default",delay:350}}
+                        ],
+                    layout={section_variant:"3cols"},
+                    style={box_style:"content_below"}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Image Boxes #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='SCHEDULE A MEETING WITH ONE OF OUR EXPERTS',
+                    description='',
+                    cta='777eba8b-a03f-4832-bbd1-fe2086b763ae',
+                    style={background:"img_vid",background_image:{alt:"bg-office-group-of-people-talking-498623425",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_office-group-of-people-talking.jpg'),width:1920},background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:60},scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

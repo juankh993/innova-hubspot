@@ -1,0 +1,524 @@
+<div class="container-accordion-slider">
+  <section id="section-value-props" class="relative bg-[#7669FD] overflow-x-clip min-h-[660px] sec-accordiong-slider--reversed">
+  <!-- SVG decorativo estrella amarilla -->
+  <div
+    class="block absolute left-[-70px] bottom-[-70px] lg:left-[-110px] lg:bottom-[-110px] z-40 animate-spin-star w-[156px] h-[156px] min-w-[156px] min-h-[156px] lg:w-[280px] lg:h-[280px] lg:min-w-[280px] lg:min-h-[280px]"
+    id="featured-star" data-animate="figure-zoom-in">
+    <img src="{{ module.image_star.src }}" alt={{ module.image_star.alt }}"" />
+  </div>
+<!-- Títulos y descripción -->
+        <div class="mb-[24px] text-center pt-[110px]">
+          <h2
+            class="uppercase italic font-bold tracking-[6.4px] text-[28px] leading-[30px] md:text-[64px] md:leading-[72px] text-[#ffffff]"
+            style="
+              font-family: 'Otterco', sans-serif;
+              font-size:64px;
+                   line-height:72px;
+              letter-spacing: 6.4px;
+            " data-animate="fade-up">
+            {{ module.main_title }} <span style=" font-family: 'Josefin Sans', sans-serif;" class="not-italic
+ text-[#FDB731] font-['Josefin Sans'] font-bold md:tracking-[4px] md:text-[40px] md:leading-[44px]">{{ module.subtitle }}</span>
+          </h2>
+        </div>
+  <div class="container mx-auto px-4 py-20 lg:py-16">
+    
+    <div class="grid grid-cols-1 lg:!grid-cols-[40%_60%] gap-12 items-start" id="valores-content"
+      data-animate="text-fade-up">
+      <!-- Columna izquierda: títulos y acordeones -->
+      <div class="content-column">
+        
+
+        <!-- Acordeones -->
+        <div id="valores-acordeones" class="space-y-2 mt-[32px]" data-animate="fade-up">
+          {% for item in module.elements %}
+          {% set snake = item.item_title|lower|replace(' ', '_') %}
+          <div 
+             class="accordion-item rounded-lg transition-all duration-300"
+             data-accordion-id="{{ item.item_title|slugify }}" 
+             data-index="{{ loop.index0 }}"
+           >
+            <button 
+                type="button" 
+                    id="ValoresAgre_{{ snake }}"
+                class="flex w-full items-stretch gap-[16px] text-left group ValoresAgre_elementos"
+                aria-expanded="false"
+            >
+              <div class="flex flex-col items-center flex-grow max-w-[24px]">
+                <div class="w-6 h-6 rounded-xl flex items-center justify-center bg-yellow-100 dot-outer"
+                  style="background-color: {% if loop.first %}#fce8c2{% else %}transparent{% endif %};">
+                  <div class="w-[10px] h-[10px] rounded-full dot-inner"
+                    style="background-color: {% if loop.first %}#fdb731{% else %}#003b87{% endif %};"></div>
+                </div>
+
+                <div class="item-line"></div>
+              </div>
+              <div class="flex-1 flex flex-col w-full">
+                <h4 class="font-bold text-[28px] leading-[28px] text-[#003b87] accordion-title mb-4"
+                  style="font-family: 'Josefin Sans', sans-serif">
+                  {{ item.item_title }}
+                </h4>
+                <h3>
+                  {{ item.item_subtitle }}
+                </h3>
+                <div class="accordion-content " data-accordion-content="valor-agregado-{{ loop.index0 }}">
+                  <div class="pt-[8px] pb-[28px] accordion-text">
+                    <p class="text-[#003b87] text-[18px] leading-[22px]"
+                      style="font-family: 'Josefin Sans', sans-serif">
+                      {{ item.element_description }}
+                    </p>
+                  </div>
+                  <a href="{{ item.item_cta }}">{{ item.item_url }}
+                  </a>
+                  <!-- Carrusel en mobile -->
+                  <div class="block lg:hidden carousel-mobile">
+                    <div class="relative lg:pb-20">
+                      <div class="swiper carousel-mobile-{{ loop.index0 }}">
+                        <div class="swiper-wrapper">
+                          {% for image in item.images %}
+                          <div class="swiper-slide">
+                            <div
+                              class="relative h-[300px] overflow-hidden rounded-tl-[32px] rounded-br-[32px] shadow-xl">
+                              <img src="{{ image.src }}" class="w-full h-full object-cover" alt="{{ image.alt }}" />
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Columna derecha: carrusel principal (desktop) -->
+      <div id="valores-carousel-col" class="relative hidden lg:block slider-column" data-animate="fade-up">
+        {% set first_valor = module.elements[0] %} {% if first_valor and first_valor.images %}
+        <div class="relative lg:pb-20 slider-desktop">
+          <div class="swiper" id="accordion-carousel-main">
+            <div class="swiper-wrapper">
+              {% for image in first_valor.images %}
+              <div class="swiper-slide">
+                <div
+                  class="relative h-[520px] overflow-hidden rounded-tl-[32px] rounded-br-[32px] shadow-xl w-full h-full">
+                  <img src="{{ image.src }}" class="w-full h-full object-cover" alt="{{ image.alt }}" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- Navigation -->
+            <div class="absolute bottom-[17px] right-[17px] z-10">
+              <div class="flex items-center justify-center navigation-desktop" id="valores-carousel-navigation">
+                <button type="button" class="swiper-button-prev-custom">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <div class="swiper-pagination-custom"></div>
+                <button type="button" class="swiper-button-next-custom">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Vertical Text Overlay SIEMPRE PRESENTE -->
+        <div class="absolute left-0 transform bottom-[10px] z-[2] pointer-events-none leading-[54px]"
+          id="valores-carousel-title">
+          <div
+            class="text-[50px] font-bold uppercase tracking-wider bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
+            style="font-family: 'Josefin Sans', sans-serif">
+            {{ module.elements[0].item_title }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-container">
+    <button class="modal-close" id="modal-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M11.8148 10L18.6082 3.20664C18.7308 3.08824 18.8285 2.94662 18.8958 2.79003C18.9631 2.63345 18.9985 2.46503 19 2.29461C19.0014 2.1242 18.969 1.95519 18.9044 1.79746C18.8399 1.63973 18.7446 1.49642 18.6241 1.37592C18.5036 1.25541 18.3603 1.16011 18.2025 1.09557C18.0448 1.03104 17.8758 0.998568 17.7054 1.00005C17.535 1.00153 17.3666 1.03694 17.21 1.1042C17.0534 1.17147 16.9118 1.26924 16.7934 1.39183L10 8.18519L3.20664 1.39183C2.96458 1.15803 2.64037 1.02867 2.30385 1.03159C1.96733 1.03452 1.64542 1.1695 1.40746 1.40746C1.1695 1.64542 1.03452 1.96733 1.03159 2.30385C1.02867 2.64037 1.15803 2.96458 1.39183 3.20664L8.18519 10L1.39183 16.7934C1.26924 16.9118 1.17147 17.0534 1.1042 17.21C1.03694 17.3666 1.00153 17.535 1.00005 17.7054C0.998568 17.8758 1.03104 18.0448 1.09557 18.2025C1.16011 18.3603 1.25541 18.5036 1.37592 18.6241C1.49642 18.7446 1.63973 18.8399 1.79746 18.9044C1.95519 18.969 2.1242 19.0014 2.29461 19C2.46503 18.9985 2.63345 18.9631 2.79003 18.8958C2.94662 18.8285 3.08824 18.7308 3.20664 18.6082L10 11.8148L16.7934 18.6082C17.0354 18.842 17.3596 18.9713 17.6961 18.9684C18.0327 18.9655 18.3546 18.8305 18.5925 18.5925C18.8305 18.3546 18.9655 18.0327 18.9684 17.6961C18.9713 17.3596 18.842 17.0354 18.6082 16.7934L11.8148 10Z"
+          fill="currentColor" />
+      </svg>
+    </button>
+
+    <!-- Modal Content Flex Container -->
+    <div class="modal-content" id="modal-content">
+      <!-- Swiper -->
+      {% set first_valor = module.elements[0] %} {% if first_valor and
+      first_valor.images %}
+      <div class="swiper lightbox-slider" id="lightbox-slider">
+        <div class="swiper-wrapper" id="lightbox-slider-wrapper">
+          {% for image in first_valor.images %}
+          <div class="swiper-slide">
+            <div class="swiper-slide__content">
+              <img src="{{ image.src }}" alt="{{ image.alt }}" />
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Custom Navigation -->
+      <div class="modal-lightbox--controls">
+        <button class="swiper-nav swiper-nav-prev" id="lightbox-slider-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M9.66211 14.5C9.55548 14.499 9.44916 14.4756 9.34961 14.4307C9.25001 14.3857 9.15796 14.3191 9.08008 14.2344L9.07422 14.2285L3.75195 8.63574C3.5933 8.46897 3.5 8.23718 3.5 7.99121C3.50005 7.74534 3.59337 7.51438 3.75195 7.34766L9.07422 1.75391C9.23208 1.58802 9.4413 1.50005 9.65332 1.5C9.81162 1.50013 9.96863 1.54921 10.1045 1.64453C10.2409 1.74033 10.3512 1.87984 10.417 2.04687C10.4828 2.21399 10.5006 2.39924 10.4668 2.57812C10.4329 2.75697 10.3495 2.91784 10.2314 3.04199L5.84961 7.64648L5.52148 7.99121L5.84961 8.33594L10.2314 12.9404L10.2373 12.9473L10.2949 13.0117C10.3494 13.0792 10.3946 13.1558 10.4287 13.2393C10.4742 13.3506 10.499 13.4711 10.5 13.5937C10.501 13.7164 10.4783 13.8379 10.4346 13.9502C10.3909 14.0623 10.3272 14.1629 10.248 14.2461C10.1689 14.3292 10.0758 14.3934 9.97559 14.4365C9.8754 14.4796 9.76878 14.501 9.66211 14.5Z"
+              fill="white" stroke="white" />
+          </svg>
+        </button>
+        <div class="swiper-pagination" id="lightbox-slider-pagination"></div>
+        <button class="swiper-nav swiper-nav-next" id="lightbox-slider-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M6.33789 1.5C6.44452 1.50101 6.55084 1.5244 6.65039 1.56934C6.74999 1.61433 6.84204 1.68089 6.91992 1.76562L6.92578 1.77148L12.248 7.36426C12.4067 7.53103 12.5 7.76282 12.5 8.00879C12.5 8.25466 12.4066 8.48562 12.248 8.65234L6.92578 14.2461C6.76792 14.412 6.5587 14.5 6.34668 14.5C6.18838 14.4999 6.03137 14.4508 5.89551 14.3555C5.7591 14.2597 5.64884 14.1202 5.58301 13.9531C5.5172 13.786 5.49935 13.6008 5.5332 13.4219C5.56706 13.243 5.65048 13.0822 5.76855 12.958L10.1504 8.35352L10.4785 8.00879L10.1504 7.66406L5.76855 3.05957L5.7627 3.05273L5.70508 2.98828C5.65061 2.92076 5.6054 2.84419 5.57129 2.76074C5.52577 2.64937 5.50101 2.52889 5.5 2.40625C5.49899 2.28361 5.52171 2.1621 5.56543 2.0498C5.60914 1.93773 5.6728 1.83708 5.75195 1.75391C5.83113 1.67075 5.92419 1.60657 6.02441 1.56348C6.1246 1.52042 6.23122 1.49903 6.33789 1.5Z"
+              fill="white" stroke="white" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{# JavaScript for interactions #} {% require_js position="footer" %}
+<style>
+  .container-accordion-slider .accordion-content {
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+  }
+
+  .container-accordion-slider .accordion-content.open {
+    /* max-height se setea dinámicamente via JS */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Datos de valores agregados desde HubL
+    const valoresData = {{ module.elements| tojson}};
+    console.log('valoresData', valoresData)
+  let currentAccordionIndex = 0;
+  let mainSwiper = null;
+  let modalSwiper = null;
+
+  // Inicializar Swiper principal (desktop)
+  function initMainSwiper() {
+    const mainCarousel = document.getElementById("accordion-carousel-main");
+    if (mainCarousel) {
+      mainSwiper = new Swiper("#accordion-carousel-main", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination-custom",
+          clickable: true,
+          bulletClass: "swiper-pagination-bullet",
+          bulletActiveClass: "swiper-pagination-bullet-active",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
+        },
+      });
+    }
+  }
+
+
+  function initModalSwiper() {
+    if (modalSwiper) {
+      modalSwiper.destroy(true, true);
+    }
+
+    modalSwiper = new Swiper("#lightbox-slider", {
+      speed: 1000,
+      navigation: {
+        nextEl: "#lightbox-slider-next",
+        prevEl: "#lightbox-slider-prev",
+      },
+      pagination: {
+        el: "#lightbox-slider-pagination",
+        clickable: true,
+      },
+      grabCursor: true,
+      centeredSlides: true,
+      centeredSlidesBounds: false,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+      },
+      // virtual: {
+      //   slides: (() => {
+      //     let slides = [];
+      //     currentSlides.forEach((slide, index) => {
+      //       slides.push(templateSlide(slide, index));
+      //     });
+      //     return slides;
+      //   })(),
+      // },
+    });
+  }
+
+  // Inicializar Swipers móviles
+  function initMobileSwipers() {
+    valoresData.forEach(function (valor, index) {
+      const mobileCarousel = document.querySelector(
+        ".carousel-mobile-" + index
+      );
+      if (mobileCarousel) {
+        new Swiper(mobileCarousel, {
+          loop: true,
+          pagination: {
+            el: mobileCarousel.querySelector(".swiper-pagination"),
+            clickable: true,
+          },
+        });
+      }
+    });
+  }
+
+  // Manejar clics en acordeones
+  function setupAccordions() {
+    const accordionItems = document.querySelectorAll(".accordion-item");
+    accordionItems.forEach(function (item, index) {
+      console.log('index, item',index, item)
+      const button = item.querySelector("button");
+      const content = item.querySelector(".accordion-content");
+      const line = item.querySelector(".item-line");
+      const title = item.querySelector(".accordion-title");
+      content.style.maxHeight = content.scrollHeight + "px";
+
+      // Set initial state for the first accordion
+      if (index === 0) {
+        console.log('line',line)
+        content.style.maxHeight = content.scrollHeight + "px";
+        if (line) line.style.opacity = "1";
+        if (title) {
+          title.classList.add("font-bold");
+          title.classList.remove("font-normal", "font-regular");
+        }
+        return;
+      } else {
+        content.style.maxHeight = "0px";
+        if (line) line.style.opacity = "0";
+        if (title) {
+          title.classList.add("font-regular");
+          title.classList.remove("font-bold", "font-normal");
+        }
+      }
+
+      button.addEventListener("click", function () {
+        if (currentAccordionIndex === index) return;
+
+        accordionItems.forEach(function (otherItem, otherIndex) {
+          const otherContent = otherItem.querySelector(".accordion-content");
+          const otherTitle = otherItem.querySelector(".accordion-title");
+          const otherIndicator = otherItem.querySelector(".dot-outer");
+          const otherDot = otherItem.querySelector(".dot-inner");
+          const otherLine = otherItem.querySelector(".item-line");
+
+          // Cierre suave
+          otherContent.style.maxHeight = "0px";
+
+          if (otherTitle) {
+            otherTitle.classList.add("font-regular");
+            otherTitle.classList.remove("font-bold");
+          }
+
+          if (otherIndicator)
+            otherIndicator.style.backgroundColor = "transparent";
+          if (otherDot) otherDot.style.backgroundColor = "#003b87";
+          if (otherLine) otherLine.style.opacity = "0";
+        });
+
+        // Apertura suave
+        content.style.maxHeight = content.scrollHeight + "px";
+
+        const currentTitle = item.querySelector(".accordion-title");
+        if (currentTitle) {
+          currentTitle.classList.add("font-bold");
+          currentTitle.classList.remove("font-regular");
+        }
+
+        const indicator = item.querySelector(".dot-outer");
+        const dot = item.querySelector(".dot-inner");
+        if (indicator) indicator.style.backgroundColor = "#fce8c2";
+        if (dot) dot.style.backgroundColor = "#fdb731";
+        if (line) line.style.opacity = "1";
+
+        currentAccordionIndex = index;
+        updateMainCarousel(index);
+        updateModalContent(index);
+      });
+
+    });
+  }
+
+  // actualizar el slider del modal al cambiar el main carousel
+  function updateModalContent(index) {
+    const modalContent = document.getElementById("modal-content");
+    const valor = valoresData[index];
+
+    if (!modalContent || !valor || !valor.images) return;
+
+    // Generar nuevo HTML
+    let slidesHTML = "";
+    valor.images.forEach(function (imagen) {
+      slidesHTML += /*html*/`
+      <div class="swiper-slide">
+        <div class="swiper-slide__content">
+          <img src="${imagen.src}" class="w-full h-full object-cover" alt="${imagen.alt}">
+        </div>
+      </div>
+      `;
+    });
+
+    modalContent.innerHTML = /*html*/`
+      <div class="swiper lightbox-slider" id="lightbox-slider">
+        <div class="swiper-wrapper" id="lightbox-slider-wrapper">
+          ${slidesHTML}
+        </div>
+      </div>
+
+      <div class="modal-lightbox--controls">
+        <button class="swiper-nav swiper-nav-prev" id="lightbox-slider-prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M9.66211 14.5C9.55548 14.499 9.44916 14.4756 9.34961 14.4307C9.25001 14.3857 9.15796 14.3191 9.08008 14.2344L9.07422 14.2285L3.75195 8.63574C3.5933 8.46897 3.5 8.23718 3.5 7.99121C3.50005 7.74534 3.59337 7.51438 3.75195 7.34766L9.07422 1.75391C9.23208 1.58802 9.4413 1.50005 9.65332 1.5C9.81162 1.50013 9.96863 1.54921 10.1045 1.64453C10.2409 1.74033 10.3512 1.87984 10.417 2.04687C10.4828 2.21399 10.5006 2.39924 10.4668 2.57812C10.4329 2.75697 10.3495 2.91784 10.2314 3.04199L5.84961 7.64648L5.52148 7.99121L5.84961 8.33594L10.2314 12.9404L10.2373 12.9473L10.2949 13.0117C10.3494 13.0792 10.3946 13.1558 10.4287 13.2393C10.4742 13.3506 10.499 13.4711 10.5 13.5937C10.501 13.7164 10.4783 13.8379 10.4346 13.9502C10.3909 14.0623 10.3272 14.1629 10.248 14.2461C10.1689 14.3292 10.0758 14.3934 9.97559 14.4365C9.8754 14.4796 9.76878 14.501 9.66211 14.5Z"
+              fill="white"
+              stroke="white"
+            />
+          </svg>
+        </button>
+        <div class="swiper-pagination" id="lightbox-slider-pagination"></div>
+        <button class="swiper-nav swiper-nav-next" id="lightbox-slider-next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M6.33789 1.5C6.44452 1.50101 6.55084 1.5244 6.65039 1.56934C6.74999 1.61433 6.84204 1.68089 6.91992 1.76562L6.92578 1.77148L12.248 7.36426C12.4067 7.53103 12.5 7.76282 12.5 8.00879C12.5 8.25466 12.4066 8.48562 12.248 8.65234L6.92578 14.2461C6.76792 14.412 6.5587 14.5 6.34668 14.5C6.18838 14.4999 6.03137 14.4508 5.89551 14.3555C5.7591 14.2597 5.64884 14.1202 5.58301 13.9531C5.5172 13.786 5.49935 13.6008 5.5332 13.4219C5.56706 13.243 5.65048 13.0822 5.76855 12.958L10.1504 8.35352L10.4785 8.00879L10.1504 7.66406L5.76855 3.05957L5.7627 3.05273L5.70508 2.98828C5.65061 2.92076 5.6054 2.84419 5.57129 2.76074C5.52577 2.64937 5.50101 2.52889 5.5 2.40625C5.49899 2.28361 5.52171 2.1621 5.56543 2.0498C5.60914 1.93773 5.6728 1.83708 5.75195 1.75391C5.83113 1.67075 5.92419 1.60657 6.02441 1.56348C6.1246 1.52042 6.23122 1.49903 6.33789 1.5Z"
+              fill="white"
+              stroke="white"
+            />
+          </svg>
+        </button>
+      </div>
+      `;
+
+    initModalSwiper();
+  }
+
+  // Actualizar carrusel principal con nuevo contenido
+  function updateMainCarousel(index) {
+    console.log(valoresData)
+    const carouselCol = document.getElementById("valores-carousel-col");
+    const valor = valoresData[index];
+
+    if (carouselCol && valor && valor.images) {
+
+      // Destruir swiper existente
+      if (mainSwiper) {
+        mainSwiper.destroy(true, true);
+      }
+
+      // Generar nuevo HTML para los slides
+      let slidesHTML = "";
+      valor.images.forEach(function (imagen) {
+        slidesHTML += `
+          <div class="swiper-slide">
+            <div class="relative h-[520px] overflow-hidden rounded-tl-[32px] rounded-br-[32px] shadow-xl w-full h-full">
+              <img src="${imagen.src}" class="w-full h-full object-cover" alt="${imagen.alt}">
+            </div>
+          </div>
+        `;
+      });
+
+      // Actualizar solo el contenido del slider (SIN el título)
+      const sliderContainer = carouselCol.querySelector('.container-accordion-slider .slider-desktop');
+      if (sliderContainer) {
+        sliderContainer.innerHTML = `
+          <div class="swiper" id="accordion-carousel-main">
+            <div class="swiper-wrapper">
+              ${slidesHTML}
+            </div>
+            <!-- Navigation -->
+            <div class="absolute bottom-[17px] right-[17px] z-10">
+              <div class="flex items-center justify-center navigation-desktop" id="valores-carousel-navigation">
+                <button type="button" class="swiper-button-prev-custom">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <div class="swiper-pagination-custom"></div>
+                <button type="button" class="swiper-button-next-custom">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Actualizar el título del carousel (que ya existe en el DOM)
+      const valoresTitle = document.getElementById("valores-carousel-title");
+      if (valoresTitle && valor.item_title) {
+        valoresTitle.innerHTML = `
+          <div class="text-[50px] font-bold uppercase tracking-wider bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
+            style="font-family: 'Josefin Sans', sans-serif">
+            ${valor.item_title}
+          </div>
+        `;
+      }
+
+      // Reinicializar swiper
+      initMainSwiper();
+      initModalSwiper();
+    }
+  }
+
+  // Inicialización
+  initMainSwiper();
+  initModalSwiper();
+  initMobileSwipers();
+  setupAccordions();
+  });
+</script>
+*/
+
+{% end_require_js %}

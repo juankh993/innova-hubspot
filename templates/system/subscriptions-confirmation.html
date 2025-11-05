@@ -1,0 +1,29 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+  label: POWER THEME Email Subscription Confirmation
+-->
+{% extends '../layouts/base.html' %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% module "hero" path='../../modules/sec-hero', 
+            title='EMAIL UNSUBSCRIBE', 
+            description='', 
+            layout={header_height:"x-small"}, 
+            style={background:"color",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},scheme:"dark"}, 
+            label='Hero' %}
+
+        <div class="pwr-email-confirmation pwr--light" style="background-color: rgba(244, 246, 250, 1.0)">
+            <div class="page-center pwr--relative">
+                <div class="row-fluid pwr-form">
+                    {% module 'subscriptions_confirmation'
+                        path='@hubspot/email_subscriptions_confirmation',
+                        label='Subscriptions Update Confirmation' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

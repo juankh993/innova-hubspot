@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="384px" height="384px" viewBox="0 0 384 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pwr-icon_entry_features_cross-browser</title>
+    <g id="cross-browser" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="384" height="384"></rect>
+        <g id="icon-browser" transform="translate(32.000000, 32.000000)">
+            <rect id="Rectangle" stroke="#3E35F1" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" x="0" y="0" width="320" height="320"></rect>
+            <line x1="320" y1="126.35" x2="0" y2="126.35" id="Path" stroke="#3E35F1" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"></line>
+            <circle id="Oval" fill="#3E35F1" fill-rule="nonzero" cx="261.5" cy="61.2" r="15"></circle>
+            <circle id="Oval" fill="#3E35F1" fill-rule="nonzero" cx="208.75" cy="61.2" r="15"></circle>
+            <circle id="Oval" fill="#3E35F1" fill-rule="nonzero" cx="156" cy="61.2" r="15"></circle>
+        </g>
+    </g>
+</svg>

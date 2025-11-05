@@ -1,0 +1,45 @@
+{% if module.show_registrations_modal %}
+	<section class="z-[99] fixed backdrop-blur-3xl w-screen h-screen flex justify-center items-center overflow-visible modal-home">
+        <div class="relative flex w-[90%] max-w-[880px] h-[85vh] md:max-h-[600px] md:max-h-[470px] bg-white rounded-[40px] overflow-visible ">
+            <img 
+                 class="hidden md:block absolute -top-[133px] -left-[133px] w-[267px] h-[267px] z-[100] doodle-rotation" 
+                 src="{{ module.doodle_icon.src }}" 
+                 alt="{{ module.doodle_icon.alt }}">
+            <div class="flex h-full flex-col md:flex-row">
+                 <div class="w-full md:w-1/2 h-[40%] md:h-full relative">
+                     <img class="w-full h-full object-cover rounded-tl-[40px] rounded-tr-[40px] md:rounded-tr-none md:rounded-bl-[40px]" 
+                          src="{{ module.modal_image.src }}" 
+                          alt="{{ module.modal_image.alt }}">
+                     <!-- Botón de cerrar para mobile -->
+                     <button class="md:hidden absolute top-4 right-4 w-8 h-8   flex items-center justify-center z-20 cursor-pointer close-modal-home">
+                         <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/x-blanca-modal.svg" 
+                              alt="x-modal">
+                     </button>
+                 </div>
+                <div class="w-full md:w-1/2 py-[20px] md:pb-[60px] md:pt-[89px] px-[16px] md:px-[30px] flex-1 relative overflow-y-auto">
+                    <img class="hidden md:block w-[32px] h-[32px] absolute top-[20px] right-[20px] cursor-pointer close-modal-home" 
+                         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/x-modal.svg" 
+                         alt="x-modal">
+                    <h4 class="modal-title">{{ module.modal_title }}</h4>
+                    <h3 class="modal-subtitle">{{ module.modal_subtitle }}</h3>
+                    <p class="font-['Josefin Sans'] text-[#003B87] text-[18px] md:text-[18px] leading-[22px] md:leading-[22px] pb-[16px] md:pb-[24px] text-left">{{ module.modal_description }}</p>
+                    <label class="font-['Josefin Sans'] text-[14px] md:text-[14px] leading-[16px] md:leading-[16px] text-[#003B87] text-left block mb-[8px]" 
+                           for="comuniquese-con-nosotros">{{ module.modal_contact_us_text }}</label>
+                    <input id="modal-input" 
+                           type="text" 
+                           name="contact-us" 
+                           placeholder="Correo@correo.com">
+                     <a href="{{ module.modal_button_text }}"
+                        class="relative group block w-fit mx-auto justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden"
+                        role="tab">
+                        <span
+                            class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+                        <span class="text-[#ffffff] relative z-10 font-otterco uppercase texture-image">
+                            {{ module.modal_button_text }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

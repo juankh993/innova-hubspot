@@ -1,0 +1,649 @@
+[ {
+  "id" : "a4156d75-c503-0e9c-d1e6-40e11c7d642b",
+  "name" : "nav_items",
+  "label" : "nav items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 5,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "0204b450-ac89-8839-db4c-ccfe34f6317d",
+    "name" : "text_name",
+    "label" : "Navbar item",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Aprendizaje"
+  }, {
+    "id" : "cddba406-584d-732f-a406-bb6ba3e1093b",
+    "name" : "accordion_selection_information",
+    "label" : "Elección Selección Acordion",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "info", "Información" ], [ "acordeon", "Acordeon" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "info"
+  }, {
+    "id" : "9058f799-29ad-c899-c371-ada6bf06342e",
+    "name" : "tab_title",
+    "label" : "Titulo de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "info",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Modelo Educativo"
+  }, {
+    "id" : "299ae60f-df52-2c93-fbd0-595a75dbace1",
+    "name" : "tab_subtitle",
+    "label" : "Subtitulo de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "info",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Aprendizaje centrado en el estudiante"
+  }, {
+    "id" : "f8485815-412c-085b-e15f-41d986414c9c",
+    "name" : "tab_description",
+    "label" : "Descripción de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "info",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "A través de un programa autodirigido y orientado a: Group learning, Flipped learning y Solo learning"
+  }, {
+    "id" : "b74298fe-48b9-45b3-61e8-8f3896c0df7a",
+    "name" : "tab_button_text",
+    "label" : "Botón de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "info",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CONOCE MÁS"
+  }, {
+    "id" : "0fc28975-bfec-61b6-b10c-5bfc69ea4e3e",
+    "name" : "asset_choice",
+    "label" : "¿Desea mostrar una imagen o un video?",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "image_choice", "Imagen" ], [ "video_choice", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "image_choice"
+  }, {
+    "id" : "84653075-e734-40b1-ee0d-caee52bb0d5f",
+    "name" : "tab_image",
+    "label" : "Imagen de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "info",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/correo-4.jpg",
+      "alt" : "correo-4",
+      "loading" : "lazy",
+      "width" : 5010,
+      "height" : 3978,
+      "max_width" : 2000,
+      "max_height" : 1588.0239520958085
+    }
+  }, {
+    "picker" : "video",
+    "id" : "07b2b175-e511-0621-5949-b9df2a575c68",
+    "name" : "tab_video",
+    "label" : "Video de la tab",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.asset_choice",
+      "controlling_value_regex" : "video_choice",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null,
+    "default" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/video-hero-new-home.mp4"
+  }, {
+    "id" : "7afd2fab-fa28-ccf3-0678-e03cfe769fe8",
+    "name" : "tab_video_id",
+    "label" : "Id del video",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.asset_choice",
+      "controlling_value_regex" : "video_choice",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "5fd77843-1e32-e547-1813-2921c3f742a6",
+    "name" : "accordion_title",
+    "label" : "Titulo Acordeon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "acordeon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Etapas del "
+  }, {
+    "id" : "4f123a0b-2684-74c8-0301-5c282e46e72e",
+    "name" : "accordion_subtitle",
+    "label" : "Subtitulo Acordeon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "acordeon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Aprendizaje"
+  }, {
+    "id" : "6d193d6d-2b45-5868-b985-8fef332efe8e",
+    "name" : "stages_accordion",
+    "label" : "Acordion Etapas",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 4,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "nav_items.accordion_selection_information",
+      "controlling_value_regex" : "acordeon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "828fd946-c520-853b-607e-fd2f73591fb2",
+      "name" : "accordion_item_title",
+      "label" : "Titulo Item del Acordeon",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Descubrimiento"
+    }, {
+      "id" : "9f1976c1-d47f-06e2-9682-81286e019ed8",
+      "name" : "accordion_item_description",
+      "label" : "Descripción Item Acordion",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años"
+    }, {
+      "id" : "2e7a10cf-1cca-af14-9253-07c94cbb54fc",
+      "name" : "accordion_item_image",
+      "label" : "Imagen Item Acordion",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      }
+    }, {
+      "id" : "bb35f92c-937a-3e7e-f75d-9a9ffb053afb",
+      "name" : "icon_mobile_acordion_item",
+      "label" : "Icono Mobile Item del Acordion",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text_name" : "Aprendizaje",
+    "accordion_selection_information" : "info",
+    "tab_title" : "Modelo Educativo",
+    "tab_subtitle" : "Aprendizaje centrado en el estudiante",
+    "tab_description" : "A través de un programa autodirigido y orientado a: Group learning, Flipped learning y Solo learning",
+    "tab_button_text" : "CONOCE MÁS",
+    "asset_choice" : "image_choice",
+    "tab_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/correo-4.jpg",
+      "alt" : "correo-4",
+      "loading" : "lazy",
+      "width" : 5010,
+      "height" : 3978,
+      "max_width" : 2000,
+      "max_height" : 1588.0239520958085
+    },
+    "tab_video" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/video-hero-new-home.mp4",
+    "accordion_title" : "Etapas del ",
+    "accordion_subtitle" : "Aprendizaje",
+    "stages_accordion" : [ {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    } ]
+  }, {
+    "text_name" : "Aprendizaje",
+    "accordion_selection_information" : "info",
+    "tab_title" : "Modelo Educativo",
+    "tab_subtitle" : "Aprendizaje centrado en el estudiante",
+    "tab_description" : "A través de un programa autodirigido y orientado a: Group learning, Flipped learning y Solo learning",
+    "tab_button_text" : "CONOCE MÁS",
+    "asset_choice" : "image_choice",
+    "tab_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/correo-4.jpg",
+      "alt" : "correo-4",
+      "loading" : "lazy",
+      "width" : 5010,
+      "height" : 3978,
+      "max_width" : 2000,
+      "max_height" : 1588.0239520958085
+    },
+    "tab_video" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/video-hero-new-home.mp4",
+    "accordion_title" : "Etapas del ",
+    "accordion_subtitle" : "Aprendizaje",
+    "stages_accordion" : [ {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    }, {
+      "accordion_item_title" : "Descubrimiento",
+      "accordion_item_description" : "Pre Jardin 3 años - Jardin 4 años - Transición 5 años",
+      "accordion_item_image" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/etapas.png",
+        "alt" : "etapas",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      },
+      "icon_mobile_acordion_item" : {
+        "size_type" : "auto",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/flor-externa.png",
+        "alt" : "flor-externa",
+        "loading" : "lazy",
+        "width" : 226,
+        "height" : 226,
+        "max_width" : 226,
+        "max_height" : 226
+      }
+    } ]
+  } ]
+}, {
+  "id" : "87e058d6-ba0a-0fcf-d6fb-1b1222dc2eb5",
+  "name" : "button_text",
+  "label" : "Texto del botón",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "iniciar matrícula"
+} ]

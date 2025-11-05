@@ -1,0 +1,166 @@
+{#*********************************************
+ * POWER THEME Coming Soon V1.0               
+*********************************************#}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+<div class="pwr-sec-coming-soon {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }}"
+     {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+     {% elif bgImg.src && bgImgPos != 'parallax' %}
+      style="
+             background-image: url({{ resize_image_url(bgImg.src,2000) }});
+             background-image: -webkit-image-set(url({{ resize_image_url(bgImg.src,2000) }}) 1x, url({{ resize_image_url(bgImg.src,3000) }}) 2x);
+             background-size: cover;
+             background-position: {{ bgImgPos }};
+            "
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+      style="background-color: transparent;"
+     {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img src="{{ bgImg.src }}" class="pwr-parallax" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+   {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" {% if bgImgPos == 'parallax' %}class="pwr-parallax"{% endif %}></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+  <div class="page-center pwr--relative {% if module.layout.centered %}pwr--align-c{% endif %}">
+    <div class="row-fluid">
+      <div class="span12">
+        {% if module.intro_to_title %}
+        <span class="pwr-sec-coming-soon__title-intro pwr--margin-b-md">{{ module.intro_to_title }}</span>
+        {% endif %}
+        {% if module.title_sel_heading && module.title %}
+        <{{ module.title_sel_heading }} class="pwr-sec-coming-soon__title" >{{ module.title }}</{{ module.title_sel_heading }}>
+        {% endif %}
+        {% if module.description %}<span class="pwr-rich-text pwr-sec-coming-soon__desc">{{ module.description }}</span>{% endif %}          
+        {% if module.release_datetime %}
+          <div class="pwr-countdown" data-release-date="{{ module.release_datetime }}">
+            <div class="pwr-countdown__element">
+              <div class="pwr-countdown__number pwr-countdown__number--days">01</div>
+              <div class="pwr-countdown__desc">{{ module.translation.txt_days }}</div>
+            </div>
+            {% if module.counter != 'down_to_days' %}
+            <div class="pwr-countdown__element">
+              <div class="pwr-countdown__number pwr-countdown__number--hours">23</div>
+              <div class="pwr-countdown__desc">{{ module.translation.txt_hours }}</div>
+            </div>
+            {% endif %}
+            {% if module.counter != 'down_to_days' && module.counter != 'down_to_hours' %}
+            <div class="pwr-countdown__element">
+              <div class="pwr-countdown__number pwr-countdown__number--mins">45</div>
+              <div class="pwr-countdown__desc">{{ module.translation.txt_mins }}</div>
+            </div>
+            {% endif %}
+            {% if module.counter == 'all' %}
+            <div class="pwr-countdown__element">
+              <div class="pwr-countdown__number pwr-countdown__number--secs">67</div>
+              <div class="pwr-countdown__desc">{{ module.translation.txt_secs }}</div>
+            </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if module.has_form %}
+        <div class="pwr-form pwr-sec-coming-soon__form {{ module.style.btn_style }}">
+          {% if module.form.form_id %}
+          <h4 class="pwr-sec-coming-soon__form-title">{{ module.form_title }}</h4>
+          {% form "subscribe" form_to_use='{{ module.form.form_id }}' no_title=True response_response_type='{{ module.form.response_type }}' response_message='{{ module.form.message }}' response_redirect_id={{ module.form.redirect_id }} response_redirect_url='{{ module.form.redirect_url }}' %}
+          {% else %}
+          <h2>Please configure a form</h2>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

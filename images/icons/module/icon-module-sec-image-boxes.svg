@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="106px" viewBox="0 0 128 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon-module-image boxes</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="image-boxes">
+            <rect id="Rectangle-Copy-3" stroke="#516F90" stroke-width="10" fill-opacity="0.3" fill="#516F90" x="5" y="5" width="50" height="62"></rect>
+            <rect id="Rectangle-Copy-36" stroke="#516F90" stroke-width="10" fill-opacity="0.3" fill="#516F90" x="73" y="5" width="50" height="62"></rect>
+            <polyline id="Path-3" stroke="#516F90" stroke-width="10" fill="#FFFFFF" points="3.57133897 63 27.571339 39 51.571339 63"></polyline>
+            <polyline id="Path-3-Copy-2" stroke="#516F90" stroke-width="10" fill="#FFFFFF" points="71.571339 63 95.571339 39 119.571339 63"></polyline>
+            <circle id="Oval" stroke="#516F90" stroke-width="6" fill="#FFFFFF" cx="38" cy="24" r="5"></circle>
+            <circle id="Oval-Copy" stroke="#516F90" stroke-width="6" fill="#FFFFFF" cx="106" cy="24" r="5"></circle>
+            <rect id="Rectangle-Copy-11" fill="#516F90" x="0" y="80" width="60" height="10"></rect>
+            <rect id="Rectangle-Copy-30" fill="#516F90" x="68" y="80" width="60" height="10"></rect>
+            <rect id="Rectangle-Copy-12" fill="#516F90" x="0" y="96" width="32" height="10"></rect>
+            <rect id="Rectangle-Copy-31" fill="#516F90" x="68" y="96" width="36" height="10"></rect>
+        </g>
+    </g>
+</svg>

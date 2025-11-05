@@ -1,0 +1,345 @@
+[ {
+  "id" : "96f8cb7f-3d9d-01fa-98b9-d41fa84e16f9",
+  "name" : "logo_image",
+  "label" : "Imagen Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/logo-innova-home.png",
+    "alt" : "logo-innova-home",
+    "loading" : "lazy",
+    "width" : 216,
+    "height" : 99,
+    "max_width" : 216,
+    "max_height" : 99
+  }
+}, {
+  "id" : "a25c037b-5f46-5967-4804-57776234d2c6",
+  "name" : "logo_url",
+  "label" : "Url Logo",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "https://google.com/"
+}, {
+  "id" : "332c8951-259c-afdb-670d-8de1b7f36c7b",
+  "name" : "social_media",
+  "label" : "Redes Sociales",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "0278a1f3-c4a9-582a-25d2-edec1897229a",
+    "name" : "url_social_media",
+    "label" : "Url Red Social",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://google.com/"
+  }, {
+    "id" : "c718f5f8-cc22-c48a-7bd6-a0791975e2e3",
+    "name" : "icon_social_media",
+    "label" : "Icono Red Social",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/icon-nav-facebook.svg",
+      "alt" : "icon-nav-facebook",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 21,
+      "max_width" : 21,
+      "max_height" : 21
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "url_social_media" : "https://google.com/",
+    "icon_social_media" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/icon-nav-facebook.svg",
+      "alt" : "icon-nav-facebook",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 21,
+      "max_width" : 21,
+      "max_height" : 21
+    }
+  } ]
+}, {
+  "id" : "5633fe39-0cb4-71da-fc5a-fe4450de9918",
+  "name" : "means_contact",
+  "label" : "Medios de contacto",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "00ab5982-be8b-5333-726b-8cd58a49ac34",
+    "name" : "text_contact",
+    "label" : "Item de contacto",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "321 456 56 78"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text_contact" : "321 456 56 78"
+  } ]
+}, {
+  "id" : "787fe663-6e82-00da-0d4b-5c57a58c7a01",
+  "name" : "copyright_text",
+  "label" : "Texto Copyright",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Copyright © Innova Shools 2025 <a href=\"https://google.com/\" class=\"!text-[#044C8D] !underline\" rel=\"noopener\" target=\"_blank\">Privacy Policy</a> <a href=\"https://google.com/\" class=\"!text-[#044C8D] !underline\" rel=\"noopener\" target=\"_blank\">Cookie Policy</a>"
+}, {
+  "id" : "ef8dca5c-9104-995a-2482-a02b414d5b32",
+  "name" : "cta_button_text",
+  "label" : "Texto Boton",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Inscribete"
+}, {
+  "id" : "10db63d6-59f6-ba5d-fd3d-4edca6e785bc",
+  "name" : "url_boton",
+  "label" : "Url Boton",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "https://google.com/"
+}, {
+  "id" : "f1287c7e-38e4-1f94-17cc-4ab51ab4c08b",
+  "name" : "menu_items",
+  "label" : "Items del menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "04e9f46f-4d63-029f-e8aa-7988af4dd2f8",
+    "name" : "item_menu_text",
+    "label" : "Texto Item Menu",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Home"
+  }, {
+    "id" : "522a0112-9202-0f78-cf59-43698c49787f",
+    "name" : "item_menu_url",
+    "label" : "Url Item Menu",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://google.com/"
+  }, {
+    "id" : "f6c66012-de2c-a9e7-f8ac-1ab6b4e3628c",
+    "name" : "has_dropdown",
+    "label" : "¿El item tiene un desplegable?",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "421ac95a-0b91-b766-09c1-c0afe871a2ff",
+    "name" : "dropdown_default_image",
+    "label" : "Imagen Desplegable por defecto",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "menu_items.has_dropdown",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/colegios.png",
+      "alt" : "colegios",
+      "loading" : "lazy",
+      "width" : 2364,
+      "height" : 1568,
+      "max_width" : 2000,
+      "max_height" : 1326.565143824027
+    }
+  }, {
+    "id" : "2b820077-429c-37af-84f9-594034acbfbb",
+    "name" : "dropdown_items",
+    "label" : "Items desplegable",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "7a0dd6c1-e6c6-4feb-8940-3f2b5fc84c66",
+      "name" : "item_dropdown_name",
+      "label" : "Nombre item del dropdown",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Innova Tunja"
+    }, {
+      "id" : "2f267e21-83ce-8c47-6925-a1713aa4c876",
+      "name" : "item_dropdown_slug",
+      "label" : "Slug item del dropdown",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "innova-tunja"
+    }, {
+      "id" : "17418b1b-b8bb-85d9-f20b-e3218fedd6a0",
+      "name" : "item_dropdown_url",
+      "label" : "Url item del dropdown",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "https://google.com/"
+    }, {
+      "id" : "c766430b-22ea-0036-6076-47b1c150749b",
+      "name" : "item_dropdown_image",
+      "label" : "Imagen item del dropdown",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/colegios.png",
+        "alt" : "colegios",
+        "loading" : "lazy",
+        "width" : 2364,
+        "height" : 1568,
+        "max_width" : 2000,
+        "max_height" : 1326.565143824027
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "item_dropdown_name" : "Innova Tunja",
+      "item_dropdown_slug" : "innova-tunja",
+      "item_dropdown_url" : "https://google.com/",
+      "item_dropdown_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/colegios.png",
+        "alt" : "colegios",
+        "loading" : "lazy",
+        "width" : 2364,
+        "height" : 1568,
+        "max_width" : 2000,
+        "max_height" : 1326.565143824027
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "item_menu_text" : "Home",
+    "item_menu_url" : "https://google.com/",
+    "has_dropdown" : false,
+    "dropdown_default_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/colegios.png",
+      "alt" : "colegios",
+      "loading" : "lazy",
+      "width" : 2364,
+      "height" : 1568,
+      "max_width" : 2000,
+      "max_height" : 1326.565143824027
+    },
+    "dropdown_items" : [ {
+      "item_dropdown_name" : "Innova Tunja",
+      "item_dropdown_slug" : "innova-tunja",
+      "item_dropdown_url" : "https://google.com/",
+      "item_dropdown_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/colegios.png",
+        "alt" : "colegios",
+        "loading" : "lazy",
+        "width" : 2364,
+        "height" : 1568,
+        "max_width" : 2000,
+        "max_height" : 1326.565143824027
+      }
+    } ]
+  } ]
+} ]

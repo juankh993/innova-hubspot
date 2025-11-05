@@ -1,0 +1,2970 @@
+[
+    {
+        "label": "Colors",
+        "name": "colors",
+        "type": "group",
+        "children": [
+            {
+                "label": "Brand Colors",
+                "help_text": "The colors you define here will serve as base and be derived by further color settings.",
+                "name": "brand_colors",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Primary color",
+                        "name": "primary_color",
+                        "inline_help_text": "Primary brand color, e.g. Accents / Hightlights, Hovers, Buttons, ...",
+                        "type": "color",
+                        "visibility": {
+                            "hidden_subfields": {
+                                "opacity": true
+                            }
+                        },
+                        "default": {
+                            "color": "#3E35F1"
+                        }
+                    },
+                    {
+                        "label": "Base Color Light",
+                        "name": "base_color_light",
+                        "inline_help_text": "Background for light scheme, light text, base for light borders, ...",
+                        "type": "color",
+                        "visibility": {
+                            "hidden_subfields": {
+                                "opacity": true
+                            }
+                        },
+                        "default": {
+                            "color": "#FFFFFF"
+                        }
+                    },
+                    {
+                        "label": "Accent Color Light",
+                        "name": "accent_color_light",
+                        "inline_help_text": "E.g box background in front of light scheme background",
+                        "type": "color",
+                        "visibility": {
+                            "hidden_subfields": {
+                                "opacity": true
+                            }
+                        },
+                        "default": {
+                            "color": "#F4f6FA"
+                        }
+                    },
+                    {
+                        "label": "Base Color Dark",
+                        "name": "base_color_dark",
+                        "inline_help_text": "Background for dark scheme, dark text, base for dark borders, ...",
+                        "type": "color",
+                        "visibility": {
+                            "hidden_subfields": {
+                                "opacity": true
+                            }
+                        },
+                        "default": {
+                            "color": "#171B25"
+                        }
+                    },
+                    {
+                        "label": "Accent Color Dark",
+                        "name": "accent_color_dark",
+                        "inline_help_text": "E.g box background in front of dark scheme background",
+                        "type": "color",
+                        "visibility": {
+                            "hidden_subfields": {
+                                "opacity": true
+                            }
+                        },
+                        "default": {
+                            "color": "#282B34"
+                        }
+                    }
+                ]
+            },
+            {
+                "label": "POWER",
+                "name": "power",
+                "help_text": "Color styles for POWER templates and modules",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Light Scheme",
+                        "name": "light_scheme",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Background",
+                                "name": "background",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Background Color",
+                                        "name": "background_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    },
+                                    {
+                                        "label": "Background Accent Color",
+                                        "name": "background_accent_color",
+                                        "inline_help_text": "E.g. box backgrounds",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.accent_color_light"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Text",
+                                "name": "text",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Text Color",
+                                        "name": "text_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Titles",
+                                "name": "titles",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Intro Title Color",
+                                        "name": "intro_title_color",
+                                        "inline_help_text": "Section module intro titles",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    },
+                                    {
+                                        "label": "Title Color",
+                                        "name": "title_color",
+                                        "inline_help_text": "Section module titles, Hero Titles, Author Page Post Title, Blog Overview (1 Column Layout)",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Link",
+                                "name": "link",
+                                "inline_help_text": "Applied to links in rich-text fields",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Link Color",
+                                        "name": "link_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.primary_color"
+                                        }
+                                    },
+                                    {
+                                        "label": "Link Hover Color",
+                                        "name": "link_hover_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Forms",
+                                "name": "forms",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Field Label Color",
+                                        "name": "label_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    },
+                                    {
+                                        "label": "Field Border Color",
+                                        "name": "field_border_color",
+                                        "type": "color",
+                                        "inherited_value": {
+                                            "property_value_paths": {
+                                                "color": "theme.colors.brand_colors.base_color_dark.color"
+                                            }
+                                        },
+                                        "default": {
+                                            "opacity": 100
+                                        }
+                                    },
+                                    {
+                                        "label": "Error Color",
+                                        "name": "error_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "default": {
+                                            "color": "#F2545B"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Other",
+                                "name": "other",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Social Icon Color",
+                                        "name": "social_icon_color",
+                                        "inline_help_text": "Header Top (light), Author Page, Media Content Split module",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "default": {
+                                            "color": "#C4C8D3"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Dark Scheme",
+                        "name": "dark_scheme",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Background",
+                                "name": "background",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Background Color",
+                                        "name": "background_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    },
+                                    {
+                                        "label": "Background Accent Color",
+                                        "name": "background_accent_color",
+                                        "inline_help_text": "E.g. box backgrounds",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.accent_color_dark"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Text",
+                                "name": "text",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Text Color",
+                                        "name": "text_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Titles",
+                                "name": "titles",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Intro Title Color",
+                                        "name": "intro_title_color",
+                                        "inline_help_text": "Section module intro titles",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    },
+                                    {
+                                        "label": "Title Color",
+                                        "name": "title_color",
+                                        "inline_help_text": "Section module titles, Hero Titles, Author Page Post Title, Blog Overview (1 Column Layout)",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Link",
+                                "name": "link",
+                                "inline_help_text": "Applied to links in rich-text fields",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Link Color",
+                                        "name": "link_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.primary_color"
+                                        }
+                                    },
+                                    {
+                                        "label": "Link Hover Color",
+                                        "name": "link_hover_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Forms",
+                                "name": "forms",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Field Label Color",
+                                        "name": "label_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    },
+                                    {
+                                        "label": "Field Border Color",
+                                        "name": "field_border_color",
+                                        "type": "color",
+                                        "inherited_value": {
+                                            "property_value_paths": {
+                                                "color": "theme.colors.brand_colors.base_color_light.color"
+                                            }
+                                        },
+                                        "default": {
+                                            "opacity": 60
+                                        }
+                                    },
+                                    {
+                                        "label": "Error Color",
+                                        "name": "error_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "CTAs",
+                        "name": "ctas",
+                        "help_text": "POWER comes with different CTA styles for dark and light scheme. Those styles feed off of the following colors",
+                        "inline_help_text": "Best configured with the template 'Setup Guide'",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "CTA Color Primary",
+                                "name": "btn_color_primary",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.primary_color"
+                                }
+                            },
+                            {
+                                "label": "CTA Color Light",
+                                "name": "btn_color_light",
+                                "inline_help_text": "",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                }
+                            },
+                            {
+                                "label": "CTA Color Dark",
+                                "name": "btn_color_dark",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                }
+                            },
+                            {
+                                "label": "CTA Text Color Light",
+                                "name": "btn_text_color_light",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                }
+                            },
+                            {
+                                "label": "CTA Text Color Dark",
+                                "name": "btn_text_color_dark",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Navigation",
+                        "name": "navigation",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Navigation Font Color Light",
+                                "name": "nav_font_color_light",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                }
+                            },
+                            {
+                                "label": "Navigation Font Color Dark",
+                                "name": "nav_font_color_dark",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                }
+                            },
+                            {
+                                "label": "Navigation Hover Background Color",
+                                "name": "nav_hover_background_color",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.primary_color"
+                                }
+                            },
+                            {
+                                "label": "Navigation Hover Font Color",
+                                "name": "nav_hover_font_color",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "HubSpot Default",
+                "name": "hs",
+                "help_text": "Basic color styles independent of POWER modules",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "HTML",
+                        "name": "html",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Background",
+                                "name": "background",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Site Background",
+                                        "name": "background_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Links",
+                                "name": "links",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Link Color",
+                                        "name": "link_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.primary_color"
+                                        }
+                                    },
+                                    {
+                                        "label": "Link Hover Color",
+                                        "name": "link_hover_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "HubSpot Forms Module",
+                        "name": "forms",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Title Background Color",
+                                "name": "title_background_color",
+                                "type": "color",
+                                "inherited_value": {
+                                    "property_value_paths": {
+                                        "color": "theme.colors.brand_colors.accent_color_light.color"
+                                    }
+                                },
+                                "default": {
+                                    "opacity": 0
+                                }
+                            },
+                            {
+                                "label": "Title Text Color",
+                                "name": "title_text_color",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                }
+                            },
+                            {
+                                "label": "Background Color",
+                                "name": "background_color",
+                                "type": "color",
+                                "inherited_value": {
+                                    "property_value_paths": {
+                                        "color": "theme.colors.brand_colors.accent_color_light.color"
+                                    }
+                                },
+                                "default": {
+                                    "opacity": 0
+                                }
+                            },
+                            {
+                                "label": "Border Color",
+                                "name": "border_color",
+                                "type": "color",
+                                "inherited_value": {
+                                    "property_value_paths": {
+                                        "color": "theme.colors.brand_colors.base_color_dark.color"
+                                    }
+                                },
+                                "default": {
+                                    "opacity": 0
+                                }
+                            },
+                            {
+                                "label": "Field Label Color",
+                                "name": "label_color",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "inherited_value": {
+                                    "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                }
+                            },
+                            {
+                                "label": "Field Border Color",
+                                "name": "field_border_color",
+                                "type": "color",
+                                "inherited_value": {
+                                    "property_value_paths": {
+                                        "color": "theme.colors.brand_colors.base_color_dark.color"
+                                    }
+                                },
+                                "default": {
+                                    "opacity": 100
+                                }
+                            },
+                            {
+                                "label": "Error Color",
+                                "name": "error_color",
+                                "type": "color",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "opacity": true
+                                    }
+                                },
+                                "default": {
+                                    "color": "#F2545B"
+                                }
+                            },
+                            {
+                                "label": "Submit Button",
+                                "name": "submit_btn",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Background Color",
+                                        "name": "background_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.primary_color"
+                                        }
+                                    },
+                                    {
+                                        "label": "Background Color Hover",
+                                        "name": "background_color_hover",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_dark"
+                                        }
+                                    },
+                                    {
+                                        "label": "Text Color",
+                                        "name": "text_color",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    },
+                                    {
+                                        "label": "Text Color Hover",
+                                        "name": "text_color_hover",
+                                        "type": "color",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "opacity": true
+                                            }
+                                        },
+                                        "inherited_value": {
+                                            "default_value_path": "theme.colors.brand_colors.base_color_light"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Fonts",
+        "name": "typography",
+        "type": "group",
+        "children": [
+            {
+                "label": "Basic Setup",
+                "name": "fonts",
+                "help_text": "Setup base font family, accent font family and font-smoothing",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Base Font",
+                        "name": "base_font",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Family",
+                                "name": "font_family",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "size": true,
+                                        "styles": true,
+                                        "color": true
+                                    }
+                                },
+                                "load_external_fonts": false,
+                                "default": {
+                                    "font": "Inter",
+                                    "font_set": "GOOGLE",
+                                    "fallback": "sans-serif"
+                                }
+                            },
+                            {
+                                "label": "Font Weights",
+                                "name": "font_weights",
+                                "help_text": "Please do not activate italic fonts, if the selected Google font does not offer italic weigths! You can check that here: https://fonts.google.com/",
+                                "inline_help_text": "We recommend to only activate font-weights that are used throughout your site. This keeps the file-size of your font-files low and is healthy for your page loading time ;)",
+                                "expanded": true,
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Thin 100",
+                                        "name": "is_100",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Thin 100 italic",
+                                        "name": "is_100_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-light 200",
+                                        "name": "is_200",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-light 200 Italic",
+                                        "name": "is_200_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Light 300",
+                                        "name": "is_300",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Light 300 Italic",
+                                        "name": "is_300_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Regular 400",
+                                        "name": "is_400",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Regular 400 Italic",
+                                        "name": "is_400_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Medium 500",
+                                        "name": "is_500",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Medium 500 Italic",
+                                        "name": "is_500_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Semi-bold 600",
+                                        "name": "is_600",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Semi-bold 600 Italic",
+                                        "name": "is_600_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Bold 700",
+                                        "name": "is_700",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Bold 700 Italic",
+                                        "name": "is_700_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-bold 800",
+                                        "name": "is_800",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-bold 800 Italic",
+                                        "name": "is_800_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Black 900",
+                                        "name": "is_900",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Black 900 Italic",
+                                        "name": "is_900_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Accent Font",
+                        "name": "accent_font",
+                        "inline_help_text": "Used for Headings, Menu, CTAs, ...",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Family",
+                                "name": "font_family",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "size": true,
+                                        "styles": true,
+                                        "color": true
+                                    }
+                                },
+                                "load_external_fonts": false,
+                                "default": {
+                                    "font": "Poppins",
+                                    "font_set": "GOOGLE",
+                                    "fallback": "sans-serif"
+                                }
+                            },
+                            {
+                                "label": "Font Weights",
+                                "name": "font_weights",
+                                "help_text": "Please do not activate italic fonts, if the selected Google font does not offer italic weigths! You can check that here: https://fonts.google.com/",
+                                "inline_help_text": "We recommend to only activate font-weights that are used throughout your site. This keeps the file-size of your font-files low and is healthy for your page loading time ;)",
+                                "expanded": true,
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Thin 100",
+                                        "name": "is_100",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Thin 100 italic",
+                                        "name": "is_100_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-light 200",
+                                        "name": "is_200",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-light 200 Italic",
+                                        "name": "is_200_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Light 300",
+                                        "name": "is_300",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Light 300 Italic",
+                                        "name": "is_300_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Regular 400",
+                                        "name": "is_400",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Regular 400 Italic",
+                                        "name": "is_400_italic",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Medium 500",
+                                        "name": "is_500",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Medium 500 Italic",
+                                        "name": "is_500_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Semi-bold 600",
+                                        "name": "is_600",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Semi-bold 600 Italic",
+                                        "name": "is_600_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Bold 700",
+                                        "name": "is_700",
+                                        "type": "boolean",
+                                        "default": true
+                                    },
+                                    {
+                                        "label": "Bold 700 Italic",
+                                        "name": "is_700_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-bold 800",
+                                        "name": "is_800",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Extra-bold 800 Italic",
+                                        "name": "is_800_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Black 900",
+                                        "name": "is_900",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
+                                    {
+                                        "label": "Black 900 Italic",
+                                        "name": "is_900_italic",
+                                        "type": "boolean",
+                                        "default": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Use Font Smoothing",
+                        "name": "is_font_smoothing",
+                        "inline_help_text": "Controls the application of anti-aliasing when fonts are rendered",
+                        "type": "boolean",
+                        "default": true
+                    }
+                ]
+            },
+            {
+                "label": "Formatting",
+                "name": "font_settings",
+                "help_text": "Setup font sizes, font weights, line heights, letter spacing for different elements",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Heading - H1",
+                        "name": "heading_one",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 72,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 85
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": -1
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Heading - H2",
+                        "name": "heading_two",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 38,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 61
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": -1
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Heading - H3",
+                        "name": "heading_three",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 32,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 51
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": -0.5
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Heading - H4",
+                        "name": "heading_four",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 24,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 38
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": -0.5
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Heading - H5",
+                        "name": "heading_five",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 19,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 30
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Heading - H6",
+                        "name": "heading_six",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 16,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "700"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 26
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Body Text",
+                        "name": "body_",
+                        "inline_help_text": "This is your base font setting. Most elements will derive from this.",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 16,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Base font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "400"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 26
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Body Text - Blog Post",
+                        "name": "post_body",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 18,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Base font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "400"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 38
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Paragraph - p",
+                        "name": "paragraph",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 16,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Base font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "400"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 32
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            } 
+                        ]
+                    },  
+                    {
+                        "label": "Section Module - Intro Title",
+                        "name": "sec_intro_title",
+                        "inline_help_text": "Smaller title above the actual section title",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 18,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "400"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 29
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },  
+                    {
+                        "label": "Section Module - Description",
+                        "name": "sec_desc",
+                        "inline_help_text": "Optional intro description text below section module title",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 18,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Base font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "400"
+                            },
+                            {
+                                "label": "Line Height",
+                                "name": "line_height",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "min": 0,
+                                "step": 1,
+                                "default": 36
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Buttons",
+                        "name": "btns",
+                        "type": "group",
+                        "children": [ 
+                            {
+                                "label": "Font Size",
+                                "name": "font_size",
+                                "type": "font",
+                                "visibility": {
+                                    "hidden_subfields": {
+                                        "styles": true,
+                                        "font": true,
+                                        "color": true
+                                    }
+                                },
+                                "default": {
+                                    "size": 13,
+                                    "size_unit": "px"
+                                }
+                            },
+                            {
+                                "label": "Font Weight",
+                                "name": "font_weight",
+                                "help_text": "Please make sure this weight is loaded for this font family",
+                                "inline_help_text": "Accent font",
+                                "display" : "select",
+                                "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                "type" : "choice",
+                                "default": "800"
+                            },
+                            {
+                                "label": "Letter Spacing",
+                                "name": "letter_spacing",
+                                "suffix": "px",
+                                "type": "number",
+                                "display": "text",
+                                "step": 0.05,
+                                "default": 0
+                            }                            
+                        ]
+                    },
+                    {
+                        "label": "Header",
+                        "name": "header",
+                        "inline_help_text": "We recommend to configure your global header first to get a better base to define your styles here.<br>Furthermore, we recommend font styles to be close to the theme default values.",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Top Header",
+                                "name": "top_header",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 12,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "800"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Header",
+                                "name": "header",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "700"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Hamburger",
+                                "name": "burger",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 13,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "800"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Mega Menu",
+                                "name": "mega_menu",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 13,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "800"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            }                
+                        ]
+                    },
+                    {
+                        "label": "Footer",
+                        "name": "footer",
+                        "inline_help_text": "We recommend to configure your global footer first to get a better base to define your styles here.<br>Furthermore, we recommend font styles to be close to the theme default values.",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Text",
+                                "name": "text",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "400"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Menu Titles",
+                                "name": "menu_titles",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "700"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Menu",
+                                "name": "menu",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Accent font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "500"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Footer Legal - Text",
+                                "name": "legal_text",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 12,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "500"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Form",
+                        "name": "form",
+                        "inline_help_text": "We recommend font styles to be close to the theme default values.",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Labels",
+                                "name": "labels",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "500"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Help Texts",
+                                "name": "help",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "400"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Inputs",
+                                "name": "inputs",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 16,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "400"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Error Texts",
+                                "name": "errors",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 16,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "500"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            },
+                            {
+                                "label": "Legal Consent Texts",
+                                "name": "legal_consent",
+                                "type": "group",
+                                "children": [
+                                    {
+                                        "label": "Font Size",
+                                        "name": "font_size",
+                                        "type": "font",
+                                        "visibility": {
+                                            "hidden_subfields": {
+                                                "styles": true,
+                                                "font": true,
+                                                "color": true
+                                            }
+                                        },
+                                        "default": {
+                                            "size": 14,
+                                            "size_unit": "px"
+                                        }
+                                    },
+                                    {
+                                        "label": "Font Weight",
+                                        "name": "font_weight",
+                                        "help_text": "Please make sure this weight is loaded for this font family",
+                                        "inline_help_text": "Base font",
+                                        "display" : "select",
+                                        "choices" : [ [ "100", "Thin 100" ], [ "200", "Extra-light 200" ], [ "300", "Light 300" ], [ "400", "Regular 400" ], [ "500", "Medium 500" ], [ "600", "Semi-bold 600" ], [ "700", "Bold 700" ], [ "800", "Extra-bold 800" ], [ "900", "Black 900" ] ],
+                                        "type" : "choice",
+                                        "default": "400"
+                                    },
+                                    {
+                                        "label": "Letter Spacing",
+                                        "name": "letter_spacing",
+                                        "suffix": "px",
+                                        "type": "number",
+                                        "display": "text",
+                                        "step": 0.05,
+                                        "default": 0
+                                    }            
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Uppercase",
+                        "name": "is_uppercase",
+                        "inline_help_text": "Automatically transform certain texts as uppercase",
+                        "type": "group",
+                        "children": [
+                            {
+                                "label": "Titles",
+                                "name": "titles",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            {
+                                "label": "Navigation",
+                                "name": "nav",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            {
+                                "label": "CTAs / Links",
+                                "name": "links",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            {
+                                "label": "Other",
+                                "name": "other",
+                                "type": "boolean",
+                                "inline_help_text": "Names, Dates, Job-Titles, Read-time, ...",
+                                "default": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Styling",
+        "name": "styling",
+        "type": "group",
+        "children": [
+            {
+                "label": "Corners",
+                "name": "corners",
+                "expanded": true,
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Base Border Radius",
+                        "name": "border_radius",
+                        "help_text": "The border radius you define here will be derived for the following border radius settings (except checkboxes).",
+                        "suffix": "px",
+                        "type": "number",
+                        "display": "text",
+                        "max": 30,
+                        "min": 0,
+                        "default": 6
+                    },
+                    {
+                        "label": "Overwrite for Buttons",
+                        "name": "btns",
+                        "suffix": "px",
+                        "type": "number",
+                        "inherited_value": {
+                            "default_value_path": "theme.styling.corners.border_radius"
+                        },
+                        "display": "text",
+                        "max": 30,
+                        "min": 0
+                    },
+                    {
+                        "label": "Overwrite for Inputs",
+                        "name": "inputs",
+                        "suffix": "px",
+                        "type": "number",
+                        "inherited_value": {
+                            "default_value_path": "theme.styling.corners.border_radius"
+                        },
+                        "display": "text",
+                        "max": 30,
+                        "min": 0
+                    },
+                    {
+                        "label": "Overwrite for Dropdowns",
+                        "name": "dropdowns",
+                        "suffix": "px",
+                        "type": "number",
+                        "inherited_value": {
+                            "default_value_path": "theme.styling.corners.border_radius"
+                        },
+                        "display": "text",
+                        "max": 30,
+                        "min": 0
+                    },
+                    {
+                        "label": "Overwrite for Boxes",
+                        "name": "boxes",
+                        "suffix": "px",
+                        "type": "number",
+                        "inherited_value": {
+                            "default_value_path": "theme.styling.corners.border_radius"
+                        },
+                        "display": "text",
+                        "max": 30,
+                        "min": 0
+                    },
+                    {
+                        "label": "Overwrite for Images",
+                        "name": "imgs",
+                        "suffix": "px",
+                        "type": "number",
+                        "inherited_value": {
+                            "default_value_path": "theme.styling.corners.border_radius"
+                        },
+                        "display": "text",
+                        "max": 30,
+                        "min": 0
+                    },
+                    {
+                        "label": "Checkboxes",
+                        "name": "checkboxes",
+                        "help_text": "This border radius should not be much bigger than 6 pixels, because the checkboxes would then look like radio buttons ;)",
+                        "suffix": "px",
+                        "type": "number",
+                        "display": "text",
+                        "max": 6,
+                        "min": 0,
+                        "default": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Effects",
+        "name": "fx",
+        "type": "group",
+        "children": [
+            {
+                "label": "3D Box Effect",
+                "name": "is_3d_effect",
+                "inline_help_text": "3D effect when user hovers over a box element",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "label": "Button Hover Effect - Slide Up",
+                "name": "is_btn_effect",
+                "inline_help_text": "Background hover color slides up when user hovers over the element",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+        "label": "Blog",
+        "name": "blog",
+        "type": "group",
+        "children": [
+            {
+                "label": "Blog Listing",
+                "name": "blog_listing",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Show Filter Bar",
+                        "name": "is_filter_bar",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label" : "Layout",
+                        "name" : "layout",
+                        "display" : "select",
+                        "choices" : [ [ "1col", "One Column" ], [ "2col", "Two Columns" ], [ "3col", "Three Columns" ] ],
+                        "type" : "choice",
+                        "required" : true,
+                        "default" : "3col"
+                    },
+                    {
+                        "label": "Show Blog Post Author?",
+                        "name": "show_author",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Show Blog Post Date?",
+                        "name": "show_date",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Show Blog Post Reading Time?",
+                        "name": "show_read_time",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "id": "blog_listing.show_summary",
+                        "label": "Show Blog Post Summary?",
+                        "name": "show_summary",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Get Summary from...",
+                        "name": "summary",
+                        "visibility": {
+                            "controlling_field": "blog_listing.show_summary",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        },
+                        "display": "select",
+                        "choices": [["content","Blog Post Content"],["meta","Blog Post Meta Description"]],
+                        "type": "choice",
+                        "default": "content"
+                    },
+                    {
+                        "label": "Truncate Summary",
+                        "name": "truncate",
+                        "help_text": "Optionally cut summary text after a certain number of characters to be specified in \"Truncate at\"  Default for 2 and 3 column layout = 90 Default for one column = 240",
+                        "visibility": {
+                            "controlling_field": "blog_listing.show_summary",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        },
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Truncate - At ... Characters",
+                        "name": "truncate_at",
+                        "visibility": {
+                            "controlling_field": "blog_listing.show_summary",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL",
+                            "access": null,
+                            "hidden_subfields": null
+                        },
+                        "display": "text",
+                        "min": 0,
+                        "step": 1,
+                        "type": "number",
+                        "default": 90
+                    },
+                    {
+                        "label" : "Pagination",
+                        "name" : "pagination",
+                        "display" : "select",
+                        "choices" : [ [ "load_more", "Load More Button" ], [ "standard", "Standard Pagination" ] ],
+                        "type" : "choice",
+                        "required" : true,
+                        "default" : "load_more"
+                    }
+                ]
+            },
+            {
+                "label": "Blog Post",
+                "name": "blog_post",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Show Navigation Bar",
+                        "name": "is_nav_bar",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Show Related Posts",
+                        "name": "is_related_posts",
+                        "type": "boolean",
+                        "default": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Layout",
+        "name": "layout",
+        "type": "group",
+        "children": [
+            {
+                "label": "Shift Header Menu Position Starting From Left",
+                "name": "header_menu_pos",
+                "suffix": "%",
+                "type": "number",
+                "display": "slider",
+                "max": 100,
+                "min": 0,
+                "default": 13
+            },
+            {
+                "label": "Content Width",
+                "name": "content_width",
+                "step": 1,
+                "suffix": "px",
+                "type": "number",
+                "min": 993,
+                "default": 1200
+            },
+            {
+                "label": "Section Paddings",
+                "name": "spacing",
+                "inline_help_text": "Related to section module layout settings: [padding-top, padding-bottom]",
+                "expanded": true,
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Section Padding Small",
+                        "name": "sec_padding_small",
+                        "type": "number",
+                        "suffix": "px",
+                        "display": "text",
+                        "max": 500,
+                        "min": 0,
+                        "default": 40
+                    },
+                    {
+                        "label": "Section Padding Medium",
+                        "name": "sec_padding_medium",
+                        "type": "number",
+                        "suffix": "px",
+                        "display": "text",
+                        "max": 500,
+                        "min": 0,
+                        "default": 80
+                    },
+                    {
+                        "label": "Section Padding Large",
+                        "name": "sec_padding_large",
+                        "type": "number",
+                        "suffix": "px",
+                        "display": "text",
+                        "max": 500,
+                        "min": 0,
+                        "default": 180
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Responsiveness",
+        "name": "resp",
+        "type": "group",
+        "children": [
+            {
+                "label": "Header",
+                "name": "header",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Header Menu Breakpoint",
+                        "name": "header_breakpoint",
+                        "inline_help_text" : "Show burger menu from 0 - ... pixels",
+                        "display": "text",
+                        "min": 769,
+                        "step": 1,
+                        "type": "number",
+                        "default": 1200
+                    }
+                ]
+            },
+            {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Horizontal Padding - Smaller Desktops / Tablets",
+                        "name": "padding_hor_desktop",
+                        "inline_help_text" : "[769 - content width] pixels",
+                        "display": "text",
+                        "min": 0,
+                        "max": 60,
+                        "step": 1,
+                        "type": "number",
+                        "default": 40
+                    },
+                    {
+                        "label": "Horizontal Padding - Mobile",
+                        "name": "padding_hor_mobile",
+                        "inline_help_text" : "[0 - 576] pixels",
+                        "display": "text",
+                        "min": 0,
+                        "max": 60,
+                        "step": 1,
+                        "type": "number",
+                        "default": 40
+                    },
+                    {
+                        "label": "Mobile - Reduce Spacing",
+                        "name": "reduce_spacing_by",
+                        "inline_help_text" : "[margins / paddings] by factor [0 - 50]% where applicable",
+                        "display": "text",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "type": "number",
+                        "default": 25
+                    }
+                ]
+            },
+            {
+                "label": "Font Sizes",
+                "name": "font_sizes",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Mobile - Reduce Font Size",
+                        "name": "reduce_font_size_by",
+                        "inline_help_text" : "by factor [0 - 50]% where applicable",
+                        "display": "text",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "type": "number",
+                        "default": 25
+                    },
+                    {
+                        "label": "Mobile - Minimum Font Size",
+                        "name": "min_font_size",
+                        "inline_help_text" : "Reduce not lower than ... pixels",
+                        "display": "text",
+                        "min": 0,
+                        "step": 1,
+                        "type": "number",
+                        "default": 15
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Performance",
+        "name": "performance",
+        "type": "group",
+        "children": [
+            {
+                "label": "Responsive Image Variants",
+                "name": "images",
+                "inline_help_text": "Images will be lazy-loaded and dynamically exchanged depending on device width and pixel density",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Image width XS",
+                        "name": "image_width_xs",
+                        "inline_help_text": "Max. image width for [Mobile Portrait]",
+                        "type": "number",
+                        "display": "text",
+                        "default": 575
+                    },
+                    {
+                        "label": "Image width S",
+                        "name": "image_width_s",
+                        "inline_help_text": "Max. image width for [Mobile Landscape] or [Tablet Portrait]",
+                        "type": "number",
+                        "display": "text",
+                        "default": 767
+                    },
+                    {
+                        "label": "Image width M",
+                        "name": "image_width_m",
+                        "inline_help_text": "Max. image width for [Tablet Landscape]",
+                        "type": "number",
+                        "display": "text",
+                        "default": 991
+                    },
+                    {
+                        "label": "Image width L",
+                        "name": "image_width_l",
+                        "inline_help_text": "Max. image width for [larger Tablets] or [small Desktops]",
+                        "type": "number",
+                        "display": "text",
+                        "default": 1199
+                    },
+                    {
+                        "label": "Maximum image size",
+                        "name": "image_max_size",
+                        "inline_help_text": "Max. image width for [larger Desktops]",
+                        "type": "number",
+                        "display": "text",
+                        "default": 2000
+                    }
+                ]
+            },
+            {
+                "label": "Retina Images",
+                "name": "retina_images",
+                "type": "group",
+                "children": [
+                    {
+                        "label": "Retina image scaling",
+                        "name": "image_retina_scaling_factor",
+                        "inline_help_text": "Images will be scaled by this factor for higher density screens",
+                        "help_text": "1 = no retina support (best performance) <br>1.5 = semi-retina support <br>2 = retina support (best quality)",
+                        "type": "number",
+                        "display": "text",
+                        "default": 1.5
+                    }
+                ]
+            },
+            {
+                "label": "Turn off Parallax on Mobile",
+                "name": "switch_off_mobile_parallax",
+                "inline_help_text": "This will remove the parallax scrolling effect from your section backgrounds on mobile",
+                "type": "boolean",
+                "default": false
+            }
+        ]
+    },
+    {
+        "label": "SEO",
+        "name": "seo",
+        "type": "group",
+        "children": [
+            {
+                "label": "Schema.org",
+                "name": "schema",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                    {
+                        "label": "Basic Schema",
+                        "name": "is_schema_basic",
+                        "inline_help_text": "Adds schema to every page",
+                        "help_text": "Company name, logo, address, language from Settings > Account Defaults > Branding as well as Email and Phone configured in the POWER header",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label": "Blog Post Schema",
+                        "name": "is_schema_blog_post",
+                        "inline_help_text": "Adds additional schema to blog posts",
+                        "help_text": "Headline, image, author, publish date, abstract, text, url, publisher, wordcount, tags",
+                        "type": "boolean",
+                        "default": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Animation",
+        "name": "animation",
+        "type": "group",
+        "children": [
+            {
+                "label": "Animation on Scroll",
+                "name": "aos",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                    {
+                        "id": "is_aos",
+                        "label": "Animation on Scroll?",
+                        "name": "is_aos",
+                        "inline_help_text": "Turn on/off animation on scroll globally.",
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
+                        "label" : "Disable Animation on...",
+                        "name" : "disable",
+                        "display" : "select",
+                        "choices" : [ [ "none", "None" ], [ "phone", "Mobile" ], [ "tablet", "Tablet" ], [ "mobile", "Mobile + Tablet" ] ],
+                        "type" : "choice",
+                        "required" : true,
+                        "visibility": {
+                            "controlling_field": "is_aos",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        },
+                        "default" : "phone"
+                    },
+                    {
+                        "label" : "Default Animation Type",
+                        "name" : "animation_type",
+                        "display" : "select",
+                        "choices" : [ [ "fade-in", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-left", "Fade Left" ], [ "fade-right", "Fade Right" ], [ "fade-up-right", "Fade Up Right" ], [ "fade-up-left", "Fade Up Left" ], [ "fade-down-right", "Fade Down Right" ], [ "fade-down-left", "Fade Down Left" ], [ "flip-up", "Flip Up" ], [ "flip-down", "Flip Down" ], [ "flip-left", "Flip Left" ], [ "flip-right", "Flip Right" ], [ "slide-up", "Slide Up" ], [ "slide-down", "Slide Down" ], [ "slide-left", "Slide Left" ], [ "slide-right", "Slide Right" ], [ "zoom-in", "Zoom In" ], [ "zoom-in-up", "Zoom In Up " ], [ "zoom-in-down", "Zoom In Down" ], [ "zoom-in-left", "Zoom In Left" ], [ "zoom-in-right", "Zoom In Right" ], [ "zoom-out", "Zoom Out" ], [ "zoom-out-up", "Zoom Out Up" ], [ "zoom-out-down", "Zoom Out Down" ], [ "zoom-out-left", "Zoom Out Left" ], [ "zoom-out-right", "Zoom Out Right" ] ],
+                        "type" : "choice",
+                        "required" : true,
+                        "visibility": {
+                            "controlling_field": "is_aos",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        },
+                        "default" : "fade-in"
+                    }, 
+                    {
+                        "label": "Default Delay",
+                        "name": "delay",
+                        "inline_help_text": "Values from 0 to 3000, with step 50ms",
+                        "type": "number",
+                        "display": "text",
+                        "default": 50,
+                        "step": 50,
+                        "max": 3000,
+                        "min": 0,
+                        "required" : true,
+                        "visibility": {
+                            "controlling_field": "is_aos",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        }
+                    },
+                    {
+                        "label": "Default Offset",
+                        "name": "offset",
+                        "inline_help_text": "Offset (in px) from the original trigger point",
+                        "type": "number",
+                        "display": "text",
+                        "default": 250,
+                        "required" : true,
+                        "visibility": {
+                            "controlling_field": "is_aos",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        }
+                    },                    
+                    {
+                        "label": "Default Duration",
+                        "name": "duration",
+                        "inline_help_text": "Values from 0 to 3000, with step 50ms",
+                        "type": "number",
+                        "display": "text",
+                        "default": 400,
+                        "step": 50,
+                        "max": 3000,
+                        "min": 0,
+                        "required" : true,
+                        "visibility": {
+                            "controlling_field": "is_aos",
+                            "controlling_value_regex": "true",
+                            "operator": "EQUAL"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

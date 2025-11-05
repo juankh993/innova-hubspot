@@ -1,0 +1,183 @@
+[ {
+  "id" : "46d32b2a-bcf3-565a-04ae-5b234674337e",
+  "name" : "main_title",
+  "label" : "Titulo principal",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Conoce nuestros"
+}, {
+  "id" : "11aebca2-e706-9127-eafe-cd25eeb89692",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Valores agregados"
+}, {
+  "id" : "16dad68c-df9f-a4e3-d49b-b4daee5b707a",
+  "name" : "description",
+  "label" : "Descripción",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>"
+}, {
+  "id" : "d7721731-5568-8be9-c946-8e1d09b36d4d",
+  "name" : "list_items",
+  "label" : "Lista de items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "5948af5c-c2f6-1ed8-546d-9adedb83af40",
+    "name" : "network_list_item_title",
+    "label" : "Titulo Item Lista",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "+74.000"
+  }, {
+    "id" : "b7da0af6-41e1-dcaf-066b-274660f260ff",
+    "name" : "network_list_item_subtitle",
+    "label" : "Subtitulo Item Lista",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Estudiantes en Latinoamérica"
+  }, {
+    "id" : "ebebd366-8680-e247-6ee0-56c9abb18f05",
+    "name" : "network_list_item_icon",
+    "label" : "Icono Item Lista",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/icono-rayo.svg",
+      "alt" : "icono-rayo",
+      "loading" : "lazy",
+      "width" : 49,
+      "height" : 49,
+      "max_width" : 49,
+      "max_height" : 49
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "network_list_item_title" : "+74.000",
+    "network_list_item_subtitle" : "Estudiantes en Latinoamérica",
+    "network_list_item_icon" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/icono-rayo.svg",
+      "alt" : "icono-rayo",
+      "loading" : "lazy",
+      "width" : 49,
+      "height" : 49,
+      "max_width" : 49,
+      "max_height" : 49
+    }
+  } ]
+}, {
+  "id" : "43b15139-72eb-3308-06ee-453fdb93a80d",
+  "name" : "image_schools",
+  "label" : "Imagen Colegios Actuales",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/correo%20open%20virtual/general.gif",
+    "alt" : "general",
+    "width" : 1080,
+    "height" : 742,
+    "max_width" : 1080,
+    "max_height" : 742
+  }
+}, {
+  "id" : "e61fbe00-6341-7ad3-0786-8f14dcb48f12",
+  "name" : "allies_title",
+  "label" : "Titulo Aliados",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "nuestros aliados"
+}, {
+  "id" : "7e6a1b36-1abe-faab-c57c-68743614e800",
+  "name" : "allies",
+  "label" : "Aliados",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "5ef6fe75-a609-1ba9-1e5d-df35fb2f690c",
+    "name" : "allie_image",
+    "label" : "Imagen de Aliado",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/aliado-ideo.png",
+      "alt" : "aliado-ideo",
+      "loading" : "lazy",
+      "width" : 137,
+      "height" : 33,
+      "max_width" : 137,
+      "max_height" : 33
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "allie_image" : {
+      "size_type" : "auto",
+      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/aliado-ideo.png",
+      "alt" : "aliado-ideo",
+      "loading" : "lazy",
+      "width" : 137,
+      "height" : 33,
+      "max_width" : 137,
+      "max_height" : 33
+    }
+  } ]
+} ]

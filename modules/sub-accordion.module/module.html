@@ -1,0 +1,36 @@
+{# *********************************************
+   * POWER Theme Sub Module Accordion V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+<div class="pwr-sub-accordion">
+    
+    <div class="pwr-accordion-container {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} pwr--align-l pwr--clearfix">
+      {% for acc in module.accordion %}
+        <div class="pwr-accordion {% if module.style.box_color.color %}pwr-accordion--color-overwritten{% endif %} pwr--colored-box"
+          {# Animation on Scroll #}
+          {{ get_aos(acc.animation) }}       
+        >
+          <span class="pwr-accordion__title" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>{{ acc.title }}<i class="pwr-accordion__icon"></i></span>
+          <span class="pwr-rich-text pwr-accordion__desc" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>{{ acc.description }}</span>
+        </div>
+      {% endfor %}  
+    </div>
+
+</div> 

@@ -1,0 +1,229 @@
+{# *********************************************
+   * POWER Theme Section Map V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+{% if module.anchor_link_id  %}<div class="pwr-anchor" id="{{ module.anchor_link_id }}"></div>{% endif %}
+<div class="pwr-sec-map {% if module.layout.section_variant  == 'map_left' %}pwr-sec-split--invert-cols{% endif %}"
+  {# Animation on Scroll #}
+  {{ get_aos(module.animation.section) }}       
+>
+  <div class="{% if !module.layout.full_width %}page-center{% endif %} pwr--relative">
+    <div class="row-fluid pwr--clearfix">
+      {% if module.layout.section_variant  != 'map_only' %}
+      <div class="{% if module.layout.section_variant == 'map_left' || module.layout.section_variant == 'map_right' %}pwr-sec-split__left{% else %}pwr-sec-map__box {% if module.layout.section_variant == 'box_left' %}pwr-sec-map__box--left{% else %}pwr-sec-map__box--right{% endif %}{% endif %} {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} pwr--relative lazyload" 
+          {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+          {% elif bgImg.src && bgImgPos != 'parallax' %}
+            {# Lazy load and resposive images for background-image #}           
+            data-bgset="{{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_xs * 2 }}w [(max-width: 575px)] | 
+                        {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_s * 2 }}w [(max-width: 767px)] | 
+                        {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_m * 2 }}w [(max-width: 991px)] | 
+                        {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l) }} {{ theme.performance.images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_l * 2 }}w [(max-width: 1199px)] |
+                        {{ resize_image_url(bgImg.src,theme.performance.images.image_max_size * theme.performance.retina_images.image_retina_scaling_factor) }}"
+            data-sizes="auto"
+            style="background-size: cover;background-position: {{ bgImgPos }};"
+           {% elif bgImg.src && bgImgPos == 'parallax' %}
+            style="background-color: transparent;"
+           {% elif bgGradientDir %}
+            style="
+                  background: {{ bgGradientColor1 }};
+                  background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                  background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                  background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+                  "     
+           {% endif %}           
+           >
+          {% if bgImg.src && bgImgPos == 'parallax' %}
+            <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+          {% endif %}
+          {% if bgVid %}
+          <div class="pwr-video-background {{ bgVidPos }}">
+            {% if isYtVid %}
+            <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+              <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+            </div>
+            {% else %}
+            <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+          <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+          {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+          <div class="pwr--abs-full" style="
+                    background: {{ bgGradientColor1 }};
+                    background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+                    background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                    background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+                    opacity: {{ generalOpacity }};
+                    "></div>
+          {% endif %}
+        
+        <div class="pwr-sec-map__content pwr--relative" {% if (module.layout.section_variant == 'map_left' || module.layout.section_variant == 'map_right') && module.layout.section_height %}style="height:{{ module.layout.section_height }}px"{% endif %}>
+          {% if module.intro_to_title %}
+          <span class="pwr-sec__title-intro pwr-sec__title-intro--narrow pwr-sec-map__title-intro"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.intro_to_title) }}       
+          >
+            {{ module.intro_to_title }}
+          </span>
+          {% endif %}
+          {% if module.title_sel_heading && module.title %}
+          <{{ module.title_sel_heading }} class="pwr-sec__title pwr-sec__title--narrow pwr-sec-map__title"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.title) }}       
+          >{{ module.title }}</{{ module.title_sel_heading }}>
+          {% endif %}          
+          <span class="pwr-rich-text pwr-sec__desc pwr-sec-map__desc"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.description) }}       
+          >
+            {{ module.desc }}
+          </span>       
+          {% if module.contact %}
+          <div class="pwr-sec-map__contact-container"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.contact_info) }}       
+          >
+            {% if module.address %}
+            <div class="pwr--clearfix">
+              <span class="pwr-sec-map__contact-icon">{% icon name="map-marker-alt" style="SOLID" unicode="f3c5" %}</span>
+              <span class="pwr-sec-map__contact">{{ module.address }}</span>
+            </div>
+            {% endif %}
+            {% if module.email %}
+            <div class="pwr--clearfix">
+              <span class="pwr-sec-map__contact-icon">{% icon name="envelope" style="SOLID" unicode="f0e0" %}</span>
+              <a class="pwr-sec-map__contact" href="mailto:{{ module.email }}">{{ module.email }}</a>
+            </div>
+            {% endif %}
+            {% if module.phone %}
+            <div class="pwr--clearfix">
+              <span class="pwr-sec-map__contact-icon pwr--flip-hor">{% icon name="phone" style="SOLID" unicode="f095" %}</span>
+              <a class="pwr-sec-map__contact" href="tel:{{ module.phone_link }}">{{ module.phone }}</a>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if module.btn_type == 'cta' && module.cta && module.cta != 'null' %}
+          <div class="pwr-sec-map__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.button) }}       
+          >
+            {% cta "cta_name" guid="{{module.cta}}" %}
+          </div>
+          {% elif module.btn_type == 'btn' %} 
+          <div class="pwr-sec-map__cta pwr-cta {{ module.style.cta_style }} {{ module.style.cta_size }}"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.button) }}       
+          >
+            <a class="cta_button" {% if module.btn.link.url.href %}href="{% if module.btn.link.url.type == "EMAIL_ADDRESS" %}mailto:{% endif %}{{ module.btn.link.url.href }}"{% endif %} {% if module.btn.link.no_follow %}rel="nofollow"{% endif %} {% if module.btn.link.open_in_new_tab %}target="_blank"{% endif %} rel="noopener" title="Button {{ module.btn.title }}">{{ module.btn.title }}</a>                    
+          </div>            
+          {% endif %}
+          {% if module.is_form %}
+          <div class="pwr-form {{ module.style.btn_style }}"
+            {# Animation on Scroll #}
+            {{ get_aos(module.animation.form) }}
+          >
+          {% form "form_name" form_to_use='{{ module.form.form_id }}' no_title=True response_response_type='{{ module.form.response_type }}' response_message='{{ module.form.message }}' response_redirect_id={{ module.form.redirect_id }} response_redirect_url='{{ module.form.redirect_url }}', gotowebinar_webinar_key='{{ module.form.gotowebinar_webinar_key }}' %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% if module.layout.section_variant == 'map_left' || module.layout.section_variant == 'map_right' %}
+      <div class="pwr-sec-split__right">
+          <div class="pwr-sec-map__map pwr--clearfix" style="height:{{ module.layout.section_height }}px">
+          {{ module.map_embed_code }}
+        </div>
+      </div>
+      {% else %} {# map full width #}
+          <div class="pwr-sec-map__map pwr--clearfix" style="height:{{ module.layout.section_height }}px" data-custom-height="{{ module.layout.section_height != undefined }}">
+          {{ module.map_embed_code }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

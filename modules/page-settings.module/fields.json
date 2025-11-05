@@ -1,0 +1,273 @@
+[ {
+  "id" : "page_type",
+  "name" : "header_footer_style",
+  "label" : "Select Header / Footer Style",
+  "help_text" : "Note that this value needs to be changed once in the beginning to take effect.",
+  "inline_help_text" : "Configurable via POWER Header and POWER Footer",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "page", "Page" ], [ "landing_page", "Landing Page" ], [ "blog_post", "Blog" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "page"
+}, {
+  "id" : "is_overwrite_header_settings",
+  "name" : "is_overwrite_header_settings",
+  "label" : "Overwrite Header Settings",
+  "inline_help_text" : "Option to overwrite header settings for this particular page. For global settings please use POWER Header",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "d2f7b5a2-7723-c47d-a381-727ab0f30beb",
+  "name" : "header_settings",
+  "label" : "Header Settings",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_overwrite_header_settings",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "f2932650-2c50-4615-4872-603fe4f9c286",
+    "name" : "local_logo",
+    "label" : "Overwrite global Logo",
+    "help_text" : "Here you can optionally overwrite the global logo settings",
+    "required" : false,
+    "locked" : false,
+    "show_loading" : false,
+    "type" : "logo",
+    "display_width" : null,
+    "default" : {
+      "override_inherited_src" : false,
+      "src" : null,
+      "alt" : null
+    }
+  }, {
+    "id" : "c94852f6-e9f4-07c2-12fc-3cbe29bd51e0",
+    "name" : "sticky_logo",
+    "label" : "Sticky Logo",
+    "help_text" : "Logo for the sticky header.\nIf this is not configured the global logo or locally configured logo will be used",
+    "required" : false,
+    "locked" : false,
+    "show_loading" : false,
+    "type" : "logo",
+    "display_width" : null,
+    "default" : {
+      "override_inherited_src" : false,
+      "src" : null,
+      "alt" : null
+    }
+  }, {
+    "id" : "b56613bd-e355-9861-26cf-480ec78a001d",
+    "name" : "btn_type",
+    "label" : "Use CTA/Button",
+    "required" : true,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "inherit", "Inherit" ], [ "none", "None" ], [ "btn", "Button" ], [ "cta", "CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "inherit"
+  }, {
+    "id" : "394bc931-38b3-f0b8-6000-5cd4759c496f",
+    "name" : "header_cta",
+    "label" : "Header CTA",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "b56613bd-e355-9861-26cf-480ec78a001d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null
+  }, {
+    "id" : "header_settings.header_btn",
+    "name" : "header_btn",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "b56613bd-e355-9861-26cf-480ec78a001d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "btn",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "header_settings.header_btn.title",
+      "name" : "title",
+      "label" : "Button Title",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button Title"
+    }, {
+      "id" : "header_settings.header_btn.link",
+      "name" : "link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "3ab5d7ba-e5cb-a0b5-816f-695a9c105a2b",
+    "name" : "style",
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "dc53ac67-bb12-db80-e8a1-414d6c1cb71e",
+      "name" : "scheme",
+      "label" : "Color Scheme Header",
+      "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "inherit", "Inherit" ], [ "light", "Light" ], [ "dark", "Dark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "inherit"
+    }, {
+      "id" : "b7775cfe-bc05-3119-679e-98b0a55f41ab",
+      "name" : "color_scheme_on_scroll",
+      "label" : "Color Scheme On Scroll",
+      "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "inherit", "Inherit" ], [ "light", "Light" ], [ "dark", "Dark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "inherit"
+    }, {
+      "id" : "header_settings.style.color_scheme_top_header",
+      "name" : "color_scheme_top_header",
+      "label" : "Color Scheme Top Header",
+      "help_text" : "Predefined light or dark color scheme. \nLight -> Light background and dark font color.\nDark -> Dark background and light font color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "inherit", "Inherit" ], [ "light", "Light" ], [ "dark", "Dark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "inherit"
+    }, {
+      "id" : "85c62e27-e63e-8039-7a1f-ec3ab710f8e0",
+      "name" : "is_transparent",
+      "label" : "Transparent Header",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "inherit", "Inherit" ], [ "true", "Transparent" ], [ "false", "Not Transparent" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "inherit"
+    }, {
+      "id" : "83577aba-f9a1-f1a2-0703-bc222f7c3974",
+      "name" : "is_transparent_top_header",
+      "label" : "Transparent Top Header",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "inherit", "Inherit" ], [ "true", "Transparent" ], [ "false", "Not Transparent" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "inherit"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "scheme" : "inherit",
+      "color_scheme_on_scroll" : "inherit",
+      "color_scheme_top_header" : "inherit",
+      "is_transparent" : "inherit",
+      "is_transparent_top_header" : "inherit"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "local_logo" : {
+      "override_inherited_src" : false,
+      "src" : null,
+      "alt" : null
+    },
+    "sticky_logo" : {
+      "override_inherited_src" : false,
+      "src" : null,
+      "alt" : null
+    },
+    "is_cta" : "inherit",
+    "style" : {
+      "scheme" : "inherit",
+      "color_scheme_on_scroll" : "inherit",
+      "color_scheme_top_header" : "inherit",
+      "is_transparent" : "inherit",
+      "is_transparent_top_header" : "inherit"
+    }
+  }
+} ]

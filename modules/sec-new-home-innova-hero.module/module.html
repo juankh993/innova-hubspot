@@ -1,0 +1,137 @@
+<section id="section-value-props" class="relative overflow-x-clip hero-new-home-section md:min-h-screen">
+
+  <div id="valores-content" data-animate="text-fade-up" class="">
+    <div id="valores-carousel-col" class="relative block slider-column" data-animate="fade-up">
+      {% if module.elements and module.elements|length > 0 %}
+      <div class="relative slider-desktop">
+        <div class="swiper md:min-h-screen" id="carousel-main">
+          <div class="swiper-wrapper">
+            {% for element in module.elements %}
+            <div class="swiper-slide w-full" data-slide-index="{{ loop.index0 }}">
+              <div class="relative overflow-hidden shadow-xl w-full h-full">
+                {% if element.asset_choice == "image_choice" %}
+                <img src="{{ element.image.src }}" class="w-full h-full object-cover" alt="{{ element.image.alt }}" />
+                {% elif element.asset_choice == "video_choice" %}
+                <iframe class="absolute left-0 top-0 w-full h-full hidden"
+                  src="https://www.youtube.com/embed/{{ element.video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ element.video_id }}"
+                  title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
+                </iframe>
+                <video class="absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline>
+                  <source src="{{ element.video }}" type="video/mp4">
+                </video>
+                <!-- Overlay para abrir modal -->
+                <div class="absolute inset-0 video-overlay z-[4]" style="cursor: none;"
+                  data-blendy-from="universal-video" data-video-id="{{ element.video_id }}" role="button" tabindex="0"
+                  aria-label="Abrir video principal">
+                  <!-- Cursor custom -->
+                  <div id="video-cursor-banner" class="video-custom-cursor absolute md:top-auto md:right-auto top-1/2 right-0">
+                    <img src="https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="cursor" />
+                  </div>
+                </div>
+                {% endif %}
+
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- CONTENIDO DINÁMICO -->
+      <div
+        class="content-column relative md:absolute left-auto bottom-0 md:left-[80px] md:bottom-[60px] bg-white z-[1] w-full h-auto md:w-[617px] md:h-[321px] p-[32px_24px_48px_24px] rounded-[16px] mt-[-10px] md:rounded-tl-[16px] md:rounded-tr-[48px] md:rounded-br-[16px] md:rounded-bl-[48px]">
+
+        <!-- Títulos y descripción -->
+        <div class="mb-[24px]">
+          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-offset="0" data-aos-delay="500" data-aos-once="true"
+            id="dynamic-main-title" class="new-hero-title">
+            {% if module.elements and module.elements[0] %}{{ module.elements[0].main_title|default('') }}{% endif %}
+          </h2>
+          <h3 data-aos="fade-up" data-aos-duration="800" data-aos-offset="0" data-aos-delay="700" data-aos-once="true"
+            id="dynamic-subtitle" class="new-hero-subtitle">
+            {% if module.elements and module.elements[0] %}{{ module.elements[0].subtitle|default('') }}{% endif %}
+          </h3>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="800" data-aos-offset="0" data-aos-delay="900" data-aos-once="true"
+          id="dynamic-description"
+          class="text-[#003b87] text-[16px] leading-[20px] mb-[24px] [&_span]:text-[16px] [&_span]:leading-[20px] !mx-0 overflow-y-auto overflow-x-hidden md:max-h-[40px]"
+          style="font-family: 'Josefin Sans', sans-serif">
+          {% if module.elements and module.elements[0] %}{{ module.elements[0].description|default('') }}{% endif %}
+        </div>
+
+        <!-- BOTONES CTA DINÁMICOS CON CONDICIONALES -->
+        <div data-aos="fade-up" data-aos-duration="800" data-aos-offset="0" data-aos-delay="1100" data-aos-once="true"
+          id="dynamic-buttons">
+          {% if module.elements and module.elements[0] and module.elements[0].boton_inscribete %}
+
+          {# CONDICIONAL: Mostrar botón naranja o azul según buton_type #}
+          {% if module.elements[0].botones.buton_type == "buton-primary" %}
+          <!-- Botón Naranja -->
+          <div class="mb-4" id="primary-button-container">
+            <a style="color:#ffffff;" href="#banner-hero" id="primary-button"
+              class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 overflow-hidden font-bold"
+              role="tab">
+              <span
+                class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+              <span id="hero-cta-registration" class="relative z-10 font-['Otterco'] uppercase texture-image"
+                style="color:#ffffff;" id="primary-button-text">
+                {{ module.elements[0].botones.buton_text|default('¡Inscríbete!') }}
+              </span>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.0186 13.8545L8.31152 12.3408L8.31738 12.3271L8.30469 12.3428L6.32422 14.7568H6.32324C6.22632 14.8807 6.095 14.9433 5.92773 14.9434C5.85748 14.9434 5.79808 14.9325 5.75 14.9111H5.74902C5.64668 14.8734 5.56489 14.8096 5.50293 14.7207C5.44095 14.6318 5.41022 14.5335 5.41016 14.4258V11.5693L12.4805 2.9043L12.4707 2.89648L12.4717 2.89551L3.72461 10.4639L0.495117 9.14062H0.494141C0.394229 9.10278 0.317388 9.04652 0.263672 8.97266C0.209939 8.89874 0.179015 8.80624 0.170898 8.69531L0.171875 8.61719C0.176922 8.5414 0.195248 8.4736 0.227539 8.41406C0.270558 8.33479 0.337801 8.26912 0.429688 8.21777L14.0508 0.360352C14.1317 0.311872 14.218 0.287109 14.3096 0.287109C14.4173 0.287179 14.5144 0.316762 14.6006 0.375977C14.6897 0.440796 14.7517 0.516633 14.7881 0.602539C14.8244 0.688648 14.8346 0.786323 14.8184 0.894531L12.7236 13.4668C12.6967 13.623 12.6106 13.7446 12.4648 13.8311C12.3895 13.8741 12.3056 13.8955 12.2139 13.8955C12.1548 13.8955 12.089 13.8816 12.0186 13.8545Z"
+                  fill="white" stroke="white" stroke-width="0.012278" />
+              </svg>
+            </a>
+          </div>
+
+          {% elif module.elements[0].botones.buton_type == "buton-secondary" %}
+          <!-- Botón Azul -->
+          <div id="secondary-button-container">
+            <a href="#banner-hero" id="secondary-button" class="secondary-button w-fit CTA_Inscribete" role="tab">
+              <span class="secondary-button__back" id="secondary-button-text">
+                {{ module.elements[0].botones.buton_text_secondary|default('¡Inscríbete!') }}
+              </span>
+            </a>
+          </div>
+          {% endif %}
+
+          {% endif %}
+        </div>
+
+        <!-- Navegación del carrusel -->
+        <div
+          class="  absolute md:bottom-0 mb-[24px] md:right-[24px] z-10 left-1/2 -translate-x-1/2 top-[-64px] md:top-auto  md:left-auto md:translate-x-0">
+          <div class="flex items-center justify-center navigation-desktop" id="valores-carousel-navigation">
+            <button type="button" class="swiper-button-prev-custom hidden md:block">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div class="swiper-pagination-custom"></div>
+            <button type="button" class="swiper-button-next-custom hidden md:block">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- DATOS PARA JAVASCRIPT -->
+<script type="application/json" id="carousel-data">
+  {{ module.elements | tojson }}
+  </script>
+
+{% require_js position="footer" %}
+
+
+
+{% end_require_js %}

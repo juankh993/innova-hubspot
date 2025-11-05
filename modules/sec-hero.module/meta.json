@@ -1,0 +1,14 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 191920780153,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/third_party/Typewriter.js",
+    "name" : "Typewriter.js"
+  } ],
+  "label" : "POWER Sec Hero",
+  "icon" : "../../../POWER%20THEME/images/icons/module/icon-module-sec-hero.svg",
+  "is_available_for_new_content" : true
+}

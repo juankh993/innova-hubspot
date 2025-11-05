@@ -1,0 +1,99 @@
+{# *********************************************
+   * POWER Theme Sub Module Services V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+
+{# style 2 / Icon + Text #}
+{% macro get_service_item(service, isLink, href) %}
+
+  <{% if isLink %}a href="{{ href }}" {% if service.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if service.link.no_follow %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-services-item {% if isLink %}{% if module.layout.unhide_link %}pwr-services-item--link__unhide{% endif %} pwr-services-item--is-link{% endif %} {% if module.style.text_color == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.layout.centered %}pwr--align-c{% endif %}" style="padding-left: calc( {{ module.style.icon_size }}px + 15px );">
+    <div class="pwr-services-front-wrapper">
+    {# icon or image? #}
+    <span class="pwr-services-item__icon" style="{% if module.style.icon_color.color %}color: rgba({{ module.style.icon_color.color|convert_rgb }},{{ module.style.icon_color.opacity|int / 100 }});{% endif %} font-size: calc( {{module.style.icon_size}}px - 2px );">
+      {% if service.icon_img.src %}
+      <img class="pwr-services-item__img" src="{{ service.icon_img.src }}" alt="{{ service.icon_img.alt }}" width="{{ module.style.icon_size }}" style="max-height: {{ module.style.icon_size }}px; max-width: {{ module.style.icon_size }}px; height: {{ module.style.icon_size }}px; width: auto;"/>
+      {% elif service.icon %}
+      {% icon name="{{ service.icon.name }}" style="{{ service.icon.type }}" unicode="{{ service.icon.unicode }}" %}
+      {% endif %}
+    </span>
+    <span class="pwr-services-item__title">{{ service.title }}</span>
+    </div>  
+    <span class="pwr-rich-text pwr-services-item__desc">{{ service.description }}</span>
+    <span class="pwr-services-item__more-link">{% if isLink %}{{ module.translation.txt_link }}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span>{% else %}&nbsp;{% endif %}</span>
+  </{% if isLink %}a{% else %}div{% endif %}>
+
+{% endmacro %}
+
+{# style 3 / box #}
+{% macro get_service_box(service, isLink, href) %}
+  
+  <div class="pwr-services-box {% if isLink %}pwr-services-item--is-link{% endif %} pwr-touch-btn-container" style="z-index: {{ index }}">
+    <div class="pwr-3D-box">
+      <div class="pwr-services-box__inner pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover pwr--colored-box {% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {% if module.layout.centered %}pwr--align-c{% endif %}" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+        <div class="pwr-touch-btn pwr-touch-btn--dark">{{ module.translation.txt_touch }}<span class="pwr-touch-btn__icon"></span></div>
+        <div class="pwr-services-box__front pwr-3D-box__info-box">
+          {# icon or image #}
+          <span class="pwr-services-item__icon" style="{% if module.style.icon_color.color %}color: rgba({{ module.style.icon_color.color|convert_rgb }},{{ module.style.icon_color.opacity|int / 100 }});{% endif %} font-size: {{module.style.icon_size}}px;">
+            {% if service.icon_img.src %}
+            <img class="pwr-services-item__img" src="{{ service.icon_img.src }}" alt="{{ service.icon_img.alt }}" width="{{ module.style.icon_size }}" style="max-height: {{ module.style.icon_size }}px; max-width: {{ module.style.icon_size }}px; width: {{ module.style.icon_size }}px; "/>
+            {% elif service.icon %}
+            {% icon name="{{ service.icon.name }}" style="{{ service.icon.type }}" unicode="{{ service.icon.unicode }}" %}
+            {% endif %}
+          </span>
+          <span class="pwr-services-item__title">{{ service.title }}</span>
+        </div>
+        <div class="pwr-services-box__back pwr-3D-box__info-box">
+          <span class="pwr-services-item__title">{{ service.title }}</span>
+          <span class="pwr-rich-text pwr-services-item__desc">{{ service.description }}</span>
+          {% if isLink %}<a href="{{ href }}" {% if service.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if service.link.no_follow %}rel="nofollow"{% endif %} class="pwr-services-item__more-link">{{ module.translation.txt_link }}<span class="pwr-link-icon pwr--padding-l-sm">{% icon name="arrow-right" style="SOLID" unicode="f061" %}</span></a>{% endif %}
+        </div>      
+      </div>
+    </div>
+  </div>
+
+{% endmacro %}
+
+
+
+<div class="pwr-sub-services pwr-sec-services--{{ module.layout.section_variant }}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+    <div class="pwr--clearfix">
+      <div class="pwr-services pwr-services--{{ module.layout.section_variant }}">
+
+        {% if module.service.link.url.href %}
+          {% set isLink = true %}
+          {% set href = module.service.link.url.href %}
+          {% if module.service.link.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}            
+        {% else %}
+          {% set isLink = false %}
+        {% endif %}
+        
+        {% if module.layout.section_variant == 'style-2' %}
+          {{ get_service_item(module.service, isLink, href) }}
+        {% elif module.layout.section_variant == 'style-3' %}
+          {{ get_service_box(module.service, isLink, href) }}
+        {% endif %}
+
+      </div>
+    </div>    
+</div>

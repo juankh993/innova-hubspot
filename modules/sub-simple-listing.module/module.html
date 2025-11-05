@@ -1,0 +1,101 @@
+{# *********************************************
+   * POWER Theme Sub Module Simple Listing V1.1               
+   - Animation on Scroll               
+   ********************************************* #}
+
+{%- macro get_aos(aos_el) %}
+  {%- if theme.animation.aos.is_aos && module.animation.is_aos && aos_el.animation_type != 'none' %}
+    {%- if aos_el.animation_type == 'default' %}
+      data-aos="{{ theme.animation.aos.animation_type }}"
+    {% else %}
+      data-aos="{{ aos_el.animation_type }}"
+    {% endif -%} 
+    {%- if aos_el.delay %}
+      data-aos-delay="{{ aos_el.delay }}"
+    {% else %}
+      data-aos-delay="{{ theme.animation.aos.delay }}"
+    {% endif -%}
+  {% endif -%}  
+{% endmacro -%}
+
+{% macro get_box(list_item, isLink, href) %}
+  {% if isLink %}
+  <a href="{{ href }}" {% if list_item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if list_item.link.no_follow %}rel="nofollow"{% endif %} class="pwr-simple-list-item pwr-simple-list-item--box-style pwr-simple-list-item--is-link">
+    <div class="pwr-3D-box">
+      <div class="pwr--colored-box pwr-3D-box__sensor pwr-3D-box--shaddow-on-hover">
+        <div class="pwr-simple-list-item__overlay"></div>
+        <div class="pwr-simple-list-item__front pwr--colored-box {% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+          <h5 class="pwr-simple-list-item__title pwr--toc-ignore">{{ list_item.title }}</h5>
+          {% if list_item.desc %}<span class="pwr-rich-text pwr-simple-list-item__desc">{{ list_item.desc }}</span>{% endif %}
+          {% for item in list_item.additional_info %}
+            {% if item.title && item.title|trim != '' %}
+            <div class="pwr-simple-list-item__additional-info">{% if item.icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--info">{% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}" %}</span>{% endif %}{{ item.title }}</div>
+            {% endif %}
+          {% endfor %}
+          <span class="pwr-simple-list-item__more-link pwr-simple-list-item__more-link--mobile">{{ module.translation.txt_link }}{% if list_item.link_icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--link {% if module.translation.txt_link|trim == '' %}pwr-simple-list-item__icon--no-text{% endif %}">{% icon name="{{ list_item.link_icon.name }}" style="{{ list_item.link_icon.type }}" unicode="{{ list_item.link_icon.unicode }}" %}</span>{% endif %}</span>
+        </div>
+        <div class="pwr-simple-list-item__back pwr-3D-box__info-box pwr-3D-box__info-box--centered">
+          <span class="pwr-simple-list-item__more-link pwr-simple-list-item__more-link--centered">{{ module.translation.txt_link }}{% if list_item.link_icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--link {% if module.translation.txt_link|trim == '' %}pwr-simple-list-item__icon--no-text{% endif %}">{% icon name="{{ list_item.link_icon.name }}" style="{{ list_item.link_icon.type }}" unicode="{{ list_item.link_icon.unicode }}" %}</span>{% endif %}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% else %}
+  <div class="pwr-simple-list-item pwr-simple-list-item--box-style pwr--colored-box">
+    <div class="pwr-simple-list-item__front pwr--colored-box {% if module.style.box_scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}" {% if module.style.box_color.color %}style="background-color: rgba({{ module.style.box_color.color|convert_rgb }}, {{ module.style.box_color.opacity|int / 100 }})"{% endif %}>
+      <h5 class="pwr-simple-list-item__title pwr--toc-ignore">{{ list_item.title }}</h5>
+      {% if list_item.desc %}<span class="pwr-rich-text pwr-simple-list-item__desc">{{ list_item.desc }}</span>{% endif %}
+      {% for item in list_item.additional_info %}
+        {% if item.title && item.title|trim != '' %}
+        <div class="pwr-simple-list-item__additional-info">{% if item.icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--info">{% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}" %}</span>{% endif %}{{ item.title }}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+{% endmacro %} 
+
+{% macro get_text(list_item, isLink, href) %}
+  <{% if isLink %}a href="{{ href }}" {% if list_item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %} {% if list_item.link.no_follow %}rel="nofollow"{% endif %}{% else %}div{% endif %} class="pwr-simple-list-item pwr-simple-list-item--text-style {% if isLink %}pwr-simple-list-item--is-link {% if module.layout.unhide_link %}pwr-simple-list-item--link__unhide{% endif %}{% endif %} ">
+  {% for item in list_item.additional_info %}
+    {% if item.title && item.title|trim != '' %}
+    <div class="pwr-simple-list-item__additional-info">{% if item.icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--info">{% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}" %}</span>{% endif %}{{ item.title }}</div>
+    {% endif %}
+  {% endfor %}
+  {% if list_item.title %}<h5 class="pwr-simple-list-item__title pwr--toc-ignore">{{ list_item.title }}</h5>{% endif %}
+  {% if list_item.desc %}<span class="pwr-rich-text pwr-simple-list-item__desc">{{ list_item.desc }}</span>{% endif %}
+  {% if isLink %}<span class="pwr-simple-list-item__more-link">{{ module.translation.txt_link }}{% if list_item.link_icon %}<span class="pwr-simple-list-item__icon pwr-simple-list-item__icon--link {% if module.translation.txt_link|trim == '' %}pwr-simple-list-item__icon--no-text{% endif %}">{% icon name="{{ list_item.link_icon.name }}" style="{{ list_item.link_icon.type }}" unicode="{{ list_item.link_icon.unicode }}" %}</span>{% endif %}</span>{% endif %}
+
+  </{% if isLink %}a{% else %}div{% endif %}>
+{% endmacro %}
+
+
+<div class="pwr-sub-simple-list-items {% if module.layout.section_variant == 'txt' %}pwr-sec-simple-list-items--text-style{% endif %} {% if module.layout.section_variant == 'txt' %}{% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %}{% endif %} {% if module.layout.centered %}pwr--align-c{% endif %}"
+    {# Animation on Scroll #}
+    {{ get_aos(module.animation) }}       
+>
+
+        <div class="pwr-sec-simple-list-items__container pwr--clearfix">
+        
+          {% if module.list_item.link.url.href %}
+            {% set isLink = true %}
+            {% set href = module.list_item.link.url.href %}
+            {% if module.list_item.link.url.type == "EMAIL_ADDRESS" %}
+             {% set href = "mailto:" + href %}
+            {% endif %}            
+          {% else %}
+            {% set isLink = false %}
+          {% endif %}
+          
+          {% if module.layout.section_variant == 'box' %}
+            {{ get_box(module.list_item, isLink, href) }}
+          {% elif module.layout.section_variant == 'txt' %}
+            {{ get_text(module.list_item, isLink, href) }}
+          {% endif %}
+
+        </div>
+
+</div>
+
+
+

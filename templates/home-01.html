@@ -1,0 +1,235 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_home-01.jpg
+  label: POWER THEME Home 01
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Hero #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "hero" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-hero', 
+                    label='Hero',
+                    title='Power Theme<br>is ',
+                    typewriter=true,
+                    typewriter_text=[" Super Love", " Clean Code", " Too Much Coffee", " Too Much Sugar"],
+                    title_sel_heading='h1',
+                    btn_type='btn',
+                    btns=[{title:"Get started now",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}}],
+                    layout={centered:False,full_width:False,header_height:"large",isSmall:False,title_extra_large:False},
+                    style={
+                        background: "img_vid",
+                        background_color_fallback:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        background_image:{alt:"POWER HOME 01",height:1080,'src':get_asset_url('../images/bgs/pwr-img_bg_blonde-girl.jpg'),width:1920},
+                        background_image_overlay:"gradient",
+                        background_image_position:"parallax",
+                        background_position:"center",
+                        cta_style:"pwr-cta--regular-border",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:50},
+                        overlay_gradient_color_1:{color:theme.colors.brand_colors.primary_color.color,opacity:0},
+                        overlay_gradient_color_2:{color:theme.colors.brand_colors.primary_color.color,opacity:100},overlay_gradient_direction:"vert",
+                        overlay_gradient_opacity:100,
+                        scheme:"dark"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    Promote your products and services with stunning design. Pixel perfect &amp; expertly crafted.
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Hero #}
+
+            {# Section Breadcrumbs #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "breadcrumbs" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-breadcrumbs', 
+                    label='Breadcrumbs', 
+                    breadcrumb=[
+                        {title:"Entry",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}}},
+                        {title:"Homes",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}}},
+                        {title:"Home 01",link:{url:{content_id:null,href:"https://maka-agency-4740449.hs-sites.com/",type:"EXTERNAL"}}}
+                        ],
+                    layout={
+                        padding_top:"pwr--padding-t-10",
+                        padding_bottom:"pwr--padding-b-10"
+                        },
+                    style={
+                        background: "primary_color",
+                        scheme:"dark"
+                        } 
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Breadcrumbs #}
+
+            {# Section Services #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "services" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-services', 
+                    label='Services',
+                    layout={centered:False,padding_top:" ",section_variant:"style-3"},
+                    services=[
+                        {description:"<span>Not sure, if our theme is the right fit for you? A 15-minute pre-purchase consultation will help you decide.</span>",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{},link:{open_in_new_tab:True,url:{href:"https://www.maka-agency.com/contact/",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"Pre-Purchase Consultation",translation:{txt_link:"Schedule a meeting"},animation:{animation_type:"fade-up",delay:50}},
+                        {description:"<span>You purchased the theme pack and need help? Schedule a free 2-hour call with one of our experts.</span>",icon:{name:"skype",type:"REGULAR",unicode:"f17e"},icon_img:{'src':""},link:{no_follow:False,open_in_new_tab:True,url:{href:"https://www.maka-agency.com/contact/",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"After-Sale Consultation",translation:{txt_link:"Schedule a meeting"},animation:{animation_type:"fade-up",delay:200}},
+                        {description:"<p>Our theme<span> pack</span> does not match your expectations? Request a refund for up to 30 days after purchase.</p>",icon:{name:"money-bill-alt",type:"REGULAR",unicode:"f3d1"},icon_img:{'src':""},link:{no_follow:False,open_in_new_tab:True,url:{href:"https://www.maka-agency.com/refund-policy",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"Your Purchase is Refundable",translation:{txt_link:"Refund Conditions"},animation:{animation_type:"fade-up",delay:350}},
+                        {description:"<span>You are facing a problem? Don\'t worry. You will get free chat support when it comes to questions regarding our theme.</span>",icon:{name:"comments",type:"REGULAR",unicode:"f086"},icon_img:{'src':""},link:{no_follow:False,open_in_new_tab:True,url:{href:"https://www.maka-agency.com/contact/",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"Free Live-Chat Support",translation:{txt_link:"Get support"},animation:{animation_type:"fade-up",delay:50}},
+                        {description:"<p><span>You have an existing website but it does not work the way you want? </span><span>Get in touch and we will give our best to help you.</span></p>",icon:{name:"rocket",type:"SOLID",unicode:"f135"},icon_img:{'src':""},link:{no_follow:False,open_in_new_tab:False,url:{href:"https://www.maka-agency.com/contact/",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"Website Optimization",translation:{txt_link:"Contact us"},animation:{animation_type:"fade-up",delay:200}},
+                        {description:"<span>You don\'t want to deal with the process of customization or have special requirements? We can help!</span>",icon:{name:"code",type:"SOLID",unicode:"f121"},icon_img:{'src':""},link:{no_follow:False,open_in_new_tab:True,url:{href:"https://www.maka-agency.com/contact/",type:"EXTERNAL"}},style:{icon_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100}},title:"Customization Service",translation:{txt_link:"Get in touch"},animation:{animation_type:"fade-up",delay:350}}],
+                    style={
+                        background:"",
+                        background_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},
+                        overwrite_box_color:True,
+                        scheme:"light",
+                        box_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100}
+                    }, 
+                    title='Powerful Services',
+                    intro_to_title=''
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <p>We want to simplify your life. If you need any help in the decision process, we are right by your side. We are ready to take off together with you.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Services #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    title='CTA Title',
+                    btn_type='btn',
+                    btn={title:"I feel great, give me the theme",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}},
+                    cta='a8f8cbb9-043c-40f0-857f-d8e1d0d07d11',
+                    layout={padding_bottom:" ",padding_top:" ",section_variant:"cta_only"},
+                    style={
+                        background:"img_vid",
+                        background_gradient_color_1:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:100},
+                        background_image:{alt:"bg-people-celebrating",height:1330,'src':get_asset_url('../images/bgs/pwr-img_bg_people-celebrating-cropped.jpg'),width:1920},background_image_overlay:"color",background_image_position:"center",
+                        background_position:"parallax",overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:40},overlay_gradient_color_1:{color:theme.colors.power.dark_scheme.background.background_color.color,opacity:50},overlay_gradient_direction:"vert",overlay_gradient_opacity:100,scheme:"dark"},
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+            {# Section Team #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "team" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-team', 
+                    label='Team',
+                    intro_to_title='', 
+                    title='Meet our amazing team', 
+                    tabs='[
+                        {"tab_title":"C-Level","team":[
+                            {"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Laura Laurati","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"CEO, Managing Director","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Laura Laurati","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com","animation":{"animation_type":"fade-up","delay":50}},
+                            {"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"","facebook":"https://www.facebook.com","img":{"alt":"Morten Mortinho","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"","job_title":"CFO, Head of Finance","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Morten Mortinho","phone":"","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"","animation":{"animation_type":"fade-up","delay":350}},
+                            {"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Ergen Mudal","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_03.png\'),"width":387},"instagram":"https://www.linkedin.com","job_title":"CTO, Head of Coding","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Ergen Mudal","phone":"+4940582291","reddit":"https://www.reddit.com","skype":"https://www.skype.com","twitter":"","xing":"https://www.xing.com","youtube":"","animation":{"animation_type":"fade-up","delay":700}}]},
+                        {"tab_title":"Developers","team":[
+                            {"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Charles Eden","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"","job_title":"Coding Wizard","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Charles Eden","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com"},
+                            {"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Sandra Torres","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"Software Engineer","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Sandra Torres","phone":"+4940582291","reddit":"","skype":"","twitter":"https://www.twitter.com","xing":"","youtube":"https://www.youtube.com"}]},
+                        {"tab_title":"Designers","team":[{"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Angela Carter","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"UI/UX Designer","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"https://www.linkedin.com","name_":"Angela Carter","phone":"+4940582291","reddit":"","skype":"https://www.skype.com","twitter":"https://www.twitter.com","xing":"","youtube":""}]},
+                        {"tab_title":"Consultants","team":[{"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Michael Hill","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_02.png\'),"width":387},"instagram":"https://www.instagram.com","job_title":"Tech Consultant","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Michael Hill","phone":"+4940582291","reddit":"","skype":"https://www.skype.com","twitter":"","xing":"","youtube":"https://www.youtube.com"}]},
+                        {"tab_title":"Trainees","team":[{"contact":True,"description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy&nbsp;","email":"hello@power.com","facebook":"https://www.facebook.com","img":{"alt":"Angelica Eaglin","height":470,"src":get_asset_url(\'../images/portraits/full/pwr-img_portrait_full_01.png\'),"width":387},"instagram":"","job_title":"Marketing","link":{"url":{"href":"https://maka-agency-4740449.hs-sites.com/power-theme-about-me","type":"EXTERNAL"}},"linkedin":"","name_":"Angelica Eaglin","phone":"","reddit":"","skype":"","twitter":"","xing":"https://www.xing.com","youtube":""}]}
+                    ]', 
+                    layout={centered:False,isTabs:True,section_variant:"full"}, 
+                    style={scheme:"light"}
+                    %}
+                    {% module_attribute "description" %}
+                    <p>This is one of the eye catching layout variants of our team module. Portrait your team members with their name, job position, personal bio, social links, photo and optionally group them by department.</p>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Team #}
+
+            {# Section Testimonial #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "testimonial" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-testimonial', 
+                    label='Testimonial',
+                    intro_to_title='',
+                    title='',
+                    description='',
+                    layout={padding_bottom:" ",section_variant:"one_by_one"},
+                    slider={autoplay:False,autoplay_time:1000,nav_arrows:True,nav_bullets:False},
+                    style={
+                        background:"color",
+                        background_color:{color:theme.colors.power.light_scheme.background.background_accent_color.color,opacity:100},scheme:"light"},
+                    testimonial=[
+                    {avatar:{alt:"Gene Cernan Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_01.png'),width:285},job_title:"Astronaut",name_:"Gene Cernan",quote:"“<span>When you head on out to the Moon, in very short order, and you get a chance to look back at the Earth, that horizon slowly curves around in upon himself, and all of sudden you\'re looking at something that is very strange, but yet is very, very familiar, because you\'re beginning to see the Earth evolve.</span>”"},
+                    {avatar:{alt:"David Attenborough Quote",height:285,'src':get_asset_url('../images/portraits/square/pwr-img_portrait_square_02.png'),width:285},job_title:"Natural Historian",name_:"David Attenborough",quote:"<span>”It seems to me that the natural world is the greatest source of excitement; the greatest source of visual beauty; the greatest source of intellectual interest. It is the greatest source of so much in life that makes life worth living.</span>”"}],
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Testimonial #}
+
+            {# Section Blog Post Preview #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "blog-post-preview" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-blog-post-preview', 
+                    label='Post Preview',
+                    btn_type='btn',
+                    btn={title:"All blog posts",link:{open_in_new_tab:False,url:{href:"https://maka-agency-4740449.hs-sites.com/en/power-theme-blog-3-col",type:"EXTERNAL"}}},
+                    cta='3301f337-0dda-4c1c-924c-cdb42e860b32',
+                    title='What we have to say', 
+                    filter={blog_id:37821962406},
+                    style={background:""}, 
+                    layout={nr_posts:2,section_variant:"large_hor",show_author:False,show_date:False,show_read_time:False,show_summary:False,truncate:False},
+                    translation={txt_link:"Start Reading"},
+                    animation={blog_posts:{delay:400}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <div class="pwr-sec-cta__hor-text-wrapper">With our blog post preview module you have lots of different layout and extensive filter options to push your content.</div>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Blog Post Preview #}
+
+            {# Section CTA #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "cta2" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-cta', 
+                    label='CTA',
+                    btn_type='btn',
+                    btn={title:"Lift off now!",link:{open_in_new_tab:True,url:{href:"https://marketplace.hubspot.com/products/npanym1111/npanym1111_power-theme",type:"EXTERNAL"}}},
+                    cta='82bae422-620c-47aa-a2fe-f98be3afb0e4',
+                    layout={padding_bottom:"pwr--sec-padding-b-md",padding_top:"pwr--sec-padding-t-md",section_variant:"horizontal"},
+                    style={background:"",background_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},cta_style:"pwr-cta--regular-solid-primary-background",scheme:"primary"}, 
+                    title='PROMOTE YOUR PRODUCTS AND SERVICES',
+                    animation={section:{animation_type:"default",delay:50}}
+                    %}
+                    
+                    {% module_attribute "description" %}
+                    <span>And generate leads with our Call-To-Action module.</span>
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section CTA #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}

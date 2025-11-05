@@ -1,0 +1,83 @@
+[ {
+  "id" : "93b25d90-26ec-23e6-3c58-0fe7c9212f1e",
+  "name" : "script_link",
+  "label" : "Social Sharing - Addthis Script Link",
+  "help_text" : "Add your AddThis script link here, e.g. //s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_ID\n\nIf you use AddThis, please make sure to deactivate Hubspots social sharing for your blog in the settings. \nSettings > Blog > Social Sharing > Social Sharing Buttons ",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "//s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_ID"
+}, {
+  "id" : "7662fe4b-3af8-ff05-deea-5cc15a8975ff",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "35e3ef2f-7b6c-b242-b447-a59e11536408",
+    "name" : "float",
+    "label" : "Float AddThis Social Sharing Items",
+    "help_text" : "Option to float AddThis social sharing icons on the left",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "93b25d90-26ec-23e6-3c58-0fe7c9212f1e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "103bbdad-f58d-2e8b-147d-621640f61303",
+    "name" : "show_author",
+    "label" : "Show Author Box?",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "float" : true,
+    "show_author" : true
+  }
+}, {
+  "id" : "f035eb67-3d1b-c4f3-a582-0358413b2c12",
+  "name" : "translation",
+  "label" : "Standard Text / Translation",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "dca7f495-9c19-0991-5c1a-67c6b3b2b8fa",
+    "name" : "txt_comments_title",
+    "label" : "Comments Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "COMMENTS"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "txt_comments_title" : "COMMENTS"
+  }
+} ]

@@ -1,0 +1,19 @@
+[ {
+  "id" : "2b371efe-2e33-8f85-bec8-59f001b4ed4d",
+  "name" : "whatsapp_number",
+  "label" : "Número de Whatsapp",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "643f8013-66f1-4aaf-1a82-22821598ed0f",
+  "name" : "message",
+  "label" : "Mensaje",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

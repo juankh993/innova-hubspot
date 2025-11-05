@@ -1,0 +1,207 @@
+.content-transition {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+.container-sticky-banner {
+  position: sticky;
+  top: 0;
+}
+  
+  .content-fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .swiper-button-next-custom,
+  .swiper-button-prev-custom {
+    color: #003b87;
+    border: 1px solid #003b87;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #003b87 !important;
+    opacity: 0.5 !important;
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-pagination-custom .swiper-pagination-bullet-active {
+    background-color: #003b87 !important;
+    opacity: 1 !important;
+  }
+  
+  .swiper-button-next-custom:hover,
+  .swiper-button-prev-custom:hover {
+    background: rgba(0, 59, 135, 0.1);
+  }
+  
+  .navigation-desktop {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 65px;
+    border: 1.5px solid #CFE2E8;
+    padding: 8px 16px;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .slider-column .swiper {
+    aspect-ratio: 761 / 520;
+    overflow: hidden;
+    width: 100%;
+    max-height:85vh;
+  }
+  
+  .secondary-button {
+    display: inline-flex;
+    height: 48px;
+    min-height: 48px;
+    padding: 12px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 40px;
+    border: 2px solid #003b87;
+    color: #003b87;
+    text-align: center;
+    font-family: Otterco;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .secondary-button .secondary-button__back {
+    color: #003b87;
+    -webkit-text-fill-color: #003b87;
+    display: inline-block;
+    background-image: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+  
+  .secondary-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003b87;
+    clip-path: circle(0% at 10% 0%);
+    transition: clip-path 0.3s ease-in-out;
+  }
+  
+  .secondary-button:hover::before {
+    clip-path: circle(150% at 10% 0%);
+  }
+  
+  .secondary-button:hover .secondary-button__back {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-image: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png);
+    background-position: 50%;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  /* Estilos para video player */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .video-container iframe,
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+  }
+#hero-cta-registration{
+color:#ffffff;
+}
+
+.new-hero-title{
+  font-family: 'Josefin Sans';
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  color:#F85245;
+}
+
+.new-hero-subtitle{
+  font-family: 'Otterco';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 4.4px;
+  text-transform: uppercase;
+  color:#044C8D;
+}
+
+.texture-image {
+    color: transparent !important;
+    background: url(https://contenidos.innovaschools.edu.co/hubfs/Innova-Niza/Texture.png) 50% center / cover text !important;
+    background-position: 50% center !important;
+}
+
+/* Estilos para el modal de video */
+#universal-video-modal {
+  display: none;
+}
+
+#universal-video-modal.flex {
+  display: flex;
+  background: rgb(15 15 15 / 80%);
+}
+
+@media screen and (max-width: 768px) {
+  .slider-column .swiper{
+    height:50vh;
+  }
+  .new-hero-title{
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 2.4px;
+}
+  .new-hero-subtitle{
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 3.2px;
+}
+  .swiper-button-next-custom, .swiper-button-prev-custom{
+  display:none;
+  }
+  
+  #video-cursor{
+    width:109px;
+    height:109px;
+  }
+}

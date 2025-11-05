@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 196673454233,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../POWER THEME INNOVA/js/third_party/animations.js",
+    "name" : "animations.js"
+  } ],
+  "label" : "sec-new-home-innova-schools-network",
+  "is_available_for_new_content" : true
+}

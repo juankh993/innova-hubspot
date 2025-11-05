@@ -1,0 +1,68 @@
+<div id="banner-sun"
+       class="absolute right-0 -translate-y-full pointer-events-none block  z-[9] w-[50px] h-[50px] md:w-auto md:h-auto md:-translate-y-1/2">
+    <img class=" object-contain"
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/media-dona-matricula.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
+  </div>
+<section id="section-form-enrollment" class="bg-[#003B87] w-full flex relative xl:min-h-[85vh] hero-banner overflow-hidden pt-[64px]" role="banner" aria-label="Banner principal de Innova Niza">
+    <img   data-aos="fade-up"
+     data-aos-delay="200"
+     data-aos-duration="800" id="sun-enrollment" class="absolute xl:w-auto xl:h-auto w-[122px] h-[127px] right-0 top-[249px] xl:top-auto xl:left-[80px] xl:bottom-[33px]" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-sol.png" alt="doogle-sol">
+    <img  data-aos="fade-right"
+     data-aos-delay="200"
+     data-aos-duration="800"
+         id="halfmoon-enrollment" class="absolute rotate-[-86deg] xl:rotate-0  xl:w-auto xl:h-auto w-[96px] h-[96px] left-[-36px] top-[314px] xl:top-auto xl:left-[385px] xl:bottom-[163px]" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-medialuna.png" alt="doogle-medialuna">
+    <img  data-aos="fade-left"
+     data-aos-delay="200"
+     data-aos-duration="800" id="hand-enrollment" class="absolute left-0 bottom-[242px] hidden xl:block" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-mano.png" alt="doogle-mano">
+    <img class="absolute right-0 bottom-0" src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-matricula-dots.svg" alt="doodle-matricula-dots">
+  <div class="flex relative overflow-hidden w-full flex-col min-[1280px]:flex-row gap-[83px] md:gap-0">
+    <!-- Bloque de video -->
+
+    <div class="flex flex-col lg:flex-row w-full items-stretch lg:items-start gap-6 relative vertical-center">
+
+    <!-- Título bajo el video -->
+    <div id="video-title" class="flex items-center lg:justify-center relative  inset-x-0 max-w-full min-[469px]:max-w-[70%]  lg:max-w-[90%] w-full overflow-visible top-0 pointer-events-none">
+      <!-- Fondo con imagen -->
+      <div class="relative max-w-6xl lg:mx-auto pt-6 lg:pt-14 pb-6 lg:pb-12 px-4 lg:px-10">
+        <!-- Título centrado -->
+        <h2 class="form-enrollment-title">
+          {{ module.welcome_title }} <br>
+          <span>
+           {{ module.welcome_description }}
+          </span>
+        </h2>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- Bloque de formulario -->
+    <div class="w-full flex flex-col justify-center relative z-[5] md:min-h-[800px]">
+    <div>
+      
+      
+      <div id="banner-hero">
+      {% form
+          form_to_use="{{ module.form_field.form_id }}"
+          response_response_type="{{ module.form_field.response_type }}"
+          response_message="{{ module.form_field.message }}"
+          response_redirect_id="{{ module.form_field.redirect_id }}"
+          response_redirect_url="{{module.form_field.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+        %}
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Figures -->
+  
+  
+</section>
+<!-- external Figure -->
+<div class="hidden lg:block relative py-10 bg-[#ffffff]">
+  <div id="cinta" class="absolute w-72 xl:w-64 2xl:w-72 left-0 top-0 pointer-events-none hidden lg:block z-[9] -translate-y-1/2	">
+    <img class="w-full h-full object-contain"
+         src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/cinta-naranja-home.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
+  </div>
+</div>

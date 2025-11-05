@@ -1,0 +1,216 @@
+{# *********************************************
+   * POWER THEME Search Results V1.0               
+   ********************************************* #}
+
+{% if module.style.background == 'color' && module.style.background_color %}
+  {% set bgColor = module.style.background_color.color|convert_rgb %}
+  {% set bgOpacity = module.style.background_color.opacity|int %}
+  {% set bgOpacity = bgOpacity / 100 %}
+
+{% elif module.style.background == 'img_vid' %}
+  {% if module.style.background_image || module.style.background_video || module.style.youtube_link %}
+    {% set bgImg = module.style.background_image %}
+    {% if module.style.background_video %}
+      {% set bgVid = module.style.background_video %}
+    {% elif  module.style.youtube_link %}
+      {% set isYtVid = true %}
+      {% set bgVid = module.style.youtube_link %}
+    {% endif %}
+    {% set bgImgPos  = module.style.background_position %}
+    {% set bgVidPos  = 'pwr-video-background--pos-' + module.style.background_position %}
+
+    {% if module.style.background_image_overlay == 'color' %}
+      {% set bgOverlayColor = module.style.overlay_color.color|convert_rgb %}
+      {% set bgOverlayOpacity = module.style.overlay_color.opacity|int %}
+      {% set bgOverlayOpacity = bgOverlayOpacity / 100 %}
+
+    {% elif module.style.background_image_overlay == 'gradient' %}
+      {% set bgGradientDir = module.style.overlay_gradient_direction %}
+      {% set bgGradientColor1 = module.style.overlay_gradient_color_1.color %}
+      {% set bgGradientColor1Opacity = module.style.overlay_gradient_color_1.opacity|int %}
+      {% set bgGradientColor1Opacity = bgGradientColor1Opacity / 100 %}
+      {% set bgGradientColor2 = module.style.overlay_gradient_color_2.color %}
+      {% set bgGradientColor2Opacity = module.style.overlay_gradient_color_2.opacity|int %}
+      {% set bgGradientColor2Opacity = bgGradientColor2Opacity / 100 %}
+
+      {% if module.style.overlay_gradient_opacity < 100 %}
+        {% set generalOpacity = module.style.overlay_gradient_opacity / 100 %}
+        {% set bgGradientColor1Opacity = 1 %}
+        {% set bgGradientColor2Opacity = 1 %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+
+{% elif module.style.background == 'gradient' && module.style.background_gradient_direction %}
+  {% set bgGradientDir = module.style.background_gradient_direction %}
+  {% set bgGradientColor1 = module.style.background_gradient_color_1.color %}
+  {% set bgGradientColor2 = module.style.background_gradient_color_2.color %}
+{% endif %}
+
+{% if bgGradientDir == 'hor' %}
+  {% set bgGradientDirMozWeb = 'left' %}
+  {% set bgGradientDirStd = 'to right' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'vert' %}
+  {% set bgGradientDirMozWeb = 'top' %}
+  {% set bgGradientDirStd = 'to bottom' %}
+  {% set bgGradientDirIEFb = 0 %}
+{% elif bgGradientDir == 'diag_tl_br' %}
+  {% set bgGradientDirMozWeb = '-45deg' %}
+  {% set bgGradientDirStd = '135deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% elif bgGradientDir == 'diag_bl_tr' %}
+  {% set bgGradientDirMozWeb = '45deg' %}
+  {% set bgGradientDirStd = '45deg' %}
+  {% set bgGradientDirIEFb = 1 %}
+{% endif %}
+
+<div class="pwr-sec-search-results {% if module.style.scheme == 'dark' %}pwr--dark{% else %}pwr--light{% endif %} {{ module.layout.padding_top }} {{ module.layout.padding_bottom }} lazyload"
+     {% if bgColor %}style="background-color: rgba({{ bgColor }}, {{ bgOpacity }})"
+     {% elif bgImg.src && bgImgPos != 'parallax' %}
+      {# Lazy load and resposive images for background-image #}           
+      data-bgset="{{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs) }} {{ theme.performance.images.image_width_xs }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_xs * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_xs * 2 }}w [(max-width: 575px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s) }} {{ theme.performance.images.image_width_s }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_s * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_s * 2 }}w [(max-width: 767px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m) }} {{ theme.performance.images.image_width_m }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_m * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_m * 2 }}w [(max-width: 991px)] | 
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l) }} {{ theme.performance.images.image_width_l }}w, {{ resize_image_url(bgImg.src,theme.performance.images.image_width_l * theme.performance.retina_images.image_retina_scaling_factor) }} {{ theme.performance.images.image_width_l * 2 }}w [(max-width: 1199px)] |
+                  {{ resize_image_url(bgImg.src,theme.performance.images.image_max_size * theme.performance.retina_images.image_retina_scaling_factor) }}"
+      data-sizes="auto"
+      style="background-size: cover;background-position: {{ bgImgPos }};"
+     {% elif bgImg.src && bgImgPos == 'parallax' %}
+      style="background-color: transparent;"
+     {% elif bgGradientDir %}
+      style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            "     
+     {% endif %}
+     >
+  {% if bgImg.src && bgImgPos == 'parallax' %}
+    <img data-src="{{ bgImg.src }}" class="pwr-parallax lazyload" alt="{{ bgImg.alt }}" width="{% if bgImg.width > 2000 %}2000{% else %}{{ bgImg.width }}{% endif %}">
+  {% endif %}
+   {% if bgVid %}
+  <div class="pwr-video-background {{ bgVidPos }}">
+    {% if isYtVid %}
+    <div class="pwr-video-background__youtube {% if bgImgPos == 'parallax' %}pwr-parallax{% endif %}">
+      <div class="player" data-property="{videoURL:'{{ module.style.youtube_link }}',containment:'self', autoPlay:true, mute:true, showControls: false, useOnMobile: true, playOnlyIfVisible: true}"></div>
+    </div>
+    {% else %}
+    <video autoplay playsinline muted loop src="{{ bgVid }}" class="{% if bgImgPos == 'parallax' %} pwr-parallax{% endif %} lazyload"></video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if (bgImg.src || bgVid) && module.style.background_image_overlay == 'color' %}
+  <div class="pwr--abs-full" style="background-color: rgba({{ bgOverlayColor }}, {{ bgOverlayOpacity }})"></div>
+  {% elif (bgImg.src || bgVid) && module.style.background_image_overlay == 'gradient' %}
+  <div class="pwr--abs-full" style="
+            background: {{ bgGradientColor1 }};
+            background: -moz-linear-gradient({{ bgGradientDirMozWeb }}, {{ bgGradientColor1 }} 0%, {{ bgGradientColor2 }} 100%);
+            background: -webkit-linear-gradient({{ bgGradientDirMozWeb }}, rgba({{ bgGradientColor1|convert_rgb }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            background: linear-gradient({{ bgGradientDirStd }}, rgba({{ bgGradientColor1|convert_rgb  }}, {{ bgGradientColor1Opacity }}) 0%, rgba({{ bgGradientColor2|convert_rgb  }}, {{ bgGradientColor2Opacity }}) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ bgGradientColor1 }}', endColorstr='{{ bgGradientColor2 }}',GradientType={{ bgGradientDirIEFb }} );
+            opacity: {{ generalOpacity }};
+            "></div>
+  {% endif %}
+  <div class="page-center pwr--relative">
+    <div class="row-fluid">
+      <div class="pwr-form hs-search-field"> 
+        <div id="hs-search-field__translations" data-suggestions_title='{{ module.translation.txt_suggestions_title }}'></div>
+        <div class="hs-search-field__bar"> 
+          <form action="/{{ site_settings.content_search_results_page_path }}">
+            <div class="pwr--relative">
+              <input autofocus="" type="text" id="pwr-search-results__input" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.field_label || "Search" }}" placeholder="{{ module.translation.txt_placeholder }}">
+              <button class="pwr-search-field__icon" type="submit">{% icon name="search" style="solid" unicode="f002" %}</button>
+            </div>
+            <input type="hidden" name="limit" value={{ module.search_settings.limit | default(5) }} >
+            {% if !module.search_settings.property.title || !module.search_settings.property.meta_description || !module.search_settings.property.html || !module.search_settings.property.author_name || !module.search_settings.property.author_handle || !module.search_settings.property.tag %}
+              {% if module.search_settings.property.title %}
+                <input type="hidden" name="property" value='title'>
+              {% endif %}
+              {% if module.search_settings.property.meta_description %}
+                <input type="hidden" name="property" value='description'>
+              {% endif %}
+              {% if module.search_settings.property.html %}
+                <input type="hidden" name="property" value='html'>
+              {% endif %}
+              {% if module.search_settings.property.author_name %}
+                <input type="hidden" name="property" value='author_full_name'>
+              {% endif %}
+              {% if module.search_settings.property.author_handle %}
+                <input type="hidden" name="property" value='author_handle'>
+              {% endif %}
+              {% if module.search_settings.property.tag %}
+                <input type="hidden" name="property" value='tag'>
+              {% endif %}
+            {% endif %}            
+            {% if !module.search_settings.search_type.pages || !module.search_settings.search_type.blog_listings || !module.search_settings.search_type.blog_posts || module.search_settings.search_type.landing_pages  || module.search_settings.search_type.knowledge_base_articles %}
+              {% if module.search_settings.search_type.pages %}
+                <input type="hidden" name="type" value='SITE_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.blog_listings %}
+                <input type="hidden" name="type" value='LISTING_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.blog_posts %}
+                <input type="hidden" name="type" value='BLOG_POST'>
+              {% endif %}
+              {% if module.search_settings.search_type.landing_pages %}
+                <input type="hidden" name="type" value='LANDING_PAGE'>
+              {% endif %}
+              {% if module.search_settings.search_type.knowledge_base_articles %}
+                <input type="hidden" name="type" value='KNOWLEDGE_ARTICLE'>
+              {% endif %}
+            {% endif %}
+            {% if module.search_settings.language %}
+            <input type="hidden" name="language" value={{ module.search_settings.language | default('en') }} >
+            {% endif %}
+            {% for blog_id in module.search_settings.blogs %}
+              <input type="hidden" name="groupId" value={{ blog_id }} >
+            {% endfor %}
+          </form>
+        </div>
+        <ul class="hs-search-field__suggestions"></ul>
+      </div>
+
+      <div class="pwr-search-results">
+        <div id="pwr-search-results__translations" data-no_results_excuse='{{ module.translation.txt_no_results_excuse }}' data-no_results_hint='{{ module.translation.txt_no_results_hint }}'></div>
+        <template class="pwr-search-results__template">
+          <li>
+            <a href="#" class="pwr-search-results__entry pwr--colored-box">
+              {% if module.layout.is_featured_img %}
+                  <img class="pwr-search-results__img" src="">
+              {% endif %}
+              <h6 href="#" class="pwr-search-results__title">Content Title</h6>
+              <p class="pwr-search-results__description">Description</p>
+            </a>
+          </li>
+        </template>
+        <ul id="hsresults" class="pwr-search-results__listing"></ul>
+        <div class="pwr-search-results__pagination" data-search-path="{{ site_settings.content_search_results_page_path }}">
+          <a href="" class="pwr-search-results__prev-page pwr-prev-next-nav__link pwr-prev-next-nav__left">
+            <span class="pwr-icon pwr-prev-next-nav__icon">
+              <svg version="1.1" id="arrow_left_thin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 32 19.3" xml:space="preserve">
+              <polygon points="0,9.6 9.6,0 11.8,2.2 5.8,8.1 32,8.1 32,11.2 5.8,11.2 11.8,17.1 9.6,19.3 0,9.6 0,9.6 "/>
+              </svg>
+            </span>
+            <span class="pwr-prev-next-nav__text">{{ module.translation.txt_previous }}</span>
+          </a>
+          <a href="" class="pwr-search-results__next-page pwr-prev-next-nav__link pwr-prev-next-nav__right">
+            <span class="pwr-prev-next-nav__text">{{ module.translation.txt_next }}</span>
+            <span class="pwr-icon pwr-prev-next-nav__icon">
+              <svg version="1.1" id="arrow_right_thin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 32 19.3" xml:space="preserve">
+              <polygon points="32,9.6 22.3,0 20.2,2.2 26.1,8.1 0,8.1 0,11.2 26.1,11.2 20.2,17.1 22.3,19.3 32,9.6 32,9.6 "/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

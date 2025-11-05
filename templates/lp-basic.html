@@ -1,0 +1,48 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/pwr-img_template-preview_lp-07-basic.jpg
+  label: POWER THEME Landing Page Basic
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+<main class="body-container-wrapper">
+    <div class="body-container">
+        {% dnd_area 'dnd_area' class='', label='Main Content' %}
+            {# Section Form #}
+            {% dnd_section full_width=true, padding={'top': 0,'bottom': 0,'left': 0,'right': 0} %}
+                {% dnd_module module "form" 
+                    full_width=true,
+                    width=12,
+                    path='../modules/sec-form', 
+                    label='Form',
+                    intro_to_title='', 
+                    title='HUNGRY FOR POWER?', 
+                    title_sel_heading='h1', 
+                    layout={padding_top:"pwr-sec--first-with-header",section_variant:"hor_boxed"}, 
+                    style={
+                        background:"img_vid",
+                        background_image:{alt:"bananas flying",height:1080,'src':get_asset_url('../images/video/pwr-img_video_banana.jpg'),width:1920},
+                        box_color:{color:theme.colors.brand_colors.primary_color.color,opacity:100},
+                        box_scheme:"dark",
+                        btn_style:"pwr-btn--regular-solid-primary-background",
+                        overlay_color:{color:theme.colors.brand_colors.base_color_dark.color,opacity:50},
+                        overwrite_box_color:true,
+                        scheme:"dark",
+                        youtube_link:"https://youtu.be/eyQsYlBc7Ew"
+                        }
+                    %}
+                    {% module_attribute "description" %}
+                    These are just some examples for Landing Pages. You have the freedom to use all POWER modules you see on other pages of this demo to create the perfect Landing Page for your use-case. <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                    {% end_module_attribute %}
+                    {% module_attribute "form" is_json=True %}
+                    {"form_id":"9d8d49d6-8926-49e5-a46c-3a34c3944b8b","form_type":"HUBSPOT","message":"Thanks for submitting the form.","response_type":"inline"}
+                    {% end_module_attribute %}
+                {% end_dnd_module %}
+            {% end_dnd_section %}
+            {# End Section Form #}
+
+        {% end_dnd_area %}
+    </div>
+</main>
+{% endblock body %}
