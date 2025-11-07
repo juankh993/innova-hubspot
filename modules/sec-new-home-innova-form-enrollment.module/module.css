@@ -6,6 +6,7 @@
     section[role="banner"] {
         flex-direction: column;
         position: relative;
+        z-index: 1;
     }
 }
 @media (min-width: 1921px) {

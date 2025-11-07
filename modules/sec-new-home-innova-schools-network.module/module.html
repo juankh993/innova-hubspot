@@ -6,7 +6,7 @@
 </div>
 <section id="section-schools-network" 
          class="relative overflow-x-clip min-h-[660px] school-network-section bg-[#ffffff]">
-  <div class="container mx-auto px-4 py-20 lg:py-16 lg:px-[80px]">
+  <div class="container mx-auto px-4 pt-20 pb-[30px] lg:py-16 lg:px-[80px]">
     <div class="grid grid-cols-1 lg:!grid-cols-2 gap-0 md:gap-12 items-start 2xl:pb-[48px]" id="valores-content-reverse"
       data-animate="text-fade-up">
      <!-- Columna izquierda: títulos, descripción y lista -->
@@ -102,6 +102,25 @@
       </div>
 
     </div>
+  <div id="sticky-cta-mobile-show" class=" relative bottom-0 left-0 right-0 z-[10] translate-y-full transition-transform duration-500 ease-out md:hidden">
+    <div class="pt-[40px] px-4">
+      <a style="color:#ffffff;" href="#section-form-enrollment" id="primary-button"
+        class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete w-full"
+        role="tab">
+        <span
+          class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+        <span id="hero-cta-registration" class="relative z-10 font-['Otterco'] uppercase texture-image"
+          style="color:#ffffff;" id="primary-button-text">
+          {{ module.button_text }}
+        </span>
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.0186 13.8545L8.31152 12.3408L8.31738 12.3271L8.30469 12.3428L6.32422 14.7568H6.32324C6.22632 14.8807 6.095 14.9433 5.92773 14.9434C5.85748 14.9434 5.79808 14.9325 5.75 14.9111H5.74902C5.64668 14.8734 5.56489 14.8096 5.50293 14.7207C5.44095 14.6318 5.41022 14.5335 5.41016 14.4258V11.5693L12.4805 2.9043L12.4707 2.89648L12.4717 2.89551L3.72461 10.4639L0.495117 9.14062H0.494141C0.394229 9.10278 0.317388 9.04652 0.263672 8.97266C0.209939 8.89874 0.179015 8.80624 0.170898 8.69531L0.171875 8.61719C0.176922 8.5414 0.195248 8.4736 0.227539 8.41406C0.270558 8.33479 0.337801 8.26912 0.429688 8.21777L14.0508 0.360352C14.1317 0.311872 14.218 0.287109 14.3096 0.287109C14.4173 0.287179 14.5144 0.316762 14.6006 0.375977C14.6897 0.440796 14.7517 0.516633 14.7881 0.602539C14.8244 0.688648 14.8346 0.786323 14.8184 0.894531L12.7236 13.4668C12.6967 13.623 12.6106 13.7446 12.4648 13.8311C12.3895 13.8741 12.3056 13.8955 12.2139 13.8955C12.1548 13.8955 12.089 13.8816 12.0186 13.8545Z"
+            fill="white" stroke="white" stroke-width="0.012278" />
+        </svg>
+      </a>
+    </div>
+  </div>
   </div>
 </section>
 

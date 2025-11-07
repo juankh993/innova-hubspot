@@ -132,6 +132,8 @@ setupAccordions();
 const stickyCTA = document.getElementById('sticky-cta-mobile');
 const targetSection = document.getElementById('tabs-section'); 
 const footerSection = document.getElementById('new-footer');
+const schoolsNetworkSection = document.getElementById('section-schools-network');
+const stickyCTAShow = document.getElementById('sticky-cta-mobile-show');
 
 if (!stickyCTA || !targetSection || !footerSection) {
     console.error('Elementos no encontrados');
@@ -140,12 +142,14 @@ if (!stickyCTA || !targetSection || !footerSection) {
 
 let hasEnteredViewport = false;
 let isAnchored = false;
+let isInSchoolsNetwork = false;
 
 const observerOptions = {
     root: null,
     rootMargin: '0px',
     threshold: 0.1
 };
+
 
 // Observer para mostrar/ocultar el CTA cuando tabs-section está visible
 const tabsObserver = new IntersectionObserver((entries) => {
@@ -155,7 +159,7 @@ const tabsObserver = new IntersectionObserver((entries) => {
         
         if (entry.isIntersecting) {
             hasEnteredViewport = true;
-            if (!isAnchored) {
+            if (!isAnchored && !isInSchoolsNetwork) {
                 stickyCTA.classList.remove('translate-y-full');
                 stickyCTA.classList.add('translate-y-0');
             }
@@ -183,15 +187,17 @@ function handleCTAPosition() {
     if (footerRect.top <= windowHeight && footerRect.top > 0) {
         // El footer está visible - anclar el CTA
         isAnchored = true;
-        stickyCTA.style.position = 'fixed';
-        stickyCTA.style.bottom = Math.max(0, footerDistanceFromBottom) + 'px';
-        stickyCTA.classList.remove('translate-y-full');
-        stickyCTA.classList.add('translate-y-0');
-    } else if (footerRect.top > windowHeight) {
+        // stickyCTA.style.position = 'fixed';
+        // stickyCTA.style.bottom = Math.max(0, footerDistanceFromBottom) + 'px';
+        stickyCTA.style.bottom = '0px';
+        // stickyCTA.classList.remove('translate-y-full');
+        // stickyCTA.classList.add('translate-y-0');
+    } 
+    else if (footerRect.top > windowHeight) {
         // El footer NO está visible - comportamiento fixed normal
         isAnchored = false;
         stickyCTA.style.position = 'fixed';
-        stickyCTA.style.bottom = '0px';
+        // stickyCTA.style.bottom = '0px';
     } 
 }
 
@@ -202,6 +208,61 @@ const footerObserver = new IntersectionObserver((entries) => {
     root: null,
     rootMargin: '0px',
     threshold: Array.from({length: 21}, (_, i) => i * 0.05) // Más precisión
+});
+
+// Observer para la sección schools-network
+const schoolsNetworkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const schoolsRect = schoolsNetworkSection.getBoundingClientRect();
+        const ctaHeight = stickyCTA.offsetHeight;
+        
+        // Detectar si el CTA está llegando al inicio de la sección
+        const isCtaReachingSection = schoolsRect.top <= window.innerHeight && schoolsRect.top > 0;
+        
+        if (entry.isIntersecting) {
+            // Cuando entramos a la sección schools-network
+            isInSchoolsNetwork = true;
+            
+            // Ocultar el CTA fixed
+            stickyCTA.classList.add('translate-y-full');
+            stickyCTA.classList.remove('translate-y-0');
+            
+            // Mostrar el CTA de la sección schools-network
+            if (stickyCTAShow) {
+                stickyCTAShow.classList.remove('translate-y-full');
+                stickyCTAShow.classList.add('translate-y-0');
+            }
+        } else {
+            // Cuando salimos de la sección schools-network
+            const schoolsNetworkRect = schoolsNetworkSection.getBoundingClientRect();
+            const isAboveViewport = schoolsNetworkRect.bottom < 0;
+            const isBelowViewport = schoolsNetworkRect.top > window.innerHeight;
+            
+            isInSchoolsNetwork = false;
+            
+            // Ocultar el CTA de la sección schools-network
+            if (stickyCTAShow) {
+                stickyCTAShow.classList.add('translate-y-full');
+                stickyCTAShow.classList.remove('translate-y-0');
+            }
+            
+            // Mostrar el CTA fixed cuando salimos hacia arriba (scroll up)
+            if (isBelowViewport && hasEnteredViewport && !isAnchored) {
+                stickyCTA.classList.remove('translate-y-full');
+                stickyCTA.classList.add('translate-y-0');
+            }
+            
+            // También mostrar cuando estamos por encima y hemos pasado tabs-section
+            if (isAboveViewport && hasEnteredViewport && !isAnchored) {
+                stickyCTA.classList.remove('translate-y-full');
+                stickyCTA.classList.add('translate-y-0');
+            }
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '-80px 0px 0px 0px', // Detecta cuando está llegando al final de la sección (80px desde arriba)
+    threshold: [0, 0.1, 1]
 });
 
 // Escuchar scroll para actualizar posición en tiempo real
@@ -218,3 +279,8 @@ window.addEventListener('scroll', () => {
 
 tabsObserver.observe(targetSection);
 footerObserver.observe(footerSection);
+
+// Observar la sección schools-network
+if (schoolsNetworkSection) {
+    schoolsNetworkObserver.observe(schoolsNetworkSection);
+}

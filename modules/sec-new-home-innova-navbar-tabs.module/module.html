@@ -1,4 +1,4 @@
-<section id="tabs-section" class="px-[14px] py-[104px] md:py-[51px] md:px-[59px] bg-[#F4FAFF] relative z-[10]">
+<section id="tabs-section" class="px-[14px] py-[104px] md:py-[51px] md:px-[59px] bg-[#F4FAFF] relative z-[2]">
   <div
     class="absolute -left-[130px] md:-left-[100px] md:-top-[130px] -top-[130px] md:w-[260px] md:h-[260px] w-[250px] h-[250px] pointer-events-none animate-[spin_10s_linear_infinite_reverse]">
     <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-sol.png"
@@ -120,6 +120,9 @@
                   src="https://www.youtube.com/embed/{{ item.tab_video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ item.tab_video_id }}"
                   title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
                 </iframe>
+                <div class="w-full h-full">
+                <img class="absolute inset-0 w-[90px] h-[90px] lg:w-[150px] lg:h-[150px] m-auto z-1" src="https://www.innovaschools.edu.co/hubfs/Innova-Niza/cursor.svg" alt="cursor">
+                </div>
                 <video class="absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline>
                   <source src="{{ item.tab_video }}" type="video/mp4">
                 </video>

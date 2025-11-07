@@ -207,7 +207,7 @@ h3{
 
 #sticky-cta-mobile.anchored {
   position: absolute;
-  bottom: 0;
+  bottom: 0 !important;
 }
 
 @media (max-width: 768px) {

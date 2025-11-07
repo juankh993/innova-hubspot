@@ -181,10 +181,26 @@ a:hover {
   pointer-events: auto;
 }
 
-/* Solo mostrar el wrapper en desktop */
+/* Ajustes para mobile y desktop */
 @media (max-width: 1023px) {
   .dropdown-wrapper {
-    display: none;
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+  }
+  
+  /* Mostrar el ul en mobile cuando está activo */
+  .home-dropdown-active .dropdown-wrapper ul {
+    display: block !important;
+    padding-left: 24px;
+    padding-top: 12px;
+  }
+  
+  /* Ocultar las imágenes en mobile */
+  .dropdown-wrapper picture {
+    display: none !important;
   }
 }
 
