@@ -28,7 +28,7 @@
             Menú</p>
           <ul>
             {% for item in module.menu_items %}
-            <li class="header-nav-menu {% if item.has_dropdown %}has-dropdown{% endif %}" {% if item.has_dropdown
+            <li class="max-w-full header-nav-menu {% if item.has_dropdown %}has-dropdown{% endif %}" {% if item.has_dropdown
               %}id="home-dropdown" {% endif %}>
 
               <a class="py-[14px] px-[10px] font-['Josefin Sans'] font-bold text-[22px] leading-[26px] text-[#003B87] uppercase {% if item.has_dropdown %}flex items-center gap-[12px]{% else %}block{% endif %} cursor-pointer hover:bg-[#E5E9EE] hover:rounded-[100px] hover:w-fit"
@@ -46,12 +46,14 @@
 
               {% if item.has_dropdown %}
               <div class="dropdown-wrapper">
+                <!-- <div
+                  class="md:w-[60%] static flex items-center md:grid md:grid-cols-2 md:absolute md:top-0 md:right-[130px] md:gap-[24px] bg-[#ffffff] rounded-[12px]"> -->
                 <div
-                  class="md:grid md:grid-cols-2 items-center md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:gap-[24px] bg-[#ffffff] rounded-[12px]">
+                  class="md:w-[60%] static flex items-center md:grid md:grid-cols-2 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:gap-[24px] bg-[#ffffff] rounded-[12px]">
                   <!-- Images -->
-                  <picture id="home-dropdown-image" class="hidden">
+                  <picture id="home-dropdown-image" class="hidden w-full max-w-full">
                     {% if item.dropdown_default_image.src %}
-                    <img class="default-image rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px]"
+                    <img class="default-image rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px] w-full max-w-full h-full object-cover"
                       src="{{ item.dropdown_default_image.src }}" alt="{{ item.dropdown_default_image.alt }}">
                     {% endif %}
 
@@ -63,7 +65,7 @@
                   </picture>
 
                   <!-- Dropdown List -->
-                  <ul class="hidden">
+                  <ul class="hidden w-[50%]">
                     {% for dropdown_item in item.dropdown_items %}
                     <li data-school="{{ dropdown_item.item_dropdown_slug }}"
                       class="font-['Josefin Sans'] font-bold text-[12px] leading-[20px] tracking-[1.2px] text-[#003B87] uppercase py-[20px] pl-[24px] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-[#CFE2E84D] after:via-[#A1B0B599] after:to-[#CFE2E84D] hover:bg-[#F2F4F6] cursor-pointer flex gap-[8px] group hover-item">
@@ -96,8 +98,22 @@
               </svg>
             </a>
           </ul>
-
+          
+            <span
+              class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+            <span
+              class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">
+              {{ module.cta_button_text }}
+            </span>
+            <svg class="relative z-10" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12.8008 14.2393L9.09375 12.7256L9.09961 12.7119L9.08691 12.7275L7.10645 15.1416H7.10547C7.00855 15.2654 6.87723 15.328 6.70996 15.3281C6.63971 15.3281 6.58031 15.3172 6.53223 15.2959H6.53125C6.42891 15.2581 6.34712 15.1943 6.28516 15.1055C6.22318 15.0165 6.19244 14.9183 6.19238 14.8105V11.9541L13.2627 3.28906L13.2529 3.28125L13.2539 3.28027L4.50684 10.8486L1.27734 9.52539H1.27637C1.17646 9.48755 1.09961 9.43128 1.0459 9.35742C0.992166 9.28351 0.961242 9.191 0.953125 9.08008L0.954102 9.00195C0.959149 8.92617 0.977475 8.85836 1.00977 8.79883C1.05278 8.71955 1.12003 8.65389 1.21191 8.60254L14.833 0.745117C14.9139 0.696638 15.0002 0.671875 15.0918 0.671875C15.1996 0.671945 15.2967 0.701528 15.3828 0.760742C15.4719 0.825561 15.534 0.901399 15.5703 0.987305C15.6066 1.07341 15.6168 1.17109 15.6006 1.2793L13.5059 13.8516C13.4789 14.0078 13.3928 14.1294 13.2471 14.2158C13.1717 14.2589 13.0878 14.2803 12.9961 14.2803C12.937 14.2803 12.8712 14.2663 12.8008 14.2393Z"
+                fill="white" stroke="white" stroke-width="0.012278" />
+            </svg>
+          </a>
         </nav>
+        
         <article id="header-contact" class="hidden md:block">
           <p class="font-['Josefin Sans'] font-bold text-[16px] leading-[18px] text-[#FF6D62] pb-[16px] md:pb-[24px]">
             Contact us</p>
@@ -131,8 +147,6 @@
       </picture>
     </section>
   </div>
-  <div>
-
   </div>
 </header>
 <div id="scroll-sentinel"></div>

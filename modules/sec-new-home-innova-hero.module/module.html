@@ -40,10 +40,10 @@
 
       <!-- CONTENIDO DINÁMICO -->
       <div
-        class="content-column relative md:absolute left-auto bottom-0 md:left-[80px] md:bottom-[60px] bg-white z-[1] w-full h-auto md:w-[617px] md:h-[321px] p-[32px_24px_48px_24px] rounded-[16px] mt-[-10px] md:rounded-tl-[16px] md:rounded-tr-[48px] md:rounded-br-[16px] md:rounded-bl-[48px]">
+        class="content-column relative md:absolute left-auto bottom-0 md:left-[80px] md:bottom-[60px] bg-white z-[1] w-full h-auto md:w-[617px] p-[32px_24px_48px_24px] rounded-[16px] mt-[-10px] md:rounded-tl-[16px] md:rounded-tr-[48px] md:rounded-br-[16px] md:rounded-bl-[48px]">
 
         <!-- Títulos y descripción -->
-        <div class="mb-[24px]">
+        <div class="mb-[24px] [word-wrap:break-word]">
           <h2 data-aos="fade-up" data-aos-duration="800" data-aos-offset="0" data-aos-delay="500" data-aos-once="true"
             id="dynamic-main-title" class="new-hero-title">
             {% if module.elements and module.elements[0] %}{{ module.elements[0].main_title|default('') }}{% endif %}

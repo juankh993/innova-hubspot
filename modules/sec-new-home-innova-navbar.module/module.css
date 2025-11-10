@@ -12,7 +12,7 @@ a:hover {
 }
 
 .home-dropdown-active>a:first-of-type {
-  background-color: #e5e9ee;
+  background-color: #82cc2cff;
   border-radius: 100px;
   display: inline-flex;
 }
@@ -112,17 +112,18 @@ a:hover {
 }
 
 /* Animación para el dropdown */
-#home-dropdown>div {
+/* #home-dropdown>div {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
-}
+} */
 
 #home-dropdown.home-dropdown-active>div {
+  width: 100%;
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
+  transition: unset;
 }
 
 /* Animación para los elementos internos - sincronizada con el contenedor */
@@ -144,7 +145,7 @@ a:hover {
 }
 
 /* Contenedor invisible que envuelve todo el dropdown */
-.dropdown-wrapper {
+/* .dropdown-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -153,7 +154,7 @@ a:hover {
   background: transparent;
   pointer-events: none;
   z-index: 7;
-}
+} */
 
 /* Posicionamiento del wrapper cuando header-nav está oculto (desktop) */
 #header-menu-items .dropdown-wrapper {

@@ -21,22 +21,19 @@
     <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" data-aos-once="true"
          id="video-title" class="flex items-center lg:justify-center max-w-full min-[469px]:max-w-full  lg:max-w-full w-full overflow-visible">
       <!-- Fondo con imagen -->
-      <div class="relative max-w-6xl lg:mx-auto pt-[50px] lg:pt-14 pb-6 lg:pb-12 px-[30px] lg:px-5 grid xl:gap-x-[22px] xl:items-center grid-cols-[auto] gap-y-[6px] text-left min-[744px]:mx-auto">
+      <div class="relative max-w-[50%] lg:mx-auto pt-[50px] lg:pt-14 pb-6 lg:pb-12 grid xl:gap-x-[22px] xl:items-center grid-cols-[auto] gap-y-[6px] text-left min-[744px]:mx-auto">
         <!-- Título centrado -->
         <h1 data-aos="fade-right" 
             class="flex flex-col justify-start font-bold uppercase tracking-[2.4px] lg:tracking-[3.8px] leading-[26px] lg:leading-[41px] text-[24px] lg:text-[38px] text-[#003B87] ">
           {{ module.banner_welcome }} <br>
-          <span class="italic text-[40px] lg:text-[64px] text-[#F85245] font-['Otterco'] leading-[45px] tracking-[4px] lg:leading-[72px] lg:tracking-[6.4px]">
+          <span class="italic text-[40px] lg:text-[54px] text-[#F85245] font-['Otterco'] leading-[45px] tracking-[4px] lg:leading-[72px] lg:tracking-[6.4px]">
            {{ module.school_campus }}
           </span>
         </h1>
-        <div class="relative inline-block">
+        <div class="w-[400px] relative inline-block">
           <picture>
-            <img class="rounded-full w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[330px] lg:h-[330px] object-cover" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
+            <img class="w-full max-w-full object-cover" src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" />
           </picture>
-          <img class="absolute top-[10%] left-[60%] md:left-[80%] lg:left-[55%] w-[150px] lg:w-[250px] h-auto z-10" 
-            src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/cohete-icon.svg" 
-            alt="Cohete" />
           </div>
 
       </div>
