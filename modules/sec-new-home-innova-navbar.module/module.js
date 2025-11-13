@@ -47,6 +47,8 @@ const checkDropdownStatus = () => {
  
 // Para mobile - manejar clicks en dropdowns
 document.addEventListener('click', (e) => {
+  if (!e || !e.target || typeof e.target.closest !== 'function') return;
+  
   const dropdownLink = e.target.closest('.has-dropdown > a');
   
   if (dropdownLink && window.innerWidth < 768) {
@@ -73,7 +75,7 @@ document.addEventListener('click', (e) => {
 
 // Para mouseenter - abrir dropdown (desktop)
 document.addEventListener('mouseenter', (e) => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 768 && e && e.target && typeof e.target.closest === 'function') {
     const dropdown = e.target.closest('#home-dropdown');
    
     if (dropdown) {
@@ -91,7 +93,7 @@ document.addEventListener('mouseenter', (e) => {
  
 // Para mouseleave - cerrar dropdown con delay (desktop)
 document.addEventListener('mouseleave', (e) => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 768 && e && e.target && typeof e.target.closest === 'function') {
     const dropdown = e.target.closest('#home-dropdown');
    
     if (dropdown) {
@@ -132,7 +134,7 @@ const showDefaultImage = () => {
 };
  
 document.addEventListener('mouseenter', (e) => {
-  if (e.target && e.target.closest) {
+  if (e && e.target && typeof e.target.closest === 'function') {
     const hoverItem = e.target.closest('li.hover-item');
     if (hoverItem && hoverItem.dataset.school) {
       const schoolName = hoverItem.dataset.school;

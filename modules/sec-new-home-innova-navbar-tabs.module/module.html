@@ -1,4 +1,4 @@
-<section id="tabs-section" class="px-[14px] py-[104px] md:py-[51px] md:px-[59px] bg-[#F4FAFF] relative z-[2]">
+<section id="tabs-section" class="px-[14px] py-[64px] md:py-[51px] md:px-[59px] bg-[#F4FAFF] relative z-[2]">
   <div
     class="absolute -left-[130px] md:-left-[100px] md:-top-[130px] -top-[130px] md:w-[260px] md:h-[260px] w-[250px] h-[250px] pointer-events-none animate-[spin_10s_linear_infinite_reverse]">
     <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/doodle-sol.png"
@@ -8,7 +8,7 @@
     alt="tabs-doodle-izquierdo" class="absolute top-0 left-0 z-[-1]">
   <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/tabs-doodle-derecho.svg"
     alt="tabs-doodle-derecho" class="absolute top-0 right-0 z-[-1] h-full">
-  <header class=" bg-[#ffffff] rounded-[30px] xl:max-w-[1280px] xl:m-auto relative z-1">
+  <header class="show-cta bg-[#ffffff] rounded-[30px] xl:max-w-[1280px] xl:m-auto relative z-1">
     <nav
       class="pt-[18px] md:px-[20px] bottom-0 flex justify-center items-center w-full !mx-auto  rounded-tl-[10px] rounded-tr-[10px] bg-[#139ED4] lg:rounded-tl-[30px] lg:rounded-tr-[30px] z-50 uppercase lg:top-4 lg:left-0 lg:right-0"
       role="navigation" aria-label="Navegación principal" id="fixed-blue-nav">
@@ -114,7 +114,7 @@
             data-animate="fade-up">
             <div class="relative slider-desktop w-full">
               <div
-                class="relative h-[261px] xl:h-[434px] w-full max-w-[612px] overflow-hidden rounded-tl-[80px] rounded-tr-[8px] rounded-br-[80px] rounded-bl-[8px]">
+                class="relative h-[261px] xl:h-[434px] w-full max-w-[612px] overflow-hidden rounded-tl-[80px] rounded-tr-[8px] rounded-br-[80px] rounded-bl-[8px] m-auto">
                 {% if item.asset_choice == "video_choice" %}
                 <iframe class="absolute left-0 top-0 w-full h-full hidden"
                   src="https://www.youtube.com/embed/{{ item.tab_video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ item.tab_video_id }}"
@@ -243,8 +243,8 @@
     </section>
   </header>
   <div id="sticky-cta-mobile"
-    class="fixed bottom-0 left-0 right-0 z-[10] translate-y-full transition-transform duration-500 ease-out md:hidden">
-    <div class="px-4 pb-4">
+    class="hidden fixed right-0 z-[10] transition-transform duration-500 ease-out md:hidden">
+    <div class="px-4 py-4 md:px-[198px] xl:hidden">
       <a style="color:#ffffff;" href="#section-form-enrollment" id="primary-button"
         class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete w-full"
         role="tab">

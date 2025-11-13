@@ -1,0 +1,9 @@
+{
+  "global": false,
+  "content_types": ["PAGE", "LANDING_PAGE"],
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "label": "Pop Up Innova Home",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "css_assets": []
+}

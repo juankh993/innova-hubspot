@@ -1,5 +1,5 @@
 <div class="block lg:hidden relative py-10 bg-[#ffffff]">
-  <div id="cinta" class="absolute w-[142px] left-0 -top-1/2 pointer-events-none">
+  <div id="cinta" class="absolute w-[142px] left-0 top-[-36px] pointer-events-none z-1">
     <img class="w-full h-full object-contain"
          src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/cinta-naranja-home.png" data-animate="figure-zoom-in" data-animate-start="top 95%" data-animate-end="bottom 95%"/>
   </div>
@@ -100,12 +100,10 @@
             {% endfor %}
          </div>
       </div>
-
     </div>
-  <div id="sticky-cta-mobile-show" class=" relative bottom-0 left-0 right-0 z-[10] translate-y-full transition-transform duration-500 ease-out md:hidden">
-    <div class="pt-[40px] px-4">
+        <div class="pt-[40px] md:px-[134px] xl:hidden">
       <a style="color:#ffffff;" href="#section-form-enrollment" id="primary-button"
-        class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete w-full"
+        class="cta-sing-up relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete w-full"
         role="tab">
         <span
           class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
@@ -120,6 +118,7 @@
         </svg>
       </a>
     </div>
+  <div id="sticky-cta-mobile-show" class=" relative bottom-0 left-0 right-0 z-[10] translate-y-full transition-transform duration-500 ease-out md:hidden">
   </div>
   </div>
 </section>

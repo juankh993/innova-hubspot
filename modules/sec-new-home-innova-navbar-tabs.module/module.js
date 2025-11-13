@@ -49,7 +49,7 @@ function setupAccordions() {
         title.classList.add("font-bold");
         title.classList.remove("font-normal", "font-regular");
       }
-      
+
       const firstTabMobileDropdownIcon = item.querySelector(".tab-mobile-dropdown-icon");
       if (firstTabMobileDropdownIcon) firstTabMobileDropdownIcon.style.transform = "rotate(180deg)";
     } else {
@@ -108,7 +108,7 @@ function setupAccordions() {
       const dot = item.querySelector(".dot-inner");
       if (indicator) indicator.style.backgroundColor = "#fce8c2";
       if (dot) dot.style.backgroundColor = "#fdb731";
-      if(index !== accordionItems.length - 1) {
+      if (index !== accordionItems.length - 1) {
         if (line) line.style.opacity = "1";
       }
 
@@ -130,157 +130,70 @@ setupAccordions();
 
 //Cta mobile logic
 const stickyCTA = document.getElementById('sticky-cta-mobile');
-const targetSection = document.getElementById('tabs-section'); 
+const ctaSingUp = document.querySelector('.cta-sing-up');
+const targetSection = document.querySelector('.show-cta'); 
 const footerSection = document.getElementById('new-footer');
-const schoolsNetworkSection = document.getElementById('section-schools-network');
-const stickyCTAShow = document.getElementById('sticky-cta-mobile-show');
 
 if (!stickyCTA || !targetSection || !footerSection) {
-    console.error('Elementos no encontrados');
-    return;
+  console.error('Elementos no encontrados');
+  return;
 }
 
 let hasEnteredViewport = false;
 let isAnchored = false;
-let isInSchoolsNetwork = false;
-
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
+let isInCtaSingUp = false;
 
 
-// Observer para mostrar/ocultar el CTA cuando tabs-section está visible
 const tabsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const sectionRect = targetSection.getBoundingClientRect();
-        const isScrollingUp = sectionRect.top > 0;
-        
-        if (entry.isIntersecting) {
-            hasEnteredViewport = true;
-            if (!isAnchored && !isInSchoolsNetwork) {
-                stickyCTA.classList.remove('translate-y-full');
-                stickyCTA.classList.add('translate-y-0');
-            }
-        } else {
-            if (isScrollingUp && hasEnteredViewport) {
-                stickyCTA.classList.add('translate-y-full');
-                stickyCTA.classList.remove('translate-y-0');
-                hasEnteredViewport = false;
-            }
-        }
-    });
-}, observerOptions);
+  entries.forEach(entry => {
+    const sectionRect = targetSection.getBoundingClientRect();
 
-// Función para manejar el scroll y anclar el CTA
-function handleCTAPosition() {
-    if (!hasEnteredViewport) return;
-    
-    const footerRect = footerSection.getBoundingClientRect();
-    const ctaHeight = stickyCTA.offsetHeight;
-    const windowHeight = window.innerHeight;
-    
-    // Calcula si el footer está entrando en el viewport
-    const footerDistanceFromBottom = windowHeight - footerRect.top;
-    
-    if (footerRect.top <= windowHeight && footerRect.top > 0) {
-        // El footer está visible - anclar el CTA
-        isAnchored = true;
-        // stickyCTA.style.position = 'fixed';
-        // stickyCTA.style.bottom = Math.max(0, footerDistanceFromBottom) + 'px';
-        stickyCTA.style.bottom = '0px';
-        // stickyCTA.classList.remove('translate-y-full');
-        // stickyCTA.classList.add('translate-y-0');
-    } 
-    else if (footerRect.top > windowHeight) {
-        // El footer NO está visible - comportamiento fixed normal
-        isAnchored = false;
-        stickyCTA.style.position = 'fixed';
-        // stickyCTA.style.bottom = '0px';
-    } 
+    const isScrollingUp = sectionRect.top > 0;
+
+    if (entry.isIntersecting) {
+      stickyCTA.style.display = "block";
+      hasEnteredViewport = true;
+    } else if (!isScrollingUp) {
+        stickyCTA.style.display = "block";
+      }
+      else if (isScrollingUp && hasEnteredViewport) {
+        stickyCTA.style.display = "none";
+
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0
+});
+
+
+let hasHiddenCTA = false;
+let lastScrollY = window.scrollY;
+
+const ctaSingUpObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const currentScrollY = window.scrollY;
+    const isScrollingUp = currentScrollY < lastScrollY;
+
+    if (entry.isIntersecting) {
+      hasHiddenCTA = true;
+      stickyCTA.style.display = "none";
+    } else if (hasHiddenCTA && isScrollingUp) {
+      stickyCTA.style.display = "block";
+    }
+
+    lastScrollY = currentScrollY;
+  });
+}, {
+  root: null,
+  threshold: 0.1
+});
+
+if (targetSection) {
+  tabsObserver.observe(targetSection);
 }
 
-// Observer para el footer
-const footerObserver = new IntersectionObserver((entries) => {
-    handleCTAPosition();
-}, {
-    root: null,
-    rootMargin: '0px',
-    threshold: Array.from({length: 21}, (_, i) => i * 0.05) // Más precisión
-});
-
-// Observer para la sección schools-network
-const schoolsNetworkObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const schoolsRect = schoolsNetworkSection.getBoundingClientRect();
-        const ctaHeight = stickyCTA.offsetHeight;
-        
-        // Detectar si el CTA está llegando al inicio de la sección
-        const isCtaReachingSection = schoolsRect.top <= window.innerHeight && schoolsRect.top > 0;
-        
-        if (entry.isIntersecting) {
-            // Cuando entramos a la sección schools-network
-            isInSchoolsNetwork = true;
-            
-            // Ocultar el CTA fixed
-            stickyCTA.classList.add('translate-y-full');
-            stickyCTA.classList.remove('translate-y-0');
-            
-            // Mostrar el CTA de la sección schools-network
-            if (stickyCTAShow) {
-                stickyCTAShow.classList.remove('translate-y-full');
-                stickyCTAShow.classList.add('translate-y-0');
-            }
-        } else {
-            // Cuando salimos de la sección schools-network
-            const schoolsNetworkRect = schoolsNetworkSection.getBoundingClientRect();
-            const isAboveViewport = schoolsNetworkRect.bottom < 0;
-            const isBelowViewport = schoolsNetworkRect.top > window.innerHeight;
-            
-            isInSchoolsNetwork = false;
-            
-            // Ocultar el CTA de la sección schools-network
-            if (stickyCTAShow) {
-                stickyCTAShow.classList.add('translate-y-full');
-                stickyCTAShow.classList.remove('translate-y-0');
-            }
-            
-            // Mostrar el CTA fixed cuando salimos hacia arriba (scroll up)
-            if (isBelowViewport && hasEnteredViewport && !isAnchored) {
-                stickyCTA.classList.remove('translate-y-full');
-                stickyCTA.classList.add('translate-y-0');
-            }
-            
-            // También mostrar cuando estamos por encima y hemos pasado tabs-section
-            if (isAboveViewport && hasEnteredViewport && !isAnchored) {
-                stickyCTA.classList.remove('translate-y-full');
-                stickyCTA.classList.add('translate-y-0');
-            }
-        }
-    });
-}, {
-    root: null,
-    rootMargin: '-80px 0px 0px 0px', // Detecta cuando está llegando al final de la sección (80px desde arriba)
-    threshold: [0, 0.1, 1]
-});
-
-// Escuchar scroll para actualizar posición en tiempo real
-let ticking = false;
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            handleCTAPosition();
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
-
-tabsObserver.observe(targetSection);
-footerObserver.observe(footerSection);
-
-// Observar la sección schools-network
-if (schoolsNetworkSection) {
-    schoolsNetworkObserver.observe(schoolsNetworkSection);
+if (ctaSingUp) {
+  ctaSingUpObserver.observe(ctaSingUp);
 }

@@ -1,10 +1,14 @@
 <!-- seccion testimonios -->
 <section id="section-testimonials" class="relative w-full aspect-video xl:h-[90vh] bg-[#ffffff]">
-  <div class="w-32 lg:w-64 h-20 lg:h-40 absolute top-0 right-0 z-[10] -translate-y-2/3 lg:-translate-y-2/3"
+  <!-- <div class="w-32 lg:w-64 h-20 lg:h-40 absolute top-0 right-0 z-[10] -translate-y-2/3 lg:-translate-y-2/3"
        id="testimonials-triangle">
     <img src="https://www.innovaschools.edu.co/hubfs/Innova-Niza/cinta.png"
-         alt="cinta" class="w-full h-full object-contain" data-animate="figure-zoom-in">
-  </div>
+         alt="cinta" class="w-full h-full object-contain relative" data-animate="figure-zoom-in">
+  </div> -->
+  <div class="h-[40px] bg-[#F4FAFF]">
+  <img src="https://www.innovaschools.edu.co/hubfs/Innova-Niza/cinta.png"
+         alt="cinta" class="absolute top-[-3px] xl:top-[-50px] right-0 z-1 w-[140px] xl:w-[280px] xl:h-[137px] max-w-full h-[61px] max-h-full object-cover">
+        </div>
   <!-- Background -->
   <div class="testimonials-background w-full h-full cursor-pointer relative" id="testimonials-background"
        data-blendy-from="universal-video" data-video-id="{{ module.testimonios_lista[0].video_youtube_id }}">
@@ -125,7 +129,7 @@
           <!-- end nombre del estudiante -->
 
           <!-- botones de navegacion -->
-          <div class="flex  gap-[16px] items-center">
+          <div class="flex gap-[16px] items-center relative z-0">
             <!-- boton de navegacion anterior -->
             <button class="secondary-circle-button" id="testimonials-swiper-prev">
               <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -81,14 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const swiper = new Swiper(".inn-slider-swiper", {
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 10,
         pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true,
+            el: ".inn-slider-picture .swiper-pagination",
+            dynamicBullets: false,
+            dynamicMainBullets: 2,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".inn-slider-picture .swiper-button-next",
+            prevEl: ".inn-slider-picture .swiper-button-prev",
         },
         breakpoints: {
             768: {

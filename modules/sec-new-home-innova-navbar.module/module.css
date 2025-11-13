@@ -12,7 +12,6 @@ a:hover {
 }
 
 .home-dropdown-active>a:first-of-type {
-  background-color: #82cc2cff;
   border-radius: 100px;
   display: inline-flex;
 }
