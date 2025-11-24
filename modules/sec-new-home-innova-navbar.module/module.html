@@ -28,7 +28,7 @@
             Menú</p>
           <ul>
             {% for item in module.menu_items %}
-            <li class="max-w-full header-nav-menu {% if item.has_dropdown %}has-dropdown{% endif %}" {% if item.has_dropdown
+            <li class="w-fit max-w-full header-nav-menu {% if item.has_dropdown %}has-dropdown{% endif %}" {% if item.has_dropdown
               %}id="home-dropdown" {% endif %}>
 
               <a class="py-[14px] px-[10px] font-['Josefin Sans'] font-bold text-[22px] leading-[26px] text-[#003B87] uppercase {% if item.has_dropdown %}flex items-center gap-[12px]{% else %}block{% endif %} cursor-pointer hover:!bg-[#E5E9EE] hover:rounded-[100px] hover:w-fit"
@@ -47,11 +47,11 @@
               {% if item.has_dropdown %}
               <div class="dropdown-wrapper">
                 <div
-                  class="lg:w-[40%] xl:w-[50%] m-auto sm:ml-[100px] xl:ml-[50px] static flex items-center md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:gap-[24px] bg-[#ffffff] rounded-[12px]">
+                  class="lg:w-[50%] m-auto sm:ml-[100px] static flex items-start md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 md:gap-[24px] bg-[#ffffff] rounded-[12px]">
                   <!-- Images -->
-                  <picture id="home-dropdown-image" class="hidden">
+                  <picture id="home-dropdown-image" class="hidden w-3/5 px-[24px] pt-[24px] pb-[24px]" style="height: auto; min-height: 400px;">
                     {% if item.dropdown_default_image.src %}
-                    <img class="default-image rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px] w-full max-w-full h-full object-cover"
+                    <img class="h-full object-cover default-image rounded-tl-[64px] rounded-br-[64px] rounded-tr-[14px] rounded-bl-[14px] "
                       src="{{ item.dropdown_default_image.src }}" alt="{{ item.dropdown_default_image.alt }}">
                     {% endif %}
 
@@ -63,7 +63,7 @@
                   </picture>
 
                   <!-- Dropdown List -->
-                  <ul class="hidden w-[50%]">
+                  <ul class="hidden w-full lg:w-auto">
                     {% for dropdown_item in item.dropdown_items %}
                     <li data-school="{{ dropdown_item.item_dropdown_slug }}"
                       class="font-['Josefin Sans'] font-bold text-[12px] leading-[20px] tracking-[1.2px] text-[#003B87] uppercase py-[20px] pl-[24px] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-[#CFE2E84D] after:via-[#A1B0B599] after:to-[#CFE2E84D] hover:bg-[#F2F4F6] cursor-pointer flex gap-[8px] group hover-item">
@@ -80,7 +80,7 @@
             </li>
             {% endfor %}
 
-            <a class="mt-[20px] md:mt-[40px] relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
+            <a id="cta-register-navbar" class="mt-[20px] md:mt-[40px] relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
               href="{{ module.url_boton }}">
               <span
                 class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>

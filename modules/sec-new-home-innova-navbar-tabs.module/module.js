@@ -131,10 +131,10 @@ setupAccordions();
 //Cta mobile logic
 const stickyCTA = document.getElementById('sticky-cta-mobile');
 const ctaSingUp = document.querySelector('.cta-sing-up');
-const targetSection = document.querySelector('.show-cta'); 
+const paragraphModelEducation = document.querySelector('.paragraph-model-education'); 
 const footerSection = document.getElementById('new-footer');
 
-if (!stickyCTA || !targetSection || !footerSection) {
+if (!stickyCTA || !paragraphModelEducation || !footerSection) {
   console.error('Elementos no encontrados');
   return;
 }
@@ -146,7 +146,7 @@ let isInCtaSingUp = false;
 
 const tabsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    const sectionRect = targetSection.getBoundingClientRect();
+    const sectionRect = paragraphModelEducation.getBoundingClientRect();
 
     const isScrollingUp = sectionRect.top > 0;
 
@@ -190,8 +190,8 @@ const ctaSingUpObserver = new IntersectionObserver((entries) => {
   threshold: 0.1
 });
 
-if (targetSection) {
-  tabsObserver.observe(targetSection);
+if (paragraphModelEducation) {
+  tabsObserver.observe(paragraphModelEducation);
 }
 
 if (ctaSingUp) {

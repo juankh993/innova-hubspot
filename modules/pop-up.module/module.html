@@ -1,40 +1,86 @@
-<section class="my-[51px] mx-[25px]">
-    <div class="relative bg-white rounded-[41px]">
-        <div>
-            <img src="{ module.imgPopup }" alt="img pop up" class="w-full h-full object-cover rounded-t-[41px] max-w-full">
-        </div>
-        <a href="#" class="absolute top-5 right-5">
-            <img src="{module.imgClose}" alt="Cerrar" role="button" aria-label="Cerrar" 
-                 class="rounded-full p-[3px] border border-white">
-        </a>
-        <div class="p-8 sm:p-4">
-            <div class="mb-6">
-                <span class="block uppercase text-[16px] font-bold text-[#003B87] tracking-[10px]">
-                    {module.subtitle}
-                </span>
-                <span class="block pt-2 uppercase text-2xl tracking-[10px] text-[#F85245] mt-2">
-                    {module.title}
-                </span>
-                <p class="text-[#003B87] text-lg font-normal my-4">
-                    {module.description}
-                </p>
-            </div>
-            <div class="w-full">
-                <form method="post" name="form" class="space-y-4">
-                    <label for="email" class="block text-[#003B87] font-medium">
-                        {module.label}
-                    </label>
-                    <input type="email" 
-                           id="email" 
-                           placeholder="Correo@correo.com" 
-                           class="w-full block mt-1 p-3 border border-[#003B87] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B87] focus:border-transparent">
-                    <button type="submit" 
-                            aria-label="Enviar" 
-                            class="w-[90%] mx-auto block uppercase bg-[#F85245] text-white py-3 px-6 rounded-full hover:bg-[#e04a3d] transition-colors duration-200">
-                        {module.button}
-                    </button>
-                </form>
-            </div>
-        </div>
+<div id="overlay">
+
+
+<section id="popup" class="relative px-[16px] py-[20px] xl:my-[140px] xl:py-0 xl:px-[280px]">
+
+  <div class="relative bg-white xl:flex xl:justify-center w-full rounded-[40px]">
+    <div
+      class="overflow-hidden lg:w-full lg:rounded-tr-none lg:rounded-br-none lg:rounded-bl-[41px] relative"
+    >
+      <img
+    src="https://www.innovaschools.edu.co/hubfs/new-home-innova/doodle-sol.png"
+    alt="img pop up"
+    class="img-sun fixed xl:top-[30px] xl:left-[170px] xl:z-[12] w-[259px] h-[259px] object-cover max-w-full hidden xl:block animate-spin-slow "
+  />
+      <img
+        src="{{ module.popup_image.src }}"
+        alt="img pop up"
+        class="w-full h-full object-cover max-w-full"
+      />
     </div>
+    <a href="#" class="absolute top-5 right-5" id="closeButton">
+      <img
+        src="{{ module.close_mobile_image.src }}"
+        alt="Cerrar"
+        role="button"
+        aria-label="Cerrar"
+        class=" rounded-full p-[7px] !border !border-width-[1px] !border-solid !border-white xl:hidden"
+      />
+
+      <img
+        src="{{ module.close_desktop_image.src }}"
+        alt="Cerrar"
+        role="button"
+        aria-label="Cerrar"
+        class="rounded-full p-[10px] xl:w-[35px] xl:!border xl:!border-width-[1px] xl:!border-solid xl:!border-[#003B87] hidden xl:block"
+      />
+    </a>
+    <div
+      class="p-8 sm:p-4 lg:w-full lg:pt-[89px] lg:pr-[26px] lg:pb-[50px] lg:pl-[30px] xl:flex xl:justify-center xl:flex-col"
+    >
+      <div>
+        <span
+          class="block uppercase text-[16px] font-bold text-[#003B87] tracking-[2px] 2xl:text-[36px] leading-[normal]"
+        >
+        {{ module.subtitle_text }}
+        </span>
+        <span
+          class="block pt-2 !leading-[normal] uppercase text-[32px] font-bold tracking-[3px] text-[#F85245] mt-2 lg:mt-0 lg:pt-0 lg:leading-[30px] 2xl:text-[42px] font-['Otterco'] "
+        >
+          <i>{{ module.title_text }}</i>
+        </span>
+        <p
+          class="text-[#003B87] text-[18px] leading-[22px] font-normal my-4 lg:my-6 2xl:text-[20px]"
+        >
+          Innova Schools promueve el aprendizaje activo, colaborativo y apoyado
+          en tecnología mediante el socioconstructivismo y el conectivismo.
+          {# {{ module.description_text }} #}
+        </p>
+      </div>
+      <div class="w-full">
+        <span
+          class="block text-[#003B87] font-medium leading-[16px] text-[14px] 2xl:text-[18px] mb-[4px]"
+        >
+          {{ module.label_text }}
+        </span>
+        <div class="text-center">
+          <a
+            class="w-[90%] mx-auto block mt-[20px] md:mt-[40px] relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden"
+            href="#section-form-enrollment" id="cta-register"
+          >
+            <span
+              class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"
+            ></span>
+            <span
+              class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[14px] cursor-pointer 2xl:text-[18px] leading-[20px]"
+            >
+              {{ module.cta_text }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+</div>

@@ -1,239 +1,192 @@
-[ {
-  "id" : "8461dc5d-02ea-593d-ddfa-43470af6a024",
-  "name" : "elements",
-  "label" : "Elementos",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : null,
-    "sorting_label_field" : null,
-    "default" : 1
-  },
-  "children" : [ {
-    "id" : "4fb45eed-4b5c-5ac1-21bd-aff5bb7f3e51",
-    "name" : "asset_choice",
-    "label" : "¿Desea mostrar una imagen o un video?",
-    "required" : false,
-    "locked" : false,
-    "display" : "radio",
-    "choices" : [ [ "image_choice", "Imagen" ], [ "video_choice", "Video" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "image_choice"
-  }, {
-    "id" : "053e3536-978a-9097-3074-83a43cb3725f",
-    "name" : "image",
-    "label" : "Imagen",
-    "required" : true,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "elements.asset_choice",
-      "controlling_value_regex" : "image_choice",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+[
+  {
+    "id": "8461dc5d-02ea-593d-ddfa-43470af6a024",
+    "name": "elements",
+    "label": "Elementos",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": null,
+      "sorting_label_field": null,
+      "default": 1
     },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/valores-demo.png",
-      "alt" : "valores-demo",
-      "loading" : "lazy",
-      "width" : 737,
-      "height" : 520,
-      "max_width" : 737,
-      "max_height" : 520
-    }
-  }, {
-    "picker" : "video",
-    "id" : "42656200-ca1c-3b67-0563-c0542ec69924",
-    "name" : "video",
-    "label" : "Video",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "elements.asset_choice",
-      "controlling_value_regex" : "video_choice",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "file",
-    "display_width" : null,
-    "default" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Cada%20ni%C3%B1o%20tiene%20un%20temperamento%20unico.mp4"
-  }, {
-    "id" : "cfb71a09-3f11-dfa3-f96f-2f8d8240a472",
-    "name" : "video_id",
-    "label" : "Video Modal",
-    "help_text" : "Extraer solo el ID del video de YouTube, no la URL completa. por ejemplo, únicamente la parte final después del igual: https://www.youtube.com/watch?v=7vdYYJrpdIk",
-    "inline_help_text" : "Ingresa solo el ID del video de YouTube.",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "elements.asset_choice",
-      "controlling_value_regex" : "video_choice",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "placeholder" : "video_id",
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "7vdYYJrpdIk"
-  }, {
-    "id" : "46d32b2a-bcf3-565a-04ae-5b234674337e",
-    "name" : "main_title",
-    "label" : "Titulo principal",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Conoce nuestros"
-  }, {
-    "id" : "11aebca2-e706-9127-eafe-cd25eeb89692",
-    "name" : "subtitle",
-    "label" : "Subtitulo",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Valores agregados"
-  }, {
-    "id" : "16dad68c-df9f-a4e3-d49b-b4daee5b707a",
-    "name" : "description",
-    "label" : "Descripción",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>"
-  }, {
-    "id" : "b811cbbf-7a8a-ffe7-7cd6-e3b6bb926b65",
-    "name" : "boton_inscribete",
-    "label" : "¿Desea mostrar Boton?",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "aa557a9a-9599-8fd5-010e-72b3a5bd59b7",
-    "name" : "botones",
-    "label" : "Botones",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "elements.boton_inscribete",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "034a98b7-b7f6-f9f9-29e8-2a62713ebbe2",
-      "name" : "buton_type",
-      "label" : "Tipo de Botón",
-      "required" : false,
-      "locked" : false,
-      "display" : "radio",
-      "choices" : [ [ "buton-primary", "Boton Naranja" ], [ "buton-secondary", "Boton Azul" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "buton-secondary"
-    }, {
-      "id" : "90fbe9d3-15df-f9c2-d965-5f71e9bc5011",
-      "name" : "buton_text",
-      "label" : "Texto Botón Naranja",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "elements.botones.buton_type",
-        "controlling_value_regex" : "buton-primary",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
+    "children": [
+      {
+        "id": "4fb45eed-4b5c-5ac1-21bd-aff5bb7f3e51",
+        "name": "asset_choice",
+        "label": "¿Desea mostrar una imagen o un video?",
+        "required": false,
+        "locked": false,
+        "display": "radio",
+        "choices": [
+          ["image_choice", "Imagen"],
+          ["video_choice", "Video"]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "type": "choice",
+        "default": "image_choice"
       },
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "¡Inscribete!"
-    }, {
-      "id" : "e27f9f6d-d31a-f70a-22d4-db359ed27fc9",
-      "name" : "buton_text_secondary",
-      "label" : "Texto Botón Azul",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "elements.botones.buton_type",
-        "controlling_value_regex" : "buton-secondary",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
+      {
+        "id": "053e3536-978a-9097-3074-83a43cb3725f",
+        "name": "image",
+        "label": "Imagen",
+        "required": true,
+        "locked": false,
+        "visibility": {
+          "controlling_field_path": "elements.asset_choice",
+          "controlling_value_regex": "image_choice",
+          "operator": "EQUAL"
+        },
+        "responsive": true,
+        "type": "image",
+        "default": {
+          "size_type": "auto",
+          "src": "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/valores-demo.png",
+          "alt": "valores-demo",
+          "loading": "lazy",
+          "width": 737,
+          "height": 520
+        }
       },
-      "allow_new_line" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "¡Inscribete!"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "buton_type" : "buton-secondary",
-      "buton_text" : "¡Inscribete!",
-      "buton_text_secondary" : "¡Inscribete!"
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "asset_choice" : "image_choice",
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/valores-demo.png",
-      "alt" : "valores-demo",
-      "loading" : "lazy",
-      "width" : 737,
-      "height" : 520,
-      "max_width" : 737,
-      "max_height" : 520
-    },
-    "video" : "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Cada%20ni%C3%B1o%20tiene%20un%20temperamento%20unico.mp4",
-    "main_title" : "Conoce nuestros",
-    "subtitle" : "Valores agregados",
-    "description" : "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>",
-    "boton_inscribete" : true,
-    "botones" : {
-      "tipo_de_boton" : "buton-secondary",
-      "buton_text" : "¡Inscribete!",
-      "buton_text_secondary" : "¡Inscribete!"
-    },
-    "video_id" : "7vdYYJrpdIk"
-  } ]
-} ]
+      {
+        "picker": "video",
+        "id": "42656200-ca1c-3b67-0563-c0542ec69924",
+        "name": "video",
+        "label": "Video",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field_path": "elements.asset_choice",
+          "controlling_value_regex": "video_choice",
+          "operator": "EQUAL"
+        },
+        "type": "file",
+        "default": "https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Cada%20ni%C3%B1o%20tiene%20un%20temperamento%20unico.mp4"
+      },
+      {
+        "id": "video-mobile-uuid",
+        "name": "video_mobile",
+        "label": "Video Mobile",
+        "type": "file",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field_path": "elements.asset_choice",
+          "controlling_value_regex": "video_choice",
+          "operator": "EQUAL"
+        }
+      },
+      {
+        "id": "cfb71a09-3f11-dfa3-f96f-2f8d8240a472",
+        "name": "video_id",
+        "label": "Video Modal",
+        "help_text": "Extraer solo el ID del video.",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field_path": "elements.asset_choice",
+          "controlling_value_regex": "video_choice",
+          "operator": "EQUAL"
+        },
+        "type": "text",
+        "default": "7vdYYJrpdIk"
+      },
+      {
+        "id": "46d32b2a-bcf3-565a-04ae-5b234674337e",
+        "name": "main_title",
+        "label": "Titulo principal",
+        "type": "text",
+        "default": "Conoce nuestros"
+      },
+      {
+        "id": "11aebca2-e706-9127-eafe-cd25eeb89692",
+        "name": "subtitle",
+        "label": "Subtitulo",
+        "type": "text",
+        "default": "Valores agregados"
+      },
+      {
+        "id": "16dad68c-df9f-a4e3-d49b-b4daee5b707a",
+        "name": "description",
+        "label": "Descripción",
+        "type": "richtext",
+        "default": "<span>Lorem ipsum dolor sit amet...</span>"
+      },
+      {
+        "id": "b811cbbf-7a8a-ffe7-7cd6-e3b6bb926b65",
+        "name": "boton_inscribete",
+        "label": "¿Desea mostrar Boton?",
+        "type": "boolean",
+        "display": "checkbox",
+        "default": true
+      },
+      {
+        "id": "aa557a9a-9599-8fd5-010e-72b3a5bd59b7",
+        "name": "botones",
+        "label": "Botones",
+        "visibility": {
+          "controlling_field_path": "elements.boton_inscribete",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "type": "group",
+        "children": [
+          {
+            "id": "034a98b7-b7f6-f9f9-29e8-2a62713ebbe2",
+            "name": "buton_type",
+            "label": "Tipo de Botón",
+            "type": "choice",
+            "display": "radio",
+            "choices": [
+              ["buton-primary", "Boton Naranja"],
+              ["buton-secondary", "Boton Azul"]
+            ],
+            "default": "buton-secondary"
+          },
+          {
+            "id": "90fbe9d3-15df-f9c2-d965-5f71e9bc5011",
+            "name": "buton_text",
+            "label": "Texto Botón Naranja",
+            "type": "text",
+            "visibility": {
+              "controlling_field_path": "elements.botones.buton_type",
+              "controlling_value_regex": "buton-primary",
+              "operator": "EQUAL"
+            },
+            "default": "¡Inscribete!"
+          },
+          {
+            "id": "e27f9f6d-d31a-f70a-22d4-db359ed27fc9",
+            "name": "buton_text_secondary",
+            "label": "Texto Botón Azul",
+            "type": "text",
+            "visibility": {
+              "controlling_field_path": "elements.botones.buton_type",
+              "controlling_value_regex": "buton-secondary",
+              "operator": "EQUAL"
+            },
+            "default": "¡Inscribete!"
+          },
+          {
+            "id": "33fd91da-4d22-4ffa-8d46-4b3402ab92a1",
+            "name": "buton_url",
+            "label": "URL del botón",
+            "type": "url",
+            "required": false,
+            "default": ""
+          }
+
+        ],
+        "default": {
+          "buton_type": "buton-secondary",
+          "buton_text": "¡Inscribete!",
+          "buton_text_secondary": "¡Inscribete!",
+          "buton_url": ""
+        }
+      }
+    ],
+    "type": "group"
+  }
+]

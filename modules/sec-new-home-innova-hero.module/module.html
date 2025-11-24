@@ -10,15 +10,44 @@
             <div class="swiper-slide w-full" data-slide-index="{{ loop.index0 }}">
               <div class="relative overflow-hidden shadow-xl w-full h-full">
                 {% if element.asset_choice == "image_choice" %}
-                <img src="{{ element.image.src }}" class="w-full h-full object-cover" alt="{{ element.image.alt }}" />
+                <picture>
+                  <source media="(max-width: 1024px)" srcset="{{ element.image_mobile.src if element.image_mobile else element.image.src }}">
+                  <source media="(min-width: 1024px)" srcset="{{ element.image_desktop.src }}">
+                  <img src="{{ element.image.src }}" class="w-full h-full object-cover" alt="imagen" loading="lazy" />
+                </picture>
                 {% elif element.asset_choice == "video_choice" %}
                 <iframe class="absolute left-0 top-0 w-full h-full hidden"
                   src="https://www.youtube.com/embed/{{ element.video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ element.video_id }}"
                   title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
                 </iframe>
-                <video class="absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline>
+                {# <video class="absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline>
+                  <source src="{{ element.video }}" type="video/mp4">
+                </video> #}
+                <!-- VIDEO DESKTOP -->
+                <!-- VIDEO DESKTOP -->
+                <video 
+                  class="hidden md:block absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline
+                >
                   <source src="{{ element.video }}" type="video/mp4">
                 </video>
+
+                <!-- VIDEO MOBILE -->
+                <video 
+                  class="block md:hidden absolute left-0 top-0 w-full !h-full object-cover" autoplay muted loop playsinline
+                >
+                  <source src="{{ element.video_mobile }}" type="video/mp4">
+                </video>
+
+                  <!-- <iframe class="absolute left-0 top-0 w-full h-full hidden md:block"
+                  src="https://www.youtube.com/embed/{{ element.video_id }}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist={{ element.video_id }}"
+                  title="Video de Innova Niza" allow="autoplay; encrypted-media" allowfullscreen frameborder="0">
+                </iframe>
+
+                <video class="absolute left-0 top-0 w-full !h-full object-cover md:hidden" autoplay muted loop playsinline>
+                  <source src="{{ element.video_mobile }}" type="video/mp4">
+                </video> -->
+
+
                 <!-- Overlay para abrir modal -->
                 <div class="absolute inset-0 video-overlay z-[4]" style="cursor: none;"
                   data-blendy-from="universal-video" data-video-id="{{ element.video_id }}" role="button" tabindex="0"
@@ -90,7 +119,7 @@
           {% elif module.elements[0].botones.buton_type == "buton-secondary" %}
           <!-- Botón Azul -->
           <div id="secondary-button-container">
-            <a href="#banner-hero" id="secondary-button" class="secondary-button w-fit CTA_Inscribete" role="tab">
+            <a href="{{ module.cta_blue.url }}" id="secondary-button" class="secondary-button w-fit CTA_Inscribete" role="tab">
               <span class="secondary-button__back" id="secondary-button-text">
                 {{ module.elements[0].botones.buton_text_secondary|default('¡Inscríbete!') }}
               </span>

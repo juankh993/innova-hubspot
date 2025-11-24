@@ -80,11 +80,24 @@
                 </div>
         </div>
       </div>
-      
     </div>
+      <div class="w-full my-[30px] xl:my-[60px]">
+        <picture>
+          <source media="(max-width:1024px)" srcset="{{ module.image_student_mobile.src }}">
+          <source media="(min-width:1024px)" srcset="{{ module.image_student_desktop.src }}">
+          
+          <img
+            src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/Banner-linea-de-tiempo.jpg"
+            alt="Imagen estudiante"
+            class="w-full"
+          />
+        </picture>
+</div>
+
+
     <!-- Sección de Aliados -->
     <div class="pt-[48px] md:pt-0 mx-auto max-w-[473px] overflow-hidden md:pt-[40px]">
-      <p class="text-[28px] leading-[33px] tracking-[2.8px] uppercase text-[#F85245] font-bold text-center italic"
+      <p class="text-[28px] leading-[33px] tracking-[2.8px] uppercase text-[#F85245] font-bold text-center italic pb-[30px]"
          style="font-family: 'Otterco', sans-serif; font-size:28px; line-height:33px; letter-spacing:2.8px;">
         {{ module.allies_title }}
       </p>

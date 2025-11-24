@@ -8,7 +8,7 @@
     alt="tabs-doodle-izquierdo" class="absolute top-0 left-0 z-[-1]">
   <img src="https://8117711.fs1.hubspotusercontent-na1.net/hubfs/8117711/new-home-innova/tabs-doodle-derecho.svg"
     alt="tabs-doodle-derecho" class="absolute top-0 right-0 z-[-1] h-full">
-  <header class="show-cta bg-[#ffffff] rounded-[30px] xl:max-w-[1280px] xl:m-auto relative z-1">
+  <header class="model-education bg-[#ffffff] rounded-[30px] xl:max-w-[1280px] xl:m-auto relative z-1">
     <nav
       class="pt-[18px] md:px-[20px] bottom-0 flex justify-center items-center w-full !mx-auto  rounded-tl-[10px] rounded-tr-[10px] bg-[#139ED4] lg:rounded-tl-[30px] lg:rounded-tr-[30px] z-50 uppercase lg:top-4 lg:left-0 lg:right-0"
       role="navigation" aria-label="Navegación principal" id="fixed-blue-nav">
@@ -32,7 +32,7 @@
 
         {# Botón Desktop #}
         <li class="hidden md:flex justify-center items-center ml-[20px] xl:mr-0" role="presentation">
-          <a href="#section-form-enrollment"
+          {# <a href="#section-form-enrollment"
             class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete"
             role="tab" id="CTA_Inscribete">
             <span
@@ -46,7 +46,16 @@
                 fill="white" stroke="white" />
             </svg>
 
-          </a>
+          </a> #}
+          <a class=" relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px] bg-[#F85245] rounded-full tracking-normal transition-colors duration-300 navbar-estilos overflow-hidden CTA_Inscribete" href="#section-form-enrollment">
+              <span class="absolute inset-0 bg-[#FDB731] group-active:bg-[#FF6D62] transition-[clip-path] duration-1000 ease-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
+              <span class="text-[#ffffff] relative z-10 font-['Otterco'] uppercase texture-image font-bold italic text-[20px] leading-[20px]">
+                Inscribete
+              </span>
+              <svg class="relative z-10" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.8008 14.2393L9.09375 12.7256L9.09961 12.7119L9.08691 12.7275L7.10645 15.1416H7.10547C7.00855 15.2654 6.87723 15.328 6.70996 15.3281C6.63971 15.3281 6.58031 15.3172 6.53223 15.2959H6.53125C6.42891 15.2581 6.34712 15.1943 6.28516 15.1055C6.22318 15.0165 6.19244 14.9183 6.19238 14.8105V11.9541L13.2627 3.28906L13.2529 3.28125L13.2539 3.28027L4.50684 10.8486L1.27734 9.52539H1.27637C1.17646 9.48755 1.09961 9.43128 1.0459 9.35742C0.992166 9.28351 0.961242 9.191 0.953125 9.08008L0.954102 9.00195C0.959149 8.92617 0.977475 8.85836 1.00977 8.79883C1.05278 8.71955 1.12003 8.65389 1.21191 8.60254L14.833 0.745117C14.9139 0.696638 15.0002 0.671875 15.0918 0.671875C15.1996 0.671945 15.2967 0.701528 15.3828 0.760742C15.4719 0.825561 15.534 0.901399 15.5703 0.987305C15.6066 1.07341 15.6168 1.17109 15.6006 1.2793L13.5059 13.8516C13.4789 14.0078 13.3928 14.1294 13.2471 14.2158C13.1717 14.2589 13.0878 14.2803 12.9961 14.2803C12.937 14.2803 12.8712 14.2663 12.8008 14.2393Z" fill="white" stroke="white" stroke-width="0.012278"></path>
+              </svg>
+            </a>
         </li>
 
 
@@ -79,15 +88,15 @@
                 {{ item.tab_subtitle }}
               </h2>
             </div>
-            <div class="text-[#003b87] mb-8 [&_span]:text-[22px] [&_span]:leading-[26px] !mx-0"
+            <div class="paragraph-model-education text-[#003b87] mb-8 [&_span]:text-[22px] [&_span]:leading-[26px] !mx-0"
               style="font-family: 'Josefin Sans', sans-serif; font-size:16px;" id="valores-description-reverse"
               data-animate="fade-up">
               {{ item.tab_description }}
             </div>
             <div class="text-center md:text-left">
-              <a href="#section-form-enrollment"
+              <a href="{{ item.tab_button_link.url.href }}"
                 class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px]  border-[2px] border-[#003B87] rounded-full tracking-normal transition-colors duration-300  overflow-hidden font-bold"
-                role="tab" id="CTA_Inscribete">
+                role="tab" id="CTA_Inscribete" target="_blank">
                 <span
                   class="absolute inset-0 bg-[#003B87] group-active:bg-[#FF6D62] transition-[clip-path] duration-500 ease-in-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
                 <span

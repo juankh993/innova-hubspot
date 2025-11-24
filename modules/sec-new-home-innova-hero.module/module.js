@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (currentSlide.botones && currentSlide.botones.buton_type === 'buton-secondary') {
           // Botón Azul
           buttonHTML = `
-          <a href="#banner-hero" class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px]  border-[2px] border-[#003B87] rounded-full tracking-normal transition-colors duration-300 overflow-hidden font-bold" role="tab" id="CTA_Inscribete">
+          <a href="${currentSlide.botones.buton_url?.href || '#'}"
+
+ class="relative group inline-flex justify-center items-center gap-2 uppercase px-[18px] pt-[12px] pb-[12px]  border-[2px] border-[#003B87] rounded-full tracking-normal transition-colors duration-300 overflow-hidden font-bold" role="tab" id="CTA_Inscribete">
                                 <span class="absolute inset-0 bg-[#003B87] group-active:bg-[#FF6D62] transition-[clip-path] duration-500 ease-in-out [clip-path:circle(0px_at_10%_0px)] group-hover:[clip-path:circle(150%_at_50%_0px)]"></span>
                                 <span class="!text-[#003B87] group-hover:!text-white relative z-10 font-['Otterco'] uppercase texture-image">
                                        ${currentSlide.botones.buton_text_secondary || '¡Inscríbete!'}

@@ -18,12 +18,16 @@
     <div class="w-full h-full">
       <img src="{{ module.testimonios_lista[0].imagen_fondo.src }}" id="dynamic-image" alt="{{ module.testimonios_lista[0].imagen_fondo.alt }}"
            class="w-full h-full object-cover" />
+           <picture>
+            <source media="(max-width:1024px)" srcset="{{ module.testimonios_lista[0].imagen_fondo_mob.src }}">
+            <source media="(min-width:1024px)" srcset="{{ module.testimonios_lista[0].imagen_fondo_desk.src }}">
+          </picture>
     </div>
   </div>
   <!-- Testimonials -->
   <div class="w-full lg:max-w-[90vw] xl:max-w-[75vw] 2xl:max-w-[60vw] bg-no-repeat bg-cover lg:absolute bottom-0 lg:-bottom-0 left-0 py-10 px-6 z-[2]"
        id="testimonials-container">
-    <div class="testimonials-content w-full lg:w-11/12 xl:w-[90%] flex flex-col items-start justify-start">
+    <div class="testimonials-content w-full lg:w-11/12 xl:w-[90%] flex flex-col items-start justify-start pl-[30px]">
       <h2 class="testimonials-content--title flex flex-wrap mb-[16px] items-center gap-x-4" id="testimonials-content--title" >
         <span class="uppercase text-[#F85245] font-['Otterco'] font-bold italic text-[44px] leading-[52px] tracking-[4.4px]">{{ module.seccion_titulo }}</span>
         <span class="text-[#003B87] uppercase font-bold text-[32px] leading-[38px] tracking-[3.2px] testimonials-content--title--highlight">{{ module.seccion_subtitulo }}</span>
